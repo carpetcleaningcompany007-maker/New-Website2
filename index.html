@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
+  <!-- ========================================= -->
+  <!-- START BASIC PAGE SEO -->
+  <!-- EDIT PAGE TITLE / META DESCRIPTION HERE -->
+  <!-- ========================================= -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JW Carpet Care | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch</title>
@@ -11,14 +15,23 @@
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas.">
   <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
   <meta name="theme-color" content="#0f172a">
+  <!-- END BASIC PAGE SEO -->
 
+  <!-- ========================================= -->
+  <!-- START FONTS / ICONS / MAIN CSS FILE -->
+  <!-- ========================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <!-- END FONTS / ICONS / MAIN CSS FILE -->
 
   <style>
+    /* ========================================= */
+    /* START QUICK EDIT COLOURS / GLOBAL SETTINGS */
+    /* EDIT THESE FIRST IF YOU WANT TO CHANGE LOOK */
+    /* ========================================= */
     :root{
       --bg:#0f172a;
       --bg2:#13203a;
@@ -35,6 +48,7 @@
       --max:1180px;
       --green:#25D366;
     }
+    /* END QUICK EDIT COLOURS / GLOBAL SETTINGS */
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -50,6 +64,9 @@
     a{text-decoration:none;color:inherit}
     .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
 
+    /* ========================================= */
+    /* START TOP BAR */
+    /* ========================================= */
     .topbar{
       background:#0b1220;
       color:#dbeafe;
@@ -72,7 +89,11 @@
     }
 
     .topbar a:hover{color:#fff}
+    /* END TOP BAR */
 
+    /* ========================================= */
+    /* START HEADER / NAV */
+    /* ========================================= */
     header{
       position:sticky;
       top:0;
@@ -198,7 +219,12 @@
       padding:10px 14px;
       font-weight:700;
     }
+    /* END HEADER / NAV */
 
+    /* ========================================= */
+    /* START HERO */
+    /* EDIT HERO IMAGE / HERO TEXT / BUTTONS HERE */
+    /* ========================================= */
     .hero{
       position:relative;
       overflow:hidden;
@@ -225,7 +251,11 @@
       align-items:start;
       padding:72px 0 64px;
     }
+    /* END HERO */
 
+    /* ========================================= */
+    /* START TEXT STYLES */
+    /* ========================================= */
     .eyebrow,
     .kicker{
       display:inline-block;
@@ -263,7 +293,6 @@
 
     .hero p,
     .lead,
-    .section-copy p,
     .review p,
     .map-panel p,
     .cta-panel-clean p,
@@ -279,6 +308,17 @@
       margin:0 0 22px;
     }
 
+    .lead{
+      color:#475569;
+      max-width:820px;
+      margin:0;
+    }
+    /* END TEXT STYLES */
+
+    /* ========================================= */
+    /* START HERO TAGS */
+    /* THESE ARE THE LITTLE PILLS UNDER HERO TEXT */
+    /* ========================================= */
     .hero-tags{
       display:flex;
       flex-wrap:wrap;
@@ -299,7 +339,11 @@
       backdrop-filter:blur(8px);
       font-size:15px;
     }
+    /* END HERO TAGS */
 
+    /* ========================================= */
+    /* START BUTTONS */
+    /* ========================================= */
     .actions{
       display:flex;
       gap:14px;
@@ -345,7 +389,12 @@
       color:#fff;
       border:1px solid rgba(255,255,255,.35);
     }
+    /* END BUTTONS */
 
+    /* ========================================= */
+    /* START QUOTE FORM CARD */
+    /* EDIT FORM LOOK HERE */
+    /* ========================================= */
     .formcard{
       background:rgba(255,255,255,.98);
       color:#0f172a;
@@ -403,7 +452,11 @@
       color:#1d4ed8;
       font-weight:700;
     }
+    /* END QUOTE FORM CARD */
 
+    /* ========================================= */
+    /* START GENERAL SECTION SPACING */
+    /* ========================================= */
     section{
       padding:82px 0;
     }
@@ -411,13 +464,12 @@
     .section-alt{
       background:#f5f7fb;
     }
+    /* END GENERAL SECTION SPACING */
 
-    .lead{
-      color:#475569;
-      max-width:820px;
-      margin:0;
-    }
-
+    /* ========================================= */
+    /* START SERVICE CARDS */
+    /* EDIT SERVICES SECTION LOOK HERE */
+    /* ========================================= */
     .cards-6{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -470,7 +522,12 @@
       font-weight:800;
       color:var(--brand);
     }
+    /* END SERVICE CARDS */
 
+    /* ========================================= */
+    /* START AREAS SECTION */
+    /* EDIT MAIN TOWNS / NEARBY TOWNS HERE */
+    /* ========================================= */
     .areas-wrap{
       margin-top:28px;
     }
@@ -529,7 +586,11 @@
       font-weight:700;
       transition:transform .2s ease, box-shadow .2s ease;
     }
+    /* END AREAS SECTION */
 
+    /* ========================================= */
+    /* START REVIEWS SECTION */
+    /* ========================================= */
     .reviews-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
@@ -553,7 +614,12 @@
       margin-top:14px;
       font-size:16px;
     }
+    /* END REVIEWS SECTION */
 
+    /* ========================================= */
+    /* START MAP + CONTACT SECTION */
+    /* EDIT MAP / QUICK CONTACT BOX HERE */
+    /* ========================================= */
     .map-cta-grid{
       display:grid;
       grid-template-columns:1.15fr .85fr;
@@ -603,7 +669,11 @@
       color:var(--brand);
       margin-top:4px;
     }
+    /* END MAP + CONTACT SECTION */
 
+    /* ========================================= */
+    /* START READY TO BOOK BAND */
+    /* ========================================= */
     .cta-band-clean{
       background:linear-gradient(135deg,#0f172a 0%,#13203a 100%);
       color:#fff;
@@ -618,7 +688,12 @@
       color:rgba(255,255,255,.86);
       max-width:760px;
     }
+    /* END READY TO BOOK BAND */
 
+    /* ========================================= */
+    /* START FOOTER */
+    /* EDIT FOOTER CONTACT DETAILS HERE */
+    /* ========================================= */
     .footer{
       background:#0b1220;
       color:#dbeafe;
@@ -658,7 +733,11 @@
       font-size:14px;
       color:#94a3b8;
     }
+    /* END FOOTER */
 
+    /* ========================================= */
+    /* START FLOATING PHONE / WHATSAPP BUTTONS */
+    /* ========================================= */
     .floating{
       position:fixed;
       right:18px;
@@ -683,7 +762,11 @@
 
     .float-btn.wa{background:var(--green)}
     .float-btn.call{background:var(--brand)}
+    /* END FLOATING PHONE / WHATSAPP BUTTONS */
 
+    /* ========================================= */
+    /* START RESPONSIVE */
+    /* ========================================= */
     @media (max-width: 1180px){
       .hero .container,
       .map-cta-grid{
@@ -814,29 +897,51 @@
         font-size:22px;
       }
     }
+    /* END RESPONSIVE */
   </style>
 </head>
 <body>
 
+  <!-- ========================================= -->
+  <!-- START TOP BAR -->
+  <!-- EDIT EMAIL / PHONE / SOCIAL LINKS HERE -->
+  <!-- ========================================= -->
   <div class="topbar">
     <div class="container">
       <div class="links">
+        <!-- EDIT EMAIL HERE -->
         <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
+
+        <!-- EDIT PHONE NUMBER HERE -->
         <a href="tel:07838231389">07838 231389</a>
       </div>
+
       <div class="links">
+        <!-- EDIT FACEBOOK LINK HERE -->
         <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a>
+
+        <!-- EDIT INSTAGRAM LINK HERE -->
         <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
+  <!-- END TOP BAR -->
 
+  <!-- ========================================= -->
+  <!-- START HEADER -->
+  <!-- EDIT LOGO / NAV LINKS HERE -->
+  <!-- ========================================= -->
   <header>
     <div class="container nav">
       <a class="brand" href="index.html">
+        <!-- EDIT LOGO IMAGE HERE -->
         <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care">
+
         <span>
+          <!-- EDIT BUSINESS NAME HERE -->
           JW Carpet Care
+
+          <!-- EDIT SMALL SUBTEXT HERE -->
           <small>Carpet cleaning across Worcestershire and the West Midlands</small>
         </span>
       </a>
@@ -875,14 +980,24 @@
       </nav>
     </div>
   </header>
+  <!-- END HEADER -->
 
+  <!-- ========================================= -->
+  <!-- START HERO SECTION -->
+  <!-- EDIT HERO TEXT / BUTTON TEXT / BUTTON LINKS HERE -->
+  <!-- ========================================= -->
   <section class="hero">
     <div class="container">
       <div>
         <span class="eyebrow">Professional local carpet cleaning</span>
+
+        <!-- EDIT MAIN HERO HEADLINE HERE -->
         <h1>Professional Carpet Cleaning Across Worcester, Bromsgrove, Kidderminster and Redditch</h1>
+
+        <!-- EDIT HERO PARAGRAPH HERE -->
         <p>JW Carpet Care provides professional carpet and upholstery cleaning across Worcestershire for homes, rental properties and commercial spaces. From busy family carpets to sofas, stairs, hallways and offices, we deliver a proper deep clean with honest advice and a straightforward local service.</p>
 
+        <!-- EDIT SMALL HERO TAGS HERE -->
         <div class="hero-tags">
           <span><i class="fa-solid fa-circle-check"></i> Carpet cleaning</span>
           <span><i class="fa-solid fa-circle-check"></i> Upholstery cleaning</span>
@@ -890,6 +1005,7 @@
           <span><i class="fa-solid fa-circle-check"></i> Domestic and commercial</span>
         </div>
 
+        <!-- EDIT HERO BUTTONS HERE -->
         <div class="actions">
           <a class="btn primary" href="tel:07838231389">Call 07838 231389</a>
           <a class="btn secondary" href="#quote">Request a Quote</a>
@@ -897,6 +1013,10 @@
         </div>
       </div>
 
+      <!-- ========================================= -->
+      <!-- START HERO FORM -->
+      <!-- EDIT FORM TITLE / FIELDS / CONTACT DETAILS HERE -->
+      <!-- ========================================= -->
       <aside class="formcard" id="quote">
         <h2>Get your free quote</h2>
         <p>Tell James what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
@@ -905,6 +1025,7 @@
           <input name="Name" placeholder="Your name" required>
           <input name="Phone" placeholder="Phone number" required>
           <input name="Email" placeholder="Email address">
+
           <select name="Service">
             <option>Carpet cleaning</option>
             <option>Upholstery cleaning</option>
@@ -913,19 +1034,32 @@
             <option>Moth treatment</option>
             <option>Commercial carpet cleaning</option>
           </select>
+
           <textarea name="Details" placeholder="Tell us what needs cleaning"></textarea>
+
           <button class="btn primary" type="submit">Send enquiry</button>
         </form>
 
         <div class="contact-mini">
+          <!-- EDIT PHONE HERE -->
           <a href="tel:07838231389"><i class="fa-solid fa-phone"></i> 07838 231389</a>
+
+          <!-- EDIT EMAIL HERE -->
           <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+
+          <!-- EDIT WHATSAPP HERE -->
           <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
         </div>
       </aside>
+      <!-- END HERO FORM -->
     </div>
   </section>
+  <!-- END HERO SECTION -->
 
+  <!-- ========================================= -->
+  <!-- START SERVICES SECTION -->
+  <!-- EDIT ALL SERVICE CARDS HERE -->
+  <!-- ========================================= -->
   <section class="section-alt">
     <div class="container">
       <span class="kicker">Our Services</span>
@@ -933,6 +1067,8 @@
       <p class="lead">JW Carpet Care offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment advice.</p>
 
       <div class="cards-6">
+
+        <!-- SERVICE CARD 1 -->
         <article class="card">
           <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Carpet cleaning by JW Carpet Care">
           <div class="iconbox">
@@ -942,6 +1078,7 @@
           </div>
         </article>
 
+        <!-- SERVICE CARD 2 -->
         <article class="card">
           <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/upholstery-cleaning-image-119.jpg" alt="Upholstery cleaning by JW Carpet Care">
           <div class="iconbox">
@@ -951,6 +1088,7 @@
           </div>
         </article>
 
+        <!-- SERVICE CARD 3 -->
         <article class="card">
           <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Stain removal treatments">
           <div class="iconbox">
@@ -960,6 +1098,7 @@
           </div>
         </article>
 
+        <!-- SERVICE CARD 4 -->
         <article class="card">
           <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop" alt="Rug cleaning">
           <div class="iconbox">
@@ -969,6 +1108,7 @@
           </div>
         </article>
 
+        <!-- SERVICE CARD 5 -->
         <article class="card">
           <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop" alt="Commercial carpet cleaning">
           <div class="iconbox">
@@ -978,6 +1118,7 @@
           </div>
         </article>
 
+        <!-- SERVICE CARD 6 -->
         <article class="card">
           <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Moth treatment advice">
           <div class="iconbox">
@@ -986,10 +1127,16 @@
             <a href="pages/moth-treatment.html">Read more</a>
           </div>
         </article>
+
       </div>
     </div>
   </section>
+  <!-- END SERVICES SECTION -->
 
+  <!-- ========================================= -->
+  <!-- START AREAS SECTION -->
+  <!-- EDIT MAIN TOWNS FIRST / NEARBY TOWNS BELOW -->
+  <!-- ========================================= -->
   <section>
     <div class="container">
       <span class="kicker">Areas We Cover</span>
@@ -997,6 +1144,8 @@
       <p class="lead">Worcester, Bromsgrove, Kidderminster and Redditch are the main service areas, along with nearby towns across Worcestershire and the wider West Midlands.</p>
 
       <div class="areas-wrap">
+
+        <!-- MAIN TOWNS -->
         <div class="town-grid-main">
           <a href="areas/worcester.html">
             <h3>Worcester</h3>
@@ -1023,6 +1172,7 @@
           </a>
         </div>
 
+        <!-- NEARBY TOWNS -->
         <div class="nearby-areas">
           <h3>Nearby service areas</h3>
           <div class="nearby-grid">
@@ -1044,7 +1194,12 @@
       </div>
     </div>
   </section>
+  <!-- END AREAS SECTION -->
 
+  <!-- ========================================= -->
+  <!-- START REVIEWS SECTION -->
+  <!-- EDIT REVIEW TEXT / NAMES HERE -->
+  <!-- ========================================= -->
   <section class="section-alt">
     <div class="container">
       <span class="kicker">Read customer reviews</span>
@@ -1083,7 +1238,12 @@
       </div>
     </div>
   </section>
+  <!-- END REVIEWS SECTION -->
 
+  <!-- ========================================= -->
+  <!-- START MAP + QUICK CONTACT SECTION -->
+  <!-- EDIT MAP / TEXT / BUTTONS HERE -->
+  <!-- ========================================= -->
   <section>
     <div class="container">
       <span class="kicker">Service area map</span>
@@ -1092,6 +1252,8 @@
       <div class="map-cta-grid">
         <div class="map-panel">
           <p class="lead">JW Carpet Care covers Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas across Worcestershire.</p>
+
+          <!-- EDIT MAP EMBED HERE -->
           <div class="mapwrap">
             <iframe src="https://www.google.com/maps?q=Worcestershire%20UK&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
@@ -1116,7 +1278,12 @@
       </div>
     </div>
   </section>
+  <!-- END MAP + QUICK CONTACT SECTION -->
 
+  <!-- ========================================= -->
+  <!-- START READY TO BOOK BAND -->
+  <!-- EDIT THIS FINAL CTA HERE -->
+  <!-- ========================================= -->
   <section>
     <div class="container">
       <div class="cta-band-clean">
@@ -1125,6 +1292,7 @@
           <h2>Ready to book JW Carpet Care?</h2>
           <p class="lead">Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning with a straightforward local service from the first call.</p>
         </div>
+
         <div class="actions">
           <a class="btn primary" href="tel:07838231389">Call 07838 231389</a>
           <a class="btn secondary" href="mailto:infojwcarpetcare@gmail.com">Email us</a>
@@ -1132,7 +1300,12 @@
       </div>
     </div>
   </section>
+  <!-- END READY TO BOOK BAND -->
 
+  <!-- ========================================= -->
+  <!-- START FOOTER -->
+  <!-- EDIT FOOTER TEXT / LINKS HERE -->
+  <!-- ========================================= -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -1165,7 +1338,12 @@
 
     <div class="container copy">© JW Carpet Care. All rights reserved.</div>
   </footer>
+  <!-- END FOOTER -->
 
+  <!-- ========================================= -->
+  <!-- START FLOATING BUTTONS -->
+  <!-- EDIT WHATSAPP / PHONE LINKS HERE -->
+  <!-- ========================================= -->
   <div class="floating">
     <a class="float-btn wa" href="https://wa.me/447838231389" target="_blank" rel="noopener" aria-label="WhatsApp JW Carpet Care">
       <i class="fa-brands fa-whatsapp"></i>
@@ -1174,7 +1352,12 @@
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
+  <!-- END FLOATING BUTTONS -->
 
+  <!-- ========================================= -->
+  <!-- START MOBILE MENU SCRIPT -->
+  <!-- USUALLY LEAVE THIS ALONE -->
+  <!-- ========================================= -->
   <script>
     const toggle = document.querySelector('.mobile-toggle');
     const menu = document.querySelector('.menu');
@@ -1186,5 +1369,7 @@
       });
     }
   </script>
+  <!-- END MOBILE MENU SCRIPT -->
+
 </body>
 </html>
