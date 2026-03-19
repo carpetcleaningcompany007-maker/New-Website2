@@ -1,1 +1,1 @@
-document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('.mobile-toggle');const m=document.querySelector('.menu');if(b&&m){b.addEventListener('click',()=>{m.classList.toggle('open');b.setAttribute('aria-expanded',m.classList.contains('open')?'true':'false');});}});
+document.querySelectorAll('details.dropdown').forEach(d=>d.addEventListener('mouseleave',()=>d.removeAttribute('open')));
