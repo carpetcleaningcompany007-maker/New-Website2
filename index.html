@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="JW Carpet Care | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop">
+  <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
   <meta name="theme-color" content="#0f172a">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,34 +19,403 @@
   <link rel="stylesheet" href="assets/style.css">
 
   <style>
-    .hero .container{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:38px;
-      align-items:start;
+    :root{
+      --bg:#0f172a;
+      --bg2:#13203a;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#dbe4ef;
+      --brand:#1d4ed8;
+      --cta:#d4af57;
+      --cta-dark:#b89238;
+      --soft:#f8fafc;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --radius:24px;
+      --max:1180px;
+      --green:#25D366;
     }
 
-    .hero-points,
-    .proof-strip{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
-      margin-top:22px;
-    }
-
-    .hero-points span,
-    .proof-strip div{
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      color:var(--text);
       background:#fff;
-      border:1px solid #e2e8f0;
-      border-radius:18px;
-      padding:14px 16px;
-      box-shadow:0 12px 32px rgba(15,23,42,.06);
+      overflow-x:hidden;
     }
 
-    .proof-strip strong,
-    .hero-proof strong{
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+    .topbar{
+      background:#0b1220;
+      color:#dbeafe;
+      font-size:14px;
+    }
+
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:10px 0;
+      flex-wrap:wrap;
+    }
+
+    .topbar .links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .topbar a:hover{color:#fff}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(219,228,239,.8);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand img{
+      height:58px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .brand span{
+      display:flex;
+      flex-direction:column;
+      font-size:20px;
+      font-weight:800;
+      line-height:1.05;
+      color:#0f172a;
+    }
+
+    .brand small{
+      font-size:12px;
+      font-weight:600;
+      color:#64748b;
+      margin-top:5px;
+      line-height:1.2;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-weight:600;
+    }
+
+    .menu > a,
+    .dropbtn{
+      color:#0f172a;
+      font:inherit;
+      background:none;
+      border:0;
+      cursor:pointer;
+      padding:0;
+    }
+
+    .menu > a:hover,
+    .dropbtn:hover,
+    .menu > a.current{
+      color:var(--brand);
+    }
+
+    .drop{
+      position:relative;
+    }
+
+    .dropmenu{
+      position:absolute;
+      top:calc(100% + 14px);
+      left:0;
+      min-width:220px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:10px;
+      display:none;
+    }
+
+    .drop:hover .dropmenu{
       display:block;
-      margin-bottom:4px;
+    }
+
+    .dropmenu a{
+      display:block;
+      padding:11px 12px;
+      border-radius:12px;
+      color:#0f172a;
+      font-weight:600;
+    }
+
+    .dropmenu a:hover{
+      background:#f8fafc;
+      color:var(--brand);
+    }
+
+    .cta{
+      background:#0f172a;
+      color:#fff !important;
+      padding:12px 18px;
+      border-radius:999px;
+      box-shadow:0 8px 24px rgba(15,23,42,.14);
+    }
+
+    .cta:hover{
+      background:#13203a;
+    }
+
+    .mobile-toggle{
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#0f172a;
+      border-radius:12px;
+      padding:10px 14px;
+      font-weight:700;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(15,23,42,.88) 0%, rgba(15,23,42,.72) 45%, rgba(15,23,42,.35) 100%),
+        url("https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png") center/cover no-repeat;
+      color:#fff;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(15,23,42,.06), rgba(15,23,42,.22));
+      pointer-events:none;
+    }
+
+    .hero .container{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:32px;
+      align-items:start;
+      padding:72px 0 64px;
+    }
+
+    .eyebrow,
+    .kicker{
+      display:inline-block;
+      margin-bottom:14px;
+      color:#1d4ed8;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .hero .eyebrow{
+      color:#dbeafe;
+    }
+
+    h1,h2,h3{
+      margin:0 0 16px;
+      line-height:.98;
+      letter-spacing:-.03em;
+    }
+
+    h1{
+      font-size:clamp(42px,6vw,74px);
+      max-width:760px;
+    }
+
+    h2{
+      font-size:clamp(34px,4vw,56px);
+      max-width:760px;
+    }
+
+    h3{
+      font-size:24px;
+    }
+
+    .hero p,
+    .lead,
+    .section-copy p,
+    .review p,
+    .map-panel p,
+    .cta-panel-clean p,
+    .footer p{
+      line-height:1.65;
+      font-size:18px;
+      color:inherit;
+    }
+
+    .hero p{
+      max-width:760px;
+      color:rgba(255,255,255,.92);
+      margin:0 0 22px;
+    }
+
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 26px;
+    }
+
+    .hero-tags span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      font-weight:600;
+      backdrop-filter:blur(8px);
+      font-size:15px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:18px;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn.primary{
+      background:var(--cta);
+      color:#111827;
+      box-shadow:0 12px 28px rgba(212,175,87,.28);
+    }
+
+    .btn.primary:hover{
+      background:var(--cta-dark);
+    }
+
+    .btn.secondary{
+      background:#fff;
+      color:#0f172a;
+      box-shadow:0 12px 28px rgba(255,255,255,.14);
+    }
+
+    .btn.ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.35);
+    }
+
+    .formcard{
+      background:rgba(255,255,255,.98);
+      color:#0f172a;
+      border:1px solid rgba(219,228,239,.9);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 24px 60px rgba(15,23,42,.18);
+    }
+
+    .formcard h2{
+      font-size:34px;
+      margin-bottom:10px;
+      max-width:none;
+    }
+
+    .formcard p{
+      margin:0 0 18px;
+      color:#475569;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .formgrid{
+      display:grid;
+      gap:14px;
+    }
+
+    .formgrid input,
+    .formgrid select,
+    .formgrid textarea{
+      width:100%;
+      border:1px solid #cbd5e1;
+      border-radius:16px;
+      padding:14px 16px;
+      font:inherit;
+      color:#0f172a;
+      background:#fff;
+    }
+
+    .formgrid textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .contact-mini{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .contact-mini a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#1d4ed8;
+      font-weight:700;
+    }
+
+    section{
+      padding:82px 0;
+    }
+
+    .section-alt{
+      background:#f5f7fb;
+    }
+
+    .lead{
+      color:#475569;
+      max-width:820px;
+      margin:0;
     }
 
     .cards-6{
@@ -56,40 +425,50 @@
       margin-top:28px;
     }
 
-    .cards-6 .card,
+    .card,
     .review,
+    .nearby-areas,
     .map-panel,
     .cta-panel-clean,
-    .nearby-areas{
+    .cta-band-clean{
       background:#fff;
-      border:1px solid #dbe4ef;
-      border-radius:24px;
-      box-shadow:0 16px 40px rgba(15,23,42,.06);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .cards-6 .card img{
+    .card{
+      overflow:hidden;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover,
+    .review:hover,
+    .town-grid-main a:hover,
+    .nearby-grid a:hover{
+      transform:translateY(-3px);
+      box-shadow:0 22px 56px rgba(15,23,42,.10);
+    }
+
+    .card img{
       width:100%;
       height:220px;
       object-fit:cover;
-      border-top-left-radius:24px;
-      border-top-right-radius:24px;
     }
 
-    .cards-6 .iconbox{
+    .iconbox{
       padding:22px;
     }
 
-    .cards-6 h3,
-    .review h3{
-      margin:0 0 10px;
+    .iconbox p{
+      color:#475569;
+      line-height:1.65;
+      margin:0 0 14px;
     }
 
-    .cards-6 p,
-    .review p,
-    .area-intro p,
-    .map-panel p,
-    .cta-panel-clean p{
-      margin:0;
+    .iconbox a{
+      font-weight:800;
+      color:var(--brand);
     }
 
     .areas-wrap{
@@ -103,39 +482,27 @@
       margin-bottom:22px;
     }
 
-    .town-grid-main a,
-    .nearby-areas a{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-    }
-
     .town-grid-main a{
+      display:block;
       background:#fff;
-      border:1px solid #dbe4ef;
+      border:1px solid var(--line);
       border-radius:22px;
       padding:22px;
-      box-shadow:0 16px 40px rgba(15,23,42,.06);
+      box-shadow:var(--shadow);
       transition:transform .2s ease, box-shadow .2s ease;
     }
 
-    .town-grid-main a:hover,
-    .nearby-areas a:hover,
-    .review:hover,
-    .cards-6 .card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 20px 46px rgba(15,23,42,.09);
-    }
-
-    .town-grid-main h3{
-      margin:0 0 10px;
+    .town-grid-main p{
+      margin:0;
+      color:#475569;
+      line-height:1.6;
     }
 
     .town-grid-main span{
       display:inline-block;
       margin-top:14px;
-      font-weight:700;
-      color:#1d4ed8;
+      font-weight:800;
+      color:var(--brand);
     }
 
     .nearby-areas{
@@ -143,7 +510,7 @@
     }
 
     .nearby-areas h3{
-      margin:0 0 14px;
+      margin-bottom:14px;
     }
 
     .nearby-grid{
@@ -153,12 +520,14 @@
     }
 
     .nearby-grid a{
-      border:1px solid #e2e8f0;
-      border-radius:16px;
+      display:block;
+      text-align:center;
       padding:14px 16px;
       background:#f8fafc;
-      font-weight:600;
-      text-align:center;
+      border:1px solid #e2e8f0;
+      border-radius:16px;
+      font-weight:700;
+      transition:transform .2s ease, box-shadow .2s ease;
     }
 
     .reviews-grid{
@@ -172,24 +541,25 @@
       padding:22px;
     }
 
-    .review .stars{
+    .stars{
       color:#f59e0b;
       letter-spacing:2px;
-      margin-bottom:12px;
       font-size:18px;
+      margin-bottom:12px;
     }
 
     .review strong{
       display:block;
       margin-top:14px;
+      font-size:16px;
     }
 
     .map-cta-grid{
       display:grid;
       grid-template-columns:1.15fr .85fr;
       gap:24px;
+      margin-top:18px;
       align-items:stretch;
-      margin-top:14px;
     }
 
     .map-panel,
@@ -199,15 +569,15 @@
 
     .mapwrap{
       margin-top:18px;
-      overflow:hidden;
       border-radius:18px;
-      border:1px solid #dbe4ef;
+      overflow:hidden;
+      border:1px solid var(--line);
       background:#f8fafc;
     }
 
     .mapwrap iframe{
       width:100%;
-      height:380px;
+      height:390px;
       border:0;
       display:block;
     }
@@ -224,42 +594,69 @@
       display:flex;
       align-items:flex-start;
       gap:10px;
-      font-weight:500;
+      color:#334155;
+      font-weight:600;
+      line-height:1.5;
     }
 
     .feature-list-clean i{
-      color:#1d4ed8;
-      margin-top:3px;
+      color:var(--brand);
+      margin-top:4px;
     }
 
     .cta-band-clean{
       background:linear-gradient(135deg,#0f172a 0%,#13203a 100%);
       color:#fff;
-      border-radius:28px;
       padding:34px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
-      margin-top:6px;
-    }
-
-    .cta-band-clean h2,
-    .cta-band-clean p{
-      margin:0;
-      color:#fff;
+      gap:22px;
     }
 
     .cta-band-clean .lead{
-      opacity:.92;
-      margin-top:10px;
+      color:rgba(255,255,255,.86);
       max-width:760px;
     }
 
-    .cta-band-clean .actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
+    .footer{
+      background:#0b1220;
+      color:#dbeafe;
+      padding:70px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .9fr .9fr;
+      gap:28px;
+    }
+
+    .footer h3{
+      color:#fff;
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .footer p{
+      margin:0;
+      font-size:16px;
+      color:#cbd5e1;
+    }
+
+    .footer a{
+      color:#cbd5e1;
+    }
+
+    .footer a:hover{
+      color:#fff;
+    }
+
+    .copy{
+      border-top:1px solid rgba(203,213,225,.15);
+      margin-top:28px;
+      padding-top:22px;
+      font-size:14px;
+      color:#94a3b8;
     }
 
     .floating{
@@ -269,7 +666,7 @@
       display:flex;
       flex-direction:column;
       gap:12px;
-      z-index:1000;
+      z-index:120;
     }
 
     .float-btn{
@@ -281,18 +678,13 @@
       justify-content:center;
       color:#fff;
       font-size:24px;
-      box-shadow:0 18px 36px rgba(15,23,42,.22);
+      box-shadow:0 18px 36px rgba(15,23,42,.24);
     }
 
-    .float-btn.wa{
-      background:#25D366;
-    }
+    .float-btn.wa{background:var(--green)}
+    .float-btn.call{background:var(--brand)}
 
-    .float-btn.call{
-      background:#1d4ed8;
-    }
-
-    @media (max-width: 1100px){
+    @media (max-width: 1180px){
       .hero .container,
       .map-cta-grid{
         grid-template-columns:1fr;
@@ -308,27 +700,107 @@
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
       .cta-band-clean{
         flex-direction:column;
         align-items:flex-start;
       }
     }
 
-    @media (max-width: 700px){
-      .hero-points,
-      .proof-strip,
+    @media (max-width: 860px){
+      .mobile-toggle{
+        display:inline-flex;
+      }
+
+      .nav{
+        flex-wrap:wrap;
+      }
+
+      .menu{
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+        padding:12px 0 4px;
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .drop{
+        width:100%;
+      }
+
+      .dropmenu{
+        position:static;
+        display:block;
+        margin-top:10px;
+        box-shadow:none;
+        border-radius:16px;
+      }
+
       .cards-6,
       .town-grid-main,
       .reviews-grid,
-      .nearby-grid{
+      .nearby-grid,
+      .footer-grid{
         grid-template-columns:1fr;
       }
 
+      .container{
+        width:min(var(--max),calc(100% - 28px));
+      }
+
+      section{
+        padding:62px 0;
+      }
+
+      .hero .container{
+        padding:56px 0 48px;
+      }
+
+      h1{
+        font-size:48px;
+      }
+
+      h2{
+        font-size:40px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .hero-tags{
+        gap:8px;
+      }
+
+      .hero-tags span{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .formcard,
       .map-panel,
       .cta-panel-clean,
       .nearby-areas,
       .cta-band-clean{
         padding:22px;
+      }
+
+      h1{
+        font-size:40px;
+      }
+
+      h2{
+        font-size:34px;
       }
 
       .floating{
@@ -350,7 +822,7 @@
     <div class="container">
       <div class="links">
         <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
-        <a href="tel:07838231389">07838231389</a>
+        <a href="tel:07838231389">07838 231389</a>
       </div>
       <div class="links">
         <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a>
@@ -363,7 +835,10 @@
     <div class="container nav">
       <a class="brand" href="index.html">
         <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care">
-        <span>JW Carpet Care<small>Carpet cleaning across Worcestershire and the West Midlands</small></span>
+        <span>
+          JW Carpet Care
+          <small>Carpet cleaning across Worcestershire and the West Midlands</small>
+        </span>
       </a>
 
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
@@ -408,36 +883,17 @@
         <h1>Professional Carpet Cleaning Across Worcester, Bromsgrove, Kidderminster and Redditch</h1>
         <p>JW Carpet Care provides professional carpet and upholstery cleaning across Worcestershire for homes, rental properties and commercial spaces. From busy family carpets to sofas, stairs, hallways and offices, we deliver a proper deep clean with honest advice and a straightforward local service.</p>
 
-        <div class="hero-points">
-          <span><i class="fa-solid fa-circle-check"></i> Family run and fully insured</span>
-          <span><i class="fa-solid fa-circle-check"></i> Carpet and upholstery cleaning</span>
-          <span><i class="fa-solid fa-circle-check"></i> Stain removal treatments available</span>
-          <span><i class="fa-solid fa-circle-check"></i> Domestic and commercial work</span>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-circle-check"></i> Carpet cleaning</span>
+          <span><i class="fa-solid fa-circle-check"></i> Upholstery cleaning</span>
+          <span><i class="fa-solid fa-circle-check"></i> Stain removal treatments</span>
+          <span><i class="fa-solid fa-circle-check"></i> Domestic and commercial</span>
         </div>
 
         <div class="actions">
           <a class="btn primary" href="tel:07838231389">Call 07838 231389</a>
           <a class="btn secondary" href="#quote">Request a Quote</a>
           <a class="btn ghost" href="pages/reviews.html">Read Reviews</a>
-        </div>
-
-        <div class="proof-strip">
-          <div>
-            <strong>Carpet cleaning</strong>
-            <span>Lounges, bedrooms, stairs, hallways and landings</span>
-          </div>
-          <div>
-            <strong>Upholstery cleaning</strong>
-            <span>Sofas, armchairs and soft furnishings</span>
-          </div>
-          <div>
-            <strong>Commercial cleaning</strong>
-            <span>Offices, receptions, hotels and shared spaces</span>
-          </div>
-          <div>
-            <strong>Fast local quotes</strong>
-            <span>Call, email or WhatsApp for a quick reply</span>
-          </div>
         </div>
       </div>
 
@@ -474,7 +930,7 @@
     <div class="container">
       <span class="kicker">Our Services</span>
       <h2>Cleaning services across Worcester and the West Midlands</h2>
-      <p class="lead">JW Carpet Care offers more than a basic freshen up. We provide deep carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcestershire.</p>
+      <p class="lead">JW Carpet Care offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment advice.</p>
 
       <div class="cards-6">
         <article class="card">
@@ -523,7 +979,7 @@
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Moth treatment">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Moth treatment advice">
           <div class="iconbox">
             <h3>Moth Treatment</h3>
             <p>Moth treatment advice for carpets and rugs where signs of damage or activity have started to appear and practical next steps are needed.</p>
@@ -538,7 +994,7 @@
     <div class="container">
       <span class="kicker">Areas We Cover</span>
       <h2>Carpet cleaning across Worcester and the West Midlands</h2>
-      <p class="lead">Start with your town, then move into the service you need. Each area page links through to local carpet cleaning, upholstery cleaning, stain removal treatments and commercial cleaning.</p>
+      <p class="lead">Worcester, Bromsgrove, Kidderminster and Redditch are the main service areas, along with nearby towns across Worcestershire and the wider West Midlands.</p>
 
       <div class="areas-wrap">
         <div class="town-grid-main">
@@ -593,7 +1049,7 @@
     <div class="container">
       <span class="kicker">Read customer reviews</span>
       <h2>Recent Customer Reviews</h2>
-      <p class="lead">A small selection of the kind words already shown on the live JW Carpet Care website.</p>
+      <p class="lead">A small selection of the kind words already shown for JW Carpet Care.</p>
 
       <div class="reviews-grid">
         <article class="review">
@@ -632,6 +1088,7 @@
     <div class="container">
       <span class="kicker">Service area map</span>
       <h2>Carpet cleaning coverage across Worcestershire</h2>
+
       <div class="map-cta-grid">
         <div class="map-panel">
           <p class="lead">JW Carpet Care covers Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas across Worcestershire.</p>
@@ -664,6 +1121,7 @@
     <div class="container">
       <div class="cta-band-clean">
         <div>
+          <span class="kicker" style="color:#93c5fd">Ready to book</span>
           <h2>Ready to book JW Carpet Care?</h2>
           <p class="lead">Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning with a straightforward local service from the first call.</p>
         </div>
@@ -678,7 +1136,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px">
+        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px;margin-bottom:16px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
       </div>
 
@@ -717,6 +1175,16 @@
     </a>
   </div>
 
-  <script src="assets/script.js"></script>
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('.menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
 </body>
 </html>
