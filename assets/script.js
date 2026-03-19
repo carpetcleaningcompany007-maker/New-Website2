@@ -1,9 +1,1 @@
-
-const toggle = document.querySelector(".mobile-toggle");
-const menu = document.querySelector(".menu");
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-}
+const t=document.querySelector('.mobile-toggle'),m=document.querySelector('.menu');if(t&&m){t.onclick=()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')}}
