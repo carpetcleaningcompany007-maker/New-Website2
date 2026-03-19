@@ -11,49 +11,74 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
 <meta name="theme-color" content="#0f172a">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"JW Carpet Care","telephone":"+44 7838 231389","email":"infojwcarpetcare@gmail.com","image":"https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png","url":"https://carpetcleaningcompany007-maker.github.io/New-Website/index.html","sameAs":["https://www.facebook.com/profile.php?id=61565031206102","https://www.instagram.com/james.wilson69/"]}
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"JW Carpet Care",
+  "telephone":"+44 7838 231389",
+  "email":"infojwcarpetcare@gmail.com",
+  "image":"https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png",
+  "url":"https://carpetcleaningcompany007-maker.github.io/New-Website/index.html",
+  "sameAs":[
+    "https://www.facebook.com/profile.php?id=61565031206102",
+    "https://www.instagram.com/james.wilson69/"
+  ]
+}
 </script>
 
 <style>
 :root{
-  --bg:#0f172a;
-  --bg2:#16233a;
-  --panel:#ffffff;
-  --soft:#f8fafc;
-  --text:#0f172a;
+  --bg:#edf3f8;
+  --bg2:#f8fbfd;
+  --ink:#0f172a;
   --muted:#475569;
-  --line:#e2e8f0;
-  --brand:#1d4ed8;
-  --brand2:#163a8c;
+  --line:#dbe5ef;
+  --panel:rgba(255,255,255,.72);
+  --panel-solid:#ffffff;
+  --brand:#2563eb;
+  --brand-dark:#1d4ed8;
+  --accent:#0ea5e9;
   --gold:#f59e0b;
-  --gold2:#d97706;
-  --shadow:0 20px 55px rgba(15,23,42,.12);
-  --shadow-heavy:0 30px 80px rgba(2,8,23,.30);
+  --shadow:0 18px 50px rgba(15,23,42,.08);
+  --shadow-heavy:0 25px 70px rgba(15,23,42,.12);
   --radius:24px;
-  --max:1180px;
+  --max:1220px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  color:var(--text);
-  background:#fff;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, #ffffff 0%, #eef4f8 45%, #e9f0f5 100%);
   overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .topbar{
-  background:#0b1220;
-  color:#dbeafe;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.55);
 }
 .topbar .container{
   display:flex;
@@ -70,18 +95,19 @@ a{text-decoration:none;color:inherit}
   flex-wrap:wrap;
   font-size:14px;
 }
-.top-actions a{color:#dbeafe}
-.top-actions strong a{color:#fff}
+.top-actions a{color:#334155;font-weight:600}
+.top-actions strong a{color:#0f172a}
+
 header{
   position:sticky;
   top:0;
   z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(15,23,42,.90);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.72);
+  border-bottom:1px solid rgba(255,255,255,.55);
 }
 .nav{
-  min-height:82px;
+  min-height:84px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -91,34 +117,53 @@ header{
   display:flex;
   align-items:center;
   gap:14px;
-  color:#fff;
   min-width:0;
 }
-.brand img{height:58px;width:auto;object-fit:contain}
-.brand span{display:flex;flex-direction:column;font-weight:800;line-height:1.15}
-.brand small{margin-top:4px;color:#cbd5e1;font-size:12px;font-weight:600}
+.brand img{
+  height:58px;
+  width:auto;
+  object-fit:contain;
+}
+.brand span{
+  display:flex;
+  flex-direction:column;
+  font-weight:800;
+  line-height:1.1;
+}
+.brand small{
+  margin-top:4px;
+  font-size:12px;
+  color:#64748b;
+  font-weight:600;
+}
+
 .menu{
   display:flex;
   gap:16px;
   align-items:center;
-  color:#fff;
   font-weight:700;
 }
-.menu>a,.dropbtn{
-  color:#fff;
+.menu > a,
+.dropbtn{
   padding:12px 10px;
   border-radius:12px;
-  background:none;
   border:0;
+  background:none;
   font:inherit;
+  color:#0f172a;
   cursor:pointer;
 }
-.menu>a:hover,.dropbtn:hover,.menu>a.current{background:rgba(255,255,255,.08)}
+.menu > a:hover,
+.menu > a.current,
+.dropbtn:hover{
+  background:rgba(37,99,235,.08);
+}
 .menu .cta{
-  background:linear-gradient(135deg,var(--gold),#fbbf24);
-  color:#111827;
+  background:linear-gradient(135deg,#1d4ed8,#0ea5e9);
+  color:#fff;
   padding:12px 16px;
   border-radius:999px;
+  box-shadow:0 10px 25px rgba(37,99,235,.18);
 }
 .drop{position:relative}
 .dropmenu{
@@ -126,8 +171,9 @@ header{
   top:100%;
   left:0;
   min-width:240px;
-  background:#fff;
-  border:1px solid var(--line);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.7);
   border-radius:18px;
   padding:10px;
   display:none;
@@ -138,10 +184,10 @@ header{
   display:block;
   padding:11px 12px;
   border-radius:12px;
-  color:var(--text);
+  color:#0f172a;
   font-weight:700;
 }
-.dropmenu a:hover{background:#f8fafc}
+.dropmenu a:hover{background:#eff6ff}
 .mobile-toggle{
   display:none;
   background:#fff;
@@ -150,47 +196,105 @@ header{
   border-radius:12px;
   padding:10px 14px;
   font-weight:800;
+  box-shadow:var(--shadow);
 }
 
 .hero{
   position:relative;
   overflow:hidden;
-  color:#fff;
-  background:
-    linear-gradient(100deg, rgba(7,14,28,.82) 0%, rgba(7,14,28,.58) 42%, rgba(10,18,32,.68) 100%),
-    url("https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png") center center/cover no-repeat;
+  padding:34px 0 42px;
 }
-.hero:before{
-  content:"";
+.hero-bg{
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(900px 500px at 15% 15%, rgba(37,99,235,.22), transparent 60%),
-    radial-gradient(600px 320px at 85% 12%, rgba(245,158,11,.12), transparent 55%);
   pointer-events:none;
+  overflow:hidden;
 }
+.glow{
+  position:absolute;
+  border-radius:999px;
+  filter:blur(60px);
+  opacity:.35;
+  animation:floatGlow 12s ease-in-out infinite;
+}
+.glow.one{
+  width:420px;height:420px;
+  background:#bfdbfe;
+  top:-100px;left:-80px;
+}
+.glow.two{
+  width:360px;height:360px;
+  background:#dbeafe;
+  right:-60px;top:40px;
+  animation-delay:1.2s;
+}
+.glow.three{
+  width:300px;height:300px;
+  background:#fde68a;
+  left:45%;bottom:-80px;
+  animation-delay:2.4s;
+}
+@keyframes floatGlow{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(16px,-18px) scale(1.06)}
+}
+
 .hero-grid{
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:34px;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:stretch;
+}
+.hero-copy,
+.formcard{
+  background:var(--panel);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:30px;
+  box-shadow:var(--shadow-heavy);
+}
+.hero-copy{
+  padding:42px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-copy:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(135deg, rgba(37,99,235,.04), transparent 35%),
+    linear-gradient(315deg, rgba(14,165,233,.04), transparent 35%);
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;
   align-items:center;
-  min-height:760px;
-  padding:84px 0 88px;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:var(--brand-dark);
+  border:1px solid #bfdbfe;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
 }
 .hero-copy h1{
-  margin:0;
-  font-size:clamp(2.5rem,5vw,4.5rem);
-  line-height:1.02;
-  letter-spacing:-.035em;
-  max-width:760px;
+  margin:18px 0 0;
+  font-size:clamp(2.6rem,5vw,4.7rem);
+  line-height:1.01;
+  letter-spacing:-.04em;
+  max-width:800px;
 }
 .hero-copy p{
   margin:18px 0 0;
-  font-size:1.08rem;
-  line-height:1.8;
-  color:#dbeafe;
+  color:#334155;
+  font-size:1.06rem;
+  line-height:1.85;
   max-width:760px;
 }
 .ticks{
@@ -198,25 +302,24 @@ header{
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:12px 16px;
   margin-top:28px;
-  max-width:760px;
 }
 .ticks span{
   display:flex;
   gap:10px;
   align-items:flex-start;
-  padding:13px 15px;
-  border-radius:16px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(8px);
+  padding:14px 15px;
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(219,229,239,.9);
   font-weight:700;
+  color:#0f172a;
 }
-.ticks i{color:#fbbf24;margin-top:2px}
+.ticks i{color:#2563eb;margin-top:2px}
 .actions{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:26px;
+  margin-top:28px;
 }
 .btn{
   display:inline-flex;
@@ -226,20 +329,19 @@ header{
   padding:13px 22px;
   border-radius:999px;
   font-weight:800;
+  transition:.22s ease;
   border:1px solid transparent;
-  transition:.2s ease;
 }
-.btn:hover{transform:translateY(-1px)}
+.btn:hover{transform:translateY(-2px)}
 .btn-primary{
-  background:linear-gradient(135deg,var(--gold),#fbbf24);
-  color:#111827;
-  box-shadow:0 14px 28px rgba(245,158,11,.28);
+  background:linear-gradient(135deg,#1d4ed8,#0ea5e9);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(37,99,235,.18);
 }
-.btn-primary:hover{background:linear-gradient(135deg,var(--gold2),var(--gold))}
 .btn-secondary{
   background:#fff;
-  color:var(--text);
-  border-color:var(--line);
+  color:#0f172a;
+  border-color:#dbe5ef;
   box-shadow:var(--shadow);
 }
 .proof-strip{
@@ -247,45 +349,77 @@ header{
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
   margin-top:30px;
-  max-width:860px;
 }
 .proof-strip div{
-  padding:18px 16px 16px;
+  padding:18px 16px;
   border-radius:18px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.74);
+  border:1px solid rgba(219,229,239,.95);
+  box-shadow:0 10px 24px rgba(15,23,42,.05);
 }
-.proof-strip strong{display:block;margin-bottom:5px;color:#fff;font-size:1.04rem}
-.proof-strip span{display:block;color:#dbeafe;font-size:14px;line-height:1.6}
+.proof-strip strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:1rem;
+}
+.proof-strip span{
+  display:block;
+  color:#475569;
+  font-size:14px;
+  line-height:1.6;
+}
 
 .formcard{
-  background:rgba(255,255,255,.98);
-  color:var(--text);
-  border-radius:28px;
-  padding:28px;
-  box-shadow:var(--shadow-heavy);
-  border:1px solid rgba(255,255,255,.56);
+  padding:30px;
+  position:relative;
 }
-.formcard h2{margin:0;font-size:1.75rem}
-.formcard p{margin-top:10px;color:var(--muted);line-height:1.65}
-.formgrid{display:grid;gap:12px;margin-top:18px}
-.formgrid input,.formgrid select,.formgrid textarea{
+.formcard:before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:8px;
+  border-radius:30px 30px 0 0;
+  background:linear-gradient(90deg,#1d4ed8,#0ea5e9,#38bdf8);
+}
+.formcard h2{
+  margin:8px 0 0;
+  font-size:1.8rem;
+}
+.formcard p{
+  margin-top:10px;
+  color:#475569;
+  line-height:1.7;
+}
+.formgrid{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+.formgrid input,
+.formgrid select,
+.formgrid textarea{
   width:100%;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:13px 14px;
+  border:1px solid #dbe5ef;
+  border-radius:16px;
+  padding:14px 14px;
   font:inherit;
-  color:var(--text);
+  color:#0f172a;
   background:#fff;
   outline:none;
+  transition:.2s ease;
 }
 .formgrid textarea{min-height:120px;resize:vertical}
-.formgrid input:focus,.formgrid select:focus,.formgrid textarea:focus{
+.formgrid input:focus,
+.formgrid select:focus,
+.formgrid textarea:focus{
   border-color:#93c5fd;
   box-shadow:0 0 0 4px rgba(59,130,246,.12);
 }
-.contact-mini{display:grid;gap:10px;margin-top:16px}
+.contact-mini{
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
 .contact-mini a{
   display:flex;
   align-items:center;
@@ -294,44 +428,53 @@ header{
   font-weight:700;
   font-size:14px;
 }
-.contact-mini i{color:var(--brand)}
+.contact-mini i{color:#2563eb}
 
-.section{padding:78px 0}
-.section-alt{
-  padding:78px 0;
-  background:linear-gradient(180deg,#f8fafc 0%,#eef2f7 100%);
+.section{padding:86px 0}
+.section-soft{
+  background:linear-gradient(180deg,#f8fbfd 0%,#eef4f8 100%);
 }
 .center{text-align:center}
+.section h2{
+  margin:0;
+  font-size:clamp(2rem,3vw,3rem);
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
 .lead{
-  color:var(--muted);
+  color:#475569;
   max-width:760px;
   margin:14px auto 0;
   font-size:1.04rem;
-  line-height:1.75;
+  line-height:1.8;
 }
+
 .cards{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:22px;
-  margin-top:30px;
+  margin-top:32px;
 }
 .card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:24px;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:26px;
   overflow:hidden;
   box-shadow:var(--shadow);
   display:flex;
   flex-direction:column;
   height:100%;
-  transition:.2s ease;
+  transition:.25s ease;
 }
-.card:hover{transform:translateY(-2px)}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 60px rgba(15,23,42,.12);
+}
 .card img{
   width:100%;
-  height:230px;
+  height:220px;
   object-fit:cover;
-  background:#e2e8f0;
 }
 .pad{
   padding:22px;
@@ -339,34 +482,51 @@ header{
   flex-direction:column;
   height:100%;
 }
-.pad h3{margin:0 0 10px;font-size:1.24rem}
-.pad p{color:var(--muted);line-height:1.72;flex:1}
-.text-link{margin-top:16px;color:var(--brand2);font-weight:800}
-
-.areas-band{
-  background:linear-gradient(180deg,#f8fafc 0%,#edf3fa 100%);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+.pad h3{
+  margin:0 0 10px;
+  font-size:1.22rem;
 }
-.section-head{margin-bottom:26px}
+.pad p{
+  color:#475569;
+  line-height:1.75;
+  flex:1;
+}
+.text-link{
+  margin-top:16px;
+  color:#1d4ed8;
+  font-weight:800;
+}
+
+.area-shell{
+  background:rgba(255,255,255,.76);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:30px;
+  padding:28px;
+  box-shadow:var(--shadow-heavy);
+}
 .town-grid{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:20px;
+  gap:18px;
+  margin-top:26px;
 }
 .town-card{
   display:block;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:22px;
   padding:22px;
-  box-shadow:var(--shadow);
-  transition:.2s ease;
+  border-radius:22px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  box-shadow:0 10px 28px rgba(15,23,42,.05);
+  transition:.22s ease;
 }
-.town-card:hover{transform:translateY(-2px)}
-.town-card h3{margin:0 0 10px;font-size:1.2rem}
-.town-card p{margin:0;color:var(--muted);line-height:1.72}
-.town-card span{display:inline-block;margin-top:16px;color:var(--brand2);font-weight:800}
+.town-card:hover{
+  transform:translateY(-4px);
+  border-color:#bfdbfe;
+}
+.town-card h3{margin:0 0 10px;font-size:1.18rem}
+.town-card p{margin:0;color:#475569;line-height:1.72}
+.town-card span{display:inline-block;margin-top:16px;color:#1d4ed8;font-weight:800}
 
 .review-row{
   display:grid;
@@ -376,47 +536,72 @@ header{
 }
 .review{
   background:#fff;
-  border:1px solid var(--line);
+  border:1px solid #e2e8f0;
   border-radius:22px;
   padding:22px;
-  box-shadow:var(--shadow);
+  box-shadow:0 10px 28px rgba(15,23,42,.05);
   text-align:left;
-  height:100%;
 }
-.review .stars{color:#f59e0b;letter-spacing:2px;margin-bottom:12px}
-.review p{color:var(--muted);line-height:1.72;margin:0 0 14px}
-.review strong{color:var(--text)}
+.review .stars{
+  color:#f59e0b;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+.review p{
+  color:#475569;
+  line-height:1.75;
+  margin:0 0 14px;
+}
+.review strong{color:#0f172a}
 
 .split{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1.08fr .92fr;
   gap:28px;
   align-items:start;
 }
 .mapwrap{
   margin-top:18px;
-  border-radius:22px;
+  border-radius:26px;
   overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid var(--line);
+  box-shadow:var(--shadow-heavy);
+  border:1px solid rgba(255,255,255,.8);
   background:#e2e8f0;
 }
 .mapwrap iframe{
   width:100%;
-  height:420px;
+  height:430px;
   border:0;
   display:block;
 }
 .cta-panel{
-  background:linear-gradient(180deg,#101b32 0%,#0c1528 100%);
+  background:
+    linear-gradient(180deg, rgba(15,23,42,.94) 0%, rgba(15,23,42,.98) 100%);
   color:#fff;
   border-radius:28px;
   padding:30px;
   box-shadow:var(--shadow-heavy);
-  border:1px solid rgba(255,255,255,.06);
+  position:relative;
+  overflow:hidden;
 }
-.cta-panel h2{margin:0;font-size:1.9rem}
-.cta-panel p{margin-top:12px;color:#dbeafe;line-height:1.78}
+.cta-panel:before{
+  content:"";
+  position:absolute;
+  inset:auto -60px -60px auto;
+  width:180px;
+  height:180px;
+  background:radial-gradient(circle,#38bdf8 0%,transparent 70%);
+  opacity:.18;
+}
+.cta-panel h2{
+  margin:0;
+  font-size:1.9rem;
+}
+.cta-panel p{
+  margin-top:12px;
+  color:#dbeafe;
+  line-height:1.8;
+}
 .feature-list{
   list-style:none;
   padding:0;
@@ -432,13 +617,26 @@ header{
   line-height:1.65;
   font-weight:600;
 }
-.feature-list i{color:#fbbf24;margin-top:3px}
+.feature-list i{color:#38bdf8;margin-top:3px}
 
 .cta-band{
-  background:linear-gradient(135deg,#163a8c 0%,#2563eb 100%);
+  background:linear-gradient(135deg,#0f172a 0%,#1d4ed8 55%,#0ea5e9 100%);
   color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.cta-band:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08) 0%, transparent 35%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,.10) 0%, transparent 38%);
+  pointer-events:none;
 }
 .row{
+  position:relative;
+  z-index:1;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -448,7 +646,7 @@ header{
 .light{color:#dbeafe}
 
 .footer{
-  background:#0a1120;
+  background:#0b1220;
   color:#dbeafe;
   padding:64px 0 18px;
 }
@@ -458,7 +656,7 @@ header{
   gap:28px;
 }
 .footer p{color:#cbd5e1;line-height:1.75}
-.footer h3{margin:0 0 14px;color:#fff;font-size:1.1rem}
+.footer h3{margin:0 0 14px;color:#fff;font-size:1.08rem}
 .footer a{color:#dbeafe;line-height:2}
 .footer a:hover{color:#fff}
 .copyright{
@@ -473,7 +671,7 @@ header{
   position:fixed;
   right:16px;
   bottom:16px;
-  z-index:50;
+  z-index:60;
   display:flex;
   flex-direction:column;
   gap:10px;
@@ -487,12 +685,16 @@ header{
   color:#fff;
   box-shadow:0 18px 38px rgba(15,23,42,.22);
   font-size:22px;
+  transition:.2s ease;
 }
+.float-btn:hover{transform:translateY(-2px) scale(1.03)}
 .wa-float{background:#25D366}
-.call-float{background:#f59e0b;color:#111827}
+.call-float{background:#0ea5e9}
 
 @media (max-width:1100px){
-  .hero-grid,.split,.cards,.town-grid,.review-row,.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-grid,.split,.cards,.town-grid,.review-row,.footer-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
   .hero-grid{grid-template-columns:1fr}
 }
 @media (max-width:820px){
@@ -507,9 +709,10 @@ header{
     top:74px;
     left:0;
     right:0;
-    background:#0f172a;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(16px);
     padding:14px 16px 18px;
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(15,23,42,.08);
     flex-direction:column;
     align-items:stretch;
     gap:8px;
@@ -518,38 +721,28 @@ header{
   .menu>a,.dropbtn{
     width:100%;
     text-align:left;
+    color:#0f172a;
     padding:14px 14px;
   }
   .dropmenu{
     position:static;
     display:none;
     min-width:0;
-    box-shadow:none;
-    border:1px solid rgba(255,255,255,.10);
-    background:#111d35;
-    color:#fff;
     margin-top:8px;
   }
   .drop.open .dropmenu{display:block}
-  .dropmenu a{color:#fff}
-  .dropmenu a:hover{background:rgba(255,255,255,.08)}
-  .menu .cta{text-align:center;margin-top:6px}
-  .hero{
-    background:
-      linear-gradient(180deg,#12284d 0%,#0f172a 100%),
-      url("https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png") center center/cover no-repeat;
-  }
+  .menu .cta{text-align:center;margin-top:6px;color:#fff}
   .hero-grid{
     min-height:auto;
-    padding:42px 0 44px;
+    padding:42px 0 46px;
     gap:22px;
   }
   .ticks,.cards,.town-grid,.review-row,.split,.footer-grid{grid-template-columns:1fr}
-  .proof-strip{grid-template-columns:1fr;gap:10px}
+  .proof-strip{grid-template-columns:1fr}
   .actions{flex-direction:column;align-items:stretch}
   .actions .btn{width:100%}
-  .section,.section-alt{padding:54px 0}
-  .cta-panel,.formcard{padding:22px 18px}
+  .section{padding:56px 0}
+  .hero-copy,.formcard,.area-shell,.cta-panel{padding:22px 18px}
 }
 @media (max-width:480px){
   .container{width:min(var(--max),calc(100% - 24px))}
@@ -608,7 +801,7 @@ header{
   </header>
 
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="hero-grid container reveal">
       <div class="hero-copy">
         <h1>Professional Carpet Cleaning Across Worcester, Bromsgrove, Kidderminster and Redditch</h1>
         <p>JW Carpet Care provides professional carpet and upholstery cleaning across Worcestershire for homes, rental properties and commercial spaces. From busy family carpets to sofas, stairs, hallways and offices, we deliver a proper deep clean with honest advice and a straightforward local service.</p>
@@ -630,8 +823,8 @@ header{
         </div>
       </div>
 
-      <aside class="formcard" id="quote">
-        <h2>Get your free quote</h2>
+      <aside class="formcard">
+        <h2 id="quote">Get your free quote</h2>
         <p>Tell James what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
         <form class="formgrid" action="mailto:infojwcarpetcare@gmail.com" method="post" enctype="text/plain">
           <input name="Name" placeholder="Your name">
@@ -655,7 +848,7 @@ header{
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="container center">
       <h2>Our Services</h2>
       <p class="lead">JW Carpet Care offers more than a basic freshen up. We provide deep carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcestershire.</p>
@@ -668,26 +861,28 @@ header{
     </div>
   </section>
 
-  <section class="section areas-band">
+  <section class="section section-soft reveal">
     <div class="container">
-      <div class="section-head center">
-        <h2>Areas We Cover</h2>
-        <p class="lead">Start with your town, then move into the service you need. Each area page links through to local carpet cleaning, upholstery cleaning, stain removal treatments and commercial cleaning.</p>
-      </div>
-      <div class="town-grid">
-        <a class="town-card" href="worcester.html"><h3>Worcester</h3><p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Worcester →</span></a>
-        <a class="town-card" href="bromsgrove.html"><h3>Bromsgrove</h3><p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Bromsgrove →</span></a>
-        <a class="town-card" href="kidderminster.html"><h3>Kidderminster</h3><p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Kidderminster →</span></a>
-        <a class="town-card" href="redditch.html"><h3>Redditch</h3><p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Redditch →</span></a>
-      </div>
-      <div class="actions" style="justify-content:center;margin-top:26px">
-        <a class="btn btn-primary" href="areas.html">View all areas</a>
-        <a class="btn btn-secondary" href="gallery.html">See the gallery</a>
+      <div class="area-shell">
+        <div class="center">
+          <h2>Areas We Cover</h2>
+          <p class="lead">Start with your town, then move into the service you need. Each area page links through to local carpet cleaning, upholstery cleaning, stain removal treatments and commercial cleaning.</p>
+        </div>
+        <div class="town-grid">
+          <a class="town-card" href="worcester.html"><h3>Worcester</h3><p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Worcester →</span></a>
+          <a class="town-card" href="bromsgrove.html"><h3>Bromsgrove</h3><p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Bromsgrove →</span></a>
+          <a class="town-card" href="kidderminster.html"><h3>Kidderminster</h3><p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Kidderminster →</span></a>
+          <a class="town-card" href="redditch.html"><h3>Redditch</h3><p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p><span>See services in Redditch →</span></a>
+        </div>
+        <div class="actions" style="justify-content:center;margin-top:26px">
+          <a class="btn btn-primary" href="areas.html">View all areas</a>
+          <a class="btn btn-secondary" href="gallery.html">See the gallery</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="container center">
       <h2>Recent Customer Reviews</h2>
       <p class="lead">A small selection of the kind words already shown on the live JW Carpet Care website.</p>
@@ -704,7 +899,7 @@ header{
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="container split">
       <div>
         <h2>Service Area Map</h2>
@@ -727,7 +922,7 @@ header{
     </div>
   </section>
 
-  <section class="section cta-band">
+  <section class="section cta-band reveal">
     <div class="container row">
       <div>
         <h2>Ready to book JW Carpet Care?</h2>
@@ -795,6 +990,16 @@ header{
         }
       });
     });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    },{threshold:.14});
+    reveals.forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
