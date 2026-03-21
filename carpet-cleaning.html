@@ -734,7 +734,7 @@
     <div class="container">
       <div class="links">
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone_display | default: site.phone }}</a>
+        <a href="tel:{{ site.phone_link }}">07838 231389</a>
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
@@ -977,7 +977,7 @@
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> Call now</a>
+          <a class="btn primary" href="tel:{{ site.phone_link }}"><i class="fa-solid fa-phone"></i> Call now</a>
           <a class="btn secondary" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> Email</a>
         </div>
       </div>
@@ -1006,7 +1006,7 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone_display | default: site.phone }}</a><br>
+          <a href="tel:{{ site.phone_link }}">07838 231389</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
           <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
@@ -1021,7 +1021,7 @@
     <a class="float-btn wa" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}">
+    <a class="float-btn call" href="tel:{{ site.phone_link }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
