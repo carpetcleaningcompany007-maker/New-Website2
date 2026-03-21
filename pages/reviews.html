@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -21,12 +23,12 @@
   <!-- ========================================= -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reviews | JW Carpet Care</title>
-  <meta name="description" content="Read reviews for JW Carpet Care.">
+  <title>Reviews | {{ site.business_name }}</title>
+  <meta name="description" content="Read reviews for {{ site.business_name }}.">
   <link rel="canonical" href="https://carpetcleaningcompany007-maker.github.io/New-Website/pages/reviews.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Reviews | JW Carpet Care">
-  <meta property="og:description" content="Read genuine customer reviews for JW Carpet Care.">
+  <meta property="og:title" content="Reviews | {{ site.business_name }}">
+  <meta property="og:description" content="Read genuine customer reviews for {{ site.business_name }}.">
   <meta name="theme-color" content="#0f172a">
 
   <!-- ========================================= -->
@@ -45,8 +47,8 @@
   <style>
     :root{
       --line:#dbe4ef;
-      --brand:#1d4ed8;
-      --cta:#d4af57;
+      --brand:{{ site.brand_colour }};
+      --cta:{{ site.accent_colour }};
       --cta-dark:#b89238;
       --shadow:0 18px 50px rgba(15,23,42,.08);
       --radius:24px;
@@ -339,12 +341,12 @@
   <div class="topbar">
     <div class="container">
       <div class="links">
-        <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
-        <a href="tel:07838231389">07838 231389</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="tel:{{ site.phone_raw }}">{{ site.phone_display }}</a>
       </div>
       <div class="links">
-        <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+        <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
+        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
@@ -356,10 +358,10 @@
   <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care">
+        <img src="{{ site.website }}/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="{{ site.business_name }}">
         <span>
-          JW Carpet Care
-          <small>Carpet cleaning across Worcestershire &amp; the West Midlands</small>
+          {{ site.business_name }}
+          <small>{{ site.tagline | escape }}</small>
         </span>
       </a>
 
@@ -405,10 +407,10 @@
     <div class="container">
       <div>
         <span class="eyebrow">Customer feedback</span>
-        <h1>Reviews for JW Carpet Care</h1>
-        <p>Read genuine customer feedback from people who have used JW Carpet Care for carpet cleaning, upholstery cleaning and related services across Worcestershire and nearby areas.</p>
+        <h1>Reviews for {{ site.business_name }}</h1>
+        <p>Read genuine customer feedback from people who have used {{ site.business_name }} for carpet cleaning, upholstery cleaning and related services across Worcestershire and nearby areas.</p>
         <div class="actions">
-          <a class="btn primary" href="tel:07838231389">Call now</a>
+          <a class="btn primary" href="tel:{{ site.phone_raw }}">Call now</a>
           <a class="btn secondary" href="../index.html#quote">Get a Quote</a>
         </div>
       </div>
@@ -428,7 +430,7 @@
     <div class="container">
       <span class="kicker">Google Reviews</span>
       <h2>Real 5 star reviews</h2>
-      <p class="lead">Read what customers across Worcestershire say about JW Carpet Care.</p>
+      <p class="lead">Read what customers across Worcestershire say about {{ site.business_name }}.</p>
 
       <div class="reviews-top">
         <div class="reviews-top-card">
@@ -474,7 +476,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px">
+        <img src="{{ site.website }}/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="{{ site.business_name }} logo" style="height:64px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across Worcestershire and the West Midlands.</p>
       </div>
 
@@ -493,24 +495,24 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:07838231389">07838 231389</a><br>
-          <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a><br>
-          <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a><br>
-          <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+          <a href="tel:{{ site.phone_raw }}">{{ site.phone_display }}</a><br>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+          <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
+          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
         </p>
       </div>
     </div>
-    <div class="container copy">© JW Carpet Care. All rights reserved.</div>
+    <div class="container copy">© {{ site.business_name }}. All rights reserved.</div>
   </footer>
 
   <!-- ========================================= -->
   <!-- 09. FLOATING BUTTONS -->
   <!-- ========================================= -->
   <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/447838231389" target="_blank" rel="noopener" aria-label="WhatsApp JW Carpet Care">
+    <a class="float-btn wa" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:07838231389" aria-label="Call JW Carpet Care">
+    <a class="float-btn call" href="tel:{{ site.phone_raw }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
@@ -538,7 +540,7 @@
   <!-- ========================================= -->
   <script>
     const REVIEWS = [
-      { name: "Paul Nicholas", when: "4 months ago", stars: 5, text: "Outstanding service from James from start to finish! JW Carpet Care arrived on time, explained the whole process clearly, and got all the stains out of our carpet. The results were amazing, stains I thought would never come out have completely vanished, and the pile looks fresh and springy again, The carpets look like new and the whole house smells amazing! James was friendly, professional, and left everything tidy. It’s rare to find a company that combines great workmanship with excellent customer service. If you’re looking for carpet cleaning in Worcester, I can highly recommend JW Carpet Care, I will be definitely be using them again." },
+      { name: "Paul Nicholas", when: "4 months ago", stars: 5, text: "Outstanding service from James from start to finish! {{ site.business_name }} arrived on time, explained the whole process clearly, and got all the stains out of our carpet. The results were amazing, stains I thought would never come out have completely vanished, and the pile looks fresh and springy again, The carpets look like new and the whole house smells amazing! James was friendly, professional, and left everything tidy. It’s rare to find a company that combines great workmanship with excellent customer service. If you’re looking for carpet cleaning in Worcester, I can highly recommend {{ site.business_name }}, I will be definitely be using them again." },
       { name: "MPM MPM", when: "Edited 2 months ago", stars: 5, text: "Having seen alot of positive reviews we decided to have our 8 year old carpets cleaned. Had we not seen the reviews it wouldn't have been a consideration. Although they were not dirty we wanted to freshen them up and were surprised by the results." },
       { name: "will burgess", when: "5 months ago", stars: 5, text: "James did a great job cleaning the carpet on our stairs and landing. Had multiple paint and dirt stains from renovations we were doing, and although we plan to change it in the future, he did an amazing job cleaning it. All stains gone and it looks so much better." },
       { name: "Aisha Nazir", when: "4 months ago", stars: 5, text: "Absolutely happy with the job thank you. Highly recommended. James thank you, really professional and got on with the Job." },
@@ -550,8 +552,8 @@
       { name: "Gemma Wingfield", when: "10 months ago", stars: 5, text: "James was very professional he turned up on time and did a fantastic job! We will definitely have James back to do our other rooms and sofas too. Thank you for your hard work. We really appreciate it." },
       { name: "Matt Kitchen", when: "5 months ago", stars: 5, text: "Had our carpet cleaned by James and he’s done an incredible job. Really happy with the results. He kept me informed on when he’d arrive and also didn’t over promise the outcome that could be achieved on our old cream carpets. The end results though are fantastic and well worth the money. I’d recommend to anyone. Thanks again James" },
       { name: "Sue Bradshaw", when: "6 months ago", stars: 5, text: "I recently hired James for carpet and furniture cleaning, and I couldn't be happier with the results. He cleaned both my carpets and 3 piece suite with exceptional skill and attention to detail." },
-      { name: "Robin Nicholas", when: "5 months ago", stars: 5, text: "I’ve used JW Carpet Care twice now, and the quality of work and service has been outstanding both times. My carpets look like brand new after each visit. It’s not just about the top quality equipment, it’s the knowledge and experience that makes the difference." },
-      { name: "Andrew Lee", when: "4 months ago", stars: 5, text: "We had a brilliant experience with James from JW Carpet Care. He was friendly, professional, and took real pride in his work. The results were outstanding and the whole place feels so much fresher." },
+      { name: "Robin Nicholas", when: "5 months ago", stars: 5, text: "I’ve used {{ site.business_name }} twice now, and the quality of work and service has been outstanding both times. My carpets look like brand new after each visit. It’s not just about the top quality equipment, it’s the knowledge and experience that makes the difference." },
+      { name: "Andrew Lee", when: "4 months ago", stars: 5, text: "We had a brilliant experience with James from {{ site.business_name }}. He was friendly, professional, and took real pride in his work. The results were outstanding and the whole place feels so much fresher." },
       { name: "Carolyn Jones", when: "3 months ago", stars: 5, text: "Excellent service throughout! James was professional, prompt and very friendly. He kept me informed from the moment I booked till the time he finished the job. Highly recommended as my lounge carpet looks brand new!" },
       { name: "Catherine Wood", when: "4 months ago", stars: 5, text: "Yet again a fabulous job on lounge and dining room carpets! James is punctual, professional, hard working, tidy and basically brilliant! The only person I would highly recommend to clean carpets. Just fantastic!" },
       { name: "Jan Shelley", when: "4 months ago", stars: 5, text: "Booked James to clean our 5 seater corner sofa and armchair. He was prompt, courteous and professional. Did an amazing job and it looks really good. Will definitely book again" },
@@ -566,7 +568,7 @@
       { name: "Matthew Cooke", when: "2 years ago", stars: 5, text: "James was very friendly, arrived on time and extremely professional throughout. I was completely happy with the quality of clean and thought it was great value for money with no hidden costs involved. I would highly recommend James to anyone looking for great results." },
       { name: "jayne smith", when: "5 months ago", stars: 5, text: "James arron time. What a lovely man he is. He did a fantastic job my living room carpet looks amazing. Thank you so much." },
       { name: "Faye Evans", when: "5 months ago", stars: 5, text: "James is very professional and did a great job cleaning our carpets. Kept us updated and sent reminders. Very punctual and polite. I would recommend him." },
-      { name: "Elliot Whittaker", when: "9 months ago", stars: 5, text: "Having used JW Carpet Care previously and been very happy with the results, I naturally contacted Jamie for his services again and was not disappointed! Great communication, fast, friendly and reliable, not to mention the quality of the work! Second to none in my opinion!" },
+      { name: "Elliot Whittaker", when: "9 months ago", stars: 5, text: "Having used {{ site.business_name }} previously and been very happy with the results, I naturally contacted Jamie for his services again and was not disappointed! Great communication, fast, friendly and reliable, not to mention the quality of the work! Second to none in my opinion!" },
       { name: "Amy Carney", when: "5 months ago", stars: 5, text: "Amazing service from JW carpet care, James was friendly and on time and did a great job of cleaning our sofa. It looks brand new and smells great! Would definitely recommend!" },
       { name: "Andrea Trickett-Born", when: "3 months ago", stars: 5, text: "James is helpful, polite and reliable. The carpets he cleaned look like new. I’m delighted and am looking to book for the rest of the carpets in the house." },
       { name: "Kerrie Birch", when: "11 months ago", stars: 5, text: "Great service received from JW carpet care. Arrived promptly, organised and tidy. Sofas and carpet came up very well indeed considering they haven’t been cleaned since having the sofas." },
@@ -582,15 +584,15 @@
       { name: "Helen Pretty", when: "11 months ago", stars: 5, text: "Thank you James for a great service with brilliant results! James was professional, friendly and very thorough with great communication throughout." },
       { name: "Rachel Sweet", when: "7 months ago", stars: 5, text: "James was super professional and really helpful with his advice. He got out a number of stains out of our new carpet and got it looking back to new! Would 100% recommend" },
       { name: "Cathryn Bateman", when: "8 months ago", stars: 5, text: "Excellent work. Second visit from James today, he did such a good job on our stair carpet we asked him to try to clean our very dirty rugs. Honest about what to expect and worked really hard." },
-      { name: "Navjyot Sabbharwal", when: "2 years ago", stars: 5, text: "Highly recommend booking JW Carpet Care if you need your carpets cleaned! James left all carpeted areas in my flat fresh, clean and looking good! Prior to booking, I had a lot of questions, and James was patient and quick to reply." },
+      { name: "Navjyot Sabbharwal", when: "2 years ago", stars: 5, text: "Highly recommend booking {{ site.business_name }} if you need your carpets cleaned! James left all carpeted areas in my flat fresh, clean and looking good! Prior to booking, I had a lot of questions, and James was patient and quick to reply." },
       { name: "Charlotte Wisdom", when: "Edited a year ago", stars: 5, text: "We called JW carpet care following leaving a large paint spillage on a brand new carpet. He came the following day and has worked a miracle! We are so amazed at the result, the stain has completely gone. We are so thankful." },
       { name: "Charlotte Thomas", when: "a year ago", stars: 5, text: "Amazing service! We had all our carpets cleaned today and I cannot fault the job he did, the house smells and looks so fresh! James is really friendly and reliable, we agreed a time and he was here bang on even in the snow ready to work." },
-      { name: "Katie Howse", when: "5 months ago", stars: 5, text: "Highly Recommended! We have Herringbone Alternative Flooring which needs an annual deep clean to keep it at it’s best, came up as new after booking JW Carpet Care!" },
+      { name: "Katie Howse", when: "5 months ago", stars: 5, text: "Highly Recommended! We have Herringbone Alternative Flooring which needs an annual deep clean to keep it at it’s best, came up as new after booking {{ site.business_name }}!" },
       { name: "Louise Roadknight", when: "7 months ago", stars: 5, text: "Would highly recommend. My carpets look amazing! James was professional and friendly and did a fantastic job!" },
       { name: "Javaid Akhter", when: "10 months ago", stars: 5, text: "James is clearly a hard working conscientious person. He was meticulous in his approach when organising his work, and it showed with the end product. I wouldn't hesitate in recommending him. Great job, great service, commitment 100%." },
       { name: "Julie O'sullivan", when: "10 months ago", stars: 5, text: "We had all of our carpets cleaned, the service was brilliant. He came out to suit us and make sure everything would dry in time for the furniture to be delivered." },
       { name: "Hayley Jacobs", when: "9 months ago", stars: 5, text: "Absolutely outstanding. We always do our research and James is such a nice guy, really helpful and does an outstanding job, can't believe how our carpets look brand new again." },
-      { name: "Carl Stokes", when: "a year ago", stars: 5, text: "Fantastic and professional job carried out by JW Carpet Care. I would 100% recommend this company for carpet cleaning and upholstery cleaning. James was prompt, professional and polite." },
+      { name: "Carl Stokes", when: "a year ago", stars: 5, text: "Fantastic and professional job carried out by {{ site.business_name }}. I would 100% recommend this company for carpet cleaning and upholstery cleaning. James was prompt, professional and polite." },
       { name: "Julie Crow", when: "a year ago", stars: 5, text: "The whole process has been so easy because James has excellent communication. He arrived promptly and immediately got to work after explaining what was going to happen. The results are excellent." },
       { name: "Ann Simpson", when: "7 months ago", stars: 5, text: "James did a brilliant job on my carpet and chair I will certainly use him again. A very pleasant and polite young man who sorted out all my furniture for me too." },
       { name: "Kelly Adderley", when: "4 months ago", stars: 5, text: "Excellent service! Brought our carpet up like new after having a naughty puppy! Highly recommend!" },
