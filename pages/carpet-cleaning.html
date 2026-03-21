@@ -33,6 +33,7 @@
       --shadow:0 18px 50px rgba(15,23,42,.08);
       --radius:24px;
       --max:1180px;
+      --content:840px;
       --green:#25D366;
     }
 
@@ -50,6 +51,58 @@
     a{text-decoration:none;color:inherit}
     button{font:inherit}
     .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .content-wrap{max-width:var(--content)}
+
+    h1,h2,h3{
+      margin:0;
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      color:var(--text);
+    }
+
+    h1{
+      font-size:clamp(42px,5vw,64px);
+      margin-bottom:18px;
+      max-width:920px;
+    }
+
+    h2{
+      font-size:clamp(30px,3.2vw,38px);
+      margin-bottom:18px;
+      max-width:900px;
+    }
+
+    h3{
+      font-size:clamp(22px,2.2vw,24px);
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:18px;
+      line-height:1.72;
+      margin:0 0 18px;
+      color:var(--muted);
+    }
+
+    .eyebrow{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:#dbeafe;
+    }
+
+    .section-label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:var(--brand);
+    }
 
     .topbar{
       background:#0b1220;
@@ -242,67 +295,12 @@
     .hero .container{
       position:relative;
       z-index:1;
-      padding:82px 0 74px;
-    }
-
-    .eyebrow,
-    .kicker{
-      display:inline-block;
-      margin-bottom:14px;
-      color:#1d4ed8;
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
-
-    .hero .eyebrow{
-      color:#dbeafe;
-    }
-
-    h1,h2,h3{
-      margin:0 0 16px;
-      line-height:.98;
-      letter-spacing:-.03em;
-    }
-
-    h1{
-      font-size:clamp(42px,6vw,72px);
-      max-width:920px;
-    }
-
-    h2{
-      font-size:clamp(32px,4vw,52px);
-      max-width:900px;
-    }
-
-    h3{
-      font-size:24px;
-    }
-
-    .hero p,
-    .lead,
-    .footer p,
-    .content-block p,
-    .process-card p,
-    .faq-item p,
-    .trust-card p,
-    .footer-note{
-      line-height:1.7;
-      font-size:18px;
-      color:inherit;
+      padding:84px 0 76px;
     }
 
     .hero p{
       max-width:860px;
       color:rgba(255,255,255,.92);
-      margin:0 0 24px;
-    }
-
-    .lead{
-      color:var(--muted);
-      max-width:900px;
-      margin:0;
     }
 
     .hero-tags{
@@ -330,7 +328,7 @@
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:6px;
+      margin-top:8px;
     }
 
     .btn{
@@ -369,20 +367,22 @@
     }
 
     section{
-      padding:82px 0;
+      padding:92px 0;
     }
 
     .section-alt{
       background:#f5f7fb;
     }
 
-    .content-block{
-      max-width:940px;
+    .content-block p:last-child,
+    .trust-card p:last-child,
+    .faq-item p:last-child,
+    .process-card p:last-child{
+      margin-bottom:0;
     }
 
-    .content-block p{
-      color:var(--muted);
-      margin:0 0 18px;
+    .section-head{
+      margin-bottom:28px;
     }
 
     .process-grid{
@@ -397,7 +397,7 @@
       border:1px solid var(--line);
       border-radius:22px;
       box-shadow:var(--shadow);
-      padding:24px;
+      padding:26px;
     }
 
     .process-card .num{
@@ -414,9 +414,7 @@
     }
 
     .process-card p{
-      color:var(--muted);
       font-size:16px;
-      margin:0;
     }
 
     .image-split{
@@ -445,7 +443,7 @@
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:20px;
-      margin-top:28px;
+      margin-top:30px;
     }
 
     .trust-card{
@@ -453,16 +451,10 @@
       border:1px solid var(--line);
       border-radius:22px;
       box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .trust-card h3{
-      margin-bottom:10px;
+      padding:26px;
     }
 
     .trust-card p{
-      color:var(--muted);
-      margin:0;
       font-size:16px;
     }
 
@@ -497,7 +489,7 @@
       display:grid;
       gap:16px;
       margin-top:30px;
-      max-width:940px;
+      max-width:var(--content);
     }
 
     .faq-item{
@@ -505,17 +497,7 @@
       border:1px solid var(--line);
       border-radius:20px;
       box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .faq-item h3{
-      margin-bottom:10px;
-      font-size:22px;
-    }
-
-    .faq-item p{
-      color:var(--muted);
-      margin:0;
+      padding:26px;
     }
 
     .cta-band{
@@ -524,7 +506,7 @@
       border-radius:28px;
       padding:34px;
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
       gap:24px;
       box-shadow:var(--shadow);
@@ -533,6 +515,7 @@
     .cta-band .lead{
       color:rgba(255,255,255,.86);
       max-width:760px;
+      margin-bottom:0;
     }
 
     .footer{
@@ -570,6 +553,8 @@
     .footer-note{
       color:#cbd5e1;
       margin-top:16px;
+      font-size:16px;
+      line-height:1.7;
     }
 
     .copy{
@@ -674,7 +659,7 @@
       }
 
       section{
-        padding:62px 0;
+        padding:72px 0;
       }
 
       .hero .container{
@@ -686,7 +671,11 @@
       }
 
       h2{
-        font-size:38px;
+        font-size:34px;
+      }
+
+      h3{
+        font-size:22px;
       }
     }
 
@@ -715,7 +704,11 @@
       }
 
       h2{
-        font-size:32px;
+        font-size:30px;
+      }
+
+      h3{
+        font-size:21px;
       }
 
       .floating{
@@ -793,45 +786,50 @@
 
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Professional carpet cleaning in Worcestershire</span>
-      <h1>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</h1>
+      <div class="content-wrap">
+        <span class="eyebrow">Professional carpet cleaning in Worcestershire</span>
+        <h1>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</h1>
 
-      <p>JW Carpet Care provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
+        <p>JW Carpet Care provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
 
-      <div class="hero-tags">
-        <span><i class="fa-solid fa-circle-check"></i> Truck mounted system</span>
-        <span><i class="fa-solid fa-circle-check"></i> Targeted pre spray</span>
-        <span><i class="fa-solid fa-circle-check"></i> CRB agitation</span>
-        <span><i class="fa-solid fa-circle-check"></i> High temperature hot water extraction</span>
-      </div>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-circle-check"></i> Truck mounted system</span>
+          <span><i class="fa-solid fa-circle-check"></i> Targeted pre spray</span>
+          <span><i class="fa-solid fa-circle-check"></i> CRB agitation</span>
+          <span><i class="fa-solid fa-circle-check"></i> High temperature hot water extraction</span>
+        </div>
 
-      <div class="actions">
-        <a class="btn primary" href="../index.html#quote"><i class="fa-solid fa-phone"></i> Get a Quote</a>
-        <a class="btn secondary" href="../pages/areas.html"><i class="fa-solid fa-location-dot"></i> Areas We Cover</a>
+        <div class="actions">
+          <a class="btn primary" href="../index.html#quote"><i class="fa-solid fa-phone"></i> Get a Quote</a>
+          <a class="btn secondary" href="../pages/areas.html"><i class="fa-solid fa-location-dot"></i> Areas We Cover</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container content-block">
-      <span class="kicker">Professional carpet cleaning for homes across Worcestershire</span>
+    <div class="container">
+      <div class="content-wrap content-block">
+        <span class="section-label">Professional carpet cleaning for homes across Worcestershire</span>
 
-      <p>JW Carpet Care provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
+        <p>JW Carpet Care provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
 
-      <p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
+        <p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
 
-      <p>Many carpets do not need replacing. They need the right cleaning process. Everyday foot traffic, food spills, pet accidents and dull traffic lanes can make a carpet look worn long before it actually is. Professional carpet cleaning helps remove that built up soiling properly and can make a significant difference to the look and feel of the room.</p>
+        <p>Many carpets do not need replacing. They need the right cleaning process. Everyday foot traffic, food spills, pet accidents and dull traffic lanes can make a carpet look worn long before it actually is. Professional carpet cleaning helps remove that built up soiling properly and can make a significant difference to the look and feel of the room.</p>
 
-      <p>For anyone searching for carpet cleaning in Worcestershire, carpet cleaning in Worcester or carpet cleaning across the West Midlands, the process is what makes the difference. Proper results come from proper preparation, agitation and extraction — not a quick once over.</p>
+        <p>For anyone searching for carpet cleaning in Worcestershire, carpet cleaning in Worcester or carpet cleaning across the West Midlands, the process is what makes the difference. Proper results come from proper preparation, agitation and extraction — not a quick once over.</p>
+      </div>
     </div>
   </section>
 
   <section class="section-alt">
     <div class="container">
-      <span class="kicker">Our carpet cleaning process</span>
-      <h2>Truck mounted carpet cleaning with a professional step by step system</h2>
-
-      <p class="lead">This is where the difference is made. The cleaning process is designed to break down soil properly, work through the carpet fibres and then extract dirt at high temperature using powerful equipment.</p>
+      <div class="section-head content-wrap">
+        <span class="section-label">Our carpet cleaning process</span>
+        <h2>Truck mounted carpet cleaning with a professional step by step system</h2>
+        <p>This is where the difference is made. The cleaning process is designed to break down soil properly, work through the carpet fibres and then extract dirt at high temperature using powerful equipment.</p>
+      </div>
 
       <div class="process-grid">
         <div class="process-card">
@@ -872,10 +870,11 @@
 
   <section>
     <div class="container">
-      <span class="kicker">Why choose JW Carpet Care</span>
-      <h2>Professional carpet cleaning in Worcestershire with a stronger setup</h2>
-
-      <p class="lead">If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
+      <div class="section-head content-wrap">
+        <span class="section-label">Why choose JW Carpet Care</span>
+        <h2>Professional carpet cleaning in Worcestershire with a stronger setup</h2>
+        <p>If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
+      </div>
 
       <div class="trust-band">
         <div class="trust-card">
@@ -897,59 +896,65 @@
   </section>
 
   <section class="section-alt">
-    <div class="container content-block">
-      <span class="kicker">Areas we cover</span>
-      <h2>Carpet cleaning across Worcestershire and the West Midlands</h2>
+    <div class="container">
+      <div class="content-wrap content-block">
+        <span class="section-label">Areas we cover</span>
+        <h2>Carpet cleaning across Worcestershire and the West Midlands</h2>
 
-      <p>If you are searching by town, the quickest way to find the right page is to go straight to your local area. These pages show where the service is available and help you move directly to the right information.</p>
+        <p>If you are searching by town, the quickest way to find the right page is to go straight to your local area. These pages show where the service is available and help you move directly to the right information.</p>
 
-      <div class="town-links">
-        <a href="../areas/worcester.html">Worcester</a>
-        <a href="../areas/bromsgrove.html">Bromsgrove</a>
-        <a href="../areas/kidderminster.html">Kidderminster</a>
-        <a href="../areas/redditch.html">Redditch</a>
-        <a href="../areas/droitwich-spa.html">Droitwich Spa</a>
-        <a href="../areas/malvern.html">Malvern</a>
-        <a href="../areas/stourport-on-severn.html">Stourport on Severn</a>
-        <a href="../areas/bewdley.html">Bewdley</a>
-        <a href="../areas/pershore.html">Pershore</a>
-        <a href="../areas/evesham.html">Evesham</a>
-        <a href="../areas/stourbridge.html">Stourbridge</a>
-        <a href="../areas/halesowen.html">Halesowen</a>
+        <div class="town-links">
+          <a href="../areas/worcester.html">Worcester</a>
+          <a href="../areas/bromsgrove.html">Bromsgrove</a>
+          <a href="../areas/kidderminster.html">Kidderminster</a>
+          <a href="../areas/redditch.html">Redditch</a>
+          <a href="../areas/droitwich-spa.html">Droitwich Spa</a>
+          <a href="../areas/malvern.html">Malvern</a>
+          <a href="../areas/stourport-on-severn.html">Stourport on Severn</a>
+          <a href="../areas/bewdley.html">Bewdley</a>
+          <a href="../areas/pershore.html">Pershore</a>
+          <a href="../areas/evesham.html">Evesham</a>
+          <a href="../areas/stourbridge.html">Stourbridge</a>
+          <a href="../areas/halesowen.html">Halesowen</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container content-block">
-      <span class="kicker">Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</span>
+    <div class="container">
+      <div class="content-wrap content-block">
+        <span class="section-label">Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</span>
 
-      <p>JW Carpet Care provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
+        <p>JW Carpet Care provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
 
-      <p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
+        <p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
 
-      <p>Whether you are based in Worcester, Bromsgrove, Kidderminster, Redditch or the surrounding areas, the aim is the same — to provide a reliable service, strong cleaning results and a straightforward customer experience from start to finish.</p>
+        <p>Whether you are based in Worcester, Bromsgrove, Kidderminster, Redditch or the surrounding areas, the aim is the same — to provide a reliable service, strong cleaning results and a straightforward customer experience from start to finish.</p>
+      </div>
     </div>
   </section>
 
   <section class="section-alt">
-    <div class="container content-block">
-      <span class="kicker">Carpet Cleaning FAQs</span>
+    <div class="container">
+      <div class="content-wrap">
+        <span class="section-label">Carpet Cleaning FAQs</span>
 
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h3>Do you cover my area?</h3>
-          <p>Use the areas page to find your town. If you are nearby but not listed, get in touch and ask.</p>
-        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do you cover my area?</h3>
+            <p>Use the areas page to find your town. If you are nearby but not listed, get in touch and ask.</p>
+          </div>
 
-        <div class="faq-item">
-          <h3>Can I get a quick quote?</h3>
-          <p>Yes. The fastest way is to call, email or send a WhatsApp message with the rooms or areas you need cleaned.</p>
-        </div>
+          <div class="faq-item">
+            <h3>Can I get a quick quote?</h3>
+            <p>Yes. The fastest way is to call, email or send a WhatsApp message with the rooms or areas you need cleaned.</p>
+          </div>
 
-        <div class="faq-item">
-          <h3>What makes this different from a basic clean?</h3>
-          <p>The process uses pre vacuuming, targeted pre spray, CRB agitation and high temperature truck mounted extraction rather than a quick surface clean.</p>
+          <div class="faq-item">
+            <h3>What makes this different from a basic clean?</h3>
+            <p>The process uses pre vacuuming, targeted pre spray, CRB agitation and high temperature truck mounted extraction rather than a quick surface clean.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -958,9 +963,9 @@
   <section>
     <div class="container">
       <div class="cta-band">
-        <div>
-          <span class="kicker" style="color:#93c5fd">Need help with carpet cleaning?</span>
-          <h2>Call, email or send a WhatsApp message for a fast local quote</h2>
+        <div class="content-wrap">
+          <span class="section-label" style="color:#93c5fd">Need help with carpet cleaning?</span>
+          <h2 style="color:#fff">Call, email or send a WhatsApp message for a fast local quote</h2>
           <p class="lead">Straightforward advice and a quick quote for carpet cleaning across Worcestershire and the West Midlands</p>
         </div>
 
