@@ -1,1 +1,0 @@
-const t=document.querySelector('.mobile-toggle'),m=document.querySelector('.menu');if(t&&m){t.onclick=()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')}}
