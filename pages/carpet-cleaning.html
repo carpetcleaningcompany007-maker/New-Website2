@@ -1,14 +1,16 @@
+---
+---
 <!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Professional Carpet Cleaning Worcestershire | JW Carpet Care</title>
+  <title>Professional Carpet Cleaning Worcestershire | {{ site.business_name }}</title>
   <meta name="description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
   <meta name="theme-color" content="#0f172a">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Professional Carpet Cleaning Worcestershire | JW Carpet Care">
+  <meta property="og:title" content="Professional Carpet Cleaning Worcestershire | {{ site.business_name }}">
   <meta property="og:description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop">
 
@@ -731,12 +733,12 @@
   <div class="topbar">
     <div class="container">
       <div class="links">
-        <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
-        <a href="tel:07838231389">07838 231389</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone_display | default: site.phone }}</a>
       </div>
       <div class="links">
-        <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+        <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
+        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
@@ -744,9 +746,9 @@
   <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
         <span>
-          JW Carpet Care
+          {{ site.business_name }}
           <small>Professional carpet cleaning across Worcestershire and the West Midlands</small>
         </span>
       </a>
@@ -789,13 +791,13 @@
   <section class="hero">
     <div class="container">
       <div class="content-wrap">
-        <div class="brand-title">JW Carpet Care</div>
+        <div class="brand-title">{{ site.business_name }}</div>
         <div class="hero-subtitle">Professional carpet cleaning across Worcestershire and the West Midlands</div>
 
         <span class="eyebrow">Professional carpet cleaning in Worcestershire</span>
         <h1>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</h1>
 
-        <p>JW Carpet Care provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
 
         <div class="hero-tags">
           <span><i class="fa-solid fa-circle-check"></i> Truck mounted system</span>
@@ -817,7 +819,7 @@
       <div class="content-wrap">
         <h2>Professional carpet cleaning for homes across Worcestershire</h2>
 
-        <p>JW Carpet Care provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
 
         <p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
 
@@ -876,7 +878,7 @@
   <section>
     <div class="container">
       <div class="section-head content-wrap">
-        <h2>Why choose JW Carpet Care</h2>
+        <h2>Why choose {{ site.business_name }}</h2>
         <h3>Professional carpet cleaning in Worcestershire with a stronger setup</h3>
         <p>If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
       </div>
@@ -894,7 +896,7 @@
 
         <div class="trust-card">
           <h3>Reliable local service</h3>
-          <p>JW Carpet Care provides straightforward carpet cleaning across Worcestershire and the West Midlands with clear communication and a fast route to a quote.</p>
+          <p>{{ site.business_name }} provides straightforward carpet cleaning across Worcestershire and the West Midlands with clear communication and a fast route to a quote.</p>
         </div>
       </div>
     </div>
@@ -931,7 +933,7 @@
       <div class="content-wrap">
         <h2>Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</h2>
 
-        <p>JW Carpet Care provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
 
         <p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
 
@@ -975,8 +977,8 @@
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="tel:07838231389"><i class="fa-solid fa-phone"></i> Call now</a>
-          <a class="btn secondary" href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> Call now</a>
+          <a class="btn secondary" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> Email</a>
         </div>
       </div>
     </div>
@@ -985,7 +987,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px;margin-bottom:16px">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
         <div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</div>
       </div>
 
@@ -1004,22 +1006,22 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:07838231389">07838 231389</a><br>
-          <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a><br>
-          <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a><br>
-          <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+          <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone_display | default: site.phone }}</a><br>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+          <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
+          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
         </p>
       </div>
     </div>
 
-    <div class="container copy">© JW Carpet Care. All rights reserved.</div>
+    <div class="container copy">© {{ site.business_name }}. All rights reserved.</div>
   </footer>
 
   <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/447838231389" target="_blank" rel="noopener" aria-label="WhatsApp JW Carpet Care">
+    <a class="float-btn wa" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:07838231389" aria-label="Call JW Carpet Care">
+    <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
