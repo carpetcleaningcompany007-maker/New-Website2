@@ -1,289 +1,1082 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Professional Carpet Cleaning in Worcestershire | JW Carpet Care</title>
-<meta name="description" content="Professional carpet cleaning across Worcestershire and the West Midlands using a truck mounted system.">
+  <title>Professional Carpet Cleaning Worcestershire | JW Carpet Care</title>
+  <meta name="description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Professional Carpet Cleaning Worcestershire | JW Carpet Care">
+  <meta property="og:description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
-:root{
-  --dark:#0f172a;
-  --blue:#1d4ed8;
-  --light:#f8fafc;
-}
+  <style>
+    :root{
+      --bg:#0f172a;
+      --bg2:#13203a;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#dbe4ef;
+      --brand:#1d4ed8;
+      --cta:#d4af57;
+      --cta-dark:#b89238;
+      --soft:#f8fafc;
+      --shadow:0 18px 50px rgba(15,23,42,.08);
+      --radius:24px;
+      --max:1180px;
+      --content:860px;
+      --green:#25D366;
+    }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui;
-  color:#0f172a;
-  line-height:1.6;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      overflow-x:hidden;
+    }
 
-.container{
-  width:min(1100px,90%);
-  margin:auto;
-}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .content-wrap{max-width:var(--content)}
+    .centered{max-width:var(--content)}
 
-/* HERO */
-.hero{
-  padding:80px 0;
-  background:linear-gradient(120deg,#0f172a,#1e293b);
-  color:#fff;
-}
+    h1,h2,h3{
+      margin:0;
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      color:var(--text);
+    }
 
-.hero h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
+    h1{
+      font-size:clamp(42px,5vw,66px);
+      margin-bottom:16px;
+      max-width:940px;
+    }
 
-.hero h2{
-  font-size:22px;
-  font-weight:500;
-  margin-bottom:20px;
-}
+    h2{
+      font-size:clamp(30px,3vw,38px);
+      margin-bottom:16px;
+      max-width:920px;
+    }
 
-.hero p{
-  max-width:700px;
-  opacity:.9;
-}
+    h3{
+      font-size:22px;
+      margin-bottom:10px;
+    }
 
-/* SECTIONS */
-section{
-  padding:60px 0;
-}
+    p{
+      font-size:18px;
+      line-height:1.72;
+      margin:0 0 18px;
+      color:var(--muted);
+    }
 
-h2{
-  font-size:28px;
-  margin-bottom:15px;
-  font-weight:700;
-}
+    .eyebrow{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:#dbeafe;
+    }
 
-h3{
-  font-size:20px;
-  margin-bottom:10px;
-  font-weight:600;
-}
+    .section-label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:var(--brand);
+    }
 
-p{
-  margin-bottom:15px;
-}
+    .topbar{
+      background:#0b1220;
+      color:#dbeafe;
+      font-size:14px;
+    }
 
-/* LIST STYLE */
-.process-step{
-  margin-bottom:25px;
-}
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:10px 0;
+      flex-wrap:wrap;
+    }
 
-.process-step strong{
-  display:block;
-  font-size:18px;
-  margin-bottom:5px;
-}
+    .topbar .links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
 
-/* AREAS GRID */
-.areas{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:10px;
-  margin-top:20px;
-}
+    .topbar a:hover{color:#fff}
 
-.areas div{
-  padding:8px 0;
-}
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(219,228,239,.8);
+    }
 
-/* CTA */
-.cta{
-  background:var(--light);
-  text-align:center;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
 
-.cta a{
-  display:inline-block;
-  margin:10px;
-  padding:12px 20px;
-  background:var(--blue);
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
 
-/* FOOTER */
-footer{
-  background:#0f172a;
-  color:#fff;
-  padding:40px 0;
-  text-align:center;
-}
-</style>
+    .brand img{
+      height:58px;
+      width:auto;
+      object-fit:contain;
+    }
 
+    .brand span{
+      display:flex;
+      flex-direction:column;
+      font-size:20px;
+      font-weight:800;
+      line-height:1.05;
+      color:#0f172a;
+    }
+
+    .brand small{
+      font-size:12px;
+      font-weight:600;
+      color:#64748b;
+      margin-top:5px;
+      line-height:1.2;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-weight:600;
+    }
+
+    .menu > a,
+    .dropbtn{
+      color:#0f172a;
+      background:none;
+      border:0;
+      cursor:pointer;
+      padding:0;
+      font-weight:600;
+    }
+
+    .menu > a:hover,
+    .dropbtn:hover,
+    .menu > a.current,
+    .drop.open > .dropbtn{
+      color:var(--brand);
+    }
+
+    .drop{
+      position:relative;
+    }
+
+    .dropbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .dropbtn::after{
+      content:"\f078";
+      font-family:"Font Awesome 6 Free";
+      font-weight:900;
+      font-size:12px;
+      transition:transform .2s ease;
+    }
+
+    .drop.open .dropbtn::after{
+      transform:rotate(180deg);
+    }
+
+    .dropmenu{
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:10px;
+      display:none;
+      z-index:200;
+      margin-top:12px;
+    }
+
+    .drop.open .dropmenu{
+      display:block;
+    }
+
+    .dropmenu a{
+      display:block;
+      padding:11px 12px;
+      border-radius:12px;
+      color:#0f172a;
+      font-weight:600;
+    }
+
+    .dropmenu a:hover{
+      background:#f8fafc;
+      color:var(--brand);
+    }
+
+    .cta{
+      background:#0f172a;
+      color:#fff !important;
+      padding:12px 18px;
+      border-radius:999px;
+      box-shadow:0 8px 24px rgba(15,23,42,.14);
+    }
+
+    .cta:hover{
+      background:#13203a;
+    }
+
+    .mobile-toggle{
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#0f172a;
+      border-radius:12px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(15,23,42,.88) 0%, rgba(15,23,42,.72) 45%, rgba(15,23,42,.38) 100%),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop") center/cover no-repeat;
+      color:#fff;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(15,23,42,.04), rgba(15,23,42,.22));
+      pointer-events:none;
+    }
+
+    .hero .container{
+      position:relative;
+      z-index:1;
+      padding:84px 0 76px;
+    }
+
+    .hero p{
+      max-width:860px;
+      color:rgba(255,255,255,.92);
+    }
+
+    .hero .brand-title{
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:#dbeafe;
+    }
+
+    .hero-subtitle{
+      font-size:20px;
+      font-weight:600;
+      color:#fff;
+      margin:0 0 22px;
+    }
+
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 26px;
+    }
+
+    .hero-tags span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      font-weight:600;
+      backdrop-filter:blur(8px);
+      font-size:15px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:18px;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      border:0;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn.primary{
+      background:var(--cta);
+      color:#111827;
+      box-shadow:0 12px 28px rgba(212,175,87,.28);
+    }
+
+    .btn.primary:hover{
+      background:var(--cta-dark);
+    }
+
+    .btn.secondary{
+      background:#fff;
+      color:#0f172a;
+      box-shadow:0 12px 28px rgba(255,255,255,.14);
+    }
+
+    section{
+      padding:92px 0;
+    }
+
+    .section-alt{
+      background:#f5f7fb;
+    }
+
+    .section-head{
+      margin-bottom:28px;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .process-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .process-card .num{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eff6ff;
+      color:var(--brand);
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .process-card p{
+      font-size:16px;
+      margin-bottom:0;
+    }
+
+    .image-split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      margin-top:30px;
+    }
+
+    .image-split .img{
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    .image-split img{
+      width:100%;
+      height:100%;
+      min-height:360px;
+      object-fit:cover;
+    }
+
+    .trust-band{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:20px;
+      margin-top:30px;
+    }
+
+    .trust-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .trust-card p{
+      font-size:16px;
+      margin-bottom:0;
+    }
+
+    .town-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .town-links a,
+    .town-links span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-weight:700;
+      color:#0f172a;
+      box-shadow:var(--shadow);
+      transition:transform .2s ease, box-shadow .2s ease, color .2s ease;
+    }
+
+    .town-links a:hover{
+      transform:translateY(-2px);
+      color:var(--brand);
+    }
+
+    .faq-grid{
+      display:grid;
+      gap:16px;
+      margin-top:30px;
+      max-width:var(--content);
+    }
+
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+
+    .faq-item p{
+      margin-bottom:0;
+    }
+
+    .cta-band{
+      background:linear-gradient(135deg,#0f172a 0%,#13203a 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:34px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta-band p{
+      color:rgba(255,255,255,.86);
+      margin-bottom:0;
+    }
+
+    .cta-band h2{
+      color:#fff;
+    }
+
+    .footer{
+      background:#0b1220;
+      color:#dbeafe;
+      padding:70px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .9fr .9fr;
+      gap:28px;
+    }
+
+    .footer h3{
+      color:#fff;
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .footer p{
+      margin:0;
+      font-size:16px;
+      color:#cbd5e1;
+    }
+
+    .footer a{
+      color:#cbd5e1;
+    }
+
+    .footer a:hover{
+      color:#fff;
+    }
+
+    .footer-note{
+      color:#cbd5e1;
+      margin-top:16px;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .copy{
+      border-top:1px solid rgba(203,213,225,.15);
+      margin-top:28px;
+      padding-top:22px;
+      font-size:14px;
+      color:#94a3b8;
+    }
+
+    .floating{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      z-index:120;
+    }
+
+    .float-btn{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:24px;
+      box-shadow:0 18px 36px rgba(15,23,42,.24);
+    }
+
+    .float-btn.wa{background:var(--green)}
+    .float-btn.call{background:var(--brand)}
+
+    @media (max-width: 1180px){
+      .process-grid,
+      .image-split,
+      .trust-band{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cta-band{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width: 860px){
+      .mobile-toggle{
+        display:inline-flex;
+      }
+
+      .nav{
+        flex-wrap:wrap;
+      }
+
+      .menu{
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+        padding:12px 0 4px;
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .drop{
+        width:100%;
+      }
+
+      .dropbtn{
+        width:100%;
+        justify-content:space-between;
+        padding:6px 0;
+      }
+
+      .dropmenu{
+        position:static;
+        margin-top:10px;
+        box-shadow:none;
+        border-radius:16px;
+        width:100%;
+      }
+
+      .process-grid,
+      .image-split,
+      .trust-band,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .container{
+        width:min(var(--max),calc(100% - 28px));
+      }
+
+      section{
+        padding:72px 0;
+      }
+
+      .hero .container{
+        padding:58px 0 50px;
+      }
+
+      h1{font-size:48px}
+      h2{font-size:34px}
+      h3{font-size:22px}
+    }
+
+    @media (max-width: 560px){
+      .hero-tags{
+        gap:8px;
+      }
+
+      .hero-tags span,
+      .town-links a,
+      .town-links span,
+      .btn{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .process-card,
+      .trust-card,
+      .faq-item,
+      .cta-band{
+        padding:22px;
+      }
+
+      h1{font-size:40px}
+      h2{font-size:30px}
+      h3{font-size:21px}
+
+      .floating{
+        right:14px;
+        bottom:14px;
+      }
+
+      .float-btn{
+        width:54px;
+        height:54px;
+        font-size:22px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<section class="hero">
-<div class="container">
-<h1>JW Carpet Care</h1>
-<h2>Professional carpet cleaning across Worcestershire and the West Midlands</h2>
+  <div class="topbar">
+    <div class="container">
+      <div class="links">
+        <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
+        <a href="tel:07838231389">07838 231389</a>
+      </div>
+      <div class="links">
+        <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
 
-<h3>Professional carpet cleaning in Worcestershire</h3>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care">
+        <span>
+          JW Carpet Care
+          <small>Professional carpet cleaning across Worcestershire and the West Midlands</small>
+        </span>
+      </a>
 
-<p><strong>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</strong></p>
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
 
-<p>JW Carpet Care provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
+      <nav class="menu">
+        <a href="../index.html">Home</a>
 
-<p>
-Truck mounted system<br>
-Targeted pre spray<br>
-CRB agitation<br>
-High temperature hot water extraction
-</p>
-</div>
-</section>
+        <div class="drop">
+          <button class="dropbtn" type="button" aria-expanded="false">Services</button>
+          <div class="dropmenu">
+            <a href="../pages/carpet-cleaning.html">Carpet Cleaning</a>
+            <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a>
+            <a href="../pages/stain-removal.html">Stain Removal Treatments</a>
+            <a href="../pages/commercial.html">Commercial Cleaning</a>
+            <a href="../pages/rug-cleaning.html">Rug Cleaning</a>
+            <a href="../pages/moth-treatment.html">Moth Treatment</a>
+          </div>
+        </div>
 
-<section>
-<div class="container">
+        <div class="drop">
+          <button class="dropbtn" type="button" aria-expanded="false">Areas We Cover</button>
+          <div class="dropmenu">
+            <a href="../pages/areas.html">All Areas</a>
+            <a href="../areas/worcester.html">Worcester</a>
+            <a href="../areas/bromsgrove.html">Bromsgrove</a>
+            <a href="../areas/kidderminster.html">Kidderminster</a>
+            <a href="../areas/redditch.html">Redditch</a>
+          </div>
+        </div>
 
-<h2>Professional carpet cleaning for homes across Worcestershire</h2>
+        <a href="../pages/reviews.html">Reviews</a>
+        <a href="../pages/gallery.html">Gallery</a>
+        <a class="cta" href="../index.html#quote">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
 
-<p>JW Carpet Care provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
+  <section class="hero">
+    <div class="container">
+      <div class="content-wrap">
+        <div class="brand-title">JW Carpet Care</div>
+        <div class="hero-subtitle">Professional carpet cleaning across Worcestershire and the West Midlands</div>
 
-<p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
+        <span class="eyebrow">Professional carpet cleaning in Worcestershire</span>
+        <h1>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</h1>
 
-<p>Many carpets do not need replacing. They need the right cleaning process. Everyday foot traffic, food spills, pet accidents and dull traffic lanes can make a carpet look worn long before it actually is. Professional carpet cleaning helps remove that built up soiling properly and can make a significant difference to the look and feel of the room.</p>
+        <p>JW Carpet Care provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
 
-<p>For anyone searching for carpet cleaning in Worcestershire, carpet cleaning in Worcester or carpet cleaning across the West Midlands, the process is what makes the difference. Proper results come from proper preparation, agitation and extraction — not a quick once over.</p>
+        <div class="hero-tags">
+          <span><i class="fa-solid fa-circle-check"></i> Truck mounted system</span>
+          <span><i class="fa-solid fa-circle-check"></i> Targeted pre spray</span>
+          <span><i class="fa-solid fa-circle-check"></i> CRB agitation</span>
+          <span><i class="fa-solid fa-circle-check"></i> High temperature hot water extraction</span>
+        </div>
 
-</div>
-</section>
+        <div class="actions">
+          <a class="btn primary" href="../index.html#quote"><i class="fa-solid fa-phone"></i> Get a Quote</a>
+          <a class="btn secondary" href="../pages/areas.html"><i class="fa-solid fa-location-dot"></i> Areas We Cover</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<div class="container">
+  <section>
+    <div class="container">
+      <div class="content-wrap">
+        <h2>Professional carpet cleaning for homes across Worcestershire</h2>
 
-<h2>Our carpet cleaning process</h2>
-<h3>Truck mounted carpet cleaning with a professional step by step system</h3>
+        <p>JW Carpet Care provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
 
-<p>This is where the difference is made. The cleaning process is designed to break down soil properly, work through the carpet fibres and then extract dirt at high temperature using powerful equipment.</p>
+        <p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
 
-<div class="process-step">
-<strong>Pre vacuum</strong>
-<p>Dry soil and loose debris are removed first so grit is not left sitting in the carpet before wet cleaning begins.</p>
-</div>
+        <p>Many carpets do not need replacing. They need the right cleaning process. Everyday foot traffic, food spills, pet accidents and dull traffic lanes can make a carpet look worn long before it actually is. Professional carpet cleaning helps remove that built up soiling properly and can make a significant difference to the look and feel of the room.</p>
 
-<div class="process-step">
-<strong>Targeted pre spray</strong>
-<p>A suitable pre spray is applied to break down traffic lane soiling, greasy build up and everyday dirt within the fibres.</p>
-</div>
+        <p>For anyone searching for carpet cleaning in Worcestershire, carpet cleaning in Worcester or carpet cleaning across the West Midlands, the process is what makes the difference. Proper results come from proper preparation, agitation and extraction — not a quick once over.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="process-step">
-<strong>CRB agitation</strong>
-<p>A counter rotating brush machine works the solution through the carpet pile, separates the fibres and helps release stubborn dirt.</p>
-</div>
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head content-wrap">
+        <h2>Our carpet cleaning process</h2>
+        <h3>Truck mounted carpet cleaning with a professional step by step system</h3>
+        <p>This is where the difference is made. The cleaning process is designed to break down soil properly, work through the carpet fibres and then extract dirt at high temperature using powerful equipment.</p>
+      </div>
 
-<div class="process-step">
-<strong>Truck mounted hot water extraction</strong>
-<p>High temperature hot water extraction with the truck mounted system flushes out loosened soil and leaves the carpet cleaner, fresher and properly rinsed.</p>
-</div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="num">1</div>
+          <h3>Pre vacuum</h3>
+          <p>Dry soil and loose debris are removed first so grit is not left sitting in the carpet before wet cleaning begins.</p>
+        </div>
 
-</div>
-</section>
+        <div class="process-card">
+          <div class="num">2</div>
+          <h3>Targeted pre spray</h3>
+          <p>A suitable pre spray is applied to break down traffic lane soiling, greasy build up and everyday dirt within the fibres.</p>
+        </div>
 
-<section>
-<div class="container">
+        <div class="process-card">
+          <div class="num">3</div>
+          <h3>CRB agitation</h3>
+          <p>A counter rotating brush machine works the solution through the carpet pile, separates the fibres and helps release stubborn dirt.</p>
+        </div>
 
-<h2>Why choose JW Carpet Care</h2>
-<h3>Professional carpet cleaning in Worcestershire with a stronger setup</h3>
+        <div class="process-card">
+          <div class="num">4</div>
+          <h3>Truck mounted hot water extraction</h3>
+          <p>High temperature hot water extraction with the truck mounted system flushes out loosened soil and leaves the carpet cleaner, fresher and properly rinsed.</p>
+        </div>
+      </div>
 
-<p>If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
+      <div class="image-split">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop" alt="Professional carpet cleaning equipment">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Deep carpet cleaning service">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><strong>Professional equipment</strong><br>
-Truck mounted hot water extraction delivers a stronger, more consistent clean compared to smaller domestic machines.</p>
+  <section>
+    <div class="container">
+      <div class="section-head content-wrap">
+        <h2>Why choose JW Carpet Care</h2>
+        <h3>Professional carpet cleaning in Worcestershire with a stronger setup</h3>
+        <p>If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
+      </div>
 
-<p><strong>Deep fibre cleaning</strong><br>
-CRB agitation works through the carpet pile properly, loosening dirt before extraction begins.</p>
+      <div class="trust-band">
+        <div class="trust-card">
+          <h3>Professional equipment</h3>
+          <p>Truck mounted hot water extraction delivers a stronger, more consistent clean compared to smaller domestic machines.</p>
+        </div>
 
-<p><strong>Reliable local service</strong><br>
-JW Carpet Care provides straightforward carpet cleaning across Worcestershire and the West Midlands with clear communication and a fast route to a quote.</p>
+        <div class="trust-card">
+          <h3>Deep fibre cleaning</h3>
+          <p>CRB agitation works through the carpet pile properly, loosening dirt before extraction begins.</p>
+        </div>
 
-</div>
-</section>
+        <div class="trust-card">
+          <h3>Reliable local service</h3>
+          <p>JW Carpet Care provides straightforward carpet cleaning across Worcestershire and the West Midlands with clear communication and a fast route to a quote.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<div class="container">
+  <section class="section-alt">
+    <div class="container">
+      <div class="content-wrap">
+        <h2>Areas we cover</h2>
+        <h3>Carpet cleaning across Worcestershire and the West Midlands</h3>
 
-<h2>Areas we cover</h2>
-<h3>Carpet cleaning across Worcestershire and the West Midlands</h3>
+        <p>If you are searching by town, the quickest way to find the right page is to go straight to your local area. These pages show where the service is available and help you move directly to the right information.</p>
 
-<p>If you are searching by town, the quickest way to find the right page is to go straight to your local area. These pages show where the service is available and help you move directly to the right information.</p>
+        <div class="town-links">
+          <a href="../areas/worcester.html">Worcester</a>
+          <a href="../areas/bromsgrove.html">Bromsgrove</a>
+          <a href="../areas/kidderminster.html">Kidderminster</a>
+          <a href="../areas/redditch.html">Redditch</a>
+          <a href="../areas/droitwich-spa.html">Droitwich Spa</a>
+          <a href="../areas/malvern.html">Malvern</a>
+          <a href="../areas/stourport-on-severn.html">Stourport on Severn</a>
+          <a href="../areas/bewdley.html">Bewdley</a>
+          <a href="../areas/pershore.html">Pershore</a>
+          <a href="../areas/evesham.html">Evesham</a>
+          <a href="../areas/stourbridge.html">Stourbridge</a>
+          <a href="../areas/halesowen.html">Halesowen</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="areas">
-<div>Worcester</div>
-<div>Bromsgrove</div>
-<div>Kidderminster</div>
-<div>Redditch</div>
-<div>Droitwich Spa</div>
-<div>Malvern</div>
-<div>Stourport on Severn</div>
-<div>Bewdley</div>
-<div>Pershore</div>
-<div>Evesham</div>
-<div>Stourbridge</div>
-<div>Halesowen</div>
-</div>
+  <section>
+    <div class="container">
+      <div class="content-wrap">
+        <h2>Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</h2>
 
-</div>
-</section>
+        <p>JW Carpet Care provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
 
-<section>
-<div class="container">
+        <p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
 
-<h2>Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</h2>
+        <p>Whether you are based in Worcester, Bromsgrove, Kidderminster, Redditch or the surrounding areas, the aim is the same — to provide a reliable service, strong cleaning results and a straightforward customer experience from start to finish.</p>
+      </div>
+    </div>
+  </section>
 
-<p>JW Carpet Care provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
+  <section class="section-alt">
+    <div class="container">
+      <div class="content-wrap">
+        <h2>Carpet Cleaning FAQs</h2>
 
-<p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do you cover my area?</h3>
+            <p>Use the areas page to find your town. If you are nearby but not listed, get in touch and ask.</p>
+          </div>
 
-<p>Whether you are based in Worcester, Bromsgrove, Kidderminster, Redditch or the surrounding areas, the aim is the same — to provide a reliable service, strong cleaning results and a straightforward customer experience from start to finish.</p>
+          <div class="faq-item">
+            <h3>Can I get a quick quote?</h3>
+            <p>Yes. The fastest way is to call, email or send a WhatsApp message with the rooms or areas you need cleaned.</p>
+          </div>
 
-</div>
-</section>
+          <div class="faq-item">
+            <h3>What makes this different from a basic clean?</h3>
+            <p>The process uses pre vacuuming, targeted pre spray, CRB agitation and high temperature truck mounted extraction rather than a quick surface clean.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<div class="container">
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <div class="content-wrap">
+          <h2>Need help with carpet cleaning?</h2>
+          <h3 style="color:#fff;margin-bottom:12px;">Call, email or send a WhatsApp message for a fast local quote</h3>
+          <p>Straightforward advice and a quick quote for carpet cleaning across Worcestershire and the West Midlands</p>
+        </div>
 
-<h2>Carpet Cleaning FAQs</h2>
+        <div class="actions">
+          <a class="btn primary" href="tel:07838231389"><i class="fa-solid fa-phone"></i> Call now</a>
+          <a class="btn secondary" href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><strong>Do you cover my area?</strong><br>
-Use the areas page to find your town. If you are nearby but not listed, get in touch and ask.</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px;margin-bottom:16px">
+        <div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</div>
+      </div>
 
-<p><strong>Can I get a quick quote?</strong><br>
-Yes. The fastest way is to call, email or send a WhatsApp message with the rooms or areas you need cleaned.</p>
+      <div>
+        <h3>Services</h3>
+        <p>
+          <a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br>
+          <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br>
+          <a href="../pages/stain-removal.html">Stain Removal Treatments</a><br>
+          <a href="../pages/commercial.html">Commercial Cleaning</a><br>
+          <a href="../pages/rug-cleaning.html">Rug Cleaning</a><br>
+          <a href="../pages/moth-treatment.html">Moth Treatment</a>
+        </p>
+      </div>
 
-<p><strong>What makes this different from a basic clean?</strong><br>
-The process uses pre vacuuming, targeted pre spray, CRB agitation and high temperature truck mounted extraction rather than a quick surface clean.</p>
+      <div>
+        <h3>Contact</h3>
+        <p>
+          <a href="tel:07838231389">07838 231389</a><br>
+          <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a><br>
+          <a href="https://www.facebook.com/profile.php?id=61565031206102" target="_blank" rel="noopener">Facebook</a><br>
+          <a href="https://www.instagram.com/james.wilson69/" target="_blank" rel="noopener">Instagram</a>
+        </p>
+      </div>
+    </div>
 
-</div>
-</section>
+    <div class="container copy">© JW Carpet Care. All rights reserved.</div>
+  </footer>
 
-<section class="cta">
-<div class="container">
-<h2>Need help with carpet cleaning?</h2>
-<p>Call, email or send a WhatsApp message for a fast local quote</p>
-<p>Straightforward advice and a quick quote for carpet cleaning across Worcestershire and the West Midlands</p>
+  <div class="floating">
+    <a class="float-btn wa" href="https://wa.me/447838231389" target="_blank" rel="noopener" aria-label="WhatsApp JW Carpet Care">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="float-btn call" href="tel:07838231389" aria-label="Call JW Carpet Care">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
 
-<a href="tel:07838231389">Call now</a>
-<a href="mailto:infojwcarpetcare@gmail.com">Email</a>
-</div>
-</section>
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('.menu');
+    const drops = document.querySelectorAll('.drop');
+    const dropButtons = document.querySelectorAll('.dropbtn');
 
-<footer>
-<div class="container">
-<p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</p>
-</div>
-</footer>
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    function closeAllDrops(except = null) {
+      drops.forEach(drop => {
+        if (drop !== except) {
+          drop.classList.remove('open');
+          const btn = drop.querySelector('.dropbtn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    dropButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const parent = button.closest('.drop');
+        const isOpen = parent.classList.contains('open');
+
+        closeAllDrops(parent);
+
+        if (isOpen) {
+          parent.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          parent.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      closeAllDrops();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDrops();
+      }
+    });
+  </script>
 
 </body>
 </html>
