@@ -68,15 +68,17 @@ layout: default
 <section class="local-flow">
   <div class="container local-grid">
     <div class="local-main">
-      <div class="copy-block">
+      <div class="copy-block intro-highlight">
         <span class="section-kicker">Local service in {{ page.town }}</span>
         <h2>Carpet cleaning and upholstery cleaning in {{ page.town }}</h2>
-        <p>{{ site.business_name }} provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and commercial carpet cleaning in {{ page.town }} and nearby areas.</p>
-        <p>If you are looking for carpet cleaning in {{ page.town }}, this page gives you the main local information in one place so you can quickly move to the right service or get in touch for a quote.</p>
-        <p>From residential carpet cleaning and sofa cleaning through to stain removal, rugs and selected commercial work, this page supports the wider service structure while still giving {{ page.town }} its own local page.</p>
+        <div class="paragraph-stack">
+          <p>{{ site.business_name }} provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and commercial carpet cleaning in {{ page.town }} and nearby areas.</p>
+          <p>If you are looking for carpet cleaning in {{ page.town }}, this page gives you the main local information in one place so you can quickly move to the right service or get in touch for a quote.</p>
+          <p>From residential carpet cleaning and sofa cleaning through to stain removal, rugs and selected commercial work, this page supports the wider service structure while still giving {{ page.town }} its own local page.</p>
+        </div>
       </div>
 
-      <div class="copy-block">
+      <div class="copy-block feature-ribbon">
         <span class="section-kicker">Why locals book us</span>
         <h2>Professional cleaning without the hard sell</h2>
         <div class="benefit-columns">
@@ -96,7 +98,7 @@ layout: default
       </div>
 
       {% if town_obj and town_obj.nearby %}
-      <div class="copy-block">
+      <div class="copy-block accent-block">
         <span class="section-kicker">Areas around {{ page.town }}</span>
         <h2>Nearby areas we also cover</h2>
         <p>{{ site.business_name }} also covers nearby areas around {{ page.town }} including {% for area in town_obj.nearby %}{{ area }}{% if forloop.last == false and forloop.length > 2 %}, {% elsif forloop.last == false %} and {% endif %}{% endfor %}.</p>
@@ -140,7 +142,7 @@ layout: default
       <p>Use the town page as the local entry point, then move into the exact service you need. This map is tied to {{ page.town }} so each location page keeps its own local relevance.</p>
       <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ page.town | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
     </div>
-    <div class="cta-panel plain-panel right-cta">
+    <div class="cta-panel plain-panel right-cta accent-block">
       <span class="section-kicker">Next step</span>
       <h2>Book local cleaning in {{ page.town }}</h2>
       <p>If you need carpet cleaning in {{ page.town }}, or you are comparing upholstery cleaning, stain removal, rug cleaning or commercial carpet cleaning in the area, get in touch and explain what needs doing.</p>
