@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch</title>
-  <meta name="description" content="{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
+  <meta name="description" content="{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. Trusted local service with honest advice and strong results.">
   <meta name="robots" content="index,follow">
   <meta name="author" content="{{ site.business_name }}">
   <meta name="theme-color" content="#0f172a">
@@ -93,6 +93,30 @@
           "@type":"Answer",
           "text":"Yes. Stain removal treatments and odour treatment are available for many common carpet and upholstery issues."
         }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"{{ site.business_name }}",
+    "url":"{{ site.url }}{{ site.baseurl }}/",
+    "logo":"{{ site.logo_url }}",
+    "review":[
+      {
+        "@type":"Review",
+        "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},
+        "author":{"@type":"Person","name":"Caroline Symonds"},
+        "reviewBody":"They did an excellent job, very professional and friendly service and definitely value for money. Would recommend and will be using again."
+      },
+      {
+        "@type":"Review",
+        "reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},
+        "author":{"@type":"Person","name":"Joanna Bennett"},
+        "reviewBody":"Fantastic service, carpets cleaned beautifully. Dried super quick, no smell. Highly recommend."
       }
     ]
   }
@@ -377,7 +401,8 @@
     .cta-panel-clean p,
     .footer p,
     .faq-item p,
-    .trust-card p{
+    .trust-card p,
+    .process-card p{
       line-height:1.65;
       font-size:18px;
       color:inherit;
@@ -544,7 +569,8 @@
     .cta-panel-clean,
     .cta-band-clean,
     .trust-card,
-    .faq-item{
+    .faq-item,
+    .process-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:var(--radius);
@@ -561,7 +587,8 @@
     .town-grid-main a:hover,
     .nearby-grid a:hover,
     .trust-card:hover,
-    .faq-item:hover{
+    .faq-item:hover,
+    .process-card:hover{
       transform:translateY(-3px);
       box-shadow:0 22px 56px rgba(15,23,42,.10);
     }
@@ -587,15 +614,30 @@
       color:var(--brand);
     }
 
-    .trust-grid{
+    .trust-grid,
+    .process-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:24px;
       margin-top:28px;
     }
 
-    .trust-card{
+    .trust-card,
+    .process-card{
       padding:24px;
+    }
+
+    .process-number{
+      width:42px;
+      height:42px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:#dbeafe;
+      color:#1d4ed8;
+      font-weight:800;
+      margin-bottom:14px;
     }
 
     .areas-wrap{
@@ -835,7 +877,8 @@
       }
 
       .cards-6,
-      .trust-grid{
+      .trust-grid,
+      .process-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
@@ -902,7 +945,8 @@
       .nearby-grid,
       .footer-grid,
       .trust-grid,
-      .faq-grid{
+      .faq-grid,
+      .process-grid{
         grid-template-columns:1fr;
       }
 
@@ -947,7 +991,8 @@
       .nearby-areas,
       .cta-band-clean,
       .faq-item,
-      .trust-card{
+      .trust-card,
+      .process-card{
         padding:22px;
       }
 
@@ -1038,7 +1083,7 @@
       <div>
         <span class="eyebrow">Professional local carpet cleaning</span>
         <h1>Professional Carpet Cleaning Across Worcester, Bromsgrove, Kidderminster and Redditch</h1>
-        <p>{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcestershire. We help homeowners, landlords, tenants and businesses get cleaner, fresher carpets and upholstery with honest advice, reliable service and strong results.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcestershire. We help homeowners, landlords, tenants and businesses get cleaner, fresher carpets and upholstery with honest advice, reliable service and results that make a visible difference.</p>
 
         <div class="hero-tags">
           <span><i class="fa-solid fa-circle-check"></i> Carpet cleaning</span>
@@ -1152,6 +1197,34 @@
 
   <section>
     <div class="container">
+      <span class="kicker">Our cleaning process</span>
+      <h2>A proper clean, not just a quick once over</h2>
+      <p class="lead">A lot of carpet cleaning is just a basic rinse. {{ site.business_name }} focuses on giving carpets and upholstery a more thorough clean with the right treatment for the material, the level of soiling and the type of problem areas involved.</p>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-number">1</div>
+          <h3>Inspection and pre treatment</h3>
+          <p>We inspect the carpet or upholstery first, identify the main problem areas, and apply the right pre treatment to loosen built up dirt, spots and traffic marks.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-number">2</div>
+          <h3>Deep cleaning and fibre agitation</h3>
+          <p>Where needed, fibres are worked properly so the cleaning solution can reach deeper into the pile, helping lift out more soil than a quick surface clean.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-number">3</div>
+          <h3>Rinse, extraction and fresh finish</h3>
+          <p>The carpet or upholstery is then thoroughly cleaned and extracted, helping remove loosened dirt, improve appearance and leave everything fresher and quicker drying.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
       <span class="kicker">Why choose us</span>
       <h2>Trusted local carpet cleaning with straightforward advice</h2>
       <p class="lead">{{ site.business_name }} focuses on practical results, clear communication and the right service for the job. Whether you need carpet cleaning in Worcester, upholstery cleaning in Bromsgrove or stain removal in Kidderminster or Redditch, the aim is always the same: cleaner, fresher results without the hard sell.</p>
@@ -1163,8 +1236,8 @@
         </article>
 
         <article class="trust-card">
-          <h3>Strong results on everyday problem areas</h3>
-          <p>Stairs, hallways, lounges, bedrooms, sofas, rugs and high traffic areas can all be treated with the right cleaning approach for the material and condition.</p>
+          <h3>Help for real everyday problems</h3>
+          <p>From dirty traffic lanes and tired lounges to marked stairs, dull rugs, stained sofas and general odours, we deal with the sort of cleaning issues people actually want sorted.</p>
         </article>
 
         <article class="trust-card">
