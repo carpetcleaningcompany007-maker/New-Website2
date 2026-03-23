@@ -932,7 +932,7 @@
 
       <aside class="formcard" id="quote">
         <h2>Get your free quote</h2>
-        <p>Tell James what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+        <p>Tell {{ site.contact_name | default: site.business_name }} what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
 
         <form class="formgrid" action="mailto:{{ site.email }}" method="post" enctype="text/plain">
           <input name="Name" placeholder="Your name" required>
@@ -956,7 +956,7 @@
         <div class="contact-mini">
           <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
           <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
-          <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+          <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name | default: site.business_name }}</a>
         </div>
       </aside>
     </div>
@@ -1130,13 +1130,13 @@
           <p class="lead">{{ site.business_name }} covers {{ site.location_list }} across {{ site.service_area }}.</p>
 
           <div class="mapwrap">
-            <iframe src="https://www.google.com/maps?q=Worcestershire%20UK&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q={{ site.map_query | default: site.service_area | uri_escape }}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
         <div class="cta-panel-clean">
           <span class="kicker">Need a quick answer?</span>
-          <h2>Call, email or WhatsApp James</h2>
+          <h2>Call, email or WhatsApp {{ site.contact_name | default: site.business_name }}</h2>
           <p>If you are unsure which service you need, the quickest option is to call, email or send a WhatsApp message. Whether it is carpet cleaning, upholstery cleaning, stain removal or commercial carpet cleaning, you can get clear advice on the right next step.</p>
 
           <ul class="feature-list-clean">

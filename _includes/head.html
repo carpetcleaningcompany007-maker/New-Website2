@@ -1,0 +1,7 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.seo_title %}{{ page.seo_title }}{% elsif page.town %}Carpet Cleaning {{ page.town }} | {{ site.business_name }}{% else %}{{ site.business_name }}{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.town %}Professional carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial carpet cleaning in {{ page.town }}.{% else %}Professional carpet cleaning across {{ site.service_area }}.{% endif %}">
+<meta property="og:type" content="website"><meta name="theme-color" content="#0f172a">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% if page.root_path %}{{ page.root_path }}{% else %}{% if page.url contains '/areas/' or page.url contains '/pages/' %}../{% endif %}{% endif %}assets/style.css">

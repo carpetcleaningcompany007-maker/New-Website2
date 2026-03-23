@@ -1,34 +1,8 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/index.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/areas.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/services.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/reviews.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/gallery.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/carpet-cleaning.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/commercial.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/moth-treatment.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/rug-cleaning.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/stain-removal.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/pages/upholstery-cleaning.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/bewdley.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/birmingham-south.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/birmingham-west.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/brierley-hill.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/bromsgrove.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/droitwich-spa.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/dudley.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/evesham.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/hagley.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/halesowen.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/kidderminster.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/kingswinford.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/malvern.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/pershore.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/redditch.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/rubery.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/solihull.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/stourbridge.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/stourport-on-severn.html</loc></url>
-  <url><loc>https://carpetcleaningcompany007-maker.github.io/New-Website/areas/worcester.html</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/areas.html</loc></url>
+  {% for t in site.data.towns %}<url><loc>{{ site.url }}{{ site.baseurl }}/areas/{{ t.slug }}.html</loc></url>{% endfor %}
 </urlset>
