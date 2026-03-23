@@ -1,24 +1,102 @@
 ---
 ---
-<!-- CONFIG NOTE: site settings come from _config.yml when built by Jekyll or GitHub Pages. If you open these HTML files directly from your computer, the {{ site.* }} values will not render. -->
 <!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch</title>
-  <meta name="description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across {{ site.location_list }}.">
-  <link rel="canonical" href="https://carpetcleaningcompany007-maker.github.io/New-Website/index.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
-  <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across {{ site.location_list }}.">
-  <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
+  <meta name="description" content="{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="{{ site.business_name }}">
   <meta name="theme-color" content="#0f172a">
+
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="{{ site.business_name }}">
+  <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
+  <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+  <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
+  <meta name="twitter:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
+  <meta name="twitter:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"{{ site.business_name }}",
+    "image":"{{ site.logo_url }}",
+    "url":"{{ site.url }}{{ site.baseurl }}/",
+    "telephone":"{{ site.phone }}",
+    "email":"{{ site.email }}",
+    "description":"Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.",
+    "areaServed":[
+      {"@type":"City","name":"Worcester"},
+      {"@type":"City","name":"Bromsgrove"},
+      {"@type":"City","name":"Kidderminster"},
+      {"@type":"City","name":"Redditch"},
+      {"@type":"AdministrativeArea","name":"Worcestershire"},
+      {"@type":"AdministrativeArea","name":"West Midlands"}
+    ],
+    "sameAs":[
+      "{{ site.facebook_url }}",
+      "{{ site.instagram_url }}"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How long do carpets take to dry after cleaning?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Drying times vary depending on carpet type, room temperature and airflow, but many carpets are dry within a few hours after professional cleaning."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you clean carpets in Worcester, Bromsgrove, Kidderminster and Redditch?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. {{ site.business_name }} provides carpet cleaning and related services across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do you clean sofas and upholstery as well as carpets?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Upholstery cleaning is available for sofas, chairs and other fabric furniture as well as carpets and rugs."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can you help with stains and odours?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Stain removal treatments and odour treatment are available for many common carpet and upholstery issues."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root{
@@ -286,12 +364,20 @@
       font-size:24px;
     }
 
+    h4{
+      margin:0 0 10px;
+      font-size:20px;
+      line-height:1.2;
+    }
+
     .hero p,
     .lead,
     .review p,
     .map-panel p,
     .cta-panel-clean p,
-    .footer p{
+    .footer p,
+    .faq-item p,
+    .trust-card p{
       line-height:1.65;
       font-size:18px;
       color:inherit;
@@ -456,7 +542,9 @@
     .nearby-areas,
     .map-panel,
     .cta-panel-clean,
-    .cta-band-clean{
+    .cta-band-clean,
+    .trust-card,
+    .faq-item{
       background:#fff;
       border:1px solid var(--line);
       border-radius:var(--radius);
@@ -471,7 +559,9 @@
     .card:hover,
     .review:hover,
     .town-grid-main a:hover,
-    .nearby-grid a:hover{
+    .nearby-grid a:hover,
+    .trust-card:hover,
+    .faq-item:hover{
       transform:translateY(-3px);
       box-shadow:0 22px 56px rgba(15,23,42,.10);
     }
@@ -495,6 +585,17 @@
     .iconbox a{
       font-weight:800;
       color:var(--brand);
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+      margin-top:28px;
+    }
+
+    .trust-card{
+      padding:24px;
     }
 
     .areas-wrap{
@@ -630,6 +731,23 @@
       margin-top:4px;
     }
 
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+      margin-top:28px;
+    }
+
+    .faq-item{
+      padding:24px;
+    }
+
+    .faq-item p{
+      color:#475569;
+      margin:0;
+      font-size:16px;
+    }
+
     .cta-band-clean{
       background:linear-gradient(135deg,#0f172a 0%,#13203a 100%);
       color:#fff;
@@ -716,13 +834,15 @@
         grid-template-columns:1fr;
       }
 
-      .cards-6{
+      .cards-6,
+      .trust-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
       .town-grid-main,
       .reviews-grid,
-      .nearby-grid{
+      .nearby-grid,
+      .faq-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
@@ -780,7 +900,9 @@
       .town-grid-main,
       .reviews-grid,
       .nearby-grid,
-      .footer-grid{
+      .footer-grid,
+      .trust-grid,
+      .faq-grid{
         grid-template-columns:1fr;
       }
 
@@ -823,7 +945,9 @@
       .map-panel,
       .cta-panel-clean,
       .nearby-areas,
-      .cta-band-clean{
+      .cta-band-clean,
+      .faq-item,
+      .trust-card{
         padding:22px;
       }
 
@@ -867,7 +991,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="index.html">
-        <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
         <span>
           {{ site.business_name }}
           <small>Carpet cleaning across {{ site.service_area }}</small>
@@ -914,7 +1038,7 @@
       <div>
         <span class="eyebrow">Professional local carpet cleaning</span>
         <h1>Professional Carpet Cleaning Across Worcester, Bromsgrove, Kidderminster and Redditch</h1>
-        <p>{{ site.business_name }} provides professional carpet and upholstery cleaning across Worcestershire for homes, rental properties and commercial spaces. From busy family carpets to sofas, stairs, hallways and offices, we deliver a proper deep clean with honest advice and a straightforward local service.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcestershire. We help homeowners, landlords, tenants and businesses get cleaner, fresher carpets and upholstery with honest advice, reliable service and strong results.</p>
 
         <div class="hero-tags">
           <span><i class="fa-solid fa-circle-check"></i> Carpet cleaning</span>
@@ -965,62 +1089,87 @@
   <section class="section-alt">
     <div class="container">
       <span class="kicker">Our Services</span>
-      <h2>Carpet Cleaning services across Worcester and the West Midlands</h2>
-      <p class="lead">{{ site.business_name }} offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment and advice.</p>
+      <h2>Carpet cleaning services across Worcester and the West Midlands</h2>
+      <p class="lead">{{ site.business_name }} offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment advice.</p>
 
       <div class="cards-6">
         <article class="card">
-          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Carpet cleaning by {{ site.business_name }}">
+          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Professional carpet cleaning in Worcester and Worcestershire">
           <div class="iconbox">
             <h3>Carpet Cleaning</h3>
-            <p>Deep carpet cleaning for homes, rentals and businesses, helping remove built up soil and improve the overall look and feel of your rooms.</p>
+            <p>Deep carpet cleaning for homes, rentals and businesses, helping remove built up soil, marks and everyday wear from carpet fibres.</p>
             <a href="pages/carpet-cleaning.html">Read more</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/upholstery-cleaning-image-119.jpg" alt="Upholstery cleaning by {{ site.business_name }}">
+          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/upholstery-cleaning-image-119.jpg" alt="Professional upholstery cleaning for sofas and fabric furniture">
           <div class="iconbox">
             <h3>Upholstery Cleaning</h3>
-            <p>Sofa and upholstery cleaning for tired fabric, everyday build up and general dullness, leaving furniture fresher and more presentable.</p>
+            <p>Sofa and upholstery cleaning for tired fabric, general build up and everyday use, helping furniture look cleaner and feel fresher.</p>
             <a href="pages/upholstery-cleaning.html">Read more</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Stain removal treatments">
+          <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/77f0c7f2-07ff-48fc-8678-e49799e99ddf.png" alt="Professional stain removal treatments for carpets and upholstery">
           <div class="iconbox">
             <h3>Stain Removal Treatments</h3>
-            <p>Targeted stain removal treatments for carpets and upholstery where a standard clean is not enough and more focused work is needed.</p>
+            <p>Targeted stain removal treatments for carpets and upholstery where a standard clean is not enough and more focused treatment is needed.</p>
             <a href="pages/stain-removal.html">Read more</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop" alt="Rug cleaning">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop" alt="Professional rug cleaning service">
           <div class="iconbox">
             <h3>Rug Cleaning</h3>
-            <p>Professional rug cleaning for everyday household rugs that need freshening, soil removal and a more presentable finish.</p>
+            <p>Professional rug cleaning for household rugs that need freshening, soil removal and a cleaner, more presentable finish.</p>
             <a href="pages/rug-cleaning.html">Read more</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop" alt="Commercial carpet cleaning">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop" alt="Commercial carpet cleaning for offices and business premises">
           <div class="iconbox">
             <h3>Commercial Cleaning</h3>
-            <p>Commercial carpet cleaning for offices, hotels, receptions and shared spaces that need to stay clean, smart and professional.</p>
+            <p>Commercial carpet cleaning for offices, receptions, hotels and shared spaces that need to stay clean, smart and professional.</p>
             <a href="pages/commercial.html">Read more</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Moth treatment advice">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop" alt="Moth treatment for carpets and rugs">
           <div class="iconbox">
             <h3>Moth Treatment</h3>
-            <p>Moth treatment for carpets and rugs where signs of damage or activity have started to appear and practical next steps are needed.</p>
+            <p>Moth treatment for carpets and rugs where signs of damage or activity are appearing and practical next steps are needed.</p>
             <a href="pages/moth-treatment.html">Read more</a>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <span class="kicker">Why choose us</span>
+      <h2>Trusted local carpet cleaning with straightforward advice</h2>
+      <p class="lead">{{ site.business_name }} focuses on practical results, clear communication and the right service for the job. Whether you need carpet cleaning in Worcester, upholstery cleaning in Bromsgrove or stain removal in Kidderminster or Redditch, the aim is always the same: cleaner, fresher results without the hard sell.</p>
+
+      <div class="trust-grid">
+        <article class="trust-card">
+          <h3>Suitable for homes and businesses</h3>
+          <p>We help homeowners, landlords, tenants, offices, shops and commercial premises keep carpets and upholstery looking cleaner and more presentable.</p>
+        </article>
+
+        <article class="trust-card">
+          <h3>Strong results on everyday problem areas</h3>
+          <p>Stairs, hallways, lounges, bedrooms, sofas, rugs and high traffic areas can all be treated with the right cleaning approach for the material and condition.</p>
+        </article>
+
+        <article class="trust-card">
+          <h3>Honest local service</h3>
+          <p>You get a straightforward quote, clear advice and a local service covering Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
         </article>
       </div>
     </div>
@@ -1036,25 +1185,25 @@
         <div class="town-grid-main">
           <a href="areas/worcester.html">
             <h3>Worcester</h3>
-            <p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p>
+            <p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
             <span>See services in Worcester →</span>
           </a>
 
           <a href="areas/bromsgrove.html">
             <h3>Bromsgrove</h3>
-            <p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p>
+            <p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
             <span>See services in Bromsgrove →</span>
           </a>
 
           <a href="areas/kidderminster.html">
             <h3>Kidderminster</h3>
-            <p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p>
+            <p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
             <span>See services in Kidderminster →</span>
           </a>
 
           <a href="areas/redditch.html">
             <h3>Redditch</h3>
-            <p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a more presentable finish.</p>
+            <p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
             <span>See services in Redditch →</span>
           </a>
         </div>
@@ -1116,6 +1265,36 @@
       <div class="actions" style="justify-content:center;margin-top:26px">
         <a class="btn primary" href="pages/reviews.html">Read more reviews</a>
         <a class="btn secondary" href="https://search.google.com/local/writereview?placeid=ChIJA0Frne3tcEgRNUE0ZtRO5wA" target="_blank" rel="noopener">Leave a review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <span class="kicker">Frequently asked questions</span>
+      <h2>Common questions about carpet cleaning</h2>
+      <p class="lead">These are some of the common questions people ask before booking carpet cleaning, upholstery cleaning or stain removal treatments.</p>
+
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h4>How long will carpets take to dry?</h4>
+          <p>Drying times depend on the carpet, room temperature and airflow, but many carpets are dry within a few hours.</p>
+        </article>
+
+        <article class="faq-item">
+          <h4>Do you clean sofas and upholstery too?</h4>
+          <p>Yes. Upholstery cleaning is available for sofas, chairs and other fabric furniture as well as carpets and rugs.</p>
+        </article>
+
+        <article class="faq-item">
+          <h4>Can you help with stains and smells?</h4>
+          <p>Yes. Stain removal treatments and odour treatment are available for many common household and commercial problems.</p>
+        </article>
+
+        <article class="faq-item">
+          <h4>Which areas do you cover?</h4>
+          <p>{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
+        </article>
       </div>
     </div>
   </section>
