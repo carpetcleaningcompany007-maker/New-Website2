@@ -1,5 +1,6 @@
 ---
 ---
+<!-- CONFIG NOTE: site settings come from _config.yml when built by Jekyll or GitHub Pages. If you open these HTML files directly from your computer, the {{ site.* }} values will not render. -->
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -25,7 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews | {{ site.business_name }}</title>
   <meta name="description" content="Read reviews for {{ site.business_name }}.">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/pages/reviews.html">
+  <link rel="canonical" href="https://carpetcleaningcompany007-maker.github.io/New-Website/pages/reviews.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Reviews | {{ site.business_name }}">
   <meta property="og:description" content="Read genuine customer reviews for {{ site.business_name }}.">
@@ -342,7 +343,7 @@
     <div class="container">
       <div class="links">
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="tel:{{ site.phone_link }}">07838 231389</a>
+        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a>
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
@@ -410,7 +411,7 @@
         <h1>Reviews for {{ site.business_name }}</h1>
         <p>Read genuine customer feedback from people who have used {{ site.business_name }} for carpet cleaning, upholstery cleaning and related services across Worcestershire and nearby areas.</p>
         <div class="actions">
-          <a class="btn primary" href="tel:{{ site.phone_link }}">Call now</a>
+          <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
           <a class="btn secondary" href="../index.html#quote">Get a Quote</a>
         </div>
       </div>
@@ -477,7 +478,7 @@
     <div class="container footer-grid">
       <div>
         <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px">
-        <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across Worcestershire and the West Midlands.</p>
+        <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across {{ site.service_area }}.</p>
       </div>
 
       <div>
@@ -495,7 +496,7 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:{{ site.phone_link }}">07838 231389</a><br>
+          <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
           <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
@@ -509,10 +510,10 @@
   <!-- 09. FLOATING BUTTONS -->
   <!-- ========================================= -->
   <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
+    <a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:{{ site.phone_link }}" aria-label="Call {{ site.business_name }}">
+    <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>

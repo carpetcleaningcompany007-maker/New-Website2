@@ -1,5 +1,6 @@
 ---
 ---
+<!-- CONFIG NOTE: site settings come from _config.yml when built by Jekyll or GitHub Pages. If you open these HTML files directly from your computer, the {{ site.* }} values will not render. -->
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -7,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Professional Carpet Cleaning Worcestershire | {{ site.business_name }}</title>
-  <meta name="description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
+  <meta name="description" content="Professional carpet cleaning in {{ site.service_area }} using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
   <meta name="theme-color" content="#0f172a">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Professional Carpet Cleaning Worcestershire | {{ site.business_name }}">
-  <meta property="og:description" content="Professional carpet cleaning in Worcestershire, Worcester and the West Midlands using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
+  <meta property="og:description" content="Professional carpet cleaning in {{ site.service_area }} using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1800&auto=format&fit=crop">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -734,7 +735,7 @@
     <div class="container">
       <div class="links">
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="tel:{{ site.phone_link }}">07838 231389</a>
+        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a>
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
@@ -749,7 +750,7 @@
         <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
         <span>
           {{ site.business_name }}
-          <small>Professional carpet cleaning across Worcestershire and the West Midlands</small>
+          <small>Professional carpet cleaning across {{ site.service_area }}</small>
         </span>
       </a>
 
@@ -792,10 +793,10 @@
     <div class="container">
       <div class="content-wrap">
         <div class="brand-title">{{ site.business_name }}</div>
-        <div class="hero-subtitle">Professional carpet cleaning across Worcestershire and the West Midlands</div>
+        <div class="hero-subtitle">Professional carpet cleaning across {{ site.service_area }}</div>
 
         <span class="eyebrow">Professional carpet cleaning in Worcestershire</span>
-        <h1>Truck mounted carpet cleaning for homes across Worcestershire and the West Midlands</h1>
+        <h1>Truck mounted carpet cleaning for homes across {{ site.service_area }}</h1>
 
         <p>{{ site.business_name }} provides professional carpet cleaning using a powerful truck mounted system, targeted pre treatment, CRB agitation and high temperature hot water extraction. The result is a deeper, more thorough clean that leaves carpets looking fresher, cleaner and more presentable.</p>
 
@@ -819,7 +820,7 @@
       <div class="content-wrap">
         <h2>Professional carpet cleaning for homes across Worcestershire</h2>
 
-        <p>{{ site.business_name }} provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across Worcestershire and the West Midlands.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning for homes, rental properties, stairs, bedrooms, lounges, hallways and landings across {{ site.service_area }}.</p>
 
         <p>Using a truck mounted system and a proper step by step cleaning process, carpets are cleaned more thoroughly than with basic equipment. Dirt is broken down properly, lifted from the fibres and extracted at high temperature, improving both the appearance and freshness of the carpet.</p>
 
@@ -880,7 +881,7 @@
       <div class="section-head content-wrap">
         <h2>Why choose {{ site.business_name }}</h2>
         <h3>Professional carpet cleaning in Worcestershire with a stronger setup</h3>
-        <p>If you are looking for professional carpet cleaning in Worcestershire, Worcester or the West Midlands, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
+        <p>If you are looking for professional carpet cleaning in {{ site.service_area }}, you want more than a basic clean. You want proper equipment, a clear process and a company that takes the work seriously.</p>
       </div>
 
       <div class="trust-band">
@@ -896,7 +897,7 @@
 
         <div class="trust-card">
           <h3>Reliable local service</h3>
-          <p>{{ site.business_name }} provides straightforward carpet cleaning across Worcestershire and the West Midlands with clear communication and a fast route to a quote.</p>
+          <p>{{ site.business_name }} provides straightforward carpet cleaning across {{ site.service_area }} with clear communication and a fast route to a quote.</p>
         </div>
       </div>
     </div>
@@ -906,7 +907,7 @@
     <div class="container">
       <div class="content-wrap">
         <h2>Areas we cover</h2>
-        <h3>Carpet cleaning across Worcestershire and the West Midlands</h3>
+        <h3>Carpet cleaning across {{ site.service_area }}</h3>
 
         <p>If you are searching by town, the quickest way to find the right page is to go straight to your local area. These pages show where the service is available and help you move directly to the right information.</p>
 
@@ -931,9 +932,9 @@
   <section>
     <div class="container">
       <div class="content-wrap">
-        <h2>Professional carpet cleaning in Worcestershire, Worcester and the West Midlands</h2>
+        <h2>Professional carpet cleaning in {{ site.service_area }}</h2>
 
-        <p>{{ site.business_name }} provides professional carpet cleaning across Worcestershire and selected areas of the West Midlands using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
+        <p>{{ site.business_name }} provides professional carpet cleaning across {{ site.service_area }} using a truck mounted system, targeted pre spray, CRB agitation and high temperature hot water extraction.</p>
 
         <p>This approach delivers a more thorough clean and helps ensure carpets are properly cleaned rather than simply freshened up.</p>
 
@@ -973,11 +974,11 @@
         <div class="content-wrap">
           <h2>Need help with carpet cleaning?</h2>
           <h3 style="color:#fff;margin-bottom:12px;">Call, email or send a WhatsApp message for a fast local quote</h3>
-          <p>Straightforward advice and a quick quote for carpet cleaning across Worcestershire and the West Midlands</p>
+          <p>Straightforward advice and a quick quote for carpet cleaning across {{ site.service_area }}</p>
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="tel:{{ site.phone_link }}"><i class="fa-solid fa-phone"></i> Call now</a>
+          <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> Call now</a>
           <a class="btn secondary" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> Email</a>
         </div>
       </div>
@@ -988,7 +989,7 @@
     <div class="container footer-grid">
       <div>
         <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
-        <div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</div>
+        <div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across {{ site.service_area }}</div>
       </div>
 
       <div>
@@ -1006,7 +1007,7 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:{{ site.phone_link }}">07838 231389</a><br>
+          <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
           <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
@@ -1018,10 +1019,10 @@
   </footer>
 
   <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
+    <a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:{{ site.phone_link }}" aria-label="Call {{ site.business_name }}">
+    <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
