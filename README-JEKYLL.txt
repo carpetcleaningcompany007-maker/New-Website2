@@ -16,3 +16,16 @@ FULL TOWN SYSTEM
 - Town pages in /areas/ are now tiny front matter files using _layouts/town.html
 - pages/areas.html and the homepage now pull town links from towns.yml
 - Add a new town by adding it to _data/towns.yml and creating a matching file in /areas/ with the same slug
+
+
+AREA COVERAGE SYSTEM
+- Edit _data/towns.yml to add or remove towns.
+- Add a nearby list under a town to show nearby areas automatically on that town page.
+- Town pages now include breadcrumb schema, service schema, and nearby area coverage sections.
+- Sitemap now includes service pages and town pages.
+
+
+SERVICE + TOWN SYSTEM
+- Edit _data/services.yml to change or add services.
+- Edit _data/towns.yml to change or add towns and nearby areas.
+- Service plus town pages live under /locations/TOWN-SLUG/SERVICE-SLUG.html
