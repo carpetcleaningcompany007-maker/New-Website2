@@ -22,14 +22,14 @@ layout: default
         <a class="btn ghost" href="{{ page.areas_path | default: '../../areas/' }}{{ town_obj.slug }}.html">Back to {{ town_obj.name }}</a>
       </div>
     </div>
-    <aside class="hero-card">
+    <aside class="formcard">
       <span class="section-kicker">Need a quick answer</span>
-      <h3>Speak to {{ site.contact_name | default: site.business_name }}</h3>
+      <h2>Speak to {{ site.contact_name }}</h2>
       <p>Call or WhatsApp for advice about {{ service_name | downcase }} in {{ town_obj.name }}.</p>
       <div class="contact-mini">
         <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i>{{ site.phone }}</a>
         <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name | default: site.business_name }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name }}</a>
       </div>
     </aside>
   </div>
@@ -37,13 +37,13 @@ layout: default
 
 <section class="section-alt">
   <div class="container">
-    <span class="section-kicker">About this local page</span>
+    <span class="section-kicker">About this local service</span>
     <h2>{{ service_name }} for {{ town_obj.name }}</h2>
     <p class="lead">{{ page.intro_paragraph_1 | default: service_obj.desc | replace: '{town}', town_obj.name }}</p>
     <div class="cards cards-3" style="margin-top:24px">
-      <article class="trust-card"><div class="pad"><h3>Direct local page</h3><p>Built around {{ town_obj.name }} and this exact service.</p></div></article>
-      <article class="trust-card"><div class="pad"><h3>Cleaner layout</h3><p>The sections follow the same look and structure as the homepage.</p></div></article>
-      <article class="trust-card"><div class="pad"><h3>Fast contact route</h3><p>Call, email or WhatsApp straight from the page.</p></div></article>
+      <article class="trust-card"><div class="pad"><h3>Local page</h3><p>Built specifically around {{ town_obj.name }} and this exact service.</p></div></article>
+      <article class="trust-card"><div class="pad"><h3>Consistent layout</h3><p>This page uses the same hero, cards, map section and call to action style as the homepage.</p></div></article>
+      <article class="trust-card"><div class="pad"><h3>Fast contact route</h3><p>Call, email or WhatsApp straight from the page for a quick local reply.</p></div></article>
     </div>
   </div>
 </section>
@@ -51,12 +51,12 @@ layout: default
 <section>
   <div class="container">
     <span class="section-kicker">Our process</span>
-    <h2>A cleaner local route to {{ service_name | downcase }}</h2>
+    <h2>A practical route to {{ service_name | downcase }}</h2>
     <div class="process-row" style="margin-top:24px">
       <article class="process-card"><div class="process-number">1</div><h3>Check the job</h3><p>{{ page.intro_paragraph_1 | default: service_obj.desc | replace: '{town}', town_obj.name }}</p></article>
-      <article class="process-card"><div class="process-number">2</div><h3>Match the right service</h3><p>{{ page.intro_paragraph_2 | default: 'Use this page to go straight to the exact service you need in the exact town you searched for.' }}</p></article>
+      <article class="process-card"><div class="process-number">2</div><h3>Match the right service</h3><p>{{ service_name }} is handled with the right approach for the material, the level of soiling and the type of property.</p></article>
       <article class="process-card"><div class="process-number">3</div><h3>Cover nearby areas</h3><p>{{ town_obj.nearby | slice: 0, 3 | join: ', ' }} and nearby places can often be covered too.</p></article>
-      <article class="process-card"><div class="process-number">4</div><h3>Book quickly</h3><p>{{ page.intro_paragraph_3 | default: 'Get in touch for a quick local reply and a straightforward route to the right service.' }}</p></article>
+      <article class="process-card"><div class="process-number">4</div><h3>Book quickly</h3><p>Get in touch for a quick local reply and a straightforward route to the right service.</p></article>
     </div>
   </div>
 </section>

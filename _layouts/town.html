@@ -10,8 +10,8 @@ layout: default
       <p>{{ town_obj.short_intro }}</p>
       <div class="hero-points">
         <span><i class="fa-solid fa-circle-check"></i>Carpet cleaning</span>
-        <span><i class="fa-solid fa-circle-check"></i>Upholstery and rugs</span>
-        <span><i class="fa-solid fa-circle-check"></i>Commercial work</span>
+        <span><i class="fa-solid fa-circle-check"></i>Upholstery cleaning</span>
+        <span><i class="fa-solid fa-circle-check"></i>Stain removal</span>
         <span><i class="fa-solid fa-circle-check"></i>Fast local reply</span>
       </div>
       <div class="actions">
@@ -20,14 +20,14 @@ layout: default
         <a class="btn ghost" href="{{ page.pages_path | default: '../pages/' }}reviews.html">Read reviews</a>
       </div>
     </div>
-    <aside class="hero-card">
+    <aside class="formcard">
       <span class="section-kicker">Quick local contact</span>
-      <h3>Speak to {{ site.contact_name | default: site.business_name }}</h3>
-      <p>Fast local reply for work in {{ town_obj.name }}, including homes, rental properties and selected commercial sites.</p>
+      <h2>Need cleaning in {{ town_obj.name }}?</h2>
+      <p>Call, email or WhatsApp for a fast reply about homes, rental properties and selected commercial sites in {{ town_obj.name }}.</p>
       <div class="contact-mini">
         <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i>{{ site.phone }}</a>
         <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name | default: site.business_name }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name }}</a>
       </div>
     </aside>
   </div>
@@ -37,7 +37,7 @@ layout: default
   <div class="container">
     <span class="section-kicker">Services in {{ town_obj.name }}</span>
     <h2>Choose the right service</h2>
-    <p class="lead">Use the service cards below to jump straight into the page you need for {{ town_obj.name }}.</p>
+    <p class="lead">Each local page below follows the same hero, card layout and call to action structure as the homepage.</p>
     <div class="cards cards-3" style="margin-top:24px">
       {% for s in site.data.services %}
       <article class="card">
@@ -54,13 +54,13 @@ layout: default
 
 <section>
   <div class="container">
-    <span class="section-kicker">Why people use us</span>
-    <h2>Everything here follows the home page style</h2>
+    <span class="section-kicker">Why choose us</span>
+    <h2>Local pages with a cleaner structure</h2>
     <div class="process-row" style="margin-top:24px">
-      <article class="process-card"><div class="process-number">1</div><h3>Clear local page</h3><p>A simple page for {{ town_obj.name }} that leads directly into the right service.</p></article>
-      <article class="process-card"><div class="process-number">2</div><h3>Cleaner layout</h3><p>The sections now follow the same structure and spacing as the homepage.</p></article>
-      <article class="process-card"><div class="process-number">3</div><h3>Useful nearby coverage</h3><p>Nearby areas are shown clearly without making the page feel cluttered.</p></article>
-      <article class="process-card"><div class="process-number">4</div><h3>Fast route to contact</h3><p>Call, email or WhatsApp straight from the page.</p></article>
+      <article class="process-card"><div class="process-number">1</div><h3>Direct service links</h3><p>Jump straight from {{ town_obj.name }} into the exact service page you need.</p></article>
+      <article class="process-card"><div class="process-number">2</div><h3>Consistent design</h3><p>The local pages now follow the same rhythm as the homepage instead of feeling like a different site.</p></article>
+      <article class="process-card"><div class="process-number">3</div><h3>Nearby coverage</h3><p>Useful nearby areas are shown clearly without making the page feel cluttered.</p></article>
+      <article class="process-card"><div class="process-number">4</div><h3>Fast contact route</h3><p>Call, email or WhatsApp straight from the page for a quick local reply.</p></article>
     </div>
   </div>
 </section>
@@ -68,7 +68,7 @@ layout: default
 <section class="section-soft">
   <div class="container local-grid">
     <div class="map-panel">
-      <span class="section-kicker">Local coverage</span>
+      <span class="section-kicker">Nearby areas</span>
       <h2>Coverage around {{ town_obj.name }}</h2>
       <p class="lead">{{ site.business_name }} covers {{ town_obj.name }} and nearby areas across {{ town_obj.region }}.</p>
       <div class="pill-links" style="margin-top:20px">{% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}</div>

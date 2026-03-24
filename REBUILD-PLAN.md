@@ -1,35 +1,17 @@
-# JW Carpet Care rebuild plan
+# JW Carpet Care homepage style rebuild plan
 
-## What has been changed in this rebuild
+## What was changed in this pass
 
-1. The site is now driven primarily through Jekyll layouts and shared includes.
-2. Service pages now use one shared `service` layout.
-3. Town pages use one shared `town` layout.
-4. Service plus town pages use one shared `service-town` layout.
-5. Missing service plus town pages for rug cleaning and commercial cleaning have been generated for every town.
-6. The design system has been tightened so pages use the same hero, cards, process blocks, map panels and CTA bands.
-7. The awkward double image sections were removed.
-8. Self aware SEO wording was stripped back.
+1. Rebuilt the shared Jekyll templates so service pages, town pages and service plus town pages all follow the homepage structure.
+2. Removed the odd explanatory wording that made pages read like draft notes instead of real service pages.
+3. Replaced the weak process sections with the same card based rhythm used on the homepage.
+4. Kept the shared map and call to action style across all main page types.
+5. Left the site fully Jekyll driven so future edits can be done once inside the layouts instead of page by page.
 
-## Recommended next order after this zip
+## Best order for the next pass
 
-1. Build and preview in GitHub Pages or local Jekyll.
-2. Check the main pages first:
-   - homepage
-   - carpet cleaning
-   - commercial
-   - Worcester town page
-   - Worcester carpet cleaning page
-3. Replace any stock photo URLs with your preferred real photos.
-4. Add the real Formspree endpoint.
-5. Add real reviews and gallery images.
-6. Then tighten any service specific wording further.
-
-## Key files to focus on next time
-
-- `_layouts/service.html`
-- `_layouts/town.html`
-- `_layouts/service-town.html`
-- `assets/style.css`
-- `_data/services.yml`
-- `_data/towns.yml`
+1. Visual click through in GitHub Pages
+2. Tighten wording on individual service pages
+3. Replace any remaining generic stock photos with better brand matched images
+4. Add proof and review blocks to each service page if wanted
+5. Add stronger local proof to the town pages

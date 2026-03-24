@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign service_name = page.service_name | default: page.eyebrow | default: 'Service' %}
+{% assign fallback_local = page.areas_path | default: '../areas/' | append: 'worcester.html' %}
 <section class="hero" style="--hero-image:url('{{ page.hero_image }}')">
   <div class="container hero-grid">
     <div>
@@ -11,30 +13,30 @@ layout: default
         {% for point in page.hero_points %}<span><i class="fa-solid fa-circle-check"></i>{{ point }}</span>{% endfor %}
       </div>
       <div class="actions">
-        <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
+        <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Request a quote</a>
         <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-        <a class="btn ghost" href="{{ page.areas_path | default: '../areas/' }}worcester.html">See local pages</a>
+        <a class="btn ghost" href="{{ fallback_local }}">See local pages</a>
       </div>
     </div>
-    <aside class="hero-card">
+    <aside class="formcard">
       <span class="section-kicker">Quick contact</span>
-      <h3>{{ page.side_title }}</h3>
+      <h2>{{ page.side_title }}</h2>
       <p>{{ page.side_text }}</p>
       <div class="contact-mini">
         <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i>{{ site.phone }}</a>
         <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
         <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name }}</a>
       </div>
-      <p class="form-note">Fast local reply for homes, rentals and selected commercial work.</p>
+      <p class="form-note">Fast reply for homes, rentals and selected commercial work.</p>
     </aside>
   </div>
 </section>
 
 <section class="section-alt">
   <div class="container">
-    <span class="section-kicker">About this service</span>
+    <span class="section-kicker">What this service covers</span>
     <h2>{{ page.intro_heading }}</h2>
-    <p class="lead">{{ page.intro_paragraphs[0] }}</p>
+    <p class="lead">{{ page.hero_text }}</p>
     <div class="cards cards-3" style="margin-top:24px">
       {% for item in page.benefits %}
       <article class="trust-card">
@@ -70,7 +72,7 @@ layout: default
     <div class="map-panel">
       <span class="section-kicker">Why people book</span>
       <h2>{{ page.benefits_heading }}</h2>
-      {% for paragraph in page.intro_paragraphs offset:1 %}<p{% if forloop.first %} class="lead"{% endif %}>{{ paragraph }}</p>{% endfor %}
+      <p class="lead">{{ page.cta_text }}</p>
       <div class="service-links" style="margin-top:20px">
         <a href="{{ page.pages_path | default: '../pages/' }}reviews.html">Read reviews</a>
         <a href="{{ page.pages_path | default: '../pages/' }}gallery.html">See the gallery</a>
@@ -87,11 +89,11 @@ layout: default
   <div class="container">
     <span class="section-kicker">Areas we cover</span>
     <h2>{{ page.local_heading }}</h2>
-    <p class="lead">{{ page.map_text }}</p>
+    <p class="lead">Choose your town below and go straight into the local version of this service.</p>
     <div class="service-chip-grid" style="margin-top:24px">
       {% for town in site.data.towns limit:8 %}
       <a href="{{ page.locations_path | default: '../locations/' }}{{ town.slug }}/{{ page.service_slug }}.html">
-        <strong>{{ service_name | default: page.eyebrow }} in {{ town.name }}</strong>
+        <strong>{{ page.eyebrow }} in {{ town.name }}</strong>
         <span>{{ site.business_name }} offers {{ page.eyebrow | downcase }} in {{ town.name }} and nearby areas.</span>
       </a>
       {% endfor %}
