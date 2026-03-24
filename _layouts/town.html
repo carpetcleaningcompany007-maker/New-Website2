@@ -1,150 +1,92 @@
 ---
 layout: default
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Carpet Cleaning in {{ page.town }}",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "{{ site.business_name }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
-    "url": "{{ site.url | append: site.baseurl }}"
-  },
-  "areaServed": {"@type": "City", "name": "{{ page.town }}"},
-  "serviceType": "Carpet Cleaning"
-}
-</script>
 {% assign town_obj = site.data.towns | where: 'slug', page.slug | first %}
-<section class="hero local-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.70)),url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
-  <div class="container hero-grid-open">
+<section class="hero local-hero" style="--hero-image:url('{{ town_obj.hero_image | default: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop' }}')">
+  <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Local service in {{ page.town }}</span>
-      <h1>Carpet cleaning and upholstery cleaning in {{ page.town }}</h1>
-      <p>{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal, moth treatment and commercial carpet cleaning in {{ page.town }} and nearby areas.</p>
-      <p class="hero-secondary">If you are looking for a reliable local service that actually delivers proper results, this page gives you the quickest route to the right service or a fast quote.</p>
-      <div class="hero-points hero-points-open">
-        <span>Homes and rentals</span>
-        <span>Stains and odours</span>
-        <span>Rugs and upholstery</span>
-        <span>Straightforward local booking</span>
+      <span class="eyebrow">{{ town_obj.name }} carpet cleaning</span>
+      <h1>Carpet cleaning in {{ town_obj.name }}</h1>
+      <p>Professional carpet cleaning, upholstery cleaning, stain removal, rug cleaning, moth treatment advice and commercial carpet cleaning in {{ town_obj.name }} and nearby areas.</p>
+      <div class="hero-points">
+        <span><i class="fa-solid fa-circle-check"></i>Homes and rentals</span>
+        <span><i class="fa-solid fa-circle-check"></i>Upholstery and rugs</span>
+        <span><i class="fa-solid fa-circle-check"></i>Commercial work</span>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
+        <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <span class="section-kicker">Quick local contact</span>
+      <h3>Speak to {{ site.contact_name | default: site.business_name }}</h3>
+      <p>Fast local reply for work in {{ town_obj.name }}, including homes, rental properties and selected commercial sites.</p>
+      <div class="contact-mini">
+        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i>{{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name | default: site.business_name }}</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="container local-grid">
+    <div class="panel">
+      <span class="section-kicker">Local service page</span>
+      <h2>Cleaning services in {{ town_obj.name }}</h2>
+      <p>{{ site.business_name }} covers {{ town_obj.name }} with practical cleaning services for carpets, upholstery, rugs and commercial areas. The aim is simple: make the page useful for local customers and give a clear route to the service they actually need.</p>
+      <p>Use the service cards below if you already know what you need. If not, call or message and explain what needs cleaning. That is usually the fastest route.</p>
+    </div>
+    <div class="cards">
+      <article class="trust-card"><div class="pad"><h3>Useful local page</h3><p>Built around {{ town_obj.name }} with direct service links instead of a generic area page.</p></div></article>
+      <article class="trust-card"><div class="pad"><h3>Nearby areas included</h3><p>Supports surrounding places without making the page feel bloated.</p></div></article>
+      <article class="trust-card"><div class="pad"><h3>Fast quote route</h3><p>Call, email or WhatsApp straight from the page.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <span class="section-kicker">Services in {{ town_obj.name }}</span>
+    <h2>Choose the right service</h2>
+    <div class="service-chip-grid" style="margin-top:22px">
+      {% for s in site.data.services %}
+      <a href="{{ page.locations_path }}{{ page.slug }}/{{ s.slug }}.html"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>{{ s.desc | replace: '{town}', town_obj.name }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container local-grid">
+    <div class="map-panel">
+      <span class="section-kicker">Map</span>
+      <h2>Coverage around {{ town_obj.name }}</h2>
+      <p>{{ site.business_name }} covers {{ town_obj.name }} and the surrounding area. The service pages above take you into the exact page for the service you need.</p>
+      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy" title="Map showing {{ town_obj.name }}"></iframe></div>
+    </div>
+    <div class="cta-panel">
+      <span class="section-kicker">Nearby areas</span>
+      <h2>Also covering nearby places</h2>
+      <div class="pill-links">{% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}</div>
+      <p style="margin-top:18px">If you are just outside {{ town_obj.name }}, get in touch anyway. Many jobs come from nearby towns and villages.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <span class="section-kicker" style="color:#93c5fd">Ready to book</span>
+        <h2>Need cleaning in {{ town_obj.name }}?</h2>
+        <p class="lead">Call, email or WhatsApp for a fast local reply and a straightforward quote.</p>
       </div>
       <div class="actions">
         <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-        <a class="btn secondary" href="{{ page.quote_path }}">Get a quote</a>
-      </div>
-    </div>
-
-    <aside class="hero-side-card">
-      <span class="section-kicker">Quick contact</span>
-      <h3>Speak to James</h3>
-      <p>Call or WhatsApp for a quick local reply about carpet cleaning in {{ page.town }}.</p>
-      <div class="contact-mini compact">
-        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp James</a>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<section class="usp-band">
-  <div class="container usp-band-grid">
-    <div><strong>Fast local contact</strong><span>Call, email or WhatsApp without digging through the site.</span></div>
-    <div><strong>Homes and rentals</strong><span>Useful for lounges, bedrooms, stairs, hallways and tenancy freshen ups.</span></div>
-    <div><strong>Stains and odours</strong><span>For marks, general dullness and built up smells needing more than a quick clean.</span></div>
-  </div>
-</section>
-
-<section class="local-story section-white">
-  <div class="container story-grid">
-    <div class="story-main">
-      <span class="section-kicker">Local service in {{ page.town }}</span>
-      <h2>Professional carpet cleaning in {{ page.town }}</h2>
-      <div class="story-copy">
-        <p>{{ site.business_name }} provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and commercial carpet cleaning in {{ page.town }} and nearby areas.</p>
-        <p>If you are looking for carpet cleaning in {{ page.town }}, this page gives you the main local information in one place so you can quickly move to the right service or get in touch for a quote.</p>
-        <p>From residential carpet cleaning and sofa cleaning through to stain removal, rugs and selected commercial work, this page supports the wider service structure while still giving {{ page.town }} its own local page.</p>
-      </div>
-    </div>
-
-    <aside class="story-side soft-panel">
-      <span class="section-kicker">Nearby towns</span>
-      <h3>More towns nearby</h3>
-      <div class="pill-links">
-        {% for t in site.data.towns limit:12 %}{% unless t.slug == page.slug %}<a href="{{ page.areas_path }}{{ t.slug }}.html">{{ t.name }}</a>{% endunless %}{% endfor %}
-      </div>
-    </aside>
-  </div>
-</section>
-
-<section class="section-alt flow-section">
-  <div class="container">
-    <div class="section-heading-wrap">
-      <span class="section-kicker">Why locals book us</span>
-      <h2>Professional cleaning without the hard sell</h2>
-    </div>
-    <div class="benefit-columns open-benefits">
-      <div>
-        <h3>Homes and rentals</h3>
-        <p>Useful for lounges, bedrooms, stairs, landings, hallways and end of tenancy freshen ups.</p>
-      </div>
-      <div>
-        <h3>Stains and odours</h3>
-        <p>Ideal when marks, general dullness or built up smells need more than a basic quick clean.</p>
-      </div>
-      <div>
-        <h3>Straightforward contact</h3>
-        <p>Quick route to call, email or WhatsApp without digging around the site.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% if town_obj and town_obj.nearby %}
-<section class="section-white flow-section">
-  <div class="container narrow-wrap">
-    <span class="section-kicker">Areas around {{ page.town }}</span>
-    <h2>Nearby areas we also cover</h2>
-    <p class="lead">{{ site.business_name }} also covers nearby areas around {{ page.town }} including {% for area in town_obj.nearby %}{{ area }}{% if forloop.last == false and forloop.length > 2 %}, {% elsif forloop.last == false %} and {% endif %}{% endfor %}.</p>
-    <div class="pill-links plain-pills local-pills">
-      {% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<section class="section-white flow-section pt-tight">
-  <div class="container narrow-wrap">
-    <span class="section-kicker">Service pages for {{ page.town }}</span>
-    <h2>Choose the exact service you need</h2>
-    <div class="service-chip-grid cards">
-      <a href="{{ page.locations_path }}{{ page.slug }}/carpet-cleaning.html"><strong>Carpet Cleaning in {{ page.town }}</strong><span>Truck mounted carpet cleaning for homes and rentals in {{ page.town }}.</span></a>
-      <a href="{{ page.locations_path }}{{ page.slug }}/upholstery-cleaning.html"><strong>Upholstery Cleaning in {{ page.town }}</strong><span>Sofas, chairs and fabric suites cleaned properly in {{ page.town }}.</span></a>
-      <a href="{{ page.locations_path }}{{ page.slug }}/stain-removal.html"><strong>Stain Removal in {{ page.town }}</strong><span>Targeted treatment where a standard clean is not enough.</span></a>
-      <a href="{{ page.locations_path }}{{ page.slug }}/moth-treatment.html"><strong>Moth Treatment in {{ page.town }}</strong><span>Practical advice and treatment support for vulnerable fibres.</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt local-map-section">
-  <div class="container split split-clean">
-    <div class="map-panel plain-panel">
-      <span class="section-kicker">Map for {{ page.town }}</span>
-      <h2>Service coverage around {{ page.town }}</h2>
-      <p>Use the town page as the local entry point, then move into the exact service you need. This map is tied to {{ page.town }} so each location page keeps its own local relevance.</p>
-      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ page.town | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
-      <p class="map-note">This helps local searches for carpet cleaning in {{ page.town }}, upholstery cleaning in {{ page.town }} and related services nearby.</p>
-    </div>
-    <div class="cta-panel plain-panel right-cta accent-block">
-      <span class="section-kicker">Next step</span>
-      <h2>Book local cleaning in {{ page.town }}</h2>
-      <p>If you need carpet cleaning in {{ page.town }}, or you are comparing upholstery cleaning, stain removal, rug cleaning or commercial carpet cleaning in the area, get in touch and explain what needs doing.</p>
-      <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
-        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn secondary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
       </div>
     </div>
   </div>
