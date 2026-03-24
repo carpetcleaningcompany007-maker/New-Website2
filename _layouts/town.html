@@ -11,13 +11,12 @@ layout: default
     "name": "{{ site.business_name }}",
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
-    "url": "{{ site.website | default: site.url }}"
+    "url": "{{ site.url | append: site.baseurl }}"
   },
   "areaServed": {"@type": "City", "name": "{{ page.town }}"},
   "serviceType": "Carpet Cleaning"
 }
 </script>
-
 {% assign town_obj = site.data.towns | where: 'slug', page.slug | first %}
 <section class="hero local-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.70)),url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
   <div class="container hero-grid-open">
@@ -119,15 +118,13 @@ layout: default
 
 <section class="section-white flow-section pt-tight">
   <div class="container narrow-wrap">
-    <span class="section-kicker">Related services</span>
-    <h2>Common services booked in {{ page.town }}</h2>
-    <div class="service-chip-grid">
-      <a href="{{ page.pages_path }}carpet-cleaning.html">Carpet Cleaning</a>
-      <a href="{{ page.pages_path }}upholstery-cleaning.html">Upholstery Cleaning</a>
-      <a href="{{ page.pages_path }}stain-removal.html">Stain Removal</a>
-      <a href="{{ page.pages_path }}rug-cleaning.html">Rug Cleaning</a>
-      <a href="{{ page.pages_path }}commercial.html">Commercial</a>
-      <a href="{{ page.pages_path }}moth-treatment.html">Moth Treatment</a>
+    <span class="section-kicker">Service pages for {{ page.town }}</span>
+    <h2>Choose the exact service you need</h2>
+    <div class="service-chip-grid cards">
+      <a href="{{ page.locations_path }}{{ page.slug }}/carpet-cleaning.html"><strong>Carpet Cleaning in {{ page.town }}</strong><span>Truck mounted carpet cleaning for homes and rentals in {{ page.town }}.</span></a>
+      <a href="{{ page.locations_path }}{{ page.slug }}/upholstery-cleaning.html"><strong>Upholstery Cleaning in {{ page.town }}</strong><span>Sofas, chairs and fabric suites cleaned properly in {{ page.town }}.</span></a>
+      <a href="{{ page.locations_path }}{{ page.slug }}/stain-removal.html"><strong>Stain Removal in {{ page.town }}</strong><span>Targeted treatment where a standard clean is not enough.</span></a>
+      <a href="{{ page.locations_path }}{{ page.slug }}/moth-treatment.html"><strong>Moth Treatment in {{ page.town }}</strong><span>Practical advice and treatment support for vulnerable fibres.</span></a>
     </div>
   </div>
 </section>
@@ -139,6 +136,7 @@ layout: default
       <h2>Service coverage around {{ page.town }}</h2>
       <p>Use the town page as the local entry point, then move into the exact service you need. This map is tied to {{ page.town }} so each location page keeps its own local relevance.</p>
       <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ page.town | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
+      <p class="map-note">This helps local searches for carpet cleaning in {{ page.town }}, upholstery cleaning in {{ page.town }} and related services nearby.</p>
     </div>
     <div class="cta-panel plain-panel right-cta accent-block">
       <span class="section-kicker">Next step</span>

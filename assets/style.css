@@ -172,3 +172,16 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
   .open-benefits h3{font-size:24px}
   .accent-block{padding:22px}
 }
+
+
+/* final polish fixes */
+.hero h1,.hero h2,.hero h3,.hero .brand-title,.hero .hero-subtitle,.local-hero h1,.local-hero h2,.local-hero h3{color:#fff !important;}
+.service-hero h1,.service-hero h2,.service-hero h3{color:#fff !important;}
+.hero-grid-open .btn.secondary{box-shadow:0 12px 28px rgba(255,255,255,.14)}
+.service-chip-grid.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.service-chip-grid.cards a{display:block;padding:20px 22px;border-radius:22px;background:linear-gradient(180deg,#fff 0%,#f8fbff 100%);border:1px solid var(--line);box-shadow:0 10px 30px rgba(15,23,42,.04);color:var(--text)}
+.service-chip-grid.cards a strong{display:block;font-size:20px;line-height:1.08;margin-bottom:8px;color:var(--text)}
+.service-chip-grid.cards a span{display:block;font-size:15px;line-height:1.65;color:var(--muted)}
+.soft-panel .section-kicker{margin-bottom:10px}
+.map-note{font-size:16px;color:var(--muted);margin-top:14px}
+@media (max-width:760px){.service-chip-grid.cards{grid-template-columns:1fr}}
