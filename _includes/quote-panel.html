@@ -1,0 +1,27 @@
+<section class="quote-section">
+  <div class="container narrow-wrap">
+    <div class="quote-panel">
+      <span class="section-kicker">Get a quote</span>
+      <h2>{{ include.heading | default: 'Tell us what needs cleaning' }}</h2>
+      <p>{{ include.text | default: 'Fill this in and your email app will open with the enquiry ready to send.' }}</p>
+      <form class="quote-grid" data-mailto-form="true" data-service="{{ include.service | default: page.title | default: 'Cleaning' }}" data-area="{{ include.area | default: page.town | default: town_obj.name }}" data-status="{{ include.status_id | default: 'quoteStatus' }}">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="text" name="area" placeholder="Town or area" value="{{ include.area | default: page.town | default: town_obj.name }}">
+        <select name="service" class="full">
+          <option>{{ include.service | default: page.title | default: 'Cleaning enquiry' }}</option>
+          <option>Carpet Cleaning</option>
+          <option>Upholstery Cleaning</option>
+          <option>Rug Cleaning</option>
+          <option>Stain Removal</option>
+          <option>Moth Treatment</option>
+          <option>Commercial Cleaning</option>
+        </select>
+        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary full" type="submit">Send enquiry</button>
+      </form>
+      <div id="{{ include.status_id | default: 'quoteStatus' }}" class="form-status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>

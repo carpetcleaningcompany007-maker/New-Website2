@@ -1,0 +1,11 @@
+---
+layout: default
+home_path: ../index.html
+pages_path: ../pages/
+areas_path: ../areas/
+quote_path: ../index.html#quote
+seo_title: Areas We Cover | {{ site.business_name }}
+description: Browse the areas covered by {{ site.business_name }} across {{ site.service_area }}.
+---
+<section class="hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.6)),url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat"><div class="container"><div><span class="eyebrow">Areas We Cover</span><h1>Local carpet cleaning pages across {{ site.service_area }}</h1><p>Browse all current town pages below. Each town page can now show nearby supporting areas as well, giving each location page a stronger local coverage signal without creating loads of thin pages.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a><a class="btn secondary" href="../index.html#quote">Get a quote</a></div></div><aside class="formcard"><h2>Coverage overview</h2><p>{{ site.business_name }} currently has {{ site.data.towns | size }} location pages in the reusable town system.</p><div class="contact-mini"><a href="mailto:{{ site.email }}">{{ site.email }}</a><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp {{ site.contact_name | default: site.business_name }}</a></div></aside></div></section>
+<section><div class="container"><span class="kicker">All area pages</span><h2>Choose your town</h2><p class="lead">Each town page links through to the main services and uses a town specific map query so the page stays locally relevant.</p><div class="town-grid" style="margin-top:24px">{% for t in site.data.towns %}<a href="../areas/{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}</div></div></section>
