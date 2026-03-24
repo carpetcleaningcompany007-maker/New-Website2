@@ -185,12 +185,3 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .soft-panel .section-kicker{margin-bottom:10px}
 .map-note{font-size:16px;color:var(--muted);margin-top:14px}
 @media (max-width:760px){.service-chip-grid.cards{grid-template-columns:1fr}}
-
-
-/* 2026 visibility and logo consistency fixes */
-.brand img{filter:none !important;mix-blend-mode:normal !important;opacity:1 !important}
-.hero-side-card .section-kicker,.soft-panel .section-kicker,.formcard .section-kicker{color:var(--brand) !important}
-.hero-side-card h1,.hero-side-card h2,.hero-side-card h3,.hero-side-card h4,.soft-panel h1,.soft-panel h2,.soft-panel h3,.soft-panel h4,.formcard h1,.formcard h2,.formcard h3,.formcard h4{color:var(--text) !important}
-.hero-side-card p,.soft-panel p,.formcard p{color:var(--muted) !important}
-.hero-side-card a:not(.btn),.soft-panel a:not(.btn),.formcard a:not(.btn){color:var(--brand) !important}
-.hero-side-card{background:linear-gradient(180deg,rgba(255,255,255,.98) 0%,rgba(247,250,255,.98) 100%);border:1px solid rgba(217,226,236,.95);box-shadow:0 26px 70px rgba(8,17,33,.16)}
