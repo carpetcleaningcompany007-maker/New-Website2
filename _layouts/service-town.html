@@ -26,7 +26,7 @@ layout: default
       <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
       <h1>{{ service_name }} in {{ town_obj.name }}</h1>
       <p>{{ page.hero_text }}</p>
-      <p class="hero-secondary">A local service page that keeps the layout clear, the wording cleaner and the route to contact nice and simple.</p>
+      <p class="hero-secondary">Built for people searching specifically for {{ service_name | downcase }} in {{ town_obj.name }}, with a clear route to the right page and a fast local reply.</p>
       <div class="hero-points hero-points-open">
         <span>{{ service_name }}</span>
         <span>{{ town_obj.name }}</span>
@@ -54,7 +54,7 @@ layout: default
 
 <section class="usp-band">
   <div class="container usp-band-grid">
-    <div><strong>{{ service_name }}</strong><span>A clearer local page for {{ town_obj.name }} and nearby areas.</span></div>
+    <div><strong>{{ service_name }}</strong><span>Clear local page built around {{ town_obj.name }} and nearby support.</span></div>
     <div><strong>Fast quote route</strong><span>Move straight to a quote, call or WhatsApp without unnecessary steps.</span></div>
     <div><strong>Local search focus</strong><span>Useful when someone searches for {{ service_name | downcase }} in {{ town_obj.name }} specifically.</span></div>
   </div>
@@ -91,7 +91,7 @@ layout: default
     <div class="benefit-columns open-benefits">
       <div>
         <h3>Local relevance</h3>
-        <p>Focused on {{ town_obj.name }} so the page feels more relevant to local customers.</p>
+        <p>Built around {{ town_obj.name }} so the page makes sense for customers searching by service and town together.</p>
       </div>
       <div>
         <h3>Straightforward layout</h3>
@@ -99,7 +99,7 @@ layout: default
       </div>
       <div>
         <h3>Fast contact route</h3>
-        <p>Useful when somebody wants the right service, the right area and a quick way to get in touch.</p>
+        <p>Useful when somebody just wants the right service, the right area and a quick way to get in touch.</p>
       </div>
     </div>
   </div>
@@ -133,9 +133,9 @@ layout: default
     <div class="map-panel plain-panel">
       <span class="section-kicker">Map around {{ town_obj.name }}</span>
       <h2>Local map for {{ town_obj.name }}</h2>
-      <p>This page uses {{ town_obj.name }} as its local anchor point so customers can move easily from the town page into the specific service they need.</p>
+      <p>This page uses {{ town_obj.name }} as its local anchor point, helping customers move from the town page into the specific service they need while keeping the wider site structure connected.</p>
       <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
-      <p class="map-note">Use the map as a quick area reference, then move into contact or related service pages from there.</p>
+      <p class="map-note">That helps support local searches for {{ service_name | downcase }} in {{ town_obj.name }} and surrounding areas.</p>
     </div>
     <div class="cta-panel plain-panel right-cta accent-block">
       <span class="section-kicker">Need this service?</span>
