@@ -214,3 +214,120 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
   .floating{right:18px;bottom:18px}
   .float-btn{min-width:132px;justify-content:center}
 }
+
+
+/* 2026-03-24 sitewide repair pass */
+.quote-side-card,
+.hero-side-card.soft-panel,
+.soft-panel.quote-side-card{
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+  color:var(--text);
+}
+.quote-side-card h3,
+.hero-side-card h3,
+.soft-panel h3{
+  color:var(--text)!important;
+  opacity:1!important;
+  font-size:clamp(28px,3vw,40px);
+  line-height:1.02;
+  letter-spacing:-.03em;
+  margin:0 0 12px;
+}
+.quote-side-card .section-kicker,
+.quote-side-card .kicker,
+.hero-side-card .section-kicker,
+.hero-side-card .kicker{
+  color:var(--text)!important;
+  opacity:1!important;
+}
+.quote-side-card p,
+.hero-side-card p,
+.soft-panel p{
+  color:var(--muted)!important;
+}
+.quote-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:16px;
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea{
+  width:100%;
+  min-width:0;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  font:inherit;
+  background:#fff;
+  color:var(--text);
+}
+.quote-form textarea,
+.quote-form button,
+.quote-form .full{
+  grid-column:1 / -1;
+}
+.quote-form textarea{min-height:120px;resize:vertical}
+.quote-form button{width:100%}
+.quote-side-card .contact-mini.compact{margin-top:14px}
+.quote-side-card .contact-mini.compact a{
+  color:var(--brand)!important;
+  font-weight:800;
+}
+
+/* keep hero text white only where intended */
+.hero .content-wrap h1,
+.hero .content-wrap h2,
+.hero .content-wrap h3,
+.hero .content-wrap .brand-title,
+.hero .content-wrap .hero-subtitle,
+.hero .content-wrap p,
+.local-hero .hero-points-open span,
+.local-hero .eyebrow,
+.local-hero h1,
+.local-hero .hero-secondary{
+  color:#fff;
+}
+
+/* smaller cleaner floating contact buttons */
+.floating{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  display:grid;
+  gap:10px;
+  z-index:60;
+}
+.float-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  padding:0 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  box-shadow:0 16px 40px rgba(15,23,42,.20);
+  font-size:14px;
+  font-weight:800;
+  line-height:1;
+  min-width:0;
+}
+.float-btn i{font-size:17px}
+.float-btn .label{display:inline-block}
+@media (min-width:761px){
+  .floating{right:18px;bottom:18px}
+  .float-btn{padding:0 13px;min-height:44px}
+}
+@media (max-width:760px){
+  .floating{left:12px;right:12px;bottom:12px;grid-template-columns:1fr 1fr;gap:10px}
+  .float-btn{min-height:50px;border-radius:16px;padding:0 14px}
+}
+@media (max-width:980px){
+  .quote-form{grid-template-columns:1fr}
+  .quote-form textarea,
+  .quote-form button,
+  .quote-form .full{grid-column:auto}
+}
