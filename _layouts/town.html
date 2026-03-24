@@ -6,16 +6,18 @@ layout: default
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">{{ town_obj.name }} carpet cleaning</span>
-      <h1>Carpet cleaning in {{ town_obj.name }}</h1>
-      <p>Professional carpet cleaning, upholstery cleaning, stain removal, rug cleaning, moth treatment advice and commercial carpet cleaning in {{ town_obj.name }} and nearby areas.</p>
+      <h1>{{ town_obj.hero_title | default: 'Carpet Cleaning ' | append: town_obj.name }}</h1>
+      <p>{{ town_obj.short_intro }}</p>
       <div class="hero-points">
-        <span><i class="fa-solid fa-circle-check"></i>Homes and rentals</span>
+        <span><i class="fa-solid fa-circle-check"></i>Carpet cleaning</span>
         <span><i class="fa-solid fa-circle-check"></i>Upholstery and rugs</span>
         <span><i class="fa-solid fa-circle-check"></i>Commercial work</span>
+        <span><i class="fa-solid fa-circle-check"></i>Fast local reply</span>
       </div>
       <div class="actions">
         <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
         <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn ghost" href="{{ page.pages_path | default: '../pages/' }}reviews.html">Read reviews</a>
       </div>
     </div>
     <aside class="hero-card">
@@ -31,47 +33,54 @@ layout: default
   </div>
 </section>
 
-<section>
-  <div class="container local-grid">
-    <div class="panel">
-      <span class="section-kicker">Local service page</span>
-      <h2>Cleaning services in {{ town_obj.name }}</h2>
-      <p>{{ site.business_name }} covers {{ town_obj.name }} with practical cleaning services for carpets, upholstery, rugs and commercial areas. The aim is simple: make the page useful for local customers and give a clear route to the service they actually need.</p>
-      <p>Use the service cards below if you already know what you need. If not, call or message and explain what needs cleaning. That is usually the fastest route.</p>
-    </div>
-    <div class="cards">
-      <article class="trust-card"><div class="pad"><h3>Useful local page</h3><p>Built around {{ town_obj.name }} with direct service links instead of a generic area page.</p></div></article>
-      <article class="trust-card"><div class="pad"><h3>Nearby areas included</h3><p>Supports surrounding places without making the page feel bloated.</p></div></article>
-      <article class="trust-card"><div class="pad"><h3>Fast quote route</h3><p>Call, email or WhatsApp straight from the page.</p></div></article>
-    </div>
-  </div>
-</section>
-
 <section class="section-alt">
   <div class="container">
     <span class="section-kicker">Services in {{ town_obj.name }}</span>
     <h2>Choose the right service</h2>
-    <div class="service-chip-grid" style="margin-top:22px">
+    <p class="lead">Use the service cards below to jump straight into the page you need for {{ town_obj.name }}.</p>
+    <div class="cards cards-3" style="margin-top:24px">
       {% for s in site.data.services %}
-      <a href="{{ page.locations_path }}{{ page.slug }}/{{ s.slug }}.html"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>{{ s.desc | replace: '{town}', town_obj.name }}</span></a>
+      <article class="card">
+        <div class="iconbox">
+          <h3>{{ s.name }} in {{ town_obj.name }}</h3>
+          <p>{{ s.desc | replace: '{town}', town_obj.name }}</p>
+          <a href="{{ page.locations_path | default: '../locations/' }}{{ page.slug }}/{{ s.slug }}.html">Open page</a>
+        </div>
+      </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
 <section>
+  <div class="container">
+    <span class="section-kicker">Why people use us</span>
+    <h2>Everything here follows the home page style</h2>
+    <div class="process-row" style="margin-top:24px">
+      <article class="process-card"><div class="process-number">1</div><h3>Clear local page</h3><p>A simple page for {{ town_obj.name }} that leads directly into the right service.</p></article>
+      <article class="process-card"><div class="process-number">2</div><h3>Cleaner layout</h3><p>The sections now follow the same structure and spacing as the homepage.</p></article>
+      <article class="process-card"><div class="process-number">3</div><h3>Useful nearby coverage</h3><p>Nearby areas are shown clearly without making the page feel cluttered.</p></article>
+      <article class="process-card"><div class="process-number">4</div><h3>Fast route to contact</h3><p>Call, email or WhatsApp straight from the page.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft">
   <div class="container local-grid">
     <div class="map-panel">
-      <span class="section-kicker">Map</span>
+      <span class="section-kicker">Local coverage</span>
       <h2>Coverage around {{ town_obj.name }}</h2>
-      <p>{{ site.business_name }} covers {{ town_obj.name }} and the surrounding area. The service pages above take you into the exact page for the service you need.</p>
-      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy" title="Map showing {{ town_obj.name }}"></iframe></div>
+      <p class="lead">{{ site.business_name }} covers {{ town_obj.name }} and nearby areas across {{ town_obj.region }}.</p>
+      <div class="pill-links" style="margin-top:20px">{% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}</div>
+      <div class="service-links" style="margin-top:20px">
+        <a href="{{ page.pages_path | default: '../pages/' }}areas.html">View all areas</a>
+        <a href="{{ page.pages_path | default: '../pages/' }}gallery.html">See the gallery</a>
+      </div>
     </div>
-    <div class="cta-panel">
-      <span class="section-kicker">Nearby areas</span>
-      <h2>Also covering nearby places</h2>
-      <div class="pill-links">{% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}</div>
-      <p style="margin-top:18px">If you are just outside {{ town_obj.name }}, get in touch anyway. Many jobs come from nearby towns and villages.</p>
+    <div class="map-panel">
+      <span class="section-kicker">Coverage map</span>
+      <h2>{{ town_obj.name }} and surrounding areas</h2>
+      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.map_query | uri_escape }}&output=embed" loading="lazy" title="Map showing {{ town_obj.name }}"></iframe></div>
     </div>
   </div>
 </section>

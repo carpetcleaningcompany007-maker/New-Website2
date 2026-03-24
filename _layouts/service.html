@@ -12,7 +12,8 @@ layout: default
       </div>
       <div class="actions">
         <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
-        <a class="btn secondary" href="{{ page.areas_path | default: '../pages/areas.html' }}">Areas we cover</a>
+        <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn ghost" href="{{ page.areas_path | default: '../areas/' }}worcester.html">See local pages</a>
       </div>
     </div>
     <aside class="hero-card">
@@ -22,25 +23,24 @@ layout: default
       <div class="contact-mini">
         <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i>{{ site.phone }}</a>
         <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name | default: site.business_name }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp {{ site.contact_name }}</a>
       </div>
+      <p class="form-note">Fast local reply for homes, rentals and selected commercial work.</p>
     </aside>
   </div>
 </section>
 
-<section>
-  <div class="container local-grid">
-    <div class="panel">
-      <span class="section-kicker">Service overview</span>
-      <h2>{{ page.intro_heading }}</h2>
-      {% for para in page.intro_paragraphs %}<p>{{ para }}</p>{% endfor %}
-    </div>
-    <div class="stat-row">
-      {% for stat in page.stats %}
-      <article class="stat-card">
+<section class="section-alt">
+  <div class="container">
+    <span class="section-kicker">About this service</span>
+    <h2>{{ page.intro_heading }}</h2>
+    <p class="lead">{{ page.intro_paragraphs[0] }}</p>
+    <div class="cards cards-3" style="margin-top:24px">
+      {% for item in page.benefits %}
+      <article class="trust-card">
         <div class="pad">
-          <strong>{{ stat.number }}</strong>
-          <p>{{ stat.label }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
         </div>
       </article>
       {% endfor %}
@@ -48,9 +48,9 @@ layout: default
   </div>
 </section>
 
-<section class="section-alt">
+<section>
   <div class="container">
-    <span class="section-kicker">How we work</span>
+    <span class="section-kicker">Our process</span>
     <h2>{{ page.process_heading }}</h2>
     <p class="lead">{{ page.process_intro }}</p>
     <div class="process-row" style="margin-top:24px">
@@ -65,34 +65,35 @@ layout: default
   </div>
 </section>
 
-<section>
-  <div class="container proof-grid">
-    <div class="proof-photo"><img src="{{ page.proof_image }}" alt="{{ page.proof_alt }}"></div>
-    <div class="panel">
-      <span class="section-kicker">Why customers choose us</span>
+<section class="section-soft">
+  <div class="container local-grid">
+    <div class="map-panel">
+      <span class="section-kicker">Why people book</span>
       <h2>{{ page.benefits_heading }}</h2>
-      <div class="cards" style="margin-top:18px">
-        {% for item in page.benefits %}
-        <article class="trust-card">
-          <div class="pad">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.text }}</p>
-          </div>
-        </article>
-        {% endfor %}
+      {% for paragraph in page.intro_paragraphs offset:1 %}<p{% if forloop.first %} class="lead"{% endif %}>{{ paragraph }}</p>{% endfor %}
+      <div class="service-links" style="margin-top:20px">
+        <a href="{{ page.pages_path | default: '../pages/' }}reviews.html">Read reviews</a>
+        <a href="{{ page.pages_path | default: '../pages/' }}gallery.html">See the gallery</a>
+        <a href="{{ page.quote_path | default: '../index.html#quote' }}">Request a quote</a>
       </div>
+    </div>
+    <div class="proof-photo">
+      <img src="{{ page.proof_image }}" alt="{{ page.proof_alt }}">
     </div>
   </div>
 </section>
 
-<section class="section-soft">
+<section>
   <div class="container">
-    <span class="section-kicker">Local pages</span>
+    <span class="section-kicker">Areas we cover</span>
     <h2>{{ page.local_heading }}</h2>
-    <p class="lead">Choose a town page below for the local version of this service.</p>
-    <div class="town-links" style="margin-top:22px">
-      {% for town in site.data.towns limit:12 %}
-      <a href="../locations/{{ town.slug }}/{{ page.service_slug }}.html">{{ town.name }}</a>
+    <p class="lead">{{ page.map_text }}</p>
+    <div class="service-chip-grid" style="margin-top:24px">
+      {% for town in site.data.towns limit:8 %}
+      <a href="{{ page.locations_path | default: '../locations/' }}{{ town.slug }}/{{ page.service_slug }}.html">
+        <strong>{{ service_name | default: page.eyebrow }} in {{ town.name }}</strong>
+        <span>{{ site.business_name }} offers {{ page.eyebrow | downcase }} in {{ town.name }} and nearby areas.</span>
+      </a>
       {% endfor %}
     </div>
   </div>
@@ -101,18 +102,18 @@ layout: default
 <section>
   <div class="container local-grid">
     <div class="map-panel">
-      <span class="section-kicker">Coverage</span>
+      <span class="section-kicker">Coverage map</span>
       <h2>{{ page.map_heading }}</h2>
       <p>{{ page.map_text }}</p>
-      <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ site.map_query | uri_escape }}&output=embed" loading="lazy" title="Map showing {{ site.service_area }}"></iframe></div>
+      <div class="mapwrap"><iframe src="https://www.google.com/maps?q=Worcestershire%20UK&output=embed" loading="lazy" title="Map showing Worcestershire"></iframe></div>
     </div>
     <div class="cta-panel">
-      <span class="section-kicker">Need a quote</span>
+      <span class="section-kicker">Need a quick answer</span>
       <h2>{{ page.cta_heading }}</h2>
       <p>{{ page.cta_text }}</p>
       <div class="actions" style="margin-top:20px">
         <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
-        <a class="btn secondary" href="mailto:{{ site.email }}">Email us</a>
+        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -127,8 +128,8 @@ layout: default
         <p class="lead">{{ page.band_text }}</p>
       </div>
       <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn primary" href="{{ page.quote_path | default: '../index.html#quote' }}">Get a quote</a>
+        <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
       </div>
     </div>
   </div>

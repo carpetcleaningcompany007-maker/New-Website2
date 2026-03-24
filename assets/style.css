@@ -26,3 +26,7 @@ section{padding:82px 0}.section-alt{background:var(--soft)}.section-soft{backgro
 .local-hero .hero-card h3{font-size:38px;line-height:1.02}.location-proof{display:grid;gap:18px}.quote-note{font-size:15px;color:var(--muted)}
 @media (max-width:1100px){.hero-grid,.local-grid,.proof-grid,.footer-grid,.cards-4,.cards-3,.process-row,.stat-row{grid-template-columns:repeat(2,minmax(0,1fr))}.service-chip-grid{grid-template-columns:1fr}}
 @media (max-width:760px){.mobile-toggle{display:inline-flex}.menu{display:none;position:absolute;top:82px;left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.menu.open{display:flex}.drop{width:100%}.dropbtn{text-align:left;width:100%}.dropmenu{position:static;box-shadow:none;border:0;padding:6px 0 0;background:transparent}.hero-grid,.local-grid,.proof-grid,.footer-grid,.cards-4,.cards-3,.process-row,.stat-row{grid-template-columns:1fr}.hero-grid{padding:70px 0 62px}.btn{width:100%}.cta-band{flex-direction:column;align-items:flex-start}.brand span small{display:none}}
+
+.cards .card:not(:has(img)){padding:0}.cards .card:not(:has(img)) .iconbox{min-height:100%}
+.hero-card h3,.cta-panel h2,.map-panel h2{font-size:34px;line-height:1.02}
+.service-chip-grid a:hover,.cards .card:hover{transform:translateY(-3px);box-shadow:0 22px 56px rgba(15,23,42,.10)}
