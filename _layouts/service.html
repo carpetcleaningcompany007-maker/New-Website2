@@ -1,0 +1,132 @@
+---
+layout: default
+---
+<section class="hero local-hero service-uniform-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.62)),url('{{ page.hero_image }}') center/cover no-repeat">
+  <div class="container hero-grid-open">
+    <div>
+      <span class="eyebrow">{{ page.hero_kicker }}</span>
+      <h1>{{ page.hero_title }}</h1>
+      <p class="hero-secondary">{{ page.hero_text }}</p>
+      <div class="hero-points-open">
+        {% for point in page.hero_points %}<span><i class="fa-solid fa-circle-check"></i>&nbsp; {{ point }}</span>{% endfor %}
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="{{ page.quote_path }}">Get a Quote</a>
+        <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+      </div>
+    </div>
+    <aside class="hero-side-card uniform-contact-card">
+      <span class="section-label">{{ page.contact_label | default: 'Popular jobs we clean' }}</span>
+      <h3>{{ page.contact_title | default: 'Common areas we clean' }}</h3>
+      <ul class="uniform-check-list">
+        {% for item in page.contact_items %}<li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>{% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="uniform-intro-section">
+  <div class="container">
+    <div class="uniform-grid-two content-wrap-wide">
+      <div class="uniform-copy-stack">
+        <span class="section-label">{{ page.intro_label | default: 'Service overview' }}</span>
+        <h2>{{ page.intro_title }}</h2>
+        {% for para in page.intro_paragraphs %}<p>{{ para }}</p>{% endfor %}
+      </div>
+      <aside class="uniform-side-note">
+        <h3>{{ page.side_note_title | default: 'Straightforward local service' }}</h3>
+        <p>{{ page.side_note_text | default: 'Clear advice, sensible pricing and a proper cleaning process from the first call.' }}</p>
+        <div class="contact-mini compact">
+          <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+          <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+          <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt uniform-section-shell">
+  <div class="container">
+    <div class="section-head content-wrap-wide uniform-center-head">
+      <span class="section-label">{{ page.process_label | default: 'Our process' }}</span>
+      <h2>{{ page.process_title }}</h2>
+      <p class="lead">{{ page.process_text }}</p>
+    </div>
+    <div class="uniform-process-grid content-wrap-wide">
+      {% for step in page.process_steps %}
+      <article class="uniform-process-card">
+        <div class="num">{{ forloop.index }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="uniform-section-shell">
+  <div class="container">
+    <div class="uniform-panel content-wrap-wide">
+      <span class="section-label">{{ page.result_label | default: 'Why it works' }}</span>
+      <h2>{{ page.result_title }}</h2>
+      <p class="lead">{{ page.result_text }}</p>
+      <div class="uniform-pill-row">
+        {% for pill in page.result_pills %}<span>{{ pill }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt uniform-section-shell">
+  <div class="container">
+    <div class="section-head content-wrap-wide uniform-center-head">
+      <span class="section-label">Areas we cover</span>
+      <h2>Browse local {{ page.service_name | downcase }} pages</h2>
+      <p class="lead">Choose the town nearest to you for a more local page.</p>
+    </div>
+    <div class="uniform-town-grid content-wrap-wide">
+      {% assign featured_towns = site.data.towns | slice: 0, 4 %}
+      {% for t in featured_towns %}
+      <article class="uniform-town-card">
+        <h3>{{ t.name }}</h3>
+        <p>{{ page.town_card_text | default: page.description | replace: site.service_area, t.name }}</p>
+        <a href="../locations/{{ t.slug }}/{{ page.service_slug }}.html">View {{ t.name }} →</a>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="uniform-pill-row content-wrap-wide local-links-row">
+      {% for t in site.data.towns offset:4 limit:8 %}<a href="../locations/{{ t.slug }}/{{ page.service_slug }}.html">{{ t.name }}</a>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="uniform-section-shell">
+  <div class="container">
+    <div class="uniform-map-panel content-wrap-wide">
+      <span class="section-label">Coverage</span>
+      <h2>{{ page.map_title | default: page.service_name | append: ' across Worcestershire and nearby areas' }}</h2>
+      <p class="lead">Local coverage across Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas.</p>
+      <div class="mapwrap">
+        <iframe src="https://www.google.com/maps?q={{ site.map_query | uri_escape }}&output=embed" loading="lazy" title="Map showing service area"></iframe>
+      </div>
+      <p class="map-note">Town specific pages linked above will give a more local route if you want the page nearest to your area.</p>
+    </div>
+  </div>
+</section>
+
+<section class="uniform-section-shell">
+  <div class="container">
+    <div class="cta-panel content-wrap-wide uniform-cta-band">
+      <div>
+        <span class="section-label">Ready to book</span>
+        <h2>{{ page.cta_title | default: 'Need a fast local quote?' }}</h2>
+        <p class="lead">{{ page.cta_text | default: 'Call, email or send a WhatsApp message for a fast reply.' }}</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
