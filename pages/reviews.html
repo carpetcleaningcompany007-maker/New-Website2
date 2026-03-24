@@ -322,20 +322,15 @@
       }
 
       .floating{
-        left:14px;
         right:14px;
         bottom:14px;
-        grid-template-columns:1fr 1fr;
       }
 
       .float-btn{
-        min-width:0;
-        width:100%;
-        justify-content:center;
-        padding:0 12px;
+        width:54px;
+        height:54px;
+        font-size:22px;
       }
-
-      .float-label{font-size:14px;}
     }
   </style>
 </head>
@@ -514,14 +509,7 @@
   <!-- ========================================= -->
   <!-- 09. FLOATING BUTTONS -->
   <!-- ========================================= -->
-  <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
-      <i class="fa-brands fa-whatsapp"></i><span class="float-label">WhatsApp</span>
-    </a>
-    <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}">
-      <i class="fa-solid fa-phone"></i><span class="float-label">Call now</span>
-    </a>
-  </div>
+  <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i><span class="label">WhatsApp</span></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i><span class="label">Call now</span></a></div>
 
   <!-- ========================================= -->
   <!-- 10. MOBILE MENU SCRIPT -->
