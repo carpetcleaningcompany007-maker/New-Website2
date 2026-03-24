@@ -3,13 +3,13 @@ layout: default
 ---
 {% assign service_name = page.service_name | default: page.eyebrow | default: 'Service' %}
 {% assign fallback_local = page.areas_path | default: '../areas/' | append: 'worcester.html' %}
-<section class="hero" style="--hero-image:url('{{ page.hero_image }}')">
-  <div class="container hero-grid">
+<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('{{ page.hero_image | default: page.proof_image }}') center/cover no-repeat">
+  <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">{{ page.eyebrow }}</span>
       <h1>{{ page.hero_heading }}</h1>
       <p>{{ page.hero_text }}</p>
-      <div class="hero-points">
+      <div class="hero-points hero-points-open">
         {% for point in page.hero_points %}<span><i class="fa-solid fa-circle-check"></i>{{ point }}</span>{% endfor %}
       </div>
       <div class="actions">
@@ -18,7 +18,7 @@ layout: default
         <a class="btn ghost" href="{{ fallback_local }}">See local pages</a>
       </div>
     </div>
-    <aside class="formcard">
+    <aside class="hero-side-card">
       <span class="section-kicker">Quick contact</span>
       <h2>{{ page.side_title }}</h2>
       <p>{{ page.side_text }}</p>
