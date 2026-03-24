@@ -18,13 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/style.css">
-  </head>
+  
+</head>
 <body>
   <div class="topbar"><div class="container"><div class="links"><a href="mailto:{{ site.email }}">{{ site.email }}</a><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a></div><div class="links"><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a></div></div></div>
   <header><div class="container nav"><a class="brand" href="../index.html"><img src="{{ site.logo_url }}" alt="{{ site.business_name }}"><span>{{ site.business_name }}<small>Professional cleaning across {{ site.service_area }}</small></span></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button><nav class="menu"><a href="../index.html">Home</a><div class="drop"><button class="dropbtn" type="button">Services</button><div class="dropmenu"><a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><a href="../pages/stain-removal.html">Stain Removal Treatments</a><a href="../pages/commercial.html">Commercial Cleaning</a><a href="../pages/rug-cleaning.html">Rug Cleaning</a><a href="../pages/moth-treatment.html">Moth Treatment</a></div></div><div class="drop"><button class="dropbtn" type="button">Areas We Cover</button><div class="dropmenu"><a href="../pages/areas.html">All Areas</a><a href="../areas/worcester.html">Worcester</a><a href="../areas/bromsgrove.html">Bromsgrove</a><a href="../areas/kidderminster.html">Kidderminster</a><a href="../areas/redditch.html">Redditch</a></div></div><a href="../pages/reviews.html">Reviews</a><a href="../pages/gallery.html">Gallery</a><a class="cta" href="../index.html#quote">Get a Quote</a></nav></div></header>
 
   <section class="hero" style="background:linear-gradient(90deg, rgba(15,23,42,.88) 0%, rgba(15,23,42,.72) 45%, rgba(15,23,42,.38) 100%),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat">
-    <div class="container">
+    <div class="container hero-grid-open">
       <div class="content-wrap">
         <div class="brand-title">{{ site.business_name }}</div>
         <div class="hero-subtitle">Commercial carpet cleaning across {{ site.service_area }}</div>
@@ -34,23 +35,27 @@
         <div class="hero-tags"><span><i class="fa-solid fa-circle-check"></i> Professional local service</span><span><i class="fa-solid fa-circle-check"></i> Areas across Worcestershire</span><span><i class="fa-solid fa-circle-check"></i> Fast local contact</span></div>
         <div class="actions"><a class="btn primary" href="../index.html#quote"><i class="fa-solid fa-phone"></i> Get a Quote</a><a class="btn secondary" href="../pages/areas.html"><i class="fa-solid fa-location-dot"></i> Areas We Cover</a></div>
       </div>
-      <aside class="hero-side-card quote-side-card">
-        <span class="section-kicker">Quick quote</span>
-        <h3>Get a fast commercial cleaning quote</h3>
-        <p>Fill out the form and we can get back to you about what needs cleaning and where you are.</p>
-        <form class="quote-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
-          <input type="hidden" name="service" value="Commercial cleaning">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="tel" name="phone" placeholder="Phone number" required>
-          <input type="text" name="postcode" placeholder="Town or postcode">
-          <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
-          <button class="btn primary" type="submit">Send enquiry</button>
-        </form>
-        <div class="contact-mini compact">
-          <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-          <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
-        </div>
-      </aside>
+
+    <aside class="quote-card" id="quote" aria-label="Quote form">
+      <span class="quote-kicker">Quick quote</span>
+      <h3 class="quote-title">Get your free quote</h3>
+      <p class="quote-copy">Tell us what needs cleaning and we can get back to you with a fast local quote.</p>
+      <form class="formgrid quoteForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+        <input class="full" type="text" name="location" placeholder="Town or postcode" autocomplete="address-level2">
+        <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary" type="submit">Send enquiry</button>
+      </form>
+      <div class="form-status" aria-live="polite"></div>
+      <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+      <div class="contact-mini">
+        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+      </div>
+    </aside>
     </div>
   </section>
 
@@ -62,7 +67,7 @@
         <p>Whether the job is a one off clean or part of a wider maintenance requirement, the aim is to provide a straightforward service and a practical result.</p>
       </div></div></section>
 
-  <section class="section-alt"><div class="container"><div class="section-head content-wrap"><span class="section-label">Our process</span><h2>A practical commercial cleaning approach</h2><h3>Built around appearance, traffic areas and fast communication</h3><p>This page gives you the main service information in one place, then moves you into the right local town pages if you want a more specific location based page.</p></div><div class="process-grid">        <div class="process-card">
+  <section class="section-alt"><div class="container"><div class="section-head content-wrap"><span class="section-label">Our process</span><h2>A practical commercial cleaning approach</h2><h3>Built around appearance, traffic areas and fast communication</h3><p>A clear service overview, a proper process and a quick route to a local quote.</p></div><div class="process-grid">        <div class="process-card">
           <div class="num">1</div>
           <h3>Assess the site</h3>
           <p>High traffic zones, access requirements and the scale of the job are considered first.</p>
@@ -105,7 +110,7 @@
   <section><div class="container"><div class="cta-band"><div class="content-wrap"><h2>Need help with commercial?</h2><h3 style="color:#fff;margin-bottom:12px;">Call, email or send a WhatsApp message for a fast local quote</h3><p>Straightforward advice and a quick quote across {{ site.service_area }}</p></div><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> Call now</a><a class="btn secondary" href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> Email</a></div></div></div></section>
 
   <footer class="footer"><div class="container footer-grid"><div><img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px"><div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across {{ site.service_area }}</div></div><div><h3>Services</h3><p><a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br><a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br><a href="../pages/stain-removal.html">Stain Removal Treatments</a><br><a href="../pages/commercial.html">Commercial Cleaning</a><br><a href="../pages/rug-cleaning.html">Rug Cleaning</a><br><a href="../pages/moth-treatment.html">Moth Treatment</a></p></div><div><h3>Contact</h3><p><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a></p></div></div><div class="container copy">© {{ site.business_name }}. All rights reserved.</div></footer>
-  <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i><span class="label">WhatsApp</span></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i><span class="label">Call now</span></a></div>
+  <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i><span class="label">WhatsApp</span></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i><span class="label">Call</span></a></div>
   <script src="../assets/script.js"></script>
 </body>
 </html>

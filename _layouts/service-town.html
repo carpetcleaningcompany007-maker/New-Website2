@@ -39,21 +39,24 @@ layout: default
       </div>
     </div>
 
-    <aside class="hero-side-card quote-side-card">
-      <span class="section-kicker">Quick quote</span>
-      <h3>Get a fast quote</h3>
-      <p>Fill out the form and we can get back to you about {{ service_name }} in {{ town_obj.name }}.</p>
-      <form class="quote-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
-        <input type="hidden" name="service" value="{{ service_name }} in {{ town_obj.name }}">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="text" name="postcode" placeholder="Town or postcode">
+    <aside class="quote-card" id="quote" aria-label="Quote form">
+      <span class="quote-kicker">Quick quote</span>
+      <h3 class="quote-title">Get your free quote</h3>
+      <p class="quote-copy">Tell us what needs cleaning and we can get back to you with a fast local quote.</p>
+      <form class="formgrid quoteForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+        <input class="full" type="text" name="location" placeholder="Town or postcode" autocomplete="address-level2">
         <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
         <button class="btn primary" type="submit">Send enquiry</button>
       </form>
-      <div class="contact-mini compact">
+      <div class="form-status" aria-live="polite"></div>
+      <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+      <div class="contact-mini">
         <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
       </div>
     </aside>
   </div>

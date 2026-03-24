@@ -39,15 +39,26 @@
           <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
         </div>
       </div>
-      <aside class="hero-side-card">
-        <h3>Fresh carpets without the hard sell</h3>
-        <p>Clear advice, straightforward quotes and a cleaning process designed to lift dirt properly from the pile rather than just skim the surface.</p>
-        <div class="contact-mini compact">
-          <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-          <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
-          <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        </div>
-      </aside>
+      <aside class="quote-card" id="quote" aria-label="Quote form">
+      <span class="quote-kicker">Quick quote</span>
+      <h3 class="quote-title">Get your free quote</h3>
+      <p class="quote-copy">Tell us what needs cleaning and we can get back to you with a fast local quote.</p>
+      <form class="formgrid quoteForm" action="YOUR_FORMSPREE_ENDPOINT" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+        <input class="full" type="text" name="location" placeholder="Town or postcode" autocomplete="address-level2">
+        <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary" type="submit">Send enquiry</button>
+      </form>
+      <div class="form-status" aria-live="polite"></div>
+      <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+      <div class="contact-mini">
+        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+      </div>
+    </aside>
     </div>
   </section>
 
@@ -65,6 +76,8 @@
         <strong>Clear local service</strong>
         <span>Fast quotes across {{ site.service_area }} with simple, straightforward advice.</span>
       </div>
+
+    
     </div>
   </section>
 
@@ -79,25 +92,7 @@
           <p>Whether you are trying to freshen up a home, improve a rental property or get on top of heavily used family areas, the aim is simple: get the carpet looking and feeling right again.</p>
         </div>
       </div>
-      <aside class="story-side">
-        <div class="soft-panel quote-side-card">
-          <span class="kicker">Quick quote</span>
-          <h3 style="margin-top:0">Get a fast carpet cleaning quote</h3>
-          <p>Fill out the form and we can get back to you about the areas you need cleaned.</p>
-          <form class="quote-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
-            <input type="hidden" name="service" value="Carpet Cleaning">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="tel" name="phone" placeholder="Phone number" required>
-            <input type="text" name="postcode" placeholder="Town or postcode">
-            <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
-            <button class="btn primary" type="submit">Send enquiry</button>
-          </form>
-          <div class="contact-mini compact">
-            <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-            <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
-          </div>
-        </div>
-      </aside>
+      
     </div>
   </section>
 
@@ -106,7 +101,7 @@
       <div class="section-heading-wrap center">
         <span class="kicker">Our process</span>
         <h2>How we clean carpets properly</h2>
-        <p class="lead" style="margin-inline:auto">A clean layout, a clear process and no giant awkward image blocks.</p>
+        <p class="lead" style="margin-inline:auto">A proper step by step cleaning process for a cleaner, fresher and more presentable result.</p>
       </div>
       <div class="benefit-columns open-benefits" style="margin-top:28px">
         <div>
@@ -198,7 +193,7 @@
   </section>
 
   <footer class="footer"><div class="container footer-grid"><div><img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px"><div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across {{ site.service_area }}</div></div><div><h3>Services</h3><p><a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br><a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br><a href="../pages/stain-removal.html">Stain Removal Treatments</a><br><a href="../pages/commercial.html">Commercial Cleaning</a><br><a href="../pages/rug-cleaning.html">Rug Cleaning</a><br><a href="../pages/moth-treatment.html">Moth Treatment</a></p></div><div><h3>Contact</h3><p><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a></p></div></div><div class="container copy">© {{ site.business_name }}. All rights reserved.</div></footer>
-  <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i><span class="label">WhatsApp</span></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i><span class="label">Call now</span></a></div>
+  <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i><span class="label">WhatsApp</span></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i><span class="label">Call</span></a></div>
   <script src="../assets/script.js"></script>
 </body>
 </html>
