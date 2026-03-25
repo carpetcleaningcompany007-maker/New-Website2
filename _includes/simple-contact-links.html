@@ -1,8 +1,0 @@
-<div class="hero-inline-contact"{% if include.id %} id="{{ include.id }}"{% endif %}>
-  <p class="hero-inline-contact-label">Quick contact</p>
-  <div class="hero-inline-contact-links">
-    <a href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-    <a href="mailto:{{ site.email }}">Email us</a>
-    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp us</a>
-  </div>
-</div>
