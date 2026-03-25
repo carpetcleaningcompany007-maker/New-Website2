@@ -4,9 +4,61 @@ home_path: ../index.html
 pages_path: ../pages/
 areas_path: ../areas/
 quote_path: get-a-quote.html
-seo_title: Areas We Cover | {{ site.business_name }}
-description: Browse the areas covered by {{ site.business_name }} across {{ site.service_area }}.
+seo_title: Areas We Cover | JW Carpet Care
+description: Browse the areas covered by JW Carpet Care across Worcestershire and the West Midlands.
 ---
-<section class="hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.6)),url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat"><div class="container"><div><span class="eyebrow">Areas We Cover</span><h1>Local carpet cleaning pages across {{ site.service_area }}</h1><p>Browse all current town pages below. Each town page can now show nearby supporting areas as well, giving each location page a stronger local coverage signal without creating loads of thin pages.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a><a class="btn secondary" href="get-a-quote.html">Get a quote</a></div></div>{% include hero-quote-form.html service="General quote" status_id="areasHeroFormStatus" %}</div></section>
+<section class="hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.6)),url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat"><div class="container"><div><span class="eyebrow">Areas We Cover</span><h1>Local carpet cleaning pages across Worcestershire and the West Midlands</h1><p>Browse all current town pages below. Each town page can now show nearby supporting areas as well, giving each location page a stronger local coverage signal without creating loads of thin pages.</p><div class="actions"><a class="btn primary" href="tel:+447838231389">Call 07838231389</a><a class="btn secondary" href="get-a-quote.html">Get a quote</a></div></div><aside class="formcard" aria-label="Quote form">
+  <h2>Get your free quote</h2>
+  <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+
+  <form class="formgrid" action="https://formspree.io/f/REPLACE_WITH_YOUR_CODE" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="areasHeroFormStatus">
+    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+    <input type="email" name="email" placeholder="Email address" autocomplete="email">
+    <select name="service" required>
+      <option value="">Select service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Rug cleaning</option><option>Stain removal treatment</option><option>Moth treatment</option><option>Commercial carpet cleaning</option><option selected>General quote</option>
+    </select>
+    <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+    <button class="btn primary" type="submit">Send enquiry</button>
+  </form>
+
+  <div id="areasHeroFormStatus" class="form-status" aria-live="polite"></div>
+
+  <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+
+  <div class="contact-mini">
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+    <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+  </div>
+</aside></div></section>
 <section><div class="container"><span class="kicker">All area pages</span><h2>Choose your town</h2><p class="lead">Each town page links through to the main services and uses a town specific map query so the page stays locally relevant.</p><div class="town-grid" style="margin-top:24px">{% for t in site.data.towns %}<a href="../areas/{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}</div></div></section>
-{% include quote-panel.html heading="Get your free quote" text="Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner." service="General quote" status_id="areasBottomFormStatus" %}
+<section class="quote-section" id="quote-section">
+  <div class="container narrow-wrap">
+    <div class="quote-panel">
+      <span class="section-kicker">Get a quote</span>
+      <h2>Get your free quote</h2>
+      <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+      <form class="quote-grid" action="https://formspree.io/f/REPLACE_WITH_YOUR_CODE" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="areasBottomFormStatus">
+        <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+        <input type="email" name="email" placeholder="Email address" autocomplete="email">
+        <input type="text" name="area" placeholder="Town or area" value="">
+        <select name="service" class="full" required>
+          <option value="">Select service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Rug cleaning</option><option>Stain removal treatment</option><option>Moth treatment</option><option>Commercial carpet cleaning</option><option selected>General quote</option>
+        </select>
+        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary full" type="submit">Send enquiry</button>
+      </form>
+      <div id="areasBottomFormStatus" class="form-status" aria-live="polite"></div>
+      <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+      <div class="contact-mini">
+        <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+        <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+        <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+      </div>
+    </div>
+  </div>
+</section>
