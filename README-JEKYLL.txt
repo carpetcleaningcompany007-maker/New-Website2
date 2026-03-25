@@ -51,3 +51,7 @@ Town pages, service town pages, Services page and Areas page now use one form pe
 SEO
 Town and town service titles now build automatically from the layouts if seo_title is not set.
 This makes rebranding easier and keeps titles more consistent.
+
+
+One live form per page
+The site now uses one working enquiry form per page. The smaller hero side panel is a contact card, not a second form.
