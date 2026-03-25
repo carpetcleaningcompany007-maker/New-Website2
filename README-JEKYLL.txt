@@ -33,3 +33,10 @@ SERVICE + TOWN SYSTEM
 
 Form setup:
 Edit _config.yml and replace formspree_endpoint with your real Formspree URL.
+
+
+Audit fixes added:
+- Fixed broken area-to-service links by adding locations_path to area pages.
+- Fixed related service links inside service-town pages.
+- Added service_name metadata and stronger descriptions for local service pages.
+- Added breadcrumb schema to town and service-town layouts.

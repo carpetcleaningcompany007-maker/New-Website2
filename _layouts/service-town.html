@@ -20,6 +20,19 @@ layout: default
   "serviceType": "{{ service_name }}"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/"},
+    {"@type": "ListItem", "position": 2, "name": "Areas", "item": "{{ site.url }}{{ site.baseurl }}/pages/areas.html"},
+    {"@type": "ListItem", "position": 3, "name": "{{ town_obj.name }}", "item": "{{ site.url }}{{ site.baseurl }}/areas/{{ town_obj.slug }}.html"},
+    {"@type": "ListItem", "position": 4, "name": "{{ service_name }}", "item": "{{ site.url }}{{ site.baseurl }}/locations/{{ town_obj.slug }}/{{ page.service_slug }}.html"}
+  ]
+}
+</script>
+
 <section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
@@ -57,9 +70,9 @@ layout: default
       <span class="section-kicker">{{ service_name }} in {{ town_obj.name }}</span>
       <h2>{{ service_name }} for homes and local customers in {{ town_obj.name }}</h2>
       <div class="story-copy paragraph-stack">
-        <p>{{ page.intro_paragraph_1 }}</p>
-        <p>{{ page.intro_paragraph_2 }}</p>
-        <p>{{ page.intro_paragraph_3 }}</p>
+        <p>{{ page.intro_paragraph_1 | default: page.intro_text }}</p>
+        <p>{{ page.intro_paragraph_2 | default: "This page helps local customers find the exact service they need in the right town without getting lost in the wider site." }}</p>
+        <p>{{ page.intro_paragraph_3 | default: "It also connects this service page back into nearby areas and the wider JW Carpet Care site structure." }}</p>
       </div>
     </div>
 
