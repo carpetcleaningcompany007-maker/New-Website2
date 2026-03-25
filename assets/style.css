@@ -248,3 +248,17 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .quote-grid button{border:0;cursor:pointer}
 .form-status{margin-top:12px;font-weight:700;color:var(--brand)}
 @media (max-width:760px){.quote-grid{grid-template-columns:1fr}}
+
+
+/* forced quote form fix */
+.quote-section{padding:56px 0}
+.quote-panel{background:#fff !important;opacity:1 !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;border:1px solid #e5e7eb !important;border-radius:32px !important;box-shadow:0 24px 60px rgba(15,23,42,.16) !important;padding:30px !important;color:#0f172a !important}
+.quote-panel h2{font-size:clamp(2rem,4vw,3.35rem);line-height:1.02;margin:0 0 10px;color:#0f172a !important}
+.quote-panel p{margin:0 0 22px;color:#475569 !important}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.quote-grid .full{grid-column:1/-1}
+.quote-grid input,.quote-grid select,.quote-grid textarea{width:100%;background:#fff !important;color:#0f172a !important;border:1.5px solid #cbd5e1 !important;border-radius:20px !important;padding:18px 20px !important;font:inherit;box-shadow:none !important;opacity:1 !important}
+.quote-grid textarea{min-height:150px;resize:vertical}
+.quote-grid input::placeholder,.quote-grid textarea::placeholder{color:#64748b !important;opacity:1 !important}
+.form-status{margin-top:12px;color:#0f172a}
+@media (max-width: 720px){.quote-grid{grid-template-columns:1fr}.quote-panel{padding:24px !important;border-radius:24px !important}}

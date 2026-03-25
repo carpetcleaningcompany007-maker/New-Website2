@@ -21,7 +21,33 @@
 </div></div>
 <div class="drop"><button class="dropbtn" type="button">Areas</button><div class="dropmenu"><a href="../pages/areas.html">All Areas</a><a href="../areas/worcester.html">Worcester</a><a href="../areas/bromsgrove.html">Bromsgrove</a><a href="../areas/kidderminster.html">Kidderminster</a><a href="../areas/redditch.html">Redditch</a></div></div>
 <a href="../pages/reviews.html">Reviews</a><a href="../pages/gallery.html">Gallery</a><a class="cta" href="../index.html#quote">Get Quote</a>
-</nav></div></header><section class="hero service-hero"><div class="container"><div><span class="eyebrow">Service hub</span><h1>Our Services</h1><p>Each core service from the older expanded website is now rebuilt here on the cleaner looking site.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a><a class="btn secondary" href="../index.html#quote">Get a Quote</a></div></div><aside class="formcard"><h2>Need help choosing?</h2><p>Call or WhatsApp and explain what needs cleaning.</p></aside></div></section><section><div class="container"><div class="town-grid grid grid-4"><a href="carpet-cleaning.html"><h3>Carpet Cleaning</h3><p>Professional carpet cleaning across {{ site.location_list }}.</p><span>Open service page →</span></a><a href="commercial.html"><h3>Commercial</h3><p>Commercial carpet cleaning for offices, receptions, rentals and shared spaces.</p><span>Open service page →</span></a><a href="moth-treatment.html"><h3>Moth Treatment</h3><p>Specialist moth treatment and advice for carpets and rugs across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="rug-cleaning.html"><h3>Rug Cleaning</h3><p>Professional rug cleaning for modern and traditional rugs across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="stain-removal.html"><h3>Stain Removal</h3><p>Targeted stain removal treatments for carpets and upholstery across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="upholstery-cleaning.html"><h3>Upholstery Cleaning</h3><p>Professional sofa and upholstery cleaning across {{ site.service_area }}.</p><span>Open service page →</span></a></div></div></section>{% include quote-panel.html heading='Get a fast quote' text='Use this form and your email app will open with the enquiry ready to send.' service='Services' area=page.town status_id='servicesStatus' %}
+</nav></div></header><section class="hero service-hero"><div class="container"><div><span class="eyebrow">Service hub</span><h1>Our Services</h1><p>Each core service from the older expanded website is now rebuilt here on the cleaner looking site.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a><a class="btn secondary" href="../index.html#quote">Get a Quote</a></div></div><aside class="formcard"><h2>Need help choosing?</h2><p>Call or WhatsApp and explain what needs cleaning.</p></aside></div></section><section><div class="container"><div class="town-grid grid grid-4"><a href="carpet-cleaning.html"><h3>Carpet Cleaning</h3><p>Professional carpet cleaning across {{ site.location_list }}.</p><span>Open service page →</span></a><a href="commercial.html"><h3>Commercial</h3><p>Commercial carpet cleaning for offices, receptions, rentals and shared spaces.</p><span>Open service page →</span></a><a href="moth-treatment.html"><h3>Moth Treatment</h3><p>Specialist moth treatment and advice for carpets and rugs across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="rug-cleaning.html"><h3>Rug Cleaning</h3><p>Professional rug cleaning for modern and traditional rugs across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="stain-removal.html"><h3>Stain Removal</h3><p>Targeted stain removal treatments for carpets and upholstery across {{ site.service_area }}.</p><span>Open service page →</span></a><a href="upholstery-cleaning.html"><h3>Upholstery Cleaning</h3><p>Professional sofa and upholstery cleaning across {{ site.service_area }}.</p><span>Open service page →</span></a></div></div></section><section class="quote-section">
+  <div class="container narrow-wrap">
+    <div class="quote-panel">
+      <span class="section-kicker">Get a quote</span>
+      <h2>Get your free quote</h2>
+      <p>Choose the service you need and send a quick enquiry.</p>
+      <form class="quote-grid" data-mailto-form="true" data-service="Cleaning Enquiry" data-area="" data-status="servicesQuoteStatus">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="text" name="area" placeholder="Town or area" value="">
+        <select name="service" class="full">
+          <option>Cleaning Enquiry</option>
+          <option>Carpet Cleaning</option>
+          <option>Upholstery Cleaning</option>
+          <option>Rug Cleaning</option>
+          <option>Stain Removal</option>
+          <option>Moth Treatment</option>
+          <option>Commercial Cleaning</option>
+        </select>
+        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary full" type="submit">Send enquiry</button>
+      </form>
+      <div id="servicesQuoteStatus" class="form-status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer"><div class="container footer-grid">
 <div><img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px"><p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across {{ site.service_area }}.</p></div>

@@ -50,7 +50,33 @@
 
   <section class="premium-cta-wrap"><div class="container narrow-wrap"><div class="premium-cta-band"><div><span class="section-kicker premium-kicker-light">Ready to book</span><h2>Need help with a stain problem?</h2><p>Call, email or send a WhatsApp message for a fast local quote across {{ site.service_area }}.</p></div><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a><a class="btn secondary" href="mailto:{{ site.email }}">Email us</a></div></div></div></section>
 
-  {% include quote-panel.html heading='Get a fast quote' text='Use this form and your email app will open with the enquiry ready to send.' service='Stain Removal' area=page.town status_id='stainremovalStatus' %}
+  <section class="quote-section">
+  <div class="container narrow-wrap">
+    <div class="quote-panel">
+      <span class="section-kicker">Get a quote</span>
+      <h2>Get your free quote</h2>
+      <p>Tell us about the stain and the surface and we will get back to you.</p>
+      <form class="quote-grid" data-mailto-form="true" data-service="Stain Removal" data-area="" data-status="stainQuoteStatus">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="email" name="email" placeholder="Email address">
+        <input type="text" name="area" placeholder="Town or area" value="">
+        <select name="service" class="full">
+          <option>Stain Removal</option>
+          <option>Carpet Cleaning</option>
+          <option>Upholstery Cleaning</option>
+          <option>Rug Cleaning</option>
+          <option>Stain Removal</option>
+          <option>Moth Treatment</option>
+          <option>Commercial Cleaning</option>
+        </select>
+        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
+        <button class="btn primary full" type="submit">Send enquiry</button>
+      </form>
+      <div id="stainQuoteStatus" class="form-status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer"><div class="container footer-grid"><div><img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px"><div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across {{ site.service_area }}</div></div><div><h3>Services</h3><p><a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br><a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br><a href="../pages/stain-removal.html">Stain Removal Treatments</a><br><a href="../pages/commercial.html">Commercial Cleaning</a><br><a href="../pages/rug-cleaning.html">Rug Cleaning</a><br><a href="../pages/moth-treatment.html">Moth Treatment</a></p></div><div><h3>Contact</h3><p><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a></p></div></div><div class="container copy">© {{ site.business_name }}. All rights reserved.</div></footer>
   <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i></a></div>
