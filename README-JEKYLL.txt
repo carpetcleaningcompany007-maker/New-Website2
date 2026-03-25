@@ -29,3 +29,7 @@ SERVICE + TOWN SYSTEM
 - Edit _data/services.yml to change or add services.
 - Edit _data/towns.yml to change or add towns and nearby areas.
 - Service plus town pages live under /locations/TOWN-SLUG/SERVICE-SLUG.html
+
+
+Form setup:
+Edit _config.yml and replace formspree_endpoint with your real Formspree URL.

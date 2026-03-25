@@ -1102,7 +1102,26 @@
         font-size:22px;
       }
     }
-  </style>
+  
+
+.hero-mini-panel,.hero-side-note{background:#fff;color:var(--text);border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow-strong);padding:28px}
+.hero-mini-panel h2,.hero-side-note h2{margin:0 0 12px;font-size:clamp(1.55rem,2vw,2rem);line-height:1.1;color:#0f172a}
+.hero-mini-panel p,.hero-side-note p{margin:0 0 16px;color:var(--muted)}
+.mini-kicker{display:inline-block;margin-bottom:12px;padding:8px 12px;border-radius:999px;background:#eef4ff;color:#1e3a8a;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.mini-checks{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
+.mini-checks li{display:flex;align-items:flex-start;gap:10px;font-weight:600;color:#1e293b}
+.mini-checks i{color:#2563eb;margin-top:3px}
+.mini-contact{display:grid;gap:12px}
+.mini-contact a{display:flex;align-items:center;gap:10px;font-weight:700;color:#1d4ed8}
+.hero-simple .container{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:88px 0 84px}
+.hero-simple .actions{margin-top:28px}
+.hero-simple .hero-side-note{max-width:480px;margin-left:auto}
+@media (max-width:980px){
+  .hero-simple .container{grid-template-columns:1fr}
+  .hero-simple .hero-side-note,.hero-mini-panel{max-width:none;margin-left:0}
+}
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -1161,7 +1180,7 @@
 
         <a href="pages/reviews.html">Reviews</a>
         <a href="pages/gallery.html">Gallery</a>
-        <a class="cta" href="#quote">Get Quote</a>
+        <a class="cta" href="pages/get-a-quote.html">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -1183,12 +1202,26 @@
 
           <div class="actions">
             <a class="btn primary" href="tel:07838231389">Call 07838231389</a>
-            <a class="btn secondary" href="#quote">Request a Quote</a>
+            <a class="btn secondary" href="pages/get-a-quote.html">Request a Quote</a>
             <a class="btn ghost" href="pages/reviews.html">Read Reviews</a>
           </div>
         </div>
 
-        {% include hero-quote-form.html id="quote" service="General quote" area="Worcestershire" status_id="formStatus" %}
+        <aside class="hero-mini-panel" aria-label="Quick contact">
+  <span class="mini-kicker">Trusted local service</span>
+  <h2>Fast help for homes and businesses</h2>
+  <p>Professional carpet cleaning, upholstery cleaning, stain removal and commercial work across Worcestershire and the West Midlands.</p>
+  <ul class="mini-checks">
+    <li><i class="fa-solid fa-circle-check"></i><span>Quick local quotes and clear advice</span></li>
+    <li><i class="fa-solid fa-circle-check"></i><span>Domestic and commercial work covered</span></li>
+    <li><i class="fa-solid fa-circle-check"></i><span>Easy booking by phone, email or WhatsApp</span></li>
+  </ul>
+  <div class="mini-contact">
+    <a href="tel:07838231389"><i class="fa-solid fa-phone"></i>07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i>infojwcarpetcare@gmail.com</a>
+    <a href="pages/get-a-quote.html"><i class="fa-solid fa-file-signature"></i>Open the full quote form</a>
+  </div>
+</aside>
       </div>
     </section>
 
@@ -1576,7 +1609,7 @@
       if (e.key === 'Escape') closeAllDrops();
     });
 
-    const quoteForm = document.getElementById('quoteForm');
+    const quoteForm = document.getElementById('quoteFormDisabled');
     const formStatus = document.getElementById('formStatus');
 
     if (quoteForm) {

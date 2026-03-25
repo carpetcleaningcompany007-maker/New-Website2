@@ -12,5 +12,5 @@
 <a href="{{ page.pages_path | default: 'pages/' }}areas.html">All Areas</a>
 {% for t in site.data.towns limit:6 %}<a href="{{ page.areas_path | default: 'areas/' }}{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}
 </div></div>
-<a href="{{ page.pages_path | default: 'pages/' }}reviews.html">Reviews</a><a href="{{ page.pages_path | default: 'pages/' }}gallery.html">Gallery</a><a class="cta" href="{{ page.quote_path | default: 'index.html#quote' }}">Get Quote</a>
+<a href="{{ page.pages_path | default: 'pages/' }}reviews.html">Reviews</a><a href="{{ page.pages_path | default: 'pages/' }}gallery.html">Gallery</a><a class="cta" href="{{ page.quote_path | default: 'pages/get-a-quote.html' }}">Get Quote</a>
 </nav></div></header>
