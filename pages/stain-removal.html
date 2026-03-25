@@ -1,5 +1,3 @@
----
----
 <!doctype html>
 <html lang="en-GB">
 <head>
@@ -35,13 +33,13 @@
       <aside class="quick-contact-card quick-contact-card-plain" aria-label="Quick contact details">
   <span class="section-kicker">Quick contact</span>
   <h2>Quick local contact</h2>
-  <p>Use the quote form lower down this page or contact us directly for a fast reply.</p>
+  <p>Call, email or WhatsApp us directly for a fast reply.</p>
   <div class="contact-mini stack quick-contact-links">
     <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
     <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
     <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
   </div>
-  <p class="quick-contact-note">One quote form appears lower down this page.</p>
+  
 </aside>
     </div>
   </section>
