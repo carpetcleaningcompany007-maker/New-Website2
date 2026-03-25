@@ -60,7 +60,17 @@
 
   <section class="premium-cta-wrap"><div class="container narrow-wrap"><div class="premium-cta-band"><div><span class="section-kicker premium-kicker-light">Ready to book</span><h2>Need help with moth treatment?</h2><p>Call, email or send a WhatsApp message for a fast local quote across Worcestershire and the West Midlands.</p></div><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a><a class="btn secondary" href="mailto:{{ site.email }}">Email us</a></div></div></div></section>
 
-  
+  <section class="quote-section" id="quote-section">
+  <div class="container narrow-wrap">
+<p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+      <div class="contact-mini">
+        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer"><div class="container footer-grid"><div><img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px"><div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</div></div><div><h3>Services</h3><p><a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br><a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br><a href="../pages/stain-removal.html">Stain Removal Treatments</a><br><a href="../pages/commercial.html">Commercial Cleaning</a><br><a href="../pages/rug-cleaning.html">Rug Cleaning</a><br><a href="../pages/moth-treatment.html">Moth Treatment</a></p></div><div><h3>Contact</h3><p><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a></p></div></div><div class="container copy">© {{ site.business_name }}. All rights reserved.</div></footer>
   <div class="floating"><a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}"><i class="fa-brands fa-whatsapp"></i></a><a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i></a></div>
