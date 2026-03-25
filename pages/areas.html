@@ -20,4 +20,3 @@ description: Browse the areas covered by {{ site.business_name }} across Worcest
   </div>
 </section>
 <section class="section-alt premium-town-wrap"><div class="container"><div class="section-heading-wrap center narrow-wrap"><span class="section-kicker">All area pages</span><h2>Choose your town</h2><p class="lead" style="margin-inline:auto">Each town page links through to carpet cleaning, upholstery cleaning, stain removal and moth treatment.</p></div><div class="premium-town-grid">{% for t in site.data.towns %}<a class="premium-town-card" href="../areas/{{ t.slug }}.html"><h3>{{ t.name }}</h3><p>{{ t.short_intro }}</p><span>Open {{ t.name }} →</span></a>{% endfor %}</div></div></section>
-{% include quote-panel.html heading='Need a quote?' text='Tell us the area and what needs cleaning for a fast local reply.' service='General quote' status_id='areasBottomFormStatus' %}
