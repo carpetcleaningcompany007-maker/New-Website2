@@ -8,11 +8,11 @@ instagram_url: https://www.instagram.com/james.wilson69/
 service_area: Worcestershire and the West Midlands
 location_list: Worcester, Bromsgrove, Kidderminster, Redditch and surrounding areas
 logo_url: https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png
-url: https://carpetcleaningcompany007-maker.github.io
-baseurl: /New-Website2
+url: https://jwcarpetcare.co.uk
+baseurl: ''
 phone_link: '+447838231389'
 contact_name: James
 map_query: Worcestershire UK
-
-# Paste your Formspree endpoint below, for example: https://formspree.io/f/abcxyzpq
-formspree_endpoint: 'https://formspree.io/f/REPLACE_WITH_YOUR_CODE'
+formspree_endpoint: https://formspree.io/f/REPLACE_WITH_YOUR_CODE
+permalink: pretty
+timezone: Europe/London

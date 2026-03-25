@@ -1,42 +1,25 @@
-This is a Jekyll config driven version.
+JW Carpet Care Jekyll build notes
 
-IMPORTANT
-- Change _config.yml to update business name, phone, email, service area and logo.
-- Those changes only appear after GitHub Pages or Jekyll rebuilds the site.
-- If you open the HTML files directly on your computer, {{ site.* }} variables will not render.
-- Upload the CONTENTS of this folder to the ROOT of your GitHub repo.
+This version has been rebuilt around Jekyll data files so the local pages are easier to maintain and harder to break.
 
-Extra config fields:
-- contact_name controls labels like WhatsApp James
-- map_query controls the homepage Google map location
+Main files to edit
+1. _config.yml
+   Update business details, social links and formspree_endpoint.
+2. _data/towns.yml
+   Add, remove or rename towns here.
+3. _data/services.yml
+   Edit service names and supporting text here.
 
+Local page structure
+- /areas/TOWN.html uses _layouts/town.html
+- /locations/TOWN/SERVICE.html uses _layouts/service-town.html
 
-FULL TOWN SYSTEM
-- Town data now lives in _data/towns.yml
-- Town pages in /areas/ are now tiny front matter files using _layouts/town.html
-- pages/areas.html and the homepage now pull town links from towns.yml
-- Add a new town by adding it to _data/towns.yml and creating a matching file in /areas/ with the same slug
+Every town now has matching local pages for all services listed in _data/services.yml.
+If you add a new town, create a matching file in /areas/ and the matching service files in /locations/TOWN/ using the same front matter pattern already in the site.
 
+Formspree
+Put your real endpoint into _config.yml:
+formspree_endpoint: https://formspree.io/f/yourcode
 
-AREA COVERAGE SYSTEM
-- Edit _data/towns.yml to add or remove towns.
-- Add a nearby list under a town to show nearby areas automatically on that town page.
-- Town pages now include breadcrumb schema, service schema, and nearby area coverage sections.
-- Sitemap now includes service pages and town pages.
-
-
-SERVICE + TOWN SYSTEM
-- Edit _data/services.yml to change or add services.
-- Edit _data/towns.yml to change or add towns and nearby areas.
-- Service plus town pages live under /locations/TOWN-SLUG/SERVICE-SLUG.html
-
-
-Form setup:
-Edit _config.yml and replace formspree_endpoint with your real Formspree URL.
-
-
-Audit fixes added:
-- Fixed broken area-to-service links by adding locations_path to area pages.
-- Fixed related service links inside service-town pages.
-- Added service_name metadata and stronger descriptions for local service pages.
-- Added breadcrumb schema to town and service-town layouts.
+Canonical domain
+Canonicals and schema now use https://jwcarpetcare.co.uk

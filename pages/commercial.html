@@ -36,7 +36,7 @@
   <h2>Get your free quote</h2>
   <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
 
-  <form class="formgrid" action="https://formspree.io/f/REPLACE_WITH_YOUR_CODE" method="POST" novalidate data-formspree="true" data-service="Commercial carpet cleaning" data-area="" data-status="commercialHeroFormStatus">
+  <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="Commercial carpet cleaning" data-area="" data-status="commercialHeroFormStatus">
     <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
     <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
     <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
@@ -81,7 +81,7 @@
       <span class="section-kicker">Get a quote</span>
       <h2>Get your free quote</h2>
       <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
-      <form class="quote-grid" action="https://formspree.io/f/REPLACE_WITH_YOUR_CODE" method="POST" novalidate data-formspree="true" data-service="Commercial carpet cleaning" data-area="" data-status="commercialBottomFormStatus">
+      <form class="quote-grid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="Commercial carpet cleaning" data-area="" data-status="commercialBottomFormStatus">
         <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
         <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
         <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>

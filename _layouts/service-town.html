@@ -3,36 +3,7 @@ layout: default
 ---
 {% assign town_obj = site.data.towns | where: 'slug', page.town_slug | first %}
 {% assign service_obj = site.data.services | where: 'slug', page.service_slug | first %}
-{% assign service_name = service_obj.name %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "{{ service_name }} in {{ town_obj.name }}",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "{{ site.business_name }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
-    "url": "{{ site.url | append: site.baseurl }}"
-  },
-  "areaServed": {"@type": "City", "name": "{{ town_obj.name }}"},
-  "serviceType": "{{ service_name }}"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}{{ site.baseurl }}/"},
-    {"@type": "ListItem", "position": 2, "name": "Areas", "item": "{{ site.url }}{{ site.baseurl }}/pages/areas.html"},
-    {"@type": "ListItem", "position": 3, "name": "{{ town_obj.name }}", "item": "{{ site.url }}{{ site.baseurl }}/areas/{{ town_obj.slug }}.html"},
-    {"@type": "ListItem", "position": 4, "name": "{{ service_name }}", "item": "{{ site.url }}{{ site.baseurl }}/locations/{{ town_obj.slug }}/{{ page.service_slug }}.html"}
-  ]
-}
-</script>
-
+{% assign service_name = page.service_name | default: service_obj.name %}
 <section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
@@ -43,7 +14,7 @@ layout: default
       <div class="hero-points hero-points-open">
         <span>{{ service_name }}</span>
         <span>{{ town_obj.name }}</span>
-        <span>Map and nearby towns</span>
+        <span>Related services</span>
         <span>Fast quote route</span>
       </div>
       <div class="actions">
@@ -51,7 +22,6 @@ layout: default
         <a class="btn secondary" href="{{ page.quote_path }}">Get a quote</a>
       </div>
     </div>
-
     {% include hero-quote-form.html service=service_name area=town_obj.name status_id="serviceTownHeroFormStatus" %}
   </div>
 </section>
@@ -60,7 +30,7 @@ layout: default
   <div class="container usp-band-grid">
     <div><strong>{{ service_name }}</strong><span>Clear local page built around {{ town_obj.name }} and nearby support.</span></div>
     <div><strong>Fast quote route</strong><span>Move straight to a quote, call or WhatsApp without unnecessary steps.</span></div>
-    <div><strong>Local search focus</strong><span>Useful when someone searches for {{ service_name | downcase }} in {{ town_obj.name }} specifically.</span></div>
+    <div><strong>Internal SEO support</strong><span>Related services and nearby town links are built in below.</span></div>
   </div>
 </section>
 
@@ -71,16 +41,15 @@ layout: default
       <h2>{{ service_name }} for homes and local customers in {{ town_obj.name }}</h2>
       <div class="story-copy paragraph-stack">
         <p>{{ page.intro_paragraph_1 | default: page.intro_text }}</p>
-        <p>{{ page.intro_paragraph_2 | default: "This page helps local customers find the exact service they need in the right town without getting lost in the wider site." }}</p>
-        <p>{{ page.intro_paragraph_3 | default: "It also connects this service page back into nearby areas and the wider JW Carpet Care site structure." }}</p>
+        <p>{{ page.intro_paragraph_2 | default: 'This page helps local customers find the exact service they need in the right town without getting lost in the wider site.' }}</p>
+        <p>{{ page.intro_paragraph_3 | default: 'It also connects this service page back into nearby areas and the wider site structure.' }}</p>
       </div>
     </div>
-
     <aside class="story-side soft-panel">
-      <span class="section-kicker">Other towns nearby</span>
-      <h3>Nearby locations</h3>
+      <span class="section-kicker">Nearby supporting areas</span>
+      <h3>Areas around {{ town_obj.name }}</h3>
       <div class="pill-links">
-        {% for t in site.data.towns limit:10 %}{% unless t.slug == town_obj.slug %}<a href="{{ page.areas_path }}{{ t.slug }}.html">{{ t.name }}</a>{% endunless %}{% endfor %}
+        {% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}
       </div>
     </aside>
   </div>
@@ -89,41 +58,9 @@ layout: default
 <section class="section-alt flow-section">
   <div class="container">
     <div class="section-heading-wrap">
-      <span class="section-kicker">Why this page matters</span>
-      <h2>A cleaner route to {{ service_name | downcase }}</h2>
+      <span class="section-kicker">Related pages</span>
+      <h2>Other services in {{ town_obj.name }}</h2>
     </div>
-    <div class="benefit-columns open-benefits">
-      <div>
-        <h3>Local relevance</h3>
-        <p>Built around {{ town_obj.name }} so the page makes sense for customers searching by service and town together.</p>
-      </div>
-      <div>
-        <h3>Straightforward layout</h3>
-        <p>Important local details, map support and related services sit in one place without the page feeling cluttered.</p>
-      </div>
-      <div>
-        <h3>Fast contact route</h3>
-        <p>Useful when somebody just wants the right service, the right area and a quick way to get in touch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-white flow-section pt-tight">
-  <div class="container narrow-wrap">
-    <span class="section-kicker">Nearby supporting areas</span>
-    <h2>Areas around {{ town_obj.name }}</h2>
-    <p class="lead">This {{ service_name | downcase }} page supports {{ town_obj.name }} while still sitting inside the wider service and area structure across {{ site.service_area }}.</p>
-    <div class="pill-links plain-pills local-pills">
-      {% if town_obj and town_obj.nearby %}{% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}{% endif %}
-    </div>
-  </div>
-</section>
-
-<section class="section-white flow-section pt-tight">
-  <div class="container narrow-wrap">
-    <span class="section-kicker">Related pages for {{ town_obj.name }}</span>
-    <h2>Compare services in {{ town_obj.name }}</h2>
     <div class="service-chip-grid cards">
       {% for s in site.data.services %}
         <a href="{{ page.locations_path }}{{ town_obj.slug }}/{{ s.slug }}.html"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>Go straight to the {{ s.name | downcase }} page for {{ town_obj.name }}.</span></a>
@@ -132,7 +69,31 @@ layout: default
   </div>
 </section>
 
-{% include quote-panel.html heading='Need a quote for this service?' text='Send the details and your email app will open with everything ready to send.' service=service_name area=town_obj.name status_id='serviceTownQuoteStatus' %}
+<section class="section-white flow-section pt-tight">
+  <div class="container narrow-wrap">
+    <span class="section-kicker">Nearby towns</span>
+    <h2>{{ service_name }} pages around {{ town_obj.name }}</h2>
+    <div class="service-chip-grid cards">
+      {% for t in site.data.towns limit:12 %}{% unless t.slug == town_obj.slug %}
+        <a href="{{ page.locations_path }}{{ t.slug }}/{{ page.service_slug }}.html"><strong>{{ service_name }} in {{ t.name }}</strong><span>View the same service page for {{ t.name }}.</span></a>
+      {% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-white flow-section pt-tight">
+  <div class="container narrow-wrap">
+    <span class="section-kicker">Quick questions</span>
+    <h2>{{ service_name }} in {{ town_obj.name }} FAQ</h2>
+    <div class="premium-process-grid">
+      <article class="premium-process-card"><h3>Do you cover nearby areas as well?</h3><p>Yes. This page is anchored to {{ town_obj.name }} but also supports nearby areas around the town.</p></article>
+      <article class="premium-process-card"><h3>Can I ask about another service too?</h3><p>Yes. Use the links above if you also need carpet cleaning, upholstery cleaning, stain removal or moth treatment in {{ town_obj.name }}.</p></article>
+      <article class="premium-process-card"><h3>How do I get a quote?</h3><p>Use the form on this page, call directly or send a WhatsApp message for a fast local reply.</p></article>
+    </div>
+  </div>
+</section>
+
+{% include quote-panel.html heading='Need a quote for this service?' text='Send the details for {{ service_name | downcase }} in {{ town_obj.name }} and we can come back with the right next step.' service=service_name area=town_obj.name status_id='serviceTownQuoteStatus' %}
 
 <section class="section-alt local-map-section">
   <div class="container split split-clean">
