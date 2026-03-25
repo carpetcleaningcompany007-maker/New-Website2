@@ -36,22 +36,7 @@ layout: default
       </div>
     </div>
 
-    <aside class="hero-side-card premium-side-card">
-      <span class="section-kicker">Quick contact</span>
-      <h3>Speak to James</h3>
-      <p>Call or WhatsApp for a quick local reply about carpet cleaning in {{ page.town }}.</p>
-      <ul class="hero-checklist">
-        <li><i class="fa-solid fa-check"></i><span>Carpet cleaning</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Upholstery and rugs</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Stain and odour issues</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Rental property refreshes</span></li>
-      </ul>
-      <div class="contact-mini compact">
-        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
-      </div>
-    </aside>
+    {% include hero-quote-form.html service="Local Cleaning Enquiry" area=page.town status_id="townHeroFormStatus" %}
   </div>
 </section>
 

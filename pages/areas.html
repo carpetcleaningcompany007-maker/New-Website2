@@ -7,32 +7,6 @@ quote_path: ../index.html#quote
 seo_title: Areas We Cover | {{ site.business_name }}
 description: Browse the areas covered by {{ site.business_name }} across {{ site.service_area }}.
 ---
-<section class="hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.6)),url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat"><div class="container"><div><span class="eyebrow">Areas We Cover</span><h1>Local carpet cleaning pages across {{ site.service_area }}</h1><p>Browse all current town pages below. Each town page can now show nearby supporting areas as well, giving each location page a stronger local coverage signal without creating loads of thin pages.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a><a class="btn secondary" href="../index.html#quote">Get a quote</a></div></div><aside class="formcard"><h2>Coverage overview</h2><p>{{ site.business_name }} currently has {{ site.data.towns | size }} location pages in the reusable town system.</p><div class="contact-mini"><a href="mailto:{{ site.email }}">{{ site.email }}</a><a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp {{ site.contact_name | default: site.business_name }}</a></div></aside></div></section>
+<section class="hero" style="background:linear-gradient(120deg,rgba(8,16,29,.88),rgba(15,23,42,.6)),url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat"><div class="container"><div><span class="eyebrow">Areas We Cover</span><h1>Local carpet cleaning pages across {{ site.service_area }}</h1><p>Browse all current town pages below. Each town page can now show nearby supporting areas as well, giving each location page a stronger local coverage signal without creating loads of thin pages.</p><div class="actions"><a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a><a class="btn secondary" href="../index.html#quote">Get a quote</a></div></div>{% include hero-quote-form.html service="General quote" status_id="areasHeroFormStatus" %}</div></section>
 <section><div class="container"><span class="kicker">All area pages</span><h2>Choose your town</h2><p class="lead">Each town page links through to the main services and uses a town specific map query so the page stays locally relevant.</p><div class="town-grid" style="margin-top:24px">{% for t in site.data.towns %}<a href="../areas/{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}</div></div></section>
-<section class="quote-section">
-  <div class="container narrow-wrap">
-    <div class="quote-panel">
-      <span class="section-kicker">Get a quote</span>
-      <h2>Need a local quote?</h2>
-      <p>Send a quick enquiry and we will get back to you with local availability.</p>
-      <form class="quote-grid" data-mailto-form="true" data-service="Local Cleaning Enquiry" data-area="" data-status="areasQuoteStatus">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="email" name="email" placeholder="Email address">
-        <input type="text" name="area" placeholder="Town or area" value="">
-        <select name="service" class="full">
-          <option>Local Cleaning Enquiry</option>
-          <option>Carpet Cleaning</option>
-          <option>Upholstery Cleaning</option>
-          <option>Rug Cleaning</option>
-          <option>Stain Removal</option>
-          <option>Moth Treatment</option>
-          <option>Commercial Cleaning</option>
-        </select>
-        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
-        <button class="btn primary full" type="submit">Send enquiry</button>
-      </form>
-      <div id="areasQuoteStatus" class="form-status" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
+{% include quote-panel.html heading="Get your free quote" text="Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner." service="General quote" status_id="areasBottomFormStatus" %}

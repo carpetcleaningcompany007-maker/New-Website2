@@ -39,16 +39,7 @@ layout: default
       </div>
     </div>
 
-    <aside class="hero-side-card">
-      <span class="section-kicker">Quick local contact</span>
-      <h3>Speak to James</h3>
-      <p>Call or WhatsApp for a quick reply about {{ service_name | downcase }} in {{ town_obj.name }}.</p>
-      <div class="contact-mini compact">
-        <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp James</a>
-      </div>
-    </aside>
+    {% include hero-quote-form.html service=service_name area=town_obj.name status_id="serviceTownHeroFormStatus" %}
   </div>
 </section>
 

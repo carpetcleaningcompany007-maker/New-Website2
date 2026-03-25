@@ -416,10 +416,7 @@
         </div>
       </div>
 
-      <aside class="formcard">
-        <h2>Why reviews matter</h2>
-        <p>Reviews help new customers feel confident before they call, especially when they want a reliable local service with proven results.</p>
-      </aside>
+      {% include hero-quote-form.html service="General quote" status_id="reviewsHeroFormStatus" %}
     </div>
   </section>
 
@@ -474,33 +471,7 @@
   <!-- ========================================= -->
   <!-- 08. FOOTER -->
   <!-- ========================================= -->
-  <section class="quote-section">
-  <div class="container narrow-wrap">
-    <div class="quote-panel">
-      <span class="section-kicker">Get a quote</span>
-      <h2>Get your free quote</h2>
-      <p>Seen enough? Send your details and get a fast local quote.</p>
-      <form class="quote-grid" data-mailto-form="true" data-service="Cleaning Enquiry" data-area="" data-status="reviewsQuoteStatus">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="tel" name="phone" placeholder="Phone number" required>
-        <input type="email" name="email" placeholder="Email address">
-        <input type="text" name="area" placeholder="Town or area" value="">
-        <select name="service" class="full">
-          <option>Cleaning Enquiry</option>
-          <option>Carpet Cleaning</option>
-          <option>Upholstery Cleaning</option>
-          <option>Rug Cleaning</option>
-          <option>Stain Removal</option>
-          <option>Moth Treatment</option>
-          <option>Commercial Cleaning</option>
-        </select>
-        <textarea class="full" name="details" placeholder="Tell us what needs cleaning" required></textarea>
-        <button class="btn primary full" type="submit">Send enquiry</button>
-      </form>
-      <div id="reviewsQuoteStatus" class="form-status" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
+  {% include quote-panel.html heading="Get your free quote" text="Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner." service="General quote" status_id="reviewsBottomFormStatus" %}
 
 <footer class="footer">
     <div class="container footer-grid">
