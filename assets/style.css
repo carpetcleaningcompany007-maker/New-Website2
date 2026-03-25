@@ -281,3 +281,11 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
   .hero-simple .hero-side-note,.hero-mini-panel{max-width:none;margin-left:0}
 }
 
+
+
+.quick-contact-card .quick-contact-list{margin:18px 0 22px;padding:0;list-style:none;display:grid;gap:12px}
+.quick-contact-card .quick-contact-list li{display:flex;gap:10px;align-items:flex-start;color:#334155}
+.quick-contact-card .quick-contact-list i{color:var(--brand);margin-top:4px}
+.quick-contact-card .contact-mini.stack{display:grid;gap:12px;margin-top:4px}
+.quick-contact-card .stack-actions{display:grid;gap:12px;margin-top:22px}
+.quick-contact-card .stack-actions .btn{width:100%;justify-content:center}

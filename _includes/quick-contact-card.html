@@ -1,0 +1,18 @@
+<aside class="formcard quick-contact-card"{% if include.id %} id="{{ include.id }}"{% endif %} aria-label="Quick contact details">
+  <h2>{{ include.heading | default: 'Quick local contact' }}</h2>
+  <p>{{ include.text | default: 'Call, email or WhatsApp for a fast reply about carpet cleaning, upholstery cleaning and stain removal.' }}</p>
+  <ul class="mini-checks quick-contact-list">
+    <li><i class="fa-solid fa-circle-check"></i><span>Fast local quotes</span></li>
+    <li><i class="fa-solid fa-circle-check"></i><span>Domestic and commercial enquiries</span></li>
+    <li><i class="fa-solid fa-circle-check"></i><span>Form at the bottom of this page</span></li>
+  </ul>
+  <div class="contact-mini stack">
+    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name | default: site.business_name }}</a>
+  </div>
+  <div class="actions stack-actions">
+    <a class="btn primary" href="{{ page.quote_path | default: 'pages/get-a-quote.html' }}">Get a quote</a>
+    <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+  </div>
+</aside>

@@ -5,8 +5,8 @@ pages_path: ./
 areas_path: ../areas/
 quote_path: get-a-quote.html
 root_path: ../
-seo_title: Get a Quote | JW Carpet Care
-description: Request a fast carpet cleaning quote from JW Carpet Care across Worcestershire and the West Midlands.
+title: Get a Quote | {{ site.business_name }}
+description: Request a fast carpet cleaning quote from {{ site.business_name }} across Worcestershire and the West Midlands.
 og_image: https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop
 ---
 <section class="hero hero-simple" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.62)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;color:#fff">
@@ -16,8 +16,8 @@ og_image: https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=18
       <h1>Tell us what needs cleaning</h1>
       <p>Use the form below for a fast local quote for carpet cleaning, upholstery cleaning, stain removal, rug cleaning, moth treatment or commercial work.</p>
       <div class="actions">
-        <a class="btn primary" href="tel:+447838231389">Call 07838231389</a>
-        <a class="btn secondary" href="mailto:infojwcarpetcare@gmail.com">Email us</a>
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn secondary" href="mailto:{{ site.email }}">Email us</a>
       </div>
     </div>
     <aside class="hero-side-note">
@@ -40,7 +40,7 @@ og_image: https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=18
       <h2>Get your free quote</h2>
       <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
       <form class="quote-grid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="mainQuotePageStatus">
-        <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+        <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
         <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
         <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
         <input type="email" name="email" placeholder="Email address" autocomplete="email">
@@ -54,9 +54,9 @@ og_image: https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=18
       <div id="mainQuotePageStatus" class="form-status" aria-live="polite"></div>
       <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
       <div class="contact-mini">
-        <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
-        <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
-        <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+        <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+        <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
       </div>
     </div>
   </div>

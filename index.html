@@ -5,34 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>JW Carpet Care | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch</title>
+  <title>{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch</title>
   <meta name="description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. Honest local service with visible results.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#0f172a">
-  <meta name="author" content="JW Carpet Care">
+  <meta name="author" content="{{ site.business_name }}">
   <meta name="format-detection" content="telephone=no,address=no,email=no">
 
   <link rel="canonical" href="https://jwcarpetcare.co.uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png">
+  <link rel="preload" as="image" href="{{ site.logo_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:site_name" content="JW Carpet Care">
-  <meta property="og:title" content="JW Carpet Care | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
+  <meta property="og:site_name" content="{{ site.business_name }}">
+  <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. Honest local service with visible results.">
   <meta property="og:url" content="https://jwcarpetcare.co.uk/">
-  <meta property="og:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png">
-  <meta property="og:image:alt" content="JW Carpet Care logo">
+  <meta property="og:image" content="{{ site.logo_url }}">
+  <meta property="og:image:alt" content="{{ site.business_name }} logo">
   <meta property="og:image:type" content="image/png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="JW Carpet Care | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
+  <meta name="twitter:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta name="twitter:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
-  <meta name="twitter:image" content="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png">
+  <meta name="twitter:image" content="{{ site.logo_url }}">
 
   <script type="application/ld+json">
   {
@@ -41,31 +41,31 @@
       {
         "@type":"Organization",
         "@id":"https://jwcarpetcare.co.uk/#org",
-        "name":"JW Carpet Care",
+        "name":"{{ site.business_name }}",
         "url":"https://jwcarpetcare.co.uk/",
         "logo":{
           "@type":"ImageObject",
-          "url":"https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png"
+          "url":"{{ site.logo_url }}"
         },
-        "email":"infojwcarpetcare@gmail.com",
-        "telephone":"07838231389"
+        "email":"{{ site.email }}",
+        "telephone":"{{ site.phone }}"
       },
       {
         "@type":"WebSite",
         "@id":"https://jwcarpetcare.co.uk/#website",
         "url":"https://jwcarpetcare.co.uk/",
-        "name":"JW Carpet Care",
+        "name":"{{ site.business_name }}",
         "publisher":{"@id":"https://jwcarpetcare.co.uk/#org"},
         "inLanguage":"en-GB"
       },
       {
         "@type":"LocalBusiness",
         "@id":"https://jwcarpetcare.co.uk/#localbusiness",
-        "name":"JW Carpet Care",
+        "name":"{{ site.business_name }}",
         "url":"https://jwcarpetcare.co.uk/",
-        "image":"https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png",
-        "telephone":"07838231389",
-        "email":"infojwcarpetcare@gmail.com",
+        "image":"{{ site.logo_url }}",
+        "telephone":"{{ site.phone }}",
+        "email":"{{ site.email }}",
         "priceRange":"££",
         "description":"Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.",
         "areaServed":[
@@ -79,9 +79,9 @@
         "contactPoint":[
           {
             "@type":"ContactPoint",
-            "telephone":"07838231389",
+            "telephone":"{{ site.phone }}",
             "contactType":"customer service",
-            "email":"infojwcarpetcare@gmail.com",
+            "email":"{{ site.email }}",
             "areaServed":"GB",
             "availableLanguage":"English"
           }
@@ -142,7 +142,7 @@
             "name":"Which areas do you cover?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"JW Carpet Care covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands."
+              "text":"{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands."
             }
           }
         ]
@@ -1129,8 +1129,8 @@
   <div class="topbar">
     <div class="container">
       <div class="links">
-        <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a>
-        <a href="tel:07838231389">07838231389</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
       </div>
 
       <div class="links">
@@ -1142,10 +1142,10 @@
 
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="JW Carpet Care home">
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo">
+      <a class="brand" href="index.html" aria-label="{{ site.business_name }} home">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
         <span>
-          JW Carpet Care
+          {{ site.business_name }}
           <small>Carpet cleaning across Worcestershire and the West Midlands</small>
         </span>
       </a>
@@ -1191,7 +1191,7 @@
         <div>
           <span class="eyebrow">Professional local carpet cleaning</span>
           <h1>Cleaner carpets, fresher rooms, proper results</h1>
-          <p>JW Carpet Care provides professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. We help homes, rental properties and businesses get cleaner, fresher results with honest advice and a straightforward local service.</p>
+          <p>{{ site.business_name }} provides professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. We help homes, rental properties and businesses get cleaner, fresher results with honest advice and a straightforward local service.</p>
 
           <div class="hero-tags">
             <span><i class="fa-solid fa-circle-check"></i> Carpet cleaning</span>
@@ -1201,7 +1201,7 @@
           </div>
 
           <div class="actions">
-            <a class="btn primary" href="tel:07838231389">Call 07838231389</a>
+            <a class="btn primary" href="tel:{{ site.phone }}">Call {{ site.phone }}</a>
             <a class="btn secondary" href="pages/get-a-quote.html">Request a Quote</a>
             <a class="btn ghost" href="pages/reviews.html">Read Reviews</a>
           </div>
@@ -1212,7 +1212,7 @@
   <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
 
   <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="homeHeroFormStatus">
-    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+    <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
     <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
     <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
     <input type="email" name="email" placeholder="Email address" autocomplete="email">
@@ -1228,9 +1228,9 @@
   <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
 
   <div class="contact-mini">
-    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
-    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
-    <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
   </div>
 </aside>
       </div>
@@ -1240,7 +1240,7 @@
       <div class="container">
         <span class="section-kicker">Our Services</span>
         <h2>Carpet cleaning services across Worcester and the West Midlands</h2>
-        <p class="lead">JW Carpet Care offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment advice.</p>
+        <p class="lead">{{ site.business_name }} offers professional cleaning for carpets, upholstery, rugs and commercial spaces, along with stain removal treatments and practical moth treatment advice.</p>
 
         <div class="cards-6">
           <article class="card">
@@ -1304,7 +1304,7 @@
       <div class="container">
         <span class="section-kicker">Our cleaning process</span>
         <h2>A proper clean, not just a quick once over</h2>
-        <p class="lead">A lot of carpet cleaning is just a basic rinse. JW Carpet Care focuses on giving carpets and upholstery a more thorough clean with the right treatment for the material, the level of soiling and the type of problem areas involved.</p>
+        <p class="lead">A lot of carpet cleaning is just a basic rinse. {{ site.business_name }} focuses on giving carpets and upholstery a more thorough clean with the right treatment for the material, the level of soiling and the type of problem areas involved.</p>
 
         <div class="process-grid">
           <article class="process-card">
@@ -1332,7 +1332,7 @@
       <div class="container">
         <span class="section-kicker">Why choose us</span>
         <h2>Trusted local carpet cleaning with straightforward advice</h2>
-        <p class="lead">JW Carpet Care focuses on practical results, clear communication and the right service for the job. Whether you need carpet cleaning in Worcester, upholstery cleaning in Bromsgrove or stain removal in Kidderminster or Redditch, the aim is always the same: cleaner, fresher results without the hard sell.</p>
+        <p class="lead">{{ site.business_name }} focuses on practical results, clear communication and the right service for the job. Whether you need carpet cleaning in Worcester, upholstery cleaning in Bromsgrove or stain removal in Kidderminster or Redditch, the aim is always the same: cleaner, fresher results without the hard sell.</p>
 
         <div class="trust-grid">
           <article class="trust-card">
@@ -1412,7 +1412,7 @@
       <div class="container">
         <span class="section-kicker">Read customer reviews</span>
         <h2>Recent Customer Reviews</h2>
-        <p class="lead">A small selection of the kind words already shown for JW Carpet Care.</p>
+        <p class="lead">A small selection of the kind words already shown for {{ site.business_name }}.</p>
 
         <div class="reviews-grid">
           <article class="review">
@@ -1471,7 +1471,7 @@
 
           <article class="faq-item">
             <h4>Which areas do you cover?</h4>
-            <p>JW Carpet Care covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
+            <p>{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
           </article>
         </div>
       </div>
@@ -1484,7 +1484,7 @@
 
         <div class="map-cta-grid">
           <div class="map-panel">
-            <p class="lead">JW Carpet Care covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
+            <p class="lead">{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
 
             <div class="mapwrap">
               <iframe src="https://www.google.com/maps?q=Worcestershire&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Worcestershire"></iframe>
@@ -1493,7 +1493,7 @@
 
           <div class="cta-panel-clean">
             <span class="section-kicker">Need a quick answer?</span>
-            <h2>Call, email or WhatsApp James</h2>
+            <h2>Call, email or WhatsApp {{ site.contact_name }}</h2>
             <p>If you are unsure which service you need, the quickest option is to call, email or send a WhatsApp message. Whether it is carpet cleaning, upholstery cleaning, stain removal or commercial carpet cleaning, you can get clear advice on the right next step.</p>
 
             <ul class="feature-list-clean">
@@ -1503,8 +1503,8 @@
             </ul>
 
             <div class="actions" style="margin-top:20px">
-              <a class="btn primary" href="tel:07838231389">Call now</a>
-              <a class="btn secondary" href="https://wa.me/447838231389" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn primary" href="tel:{{ site.phone }}">Call now</a>
+              <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener">WhatsApp</a>
             </div>
           </div>
         </div>
@@ -1516,13 +1516,13 @@
         <div class="cta-band-clean">
           <div>
             <span class="section-kicker" style="color:#93c5fd">Ready to book</span>
-            <h2>Ready to book JW Carpet Care?</h2>
+            <h2>Ready to book {{ site.business_name }}?</h2>
             <p class="lead">Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning with a straightforward local service from the first call.</p>
           </div>
 
           <div class="actions">
-            <a class="btn primary" href="tel:07838231389">Call 07838231389</a>
-            <a class="btn secondary" href="mailto:infojwcarpetcare@gmail.com">Email us</a>
+            <a class="btn primary" href="tel:{{ site.phone }}">Call {{ site.phone }}</a>
+            <a class="btn secondary" href="mailto:{{ site.email }}">Email us</a>
           </div>
         </div>
       </div>
@@ -1532,7 +1532,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="https://jwcarpetcare.co.uk/wp-content/uploads/2022/01/Untitled-500-%C3%97-300-px-e1690358088999.png" alt="JW Carpet Care logo" style="height:64px;margin-bottom:16px">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
       </div>
 
@@ -1551,22 +1551,22 @@
       <div>
         <h3>Contact</h3>
         <p>
-          <a href="tel:07838231389">07838231389</a><br>
-          <a href="mailto:infojwcarpetcare@gmail.com">infojwcarpetcare@gmail.com</a><br>
+          <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="pages/reviews.html">Reviews</a><br>
           <a href="pages/gallery.html">Gallery</a>
         </p>
       </div>
     </div>
 
-    <div class="container copy">© JW Carpet Care. All rights reserved.</div>
+    <div class="container copy">© {{ site.business_name }}. All rights reserved.</div>
   </footer>
 
   <div class="floating">
-    <a class="float-btn wa" href="https://wa.me/447838231389" target="_blank" rel="noopener" aria-label="WhatsApp JW Carpet Care">
+    <a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a class="float-btn call" href="tel:07838231389" aria-label="Call JW Carpet Care">
+    <a class="float-btn call" href="tel:{{ site.phone }}" aria-label="Call {{ site.business_name }}">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>

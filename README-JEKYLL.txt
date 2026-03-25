@@ -1,25 +1,53 @@
-JW Carpet Care Jekyll build notes
+JEKYLL SITE QUICK GUIDE
 
-This version has been rebuilt around Jekyll data files so the local pages are easier to maintain and harder to break.
+FAST REBRAND
+1. Open _config.yml
+2. Change these values:
+   business_name
+   title
+   phone
+   phone_link
+   email
+   website
+   url
+   logo_url
+   contact_name
+   service_area
+   facebook_url
+   instagram_url
+   formspree_endpoint
+3. Build the site through Jekyll or GitHub Pages.
 
-Main files to edit
-1. _config.yml
-   Update business details, social links and formspree_endpoint.
-2. _data/towns.yml
-   Add, remove or rename towns here.
-3. _data/services.yml
-   Edit service names and supporting text here.
+Because the layouts and includes now pull the main brand details from _config.yml, most of the site branding updates in one place.
 
-Local page structure
-- /areas/TOWN.html uses _layouts/town.html
-- /locations/TOWN/SERVICE.html uses _layouts/service-town.html
+ADD A NEW AREA
+1. Add the town to _data/towns.yml
+2. Duplicate one file in areas/ and change:
+   town
+   slug
+   town_heading
+3. Duplicate one existing town folder in locations/ and rename it to the new slug
+4. Keep these four service pages in the folder:
+   carpet-cleaning.html
+   upholstery-cleaning.html
+   stain-removal.html
+   moth-treatment.html
+5. Update the town name and slug in the front matter of those files
 
-Every town now has matching local pages for all services listed in _data/services.yml.
-If you add a new town, create a matching file in /areas/ and the matching service files in /locations/TOWN/ using the same front matter pattern already in the site.
+REMOVE AN AREA
+1. Remove the town from _data/towns.yml
+2. Delete the matching file from areas/
+3. Delete the matching folder from locations/
 
-Formspree
-Put your real endpoint into _config.yml:
-formspree_endpoint: https://formspree.io/f/yourcode
+FORMS
+The main endpoint is in _config.yml
+formspree_endpoint: https://formspree.io/f/REPLACE_WITH_YOUR_CODE
 
-Canonical domain
-Canonicals and schema now use https://jwcarpetcare.co.uk
+FORM STRATEGY
+Home page keeps the main hero form.
+Get a Quote page keeps the full form.
+Town pages, service town pages, Services page and Areas page now use one form per page, with a contact card in the hero and the full form lower down.
+
+SEO
+Town and town service titles now build automatically from the layouts if seo_title is not set.
+This makes rebranding easier and keeps titles more consistent.
