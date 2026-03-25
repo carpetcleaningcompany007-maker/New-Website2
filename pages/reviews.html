@@ -416,17 +416,14 @@
         </div>
       </div>
 
-      <aside class="quick-contact-card quick-contact-card-plain" aria-label="Quick contact details">
-  <span class="section-kicker">Quick contact</span>
-  <h2>Quick local contact</h2>
-  <p>Call, email or WhatsApp us directly for a fast reply.</p>
-  <div class="contact-mini stack quick-contact-links">
-    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
-    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
+      <div class="hero-inline-contact">
+  <p class="hero-inline-contact-label">Quick contact</p>
+  <div class="hero-inline-contact-links">
+    <a href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+    <a href="mailto:{{ site.email }}">Email us</a>
+    <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener">WhatsApp us</a>
   </div>
-  <p class="quick-contact-note">One quote form appears lower down this page.</p>
-</aside>
+</div>
     </div>
   </section>
 
