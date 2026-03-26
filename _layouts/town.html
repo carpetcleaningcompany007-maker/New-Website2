@@ -58,7 +58,7 @@ layout: default
       <p class="lead" style="margin-inline:auto">Every card below now links to a real local service page for {{ page.town }}.</p>
     </div>
     <div class="premium-town-grid">
-      {% capture town_token %}{town}{% endcapture %}
+      {% assign town_token = '{town}' %}
       {% for s in site.data.services %}
       <a class="premium-town-card" href="{{ page.locations_path }}{{ page.slug }}/{{ s.slug }}.html">
         <h3>{{ s.name }}</h3>
