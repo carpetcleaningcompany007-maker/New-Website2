@@ -1,1 +1,0 @@
-Fixed Jekyll data setup, homepage Liquid rendering, and .html output paths.

@@ -1,7 +1,7 @@
 ---
 layout: default
 home_path: ../index.html
-pages_path: ../pages/
+pages_path: ./
 areas_path: ../areas/
 quote_path: get-a-quote.html
 root_path: ../
@@ -21,17 +21,25 @@ description: Browse the areas covered by {{ site.business_name }} across Worcest
 </section>
 <section class="section-alt premium-town-wrap"><div class="container"><div class="section-heading-wrap center narrow-wrap"><span class="section-kicker">All area pages</span><h2>Choose your town</h2><p class="lead" style="margin-inline:auto">Each town page links through to carpet cleaning, upholstery cleaning, stain removal and moth treatment.</p></div><div class="premium-town-grid">{% for t in site.data.towns %}<a class="premium-town-card" href="../areas/{{ t.slug }}.html"><h3>{{ t.name }}</h3><p>{{ t.short_intro }}</p><span>Open {{ t.name }} →</span></a>{% endfor %}</div></div></section>
 <section>
-  <div class="container narrow-wrap">
-    <div class="premium-cta-band">
-      <div>
-        <span class="section-kicker premium-kicker-light">Quick quote</span>
-        <h2>Jump straight to the quote form</h2>
-        <p>Need a quick quote? Use the button below to jump straight to the main quote page.</p>
+  <div class="container" style="max-width:1100px">
+    <div class="section-heading-wrap center narrow-wrap">
+      <span class="section-kicker">Need a quick quote?</span>
+      <h2>Use the same quote form as the homepage</h2>
+      <p class="lead" style="margin-inline:auto">If you are not sure which town page or service page you need, use this form and we will point you in the right direction.</p>
+    </div>
+    <div class="hero-grid-open" style="margin-top:24px;align-items:start">
+      <div class="premium-cta-band">
+        <div>
+          <span class="section-kicker premium-kicker-light">Fast route</span>
+          <h2>Tell us your town and what needs cleaning</h2>
+          <p>This uses the same main quote route as the homepage, so you can get a quick answer without hunting around the site.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="get-a-quote.html">Open full quote page</a>
+          <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        </div>
       </div>
-      <div class="actions">
-        <a class="btn primary" href="get-a-quote.html">Open the quote form</a>
-        <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-      </div>
+      {% include hero-quote-form.html heading="Get your free quote" text="Use the same quote route as the homepage for a fast local response." service="General quote" status_id="areasBottomFormStatus" %}
     </div>
   </div>
 </section>

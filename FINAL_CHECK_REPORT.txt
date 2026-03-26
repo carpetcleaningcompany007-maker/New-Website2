@@ -1,4 +1,0 @@
-<aside class="formcard": index.html, _includes/hero-quote-form.html
-<form class="formgrid": index.html, _includes/hero-quote-form.html
-quote-section: NONE
-quote-panel: NONE
