@@ -19,7 +19,8 @@ layout: default
         <a class="btn secondary" href="{{ page.quote_path }}">Get a Quote</a>
       </div>
     </div>
-    {% include hero-quote-form.html heading="Get your free quote" text="Tell us what needs cleaning in {{ page.town }} and get a fast local reply." service="General quote" area=page.town status_id="townHeroFormStatus" %}
+    {% capture town_quote_text %}Tell us what needs cleaning in {{ page.town }} and get a fast local reply.{% endcapture %}
+    {% include hero-quote-form.html heading="Get your free quote" text=town_quote_text service="General quote" area=page.town status_id="townHeroFormStatus" %}
   </div>
 </section>
 

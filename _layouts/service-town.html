@@ -22,7 +22,8 @@ layout: default
         <a class="btn secondary" href="{{ page.quote_path }}">Get a quote</a>
       </div>
     </div>
-    {% include hero-quote-form.html heading="Get your free quote" text="Tell us what needs cleaning in {{ town_obj.name }} and get a fast local reply." service=service_name area=town_obj.name status_id="serviceTownHeroFormStatus" %}
+    {% capture service_town_quote_text %}Tell us what needs cleaning in {{ town_obj.name }} and get a fast local reply.{% endcapture %}
+    {% include hero-quote-form.html heading="Get your free quote" text=service_town_quote_text service=service_name area=town_obj.name status_id="serviceTownHeroFormStatus" %}
   </div>
 </section>
 
@@ -103,29 +104,14 @@ layout: default
       <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
       <p class="map-note">That helps support local searches for {{ service_name | downcase }} in {{ town_obj.name }} and surrounding areas.</p>
     </div>
-    {% include hero-quote-form.html heading="Get your free quote" text="Tell us what needs cleaning in {{ town_obj.name }} and get a fast reply about {{ service_name | downcase }}." service=service_name area=town_obj.name status_id="serviceTownMapFormStatus" %}
-  </div>
-</section>
-<section class="premium-cta-wrap">
-  <div class="container" style="max-width:1100px">
-    <div class="section-heading-wrap center narrow-wrap">
-      <span class="section-kicker">Ready to book</span>
-      <h2>Need {{ service_name | downcase }} in {{ town_obj.name }}?</h2>
-      <p class="lead" style="margin-inline:auto">Use the same quote form as the homepage and tell us exactly what you need in {{ town_obj.name }}.</p>
-    </div>
-    <div class="hero-grid-open" style="margin-top:24px;align-items:start">
-      <div class="premium-cta-band">
-        <div>
-          <span class="section-kicker premium-kicker-light">Straight to the point</span>
-          <h2>Get a fast local quote</h2>
-          <p>Tell us the rooms, items or problem areas and we will come back to you about {{ service_name | downcase }} in {{ town_obj.name }}.</p>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
-          <a class="btn secondary" href="{{ page.quote_path }}">Open full quote page</a>
-        </div>
+    <div class="cta-panel plain-panel right-cta accent-block">
+      <span class="section-kicker">Need this service?</span>
+      <h2>Get a quote for {{ service_name | downcase }} in {{ town_obj.name }}</h2>
+      <p>If you are comparing options and want a fast answer about {{ service_name | downcase }} in {{ town_obj.name }}, call, email or send a WhatsApp message.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-      {% include hero-quote-form.html heading="Get your free quote" text="Use the same quote route as the homepage for a fast response." service=service_name area=town_obj.name status_id="serviceTownBottomFormStatus" %}
     </div>
   </div>
 </section>
