@@ -18,7 +18,7 @@ FAST REBRAND
    formspree_endpoint
 3. Build the site through Jekyll or GitHub Pages.
 
-Because the layouts and includes now pull the main brand details from _config.yml, most of the site branding updates in one place.
+Because the layouts and includes pull the main brand details from _config.yml, most branding updates in one place.
 
 ADD A NEW AREA
 1. Add the town to _data/towns.yml
@@ -45,9 +45,9 @@ formspree_endpoint: https://formspree.io/f/REPLACE_WITH_YOUR_CODE
 
 FORM STRATEGY
 Home page keeps the main hero form.
-Get a Quote page keeps the full form.
-Town pages, service town pages, Services page and Areas page now use one form per page, with a contact card in the hero and the full form lower down.
+Internal pages use the quick contact card only.
+No bottom quote form should appear on town pages, service town pages, Services page or Areas page.
 
 SEO
-Town and town service titles now build automatically from the layouts if seo_title is not set.
+Town and town service titles build automatically from the layouts if seo_title is not set.
 This makes rebranding easier and keeps titles more consistent.
