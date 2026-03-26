@@ -1,0 +1,1 @@
+Homepage test banner added to index.html. Look for the orange strip that says GITHUB TEST MARKER near the top of the homepage after pushing to GitHub. If you do not see it, GitHub is still serving an older version or a different file.
