@@ -1,0 +1,1 @@
+Removed GitHub test banner. Enabled Liquid on key service/review/gallery pages. Swapped quick contact cards for real quote forms on hero sections. Rebuilt get-a-quote page with a full form. Kept Jekyll data-driven areas and town pages.
