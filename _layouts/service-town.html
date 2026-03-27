@@ -5,8 +5,8 @@ layout: default
 {% assign service_obj = site.data.services | where: 'slug', page.service_slug | first %}
 {% assign service_name = page.service_name | default: service_obj.name %}
 {% assign service_image = '../../assets/img/truckmount.png' %}
-{% if page.service_slug == 'upholstery-cleaning' %}{% assign service_image = '../../assets/img/upholstery-cleaning-pro.png' %}{% endif %}
-{% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/rug-cleaning-pro.png' %}{% endif %}
+{% if page.service_slug == 'upholstery-cleaning' %}{% assign service_image = '../../assets/img/hero-upholstery-cleaning.png' %}{% endif %}
+{% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/hero-rug-cleaning.png' %}{% endif %}
 {% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles.webp' %}{% endif %}
 {% if page.service_slug == 'moth-treatment' %}{% assign service_image = '../../assets/img/carpet-moth-treatment.jpg' %}{% endif %}
 <section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('{{ service_image }}') center/cover no-repeat">
