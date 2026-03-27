@@ -152,21 +152,6 @@ layout: null
       }
     ]
   }
-
-    const revealSections = document.querySelectorAll('main > section:not(.hero):not(.hero-quote-band)');
-    revealSections.forEach(section => section.classList.add('section-reveal'));
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealSections.forEach(section => revealObserver.observe(section));
-
   </script>
 
   <style>
@@ -1201,57 +1186,47 @@ layout: null
 
 /* full site clean hero redesign */
 .hero-clean{
-  position:relative;
-  overflow:hidden;
-  min-height:82vh;
-  color:#fff;
-  background:
-    linear-gradient(90deg, rgba(8,16,29,.82) 0%, rgba(8,16,29,.66) 34%, rgba(8,16,29,.34) 62%, rgba(8,16,29,.18) 100%),
-    url("assets/img/hero-truckmount-system.png") center center/cover no-repeat;
+  background:linear-gradient(180deg,#f6f8fc 0%,#ffffff 100%);
+  color:var(--text);
+  overflow:visible;
 }
-.hero-clean::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at top right, rgba(59,130,246,.20), transparent 30%);
-  pointer-events:none;
+.hero-clean .container{padding:72px 0 42px;display:block}
+.hero-clean-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(420px,520px);
+  gap:44px;
+  align-items:center;
 }
-.hero-clean .container{
-  position:relative;
-  z-index:1;
-  padding:112px 0 86px;
-}
-.hero-clean-grid{display:block}
-.hero-clean-copy{max-width:680px}
+.hero-clean-copy{max-width:620px}
 .hero-clean-kicker{
   display:inline-block;
-  margin-bottom:16px;
-  font-size:13px;
+  margin-bottom:14px;
+  font-size:12px;
   font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.14em;
   text-transform:uppercase;
-  color:#dbeafe;
+  color:var(--brand);
 }
 .hero-clean h1{
-  margin:0 0 18px;
-  font-size:clamp(54px,6vw,90px);
-  line-height:.94;
-  letter-spacing:-.05em;
-  color:#fff;
-  max-width:760px;
+  margin:0 0 16px;
+  font-size:clamp(46px,6vw,76px);
+  line-height:.96;
+  letter-spacing:-.045em;
+  color:#0f172a;
+  max-width:640px;
 }
 .hero-clean-sub{
   margin:0;
-  max-width:650px;
-  color:rgba(255,255,255,.93);
-  font-size:20px;
-  line-height:1.72;
+  max-width:620px;
+  color:#475569;
+  font-size:19px;
+  line-height:1.75;
 }
 .hero-clean-points{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin:26px 0 0;
+  margin:24px 0 22px;
 }
 .hero-clean-points span{
   display:inline-flex;
@@ -1259,186 +1234,366 @@ layout: null
   gap:10px;
   padding:12px 16px;
   border-radius:999px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
-  color:#fff;
+  background:#eef4ff;
+  border:1px solid #dbe7ff;
+  color:#163ea8;
   font-weight:800;
-  backdrop-filter:blur(6px);
 }
-.hero-clean-actions,.hero-clean-visual{display:none}
+.hero-clean-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
 .hero-clean-proof{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px;
   margin-top:28px;
-  max-width:640px;
 }
 .hero-clean-proof div{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
+  background:#fff;
+  border:1px solid var(--line);
   border-radius:22px;
   padding:18px 18px 16px;
-  box-shadow:0 14px 34px rgba(15,23,42,.14);
-  backdrop-filter:blur(8px);
+  box-shadow:0 14px 34px rgba(15,23,42,.06);
 }
 .hero-clean-proof strong{
   display:block;
   font-size:16px;
   line-height:1.2;
-  color:#fff;
+  color:#0f172a;
   margin-bottom:6px;
 }
 .hero-clean-proof span{
   display:block;
-  color:rgba(255,255,255,.86);
+  color:#64748b;
   font-size:14px;
   line-height:1.65;
 }
+.hero-clean-visual{
+  position:relative;
+  border-radius:30px;
+  overflow:hidden;
+  min-height:620px;
+  box-shadow:0 28px 70px rgba(8,17,33,.18);
+  border:1px solid rgba(219,228,239,.85);
+  background:#dfe7f3;
+}
+.hero-clean-visual img{
+  width:100%;
+  height:100%;
+  min-height:620px;
+  object-fit:cover;
+  object-position:center;
+}
+.hero-clean-badge{
+  position:absolute;
+  left:24px;
+  right:24px;
+  bottom:24px;
+  background:rgba(8,16,29,.78);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:20px 22px;
+  color:#fff;
+}
+.hero-clean-badge strong{
+  display:block;
+  font-size:26px;
+  line-height:1.06;
+  letter-spacing:-.03em;
+  margin-bottom:8px;
+}
+.hero-clean-badge span{
+  display:block;
+  color:#dbe6f4;
+  font-size:15px;
+  line-height:1.6;
+}
 .hero-quote-band{
-  padding:20px 0 34px;
+  padding:0 0 26px;
   background:#fff;
 }
 .hero-quote-band-grid{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,560px);
-  gap:34px;
-  align-items:center;
-  max-width:1120px;
-  margin:0 auto;
+  grid-template-columns:minmax(0,1fr) minmax(0,540px);
+  gap:30px;
+  align-items:start;
 }
-.hero-quote-intro{padding:10px 0 0}
-.hero-quote-intro h2{margin-bottom:12px}
+.hero-quote-intro{
+  padding:24px 0 0;
+}
+.hero-quote-intro h2{
+  margin-bottom:12px;
+}
 .hero-quote-form-card{
-  margin-top:-72px;
-  position:relative;
-  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
-  border:1px solid #dbe7ff;
-  box-shadow:0 24px 70px rgba(29,78,216,.16), 0 8px 24px rgba(15,23,42,.06);
-  overflow:visible;
+  margin-top:-34px;
 }
-.hero-quote-form-card::before{
-  content:"";
-  position:absolute;
-  inset:-18px;
-  background:radial-gradient(circle, rgba(59,130,246,.18) 0%, rgba(59,130,246,.10) 35%, rgba(59,130,246,0) 72%);
-  z-index:-1;
-  filter:blur(12px);
-  border-radius:36px;
+.hero-quote-intro{
+  max-width:540px;
 }
-.hero-quote-form-card h2{font-size:32px}
-.trust-badges{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-  margin-top:16px;
+.hero-quote-note{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#eff5ff 0%,#f8fbff 100%);
+  border:1px solid #d6e3ff;
+  color:#28415f;
+  font-weight:600;
+  line-height:1.65;
+  box-shadow:0 14px 30px rgba(29,78,216,.06);
 }
-.trust-badges span{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  text-align:center;
-  padding:12px 14px;
-  border-radius:16px;
-  background:#eff6ff;
-  border:1px solid #dbeafe;
-  color:#1e3a8a;
-  font-weight:800;
-  font-size:14px;
-  line-height:1.4;
-}
-.home-areas-accordion,.home-faq-accordion{display:grid;gap:14px;margin-top:28px}
-.accordion-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:22px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-.accordion-card summary{
+.hero-quote-points{
   list-style:none;
-  cursor:pointer;
+  padding:0;
+  margin:20px 0 0;
+  display:grid;
+  gap:12px;
+}
+.hero-quote-points li{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:22px 24px;
-  font-weight:800;
+  align-items:flex-start;
+  gap:12px;
   color:#0f172a;
+  font-weight:700;
+  line-height:1.5;
 }
-.accordion-card summary::-webkit-details-marker{display:none}
-.accordion-card summary::after{
-  content:"+";
-  font-size:28px;
-  line-height:1;
+.hero-quote-points i{
   color:var(--brand);
-  flex:0 0 auto;
+  margin-top:4px;
 }
-.accordion-card[open] summary::after{content:"–"}
-.accordion-card-body{
-  padding:0 24px 22px;
-  color:var(--muted);
-  line-height:1.7;
+.hero-quote-form-card{
+  border:1px solid #cfe0ff;
+  box-shadow:0 18px 50px rgba(29,78,216,.12), 0 0 0 10px rgba(59,130,246,.08);
 }
-.accordion-card-body a{color:var(--brand);font-weight:800}
-.section-reveal{
-  opacity:0;
-  transform:translateY(28px);
-  transition:opacity .65s ease, transform .65s ease;
+.hero-quote-form-card .formgrid input,
+.hero-quote-form-card .formgrid select,
+.hero-quote-form-card .formgrid textarea{
+  background:#fcfdff;
+  border:1px solid #bccce8;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
 }
-.section-reveal.is-visible{
-  opacity:1;
-  transform:none;
+.hero-quote-form-card .formgrid input::placeholder,
+.hero-quote-form-card .formgrid textarea::placeholder,
+.hero-quote-form-card .formgrid select{
+  color:#516074;
+  font-weight:600;
+}
+.hero-quote-form-card .formgrid input:focus,
+.hero-quote-form-card .formgrid select:focus,
+.hero-quote-form-card .formgrid textarea:focus{
+  border-color:#7aa2ff;
+  box-shadow:0 0 0 4px rgba(59,130,246,.18), inset 0 1px 0 rgba(255,255,255,.95);
 }
 @media (max-width:1100px){
-  .hero-clean{min-height:72vh;background-position:62% center}
-  .hero-clean .container{padding:90px 0 70px}
-  .hero-quote-band-grid{grid-template-columns:1fr}
-  .hero-quote-form-card{margin-top:0}
+  .hero-clean-grid,.hero-quote-band-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-clean-copy{
+    max-width:none;
+  }
+  .hero-clean-visual{
+    min-height:480px;
+  }
+  .hero-clean-visual img{
+    min-height:480px;
+  }
+  .hero-quote-form-card{
+    margin-top:0;
+  }
 }
 @media (max-width:860px){
   .topbar{display:none}
-  .nav{min-height:auto;padding:12px 0;gap:12px;flex-wrap:nowrap}
-  .brand{flex:1 1 auto;min-width:0;gap:10px}
-  .brand img{height:44px}
-  .brand span{font-size:15px;line-height:1.05}
-  .brand small{font-size:10px;margin-top:3px;line-height:1.2;max-width:180px}
-  .mobile-toggle{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;min-width:90px;flex:0 0 auto}
-  .menu{width:100%;display:none;flex-direction:column;align-items:stretch;gap:10px;padding:10px 0 4px;flex-wrap:nowrap}
+  .nav{
+    min-height:auto;
+    padding:12px 0;
+    gap:12px;
+    flex-wrap:nowrap;
+  }
+  .brand{
+    flex:1 1 auto;
+    min-width:0;
+    gap:10px;
+  }
+  .brand img{
+    height:44px;
+  }
+  .brand span{
+    font-size:15px;
+    line-height:1.05;
+  }
+  .brand small{
+    font-size:10px;
+    margin-top:3px;
+    line-height:1.2;
+    max-width:180px;
+  }
+  .mobile-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 16px;
+    border-radius:999px;
+    min-width:90px;
+    flex:0 0 auto;
+  }
+  .menu{
+    width:100%;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    padding:10px 0 4px;
+    flex-wrap:nowrap;
+  }
   .menu.open{display:flex}
-  .menu a,.dropbtn{width:100%;text-align:left}
-  .drop{width:100%}
-  .dropmenu{position:static;margin-top:8px}
-  .hero-clean{min-height:auto;background-position:64% center}
-  .hero-clean .container{padding:34px 0 30px}
-  .hero-clean h1{font-size:clamp(36px,11vw,54px);max-width:9ch;margin-bottom:14px}
-  .hero-clean-sub{max-width:32ch;font-size:17px;line-height:1.58}
-  .hero-clean-points{gap:10px;margin:20px 0 0}
-  .hero-clean-points span:nth-child(n+3){display:none}
-  .hero-clean-points span{padding:11px 14px;font-size:15px}
-  .hero-clean-proof{grid-template-columns:1fr;gap:12px;margin-top:20px;max-width:340px}
-  .hero-clean-proof div:last-child{display:none}
-  .hero-quote-band{padding:8px 0 16px}
-  .hero-quote-intro{padding-top:0;text-align:center}
-  .hero-quote-intro .lead{font-size:16px}
-  .trust-badges{grid-template-columns:1fr;gap:10px}
-  .floating{bottom:94px;right:12px}
+  .menu a,.dropbtn{
+    width:100%;
+    text-align:left;
+  }
+  .drop{
+    width:100%;
+  }
+  .dropmenu{
+    position:static;
+    margin-top:8px;
+  }
+  .hero-clean .container{
+    padding:28px 0 18px;
+  }
+  .hero-clean-grid{
+    gap:22px;
+  }
+  .hero-clean-visual{
+    order:-1;
+    min-height:280px;
+    border-radius:24px;
+  }
+  .hero-clean-visual img{
+    min-height:280px;
+  }
+  .hero-clean-badge{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    padding:14px 16px;
+    border-radius:18px;
+  }
+  .hero-clean-badge strong{
+    font-size:18px;
+    line-height:1.12;
+    margin-bottom:4px;
+  }
+  .hero-clean-badge span{
+    font-size:13px;
+  }
+  .hero-clean-copy{
+    text-align:left;
+  }
+  .hero-clean h1{
+    font-size:clamp(34px,11vw,50px);
+    line-height:.98;
+    max-width:420px;
+    text-wrap:balance;
+  }
+  .hero-clean-sub{
+    font-size:16px;
+    line-height:1.65;
+    max-width:none;
+  }
+  .hero-clean-points{
+    display:none;
+  }
+  .hero-clean-proof{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:18px;
+  }
+  .hero-clean-proof div:last-child{
+    display:none;
+  }
+  .hero-clean-actions{
+    flex-direction:column;
+  }
+  .hero-clean-actions .btn{
+    width:100%;
+  }
+  .hero-quote-band{
+    padding:8px 0 16px;
+  }
+  .hero-quote-intro{
+    padding-top:0;
+  }
+  .hero-quote-intro .lead{
+    font-size:16px;
+  }
+  .hero-quote-note{
+    margin-top:14px;
+    padding:14px 16px;
+    font-size:14px;
+  }
+  .hero-quote-points{
+    gap:10px;
+    margin-top:16px;
+  }
+  .hero-quote-points li{
+    font-size:15px;
+  }
+  .floating{
+    bottom:94px;
+    right:12px;
+  }
 }
 @media (max-width:560px){
   .container{width:min(var(--max),calc(100% - 24px))}
-  .brand img{height:40px}
-  .brand span{font-size:14px}
-  .brand small{font-size:9px;max-width:150px}
-  .mobile-toggle{min-width:88px;padding:9px 14px}
-  .hero-clean .container{padding:18px 0 18px}
-  .hero-clean{background-position:68% center}
-  .hero-clean h1{font-size:clamp(30px,11vw,42px);max-width:250px}
-  .hero-clean-sub{font-size:15px;max-width:21ch}
-  .hero-clean-proof{display:none}
-  .hero-quote-band-grid{gap:18px}
-  .formcard,.hero-quote-form-card{padding:22px;border-radius:22px}
-  .accordion-card summary{padding:18px 18px;font-size:16px}
-  .accordion-card-body{padding:0 18px 18px}
+  .brand img{
+    height:40px;
+  }
+  .brand span{
+    font-size:14px;
+  }
+  .brand small{
+    font-size:9px;
+    max-width:150px;
+  }
+  .mobile-toggle{
+    min-width:88px;
+    padding:9px 14px;
+  }
+  .hero-clean .container{
+    padding:20px 0 12px;
+  }
+  .hero-clean-grid{
+    gap:16px;
+  }
+  .hero-clean-visual{
+    min-height:228px;
+  }
+  .hero-clean-visual img{
+    min-height:228px;
+  }
+  .hero-clean h1{
+    font-size:clamp(30px,10vw,42px);
+    max-width:320px;
+    text-wrap:balance;
+  }
+  .hero-clean-sub{
+    font-size:15px;
+  }
+  .hero-clean-proof{
+    display:none;
+  }
+  .hero-quote-band-grid{
+    gap:18px;
+  }
+  .formcard,
+  .hero-quote-form-card{
+    padding:22px;
+    border-radius:22px;
+    box-shadow:0 16px 40px rgba(29,78,216,.14), 0 0 0 8px rgba(59,130,246,.08);
+  }
 }
 /* end full site clean hero redesign */
 
@@ -1513,7 +1668,7 @@ layout: null
       <div class="container hero-clean-grid">
         <div class="hero-clean-copy">
           <span class="hero-clean-kicker">Professional carpet cleaning across Worcestershire and the West Midlands</span>
-          <h1>Cleaner carpets. Better results.</h1>
+          <h1>Professional carpet cleaning. Better results.</h1>
           <p class="hero-clean-sub">Professional carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial carpet cleaning with straightforward local service and proper equipment.</p>
 
           <div class="hero-clean-points">
@@ -1521,15 +1676,28 @@ layout: null
             <span><i class="fa-solid fa-circle-check"></i> Upholstery cleaning</span>
           </div>
 
+          <div class="hero-clean-actions">
+            <a class="btn primary" href="tel:{{ site.phone }}">Call {{ site.phone }}</a>
+            <a class="btn secondary" href="pages/get-a-quote.html">Request a Quote</a>
+          </div>
+
           <div class="hero-clean-proof">
             <div>
-              <strong>Truck mounted equipment</strong>
-              <span>Professional truck-mounted and hot water extraction focused cleaning.</span>
+              <strong>Proper equipment</strong>
+              <span>Truck mounted and hot water extraction focused cleaning.</span>
             </div>
             <div>
               <strong>Domestic and commercial</strong>
-              <span>Homes, rentals, offices and high use areas across Worcestershire.</span>
+              <span>Homes, rentals, offices and high use areas.</span>
             </div>
+          </div>
+        </div>
+
+        <div class="hero-clean-visual">
+          <img src="assets/img/hero-truckmount-system.png" alt="Professional truck-mounted carpet cleaning system inside a van">
+          <div class="hero-clean-badge">
+            <strong>Professional truck-mounted carpet cleaning systems</strong>
+            <span>Proper deep cleaning equipment for a stronger result.</span>
           </div>
         </div>
       </div>
@@ -1541,6 +1709,12 @@ layout: null
           <span class="section-kicker">Get a quote</span>
           <h2>Tell us what needs cleaning</h2>
           <p class="lead">Get a fast local reply for carpet cleaning, upholstery cleaning, rug cleaning, stain removal or commercial carpet cleaning.</p>
+          <div class="hero-quote-note">Send a few details and we will point you to the right service, answer any quick questions and get a proper quote back to you fast.</div>
+          <ul class="hero-quote-points" aria-label="Why use the quote form">
+            <li><i class="fa-solid fa-bolt"></i><span>Fast local reply</span></li>
+            <li><i class="fa-solid fa-shield-heart"></i><span>Honest advice on the right clean</span></li>
+            <li><i class="fa-solid fa-soap"></i><span>Carpets, sofas, rugs and stain work</span></li>
+          </ul>
         </div>
 
         <aside class="formcard hero-quote-form-card" aria-label="Quote form">
@@ -1563,10 +1737,10 @@ layout: null
 
           <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
 
-          <div class="trust-badges">
-            <span><i class="fa-solid fa-bolt"></i> Fast local reply</span>
-            <span><i class="fa-solid fa-shield"></i> Honest advice</span>
-            <span><i class="fa-solid fa-star"></i> Professional service</span>
+          <div class="contact-mini">
+            <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
+            <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+            <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: "+" }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name }}</a>
           </div>
         </aside>
       </div>
@@ -1696,35 +1870,30 @@ layout: null
         <p class="lead">Worcester, Bromsgrove, Kidderminster and Redditch are the main service areas, along with nearby towns across Worcestershire and the wider West Midlands.</p>
 
         <div class="areas-wrap">
-          <div class="home-areas-accordion">
-            <details class="accordion-card">
-              <summary>Worcester</summary>
-              <div class="accordion-card-body">
-                <p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="areas/worcester.html">See services in Worcester →</a>
-              </div>
-            </details>
-            <details class="accordion-card">
-              <summary>Bromsgrove</summary>
-              <div class="accordion-card-body">
-                <p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="areas/bromsgrove.html">See services in Bromsgrove →</a>
-              </div>
-            </details>
-            <details class="accordion-card">
-              <summary>Kidderminster</summary>
-              <div class="accordion-card-body">
-                <p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="areas/kidderminster.html">See services in Kidderminster →</a>
-              </div>
-            </details>
-            <details class="accordion-card">
-              <summary>Redditch</summary>
-              <div class="accordion-card-body">
-                <p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="areas/redditch.html">See services in Redditch →</a>
-              </div>
-            </details>
+          <div class="town-grid-main">
+            <a href="areas/worcester.html">
+              <h3>Worcester</h3>
+              <p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
+              <span>See services in Worcester →</span>
+            </a>
+
+            <a href="areas/bromsgrove.html">
+              <h3>Bromsgrove</h3>
+              <p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
+              <span>See services in Bromsgrove →</span>
+            </a>
+
+            <a href="areas/kidderminster.html">
+              <h3>Kidderminster</h3>
+              <p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
+              <span>See services in Kidderminster →</span>
+            </a>
+
+            <a href="areas/redditch.html">
+              <h3>Redditch</h3>
+              <p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
+              <span>See services in Redditch →</span>
+            </a>
           </div>
 
           <div class="nearby-areas">
@@ -1794,34 +1963,26 @@ layout: null
         <h2>Common questions about carpet cleaning</h2>
         <p class="lead">These are some of the common questions people ask before booking carpet cleaning, upholstery cleaning or stain removal treatments.</p>
 
-        <div class="home-faq-accordion">
-          <details class="accordion-card">
-            <summary>How long will carpets take to dry?</summary>
-            <div class="accordion-card-body">
-              <p>Drying times depend on the carpet, room temperature and airflow, but many carpets are dry within a few hours.</p>
-            </div>
-          </details>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h4>How long will carpets take to dry?</h4>
+            <p>Drying times depend on the carpet, room temperature and airflow, but many carpets are dry within a few hours.</p>
+          </article>
 
-          <details class="accordion-card">
-            <summary>Do you clean sofas and upholstery too?</summary>
-            <div class="accordion-card-body">
-              <p>Yes. Upholstery cleaning is available for sofas, chairs and other fabric furniture as well as carpets and rugs.</p>
-            </div>
-          </details>
+          <article class="faq-item">
+            <h4>Do you clean sofas and upholstery too?</h4>
+            <p>Yes. Upholstery cleaning is available for sofas, chairs and other fabric furniture as well as carpets and rugs.</p>
+          </article>
 
-          <details class="accordion-card">
-            <summary>Can you help with stains and smells?</summary>
-            <div class="accordion-card-body">
-              <p>Yes. Stain removal treatments and odour treatment are available for many common household and commercial problems.</p>
-            </div>
-          </details>
+          <article class="faq-item">
+            <h4>Can you help with stains and smells?</h4>
+            <p>Yes. Stain removal treatments and odour treatment are available for many common household and commercial problems.</p>
+          </article>
 
-          <details class="accordion-card">
-            <summary>Which areas do you cover?</summary>
-            <div class="accordion-card-body">
-              <p>{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
-            </div>
-          </details>
+          <article class="faq-item">
+            <h4>Which areas do you cover?</h4>
+            <p>{{ site.business_name }} covers Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas across Worcestershire and the West Midlands.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -2017,21 +2178,6 @@ layout: null
         }
       });
     }
-
-    const revealSections = document.querySelectorAll('main > section:not(.hero):not(.hero-quote-band)');
-    revealSections.forEach(section => section.classList.add('section-reveal'));
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealSections.forEach(section => revealObserver.observe(section));
-
   </script>
 </body>
 </html>
