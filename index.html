@@ -1186,47 +1186,61 @@ layout: null
 
 /* full site clean hero redesign */
 .hero-clean{
-  background:linear-gradient(180deg,#f6f8fc 0%,#ffffff 100%);
-  color:var(--text);
-  overflow:visible;
+  position:relative;
+  overflow:hidden;
+  min-height:78vh;
+  color:#fff;
+  background:
+    linear-gradient(90deg, rgba(8,16,29,.86) 0%, rgba(8,16,29,.70) 38%, rgba(8,16,29,.34) 68%, rgba(8,16,29,.18) 100%),
+    url("assets/img/hero-truckmount-system.png") center center/cover no-repeat;
 }
-.hero-clean .container{padding:72px 0 42px;display:block}
+.hero-clean::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top right, rgba(212,175,87,.16), transparent 28%);
+  pointer-events:none;
+}
+.hero-clean .container{
+  position:relative;
+  z-index:1;
+  padding:110px 0 84px;
+}
 .hero-clean-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(420px,520px);
-  gap:44px;
-  align-items:center;
+  display:block;
 }
-.hero-clean-copy{max-width:620px}
+.hero-clean-copy{
+  max-width:660px;
+}
 .hero-clean-kicker{
   display:inline-block;
-  margin-bottom:14px;
-  font-size:12px;
+  margin-bottom:16px;
+  font-size:13px;
   font-weight:800;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--brand);
+  color:#dbeafe;
 }
 .hero-clean h1{
-  margin:0 0 16px;
-  font-size:clamp(46px,6vw,76px);
-  line-height:.96;
-  letter-spacing:-.045em;
-  color:#0f172a;
-  max-width:640px;
+  margin:0 0 18px;
+  font-size:clamp(52px,6vw,88px);
+  line-height:.94;
+  letter-spacing:-.05em;
+  color:#fff;
+  max-width:720px;
 }
 .hero-clean-sub{
   margin:0;
-  max-width:620px;
-  color:#475569;
-  font-size:19px;
-  line-height:1.75;
+  max-width:650px;
+  color:rgba(255,255,255,.92);
+  font-size:20px;
+  line-height:1.7;
 }
 .hero-clean-points{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin:24px 0 22px;
+  margin:26px 0 24px;
 }
 .hero-clean-points span{
   display:inline-flex;
@@ -1234,10 +1248,11 @@ layout: null
   gap:10px;
   padding:12px 16px;
   border-radius:999px;
-  background:#eef4ff;
-  border:1px solid #dbe7ff;
-  color:#163ea8;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
   font-weight:800;
+  backdrop-filter:blur(6px);
 }
 .hero-clean-actions{
   display:flex;
@@ -1245,72 +1260,39 @@ layout: null
   flex-wrap:wrap;
   margin-top:8px;
 }
+.hero-clean-actions .btn{
+  min-width:220px;
+}
 .hero-clean-proof{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px;
-  margin-top:28px;
+  margin-top:30px;
+  max-width:640px;
 }
 .hero-clean-proof div{
-  background:#fff;
-  border:1px solid var(--line);
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
   border-radius:22px;
   padding:18px 18px 16px;
-  box-shadow:0 14px 34px rgba(15,23,42,.06);
+  box-shadow:0 14px 34px rgba(15,23,42,.14);
+  backdrop-filter:blur(8px);
 }
 .hero-clean-proof strong{
   display:block;
   font-size:16px;
   line-height:1.2;
-  color:#0f172a;
+  color:#fff;
   margin-bottom:6px;
 }
 .hero-clean-proof span{
   display:block;
-  color:#64748b;
+  color:rgba(255,255,255,.86);
   font-size:14px;
   line-height:1.65;
 }
 .hero-clean-visual{
-  position:relative;
-  border-radius:30px;
-  overflow:hidden;
-  min-height:620px;
-  box-shadow:0 28px 70px rgba(8,17,33,.18);
-  border:1px solid rgba(219,228,239,.85);
-  background:#dfe7f3;
-}
-.hero-clean-visual img{
-  width:100%;
-  height:100%;
-  min-height:620px;
-  object-fit:cover;
-  object-position:center;
-}
-.hero-clean-badge{
-  position:absolute;
-  left:24px;
-  right:24px;
-  bottom:24px;
-  background:rgba(8,16,29,.78);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:24px;
-  padding:20px 22px;
-  color:#fff;
-}
-.hero-clean-badge strong{
-  display:block;
-  font-size:26px;
-  line-height:1.06;
-  letter-spacing:-.03em;
-  margin-bottom:8px;
-}
-.hero-clean-badge span{
-  display:block;
-  color:#dbe6f4;
-  font-size:15px;
-  line-height:1.6;
+  display:none;
 }
 .hero-quote-band{
   padding:0 0 26px;
@@ -1332,17 +1314,15 @@ layout: null
   margin-top:-34px;
 }
 @media (max-width:1100px){
-  .hero-clean-grid,.hero-quote-band-grid{
+  .hero-quote-band-grid{
     grid-template-columns:1fr;
   }
-  .hero-clean-copy{
-    max-width:none;
+  .hero-clean{
+    min-height:72vh;
+    background-position:62% center;
   }
-  .hero-clean-visual{
-    min-height:480px;
-  }
-  .hero-clean-visual img{
-    min-height:480px;
+  .hero-clean .container{
+    padding:88px 0 72px;
   }
   .hero-quote-form-card{
     margin-top:0;
@@ -1404,135 +1384,69 @@ layout: null
     position:static;
     margin-top:8px;
   }
+  .hero-clean{
+    min-height:auto;
+    background-position:64% center;
+  }
   .hero-clean .container{
-    padding:28px 0 18px;
-  }
-  .hero-clean-grid{
-    gap:22px;
-  }
-  .hero-clean-visual{
-    order:-1;
-    min-height:280px;
-    border-radius:24px;
-  }
-  .hero-clean-visual img{
-    min-height:280px;
-  }
-  .hero-clean-badge{
-    left:14px;
-    right:14px;
-    bottom:14px;
-    padding:14px 16px;
-    border-radius:18px;
-  }
-  .hero-clean-badge strong{
-    font-size:18px;
-    line-height:1.12;
-    margin-bottom:4px;
-  }
-  .hero-clean-badge span{
-    font-size:13px;
-  }
-  .hero-clean-copy{
-    text-align:left;
+    padding:34px 0 30px;
   }
   .hero-clean h1{
-    font-size:clamp(34px,12vw,48px);
-    line-height:.98;
-    max-width:320px;
+    font-size:clamp(36px,11vw,54px);
+    max-width:9ch;
+    margin-bottom:14px;
   }
   .hero-clean-sub{
-    font-size:16px;
-    line-height:1.65;
-    max-width:none;
+    max-width:32ch;
+    font-size:17px;
+    line-height:1.58;
   }
   .hero-clean-points{
-    margin:18px 0 18px;
     gap:10px;
+    margin:20px 0 18px;
   }
+  .hero-clean-points span:nth-child(n+3){display:none}
   .hero-clean-points span{
+    padding:10px 12px;
+    font-size:14px;
+  }
+  .hero-clean-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .hero-clean-actions .btn{
+    min-width:0;
     width:100%;
-    justify-content:flex-start;
-    padding:11px 14px;
-    font-size:15px;
   }
   .hero-clean-proof{
     grid-template-columns:1fr;
     gap:12px;
     margin-top:18px;
   }
-  .hero-clean-proof div:last-child{
-    display:none;
-  }
-  .hero-clean-actions{
-    flex-direction:column;
-  }
-  .hero-clean-actions .btn{
-    width:100%;
-  }
-  .hero-quote-band{
-    padding:8px 0 16px;
-  }
-  .hero-quote-intro{
-    padding-top:0;
-  }
-  .hero-quote-intro .lead{
-    font-size:16px;
-  }
-  .floating{
-    bottom:94px;
-    right:12px;
-  }
 }
 @media (max-width:560px){
-  .container{width:min(var(--max),calc(100% - 24px))}
-  .brand img{
-    height:40px;
-  }
-  .brand span{
-    font-size:14px;
-  }
-  .brand small{
-    font-size:9px;
-    max-width:150px;
-  }
-  .mobile-toggle{
-    min-width:88px;
-    padding:9px 14px;
+  .hero-clean{
+    background-position:67% center;
   }
   .hero-clean .container{
-    padding:20px 0 12px;
+    padding:28px 0 24px;
   }
-  .hero-clean-grid{
-    gap:16px;
-  }
-  .hero-clean-visual{
-    min-height:228px;
-  }
-  .hero-clean-visual img{
-    min-height:228px;
+  .hero-clean-kicker{
+    font-size:11px;
+    letter-spacing:.14em;
+    margin-bottom:12px;
   }
   .hero-clean h1{
-    font-size:clamp(30px,11vw,42px);
-    max-width:260px;
+    font-size:clamp(34px,11.5vw,48px);
+    line-height:.97;
+    max-width:8ch;
   }
   .hero-clean-sub{
-    font-size:15px;
+    font-size:16px;
+    max-width:27ch;
   }
-  .hero-clean-proof{
-    display:none;
-  }
-  .hero-quote-band-grid{
-    gap:18px;
-  }
-  .formcard,
-  .hero-quote-form-card{
-    padding:22px;
-    border-radius:22px;
-  }
+  .hero-clean-proof{display:none}
 }
-/* end full site clean hero redesign */
-
 </style>
 </head>
 <body>
@@ -1626,14 +1540,6 @@ layout: null
               <strong>Domestic and commercial</strong>
               <span>Homes, rentals, offices and high use areas.</span>
             </div>
-          </div>
-        </div>
-
-        <div class="hero-clean-visual">
-          <img src="assets/img/hero-truckmount-system.png" alt="Professional truck-mounted carpet cleaning system inside a van">
-          <div class="hero-clean-badge">
-            <strong>Professional truck-mounted carpet cleaning systems</strong>
-            <span>Proper deep cleaning equipment for a stronger result.</span>
           </div>
         </div>
       </div>
