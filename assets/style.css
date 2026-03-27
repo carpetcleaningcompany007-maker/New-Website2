@@ -96,10 +96,6 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .pt-tight{padding-top:28px}
 .narrow-wrap{max-width:920px}
 .section-heading-wrap{display:grid;gap:4px;margin-bottom:8px}
-.section-heading-wrap.center{justify-items:center;text-align:center}
-.section-heading-wrap.center .section-kicker,.section-heading-wrap.center h2,.section-heading-wrap.center .lead{margin-left:auto;margin-right:auto;text-align:center}
-.section-heading-wrap.center h2{max-width:100%;width:100%}
-.section-heading-wrap.center .lead{max-width:760px}
 
 .hero-grid-open{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;padding:94px 0 90px}
 .local-hero{position:relative;overflow:hidden}
@@ -305,3 +301,38 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .quick-contact-card .quick-contact-list,.quick-contact-card .stack-actions{display:none}
 
 @media (max-width:560px){.topbar .container{justify-content:center}.brand img{height:36px}.brand span{font-size:15px}.brand small{font-size:9px}.nav{min-height:60px;padding:8px 0}.hero .container{padding:34px 0 30px}.hero h1{font-size:32px}.hero p,.lead{font-size:16px}}
+
+
+/* mobile declutter pass */
+@media (max-width:760px){
+  .topbar{display:none}
+  .nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:64px;padding:10px 0}
+  .brand{gap:10px;min-width:0;max-width:100%}
+  .brand img{height:42px}
+  .brand span{font-size:16px;min-width:0;max-width:100%;line-height:1.05}
+  .brand small{font-size:10px;line-height:1.2;white-space:normal;max-width:28ch}
+  .mobile-toggle{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:14px;font-size:16px;line-height:1;white-space:nowrap}
+  .menu{left:0;right:0;top:calc(100% + 8px)}
+  .hero{background-position:60% center}
+  .hero .container{padding:36px 0 28px;gap:16px}
+  .hero h1{font-size:34px;line-height:1.02;max-width:10ch;margin:10px 0 12px}
+  .hero p{font-size:16px;line-height:1.6;max-width:34ch}
+  .hero-points{gap:10px;margin:18px 0 20px}
+  .hero-points span{padding:11px 14px;border-radius:18px;background:rgba(255,255,255,.10)}
+  .hero-points span:nth-child(n+3){display:none}
+  .actions{margin-top:2px;gap:10px}
+  .actions .btn{width:100%;min-height:48px;font-size:18px}
+  .actions .btn.ghost{display:none}
+}
+@media (max-width:560px){
+  .nav{min-height:60px;padding:8px 0}
+  .brand img{height:38px}
+  .brand span{font-size:14px}
+  .brand small{font-size:9px;max-width:24ch}
+  .mobile-toggle{padding:7px 12px;font-size:15px}
+  .hero{background-position:62% center}
+  .hero .container{padding:30px 0 24px;gap:14px}
+  .hero h1{font-size:30px;max-width:9ch}
+  .hero p{font-size:15px;line-height:1.55}
+  .hero-points span{min-height:0;padding:10px 12px;font-size:15px}
+}
