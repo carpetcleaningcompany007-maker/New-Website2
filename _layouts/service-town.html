@@ -4,7 +4,7 @@ layout: default
 {% assign town_obj = site.data.towns | where: 'slug', page.town_slug | first %}
 {% assign service_obj = site.data.services | where: 'slug', page.service_slug | first %}
 {% assign service_name = page.service_name | default: service_obj.name %}
-{% assign service_image = '../../assets/img/carpet-wand-cleaning.webp' %}
+{% assign service_image = '../../assets/img/truckmount.png' %}
 {% if page.service_slug == 'upholstery-cleaning' %}{% assign service_image = '../../assets/img/sofa-upholstery-cleaning.webp' %}{% endif %}
 {% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/rug-cleaning.jpg' %}{% endif %}
 {% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles.webp' %}{% endif %}
