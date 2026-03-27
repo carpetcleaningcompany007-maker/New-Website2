@@ -1023,17 +1023,27 @@ layout: null
     @media (max-width:860px){
       .mobile-toggle{display:inline-flex}
 
+      .topbar{font-size:12px}
+      .topbar .container{padding:6px 0;gap:10px}
+      .topbar .links{gap:10px}
+
       .nav{
         flex-wrap:wrap;
+        min-height:72px;
+        padding:10px 0;
       }
+
+      .brand img{height:44px}
+      .brand span{font-size:17px}
+      .brand small{font-size:10px;margin-top:3px}
 
       .menu{
         width:100%;
         display:none;
         flex-direction:column;
         align-items:flex-start;
-        gap:14px;
-        padding:12px 0 4px;
+        gap:12px;
+        padding:10px 0 2px;
       }
 
       .menu.open{display:flex}
@@ -1043,12 +1053,12 @@ layout: null
       .dropbtn{
         width:100%;
         justify-content:space-between;
-        padding:6px 0;
+        padding:4px 0;
       }
 
       .dropmenu{
         position:static;
-        margin-top:10px;
+        margin-top:8px;
         box-shadow:none;
         border-radius:16px;
         width:100%;
@@ -1065,17 +1075,30 @@ layout: null
         grid-template-columns:1fr;
       }
 
-      .container{width:min(var(--max),calc(100% - 28px))}
-      section{padding:62px 0}
-      .hero .container{padding:56px 0 48px}
-      h1{font-size:46px}
-      h2{font-size:38px}
+      .container{width:min(var(--max),calc(100% - 24px))}
+      section{padding:56px 0}
+      .hero .container{padding:46px 0 40px;gap:24px}
+      .hero p{font-size:17px}
+      h1{font-size:42px}
+      h2{font-size:36px}
+      .hero-tags{gap:8px;margin:0 0 22px}
+      .hero-tags span{padding:9px 12px;font-size:14px}
     }
 
     @media (max-width:560px){
+      .topbar .container{justify-content:center}
+      .brand{gap:10px}
+      .brand img{height:38px}
+      .brand span{font-size:15px}
+      .brand small{font-size:9px}
+      .nav{min-height:64px;padding:8px 0}
+      .mobile-toggle{padding:8px 10px;font-size:14px}
+      .hero .container{padding:36px 0 34px;gap:20px}
+      .hero-tags{display:grid;grid-template-columns:1fr 1fr}
       .hero-tags span{
         width:100%;
         justify-content:flex-start;
+        min-height:44px;
       }
 
       .btn{width:100%}
@@ -1088,11 +1111,12 @@ layout: null
       .faq-item,
       .trust-card,
       .process-card{
-        padding:22px;
+        padding:20px;
       }
 
-      h1{font-size:38px}
-      h2{font-size:32px}
+      h1{font-size:34px;line-height:1.02}
+      h2{font-size:30px}
+      .hero p{font-size:16px}
 
       .floating{
         right:14px;
@@ -1256,7 +1280,7 @@ layout: null
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/upholstery-cleaning-image-119.jpg" alt="Professional upholstery cleaning for sofas and fabric furniture">
+            <img loading="lazy" src="https://jwcarpetcare.co.uk/wp-content/uploads/2025/09/upholstery-cleaning-image-119.jpg" alt="Professional sofa and upholstery cleaning in progress">
             <div class="iconbox">
               <h3>Upholstery Cleaning</h3>
               <p>Sofa and upholstery cleaning for tired fabric, everyday build up and general dullness, helping furniture look cleaner and feel fresher.</p>
@@ -1274,7 +1298,7 @@ layout: null
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&amp;w=1800&amp;auto=format&amp;fit=crop" alt="Professional rug cleaning service">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&amp;w=1800&amp;auto=format&amp;fit=crop" alt="Professional rug cleaning service for household rugs">
             <div class="iconbox">
               <h3>Rug Cleaning</h3>
               <p>Professional rug cleaning for household rugs that need freshening, soil removal and a cleaner, more presentable finish.</p>
@@ -1283,7 +1307,7 @@ layout: null
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://images.pexels.com/photos/14613453/pexels-photo-14613453.jpeg?cs=srgb&dl=pexels-hiba-q-omar-106562569-14613453.jpg&fm=jpg" alt="Modern commercial flooring and reception area">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1800&auto=format&fit=crop" alt="Office interior with commercial carpet tiles">
             <div class="iconbox">
               <h3>Commercial Cleaning</h3>
               <p>Commercial carpet cleaning for offices, receptions, hotels and shared spaces that need to stay clean, smart and professional.</p>
@@ -1292,9 +1316,9 @@ layout: null
           </article>
 
           <article class="card">
-            <img loading="lazy" src="https://images.pexels.com/photos/8155512/pexels-photo-8155512.jpeg?cs=srgb&dl=pexels-ekamelev-8155512.jpg&fm=jpg" alt="Close up moth image representing carpet moth treatment">
+            <img loading="lazy" src="https://images.pexels.com/photos/8155512/pexels-photo-8155512.jpeg?cs=srgb&dl=pexels-ekamelev-8155512.jpg&fm=jpg" alt="Close up carpet moth image for moth treatment service">
             <div class="iconbox">
-              <h3>Moth Treatment</h3>
+              <h3>Carpet Moth Treatment</h3>
               <p>Moth treatment for carpets and rugs where signs of damage or activity are appearing and practical next steps are needed.</p>
               <a href="pages/moth-treatment.html">Read more</a>
             </div>
