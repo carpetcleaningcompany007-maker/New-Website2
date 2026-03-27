@@ -96,6 +96,10 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .pt-tight{padding-top:28px}
 .narrow-wrap{max-width:920px}
 .section-heading-wrap{display:grid;gap:4px;margin-bottom:8px}
+.section-heading-wrap.center{justify-items:center;text-align:center}
+.section-heading-wrap.center .section-kicker,.section-heading-wrap.center h2,.section-heading-wrap.center .lead{margin-left:auto;margin-right:auto;text-align:center}
+.section-heading-wrap.center h2{max-width:100%;width:100%}
+.section-heading-wrap.center .lead{max-width:760px}
 
 .hero-grid-open{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;padding:94px 0 90px}
 .local-hero{position:relative;overflow:hidden}
