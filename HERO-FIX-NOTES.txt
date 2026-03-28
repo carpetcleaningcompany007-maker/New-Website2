@@ -1,0 +1,8 @@
+Service heroes now match their service:
+- carpet cleaning = truckmount
+- upholstery = sofa/upholstery cleaning
+- stain removal = stain removal image
+- commercial = commercial carpet tiles
+- rug cleaning = rug cleaning image
+- moth treatment = moth image
+Service-town local pages use the same mapping via _layouts/service-town.html.

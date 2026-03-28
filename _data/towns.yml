@@ -1,0 +1,274 @@
+- slug: bewdley
+  name: Bewdley
+  hero_title: Carpet Cleaning Bewdley
+  short_intro: Professional carpet cleaning in Bewdley for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Kidderminster
+    - Stourport on Severn
+    - Worcester
+    - Droitwich Spa
+- slug: birmingham-south
+  name: Birmingham South
+  hero_title: Carpet Cleaning Birmingham South
+  short_intro: Professional carpet cleaning in Birmingham South for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Harborne
+    - Quinton
+    - Halesowen
+    - Kingswinford
+- slug: birmingham-west
+  name: Birmingham West
+  hero_title: Carpet Cleaning Birmingham West
+  short_intro: Professional carpet cleaning in Birmingham West for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Harborne
+    - Quinton
+    - Smethwick
+    - Oldbury
+- slug: brierley-hill
+  name: Brierley Hill
+  hero_title: Carpet Cleaning Brierley Hill
+  short_intro: Professional carpet cleaning in Brierley Hill for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Kingswinford
+    - Stourbridge
+    - Halesowen
+    - Dudley
+- slug: bromsgrove
+  name: Bromsgrove
+  hero_title: Carpet Cleaning Bromsgrove
+  short_intro: Professional carpet cleaning in Bromsgrove for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Droitwich Spa
+    - Redditch
+    - Hagley
+    - Worcester
+- slug: bromyard
+  name: Bromyard
+  hero_title: Carpet Cleaning Bromyard
+  short_intro: Professional carpet cleaning in Bromyard for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Worcester
+    - Malvern
+    - Tenbury Wells
+    - Pershore
+- slug: droitwich-spa
+  name: Droitwich Spa
+  hero_title: Carpet Cleaning Droitwich Spa
+  short_intro: Professional carpet cleaning in Droitwich Spa for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Worcester
+    - Bromsgrove
+    - Pershore
+    - Kidderminster
+- slug: dudley
+  name: Dudley
+  hero_title: Carpet Cleaning Dudley
+  short_intro: Professional carpet cleaning in Dudley for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Halesowen
+    - Brierley Hill
+    - Oldbury
+    - Smethwick
+- slug: evesham
+  name: Evesham
+  hero_title: Carpet Cleaning Evesham
+  short_intro: Professional carpet cleaning in Evesham for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Pershore
+    - Worcester
+    - Great Malvern
+    - Droitwich Spa
+- slug: great-malvern
+  name: Great Malvern
+  hero_title: Carpet Cleaning Great Malvern
+  short_intro: Professional carpet cleaning in Great Malvern for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Malvern
+    - Worcester
+    - Bromyard
+    - Pershore
+- slug: hagley
+  name: Hagley
+  hero_title: Carpet Cleaning Hagley
+  short_intro: Professional carpet cleaning in Hagley for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Stourbridge
+    - Kidderminster
+    - Bromsgrove
+    - Halesowen
+- slug: halesowen
+  name: Halesowen
+  hero_title: Carpet Cleaning Halesowen
+  short_intro: Professional carpet cleaning in Halesowen for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Dudley
+    - Brierley Hill
+    - Stourbridge
+    - Smethwick
+- slug: harborne
+  name: Harborne
+  hero_title: Carpet Cleaning Harborne
+  short_intro: Professional carpet cleaning in Harborne for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Birmingham West
+    - Quinton
+    - Smethwick
+    - Oldbury
+- slug: kidderminster
+  name: Kidderminster
+  hero_title: Carpet Cleaning Kidderminster
+  short_intro: Professional carpet cleaning in Kidderminster for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Bewdley
+    - Stourport on Severn
+    - Hagley
+    - Droitwich Spa
+- slug: kingswinford
+  name: Kingswinford
+  hero_title: Carpet Cleaning Kingswinford
+  short_intro: Professional carpet cleaning in Kingswinford for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Brierley Hill
+    - Stourbridge
+    - Halesowen
+    - Dudley
+- slug: malvern
+  name: Malvern
+  hero_title: Carpet Cleaning Malvern
+  short_intro: Professional carpet cleaning in Malvern for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Great Malvern
+    - Worcester
+    - Pershore
+    - Bromyard
+- slug: oldbury
+  name: Oldbury
+  hero_title: Carpet Cleaning Oldbury
+  short_intro: Professional carpet cleaning in Oldbury for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Smethwick
+    - Dudley
+    - Quinton
+    - Harborne
+- slug: pershore
+  name: Pershore
+  hero_title: Carpet Cleaning Pershore
+  short_intro: Professional carpet cleaning in Pershore for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Evesham
+    - Worcester
+    - Droitwich Spa
+    - Malvern
+- slug: quinton
+  name: Quinton
+  hero_title: Carpet Cleaning Quinton
+  short_intro: Professional carpet cleaning in Quinton for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Harborne
+    - Birmingham West
+    - Oldbury
+    - Halesowen
+- slug: redditch
+  name: Redditch
+  hero_title: Carpet Cleaning Redditch
+  short_intro: Professional carpet cleaning in Redditch for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Bromsgrove
+    - Droitwich Spa
+    - Worcester
+    - Pershore
+- slug: rubery
+  name: Rubery
+  hero_title: Carpet Cleaning Rubery
+  short_intro: Professional carpet cleaning in Rubery for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Bromsgrove
+    - Halesowen
+    - Quinton
+    - Birmingham South
+- slug: smethwick
+  name: Smethwick
+  hero_title: Carpet Cleaning Smethwick
+  short_intro: Professional carpet cleaning in Smethwick for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Oldbury
+    - Harborne
+    - Quinton
+    - Dudley
+- slug: solihull
+  name: Solihull
+  hero_title: Carpet Cleaning Solihull
+  short_intro: Professional carpet cleaning in Solihull for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Birmingham South
+    - Sutton Coldfield
+    - Redditch
+    - Harborne
+- slug: stourbridge
+  name: Stourbridge
+  hero_title: Carpet Cleaning Stourbridge
+  short_intro: Professional carpet cleaning in Stourbridge for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Kingswinford
+    - Brierley Hill
+    - Hagley
+    - Halesowen
+- slug: stourport-on-severn
+  name: Stourport on Severn
+  hero_title: Carpet Cleaning Stourport on Severn
+  short_intro: Professional carpet cleaning in Stourport on Severn for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Bewdley
+    - Kidderminster
+    - Droitwich Spa
+    - Worcester
+- slug: sutton-coldfield
+  name: Sutton Coldfield
+  hero_title: Carpet Cleaning Sutton Coldfield
+  short_intro: Professional carpet cleaning in Sutton Coldfield for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Solihull
+    - Birmingham South
+    - Harborne
+    - Smethwick
+- slug: tenbury-wells
+  name: Tenbury Wells
+  hero_title: Carpet Cleaning Tenbury Wells
+  short_intro: Professional carpet cleaning in Tenbury Wells for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Bromyard
+    - Malvern
+    - Worcester
+    - Kidderminster
+- slug: wednesbury
+  name: Wednesbury
+  hero_title: Carpet Cleaning Wednesbury
+  short_intro: Professional carpet cleaning in Wednesbury for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - West Bromwich
+    - Smethwick
+    - Oldbury
+    - Dudley
+- slug: west-bromwich
+  name: West Bromwich
+  hero_title: Carpet Cleaning West Bromwich
+  short_intro: Professional carpet cleaning in West Bromwich for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Wednesbury
+    - Smethwick
+    - Oldbury
+    - Dudley
+- slug: worcester
+  name: Worcester
+  hero_title: Carpet Cleaning Worcester
+  short_intro: Professional carpet cleaning in Worcester for homes, rental properties and local businesses needing a proper clean and a fresher finish.
+  nearby:
+    - Droitwich Spa
+    - Bromsgrove
+    - Pershore
+    - Malvern
+    - Great Malvern
+    - Bromyard
+    - Kidderminster
+    - Redditch
