@@ -347,7 +347,7 @@
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
-        {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
@@ -359,7 +359,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
-        <img loading="lazy" src="{{ site.logo_url }}" alt="{{ site.business_name }}">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
         <span>
           {{ site.business_name }}
           <small>Carpet cleaning across Worcestershire and the West Midlands</small>
@@ -476,7 +476,7 @@
 <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img loading="lazy" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px">
+        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across Worcestershire and the West Midlands.</p>
       </div>
 
@@ -498,7 +498,7 @@
           <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
-          {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
         </p>
       </div>
     </div>
