@@ -1,7 +1,0 @@
-Latest update
-
-1. Reordered the Areas dropdown so Worcester, Bromsgrove, Redditch and Kidderminster show first.
-2. Added a few more supporting towns after the main four, including Birmingham South as a later option.
-3. Made the local service page heroes lighter so they visually match the core service pages better.
-4. Restored a desk based image feel on the Reviews page hero area.
-5. Swapped the Gallery hero to a brighter cleaning image instead of leaving it feeling like a truckmount page.
