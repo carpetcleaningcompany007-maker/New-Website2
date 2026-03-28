@@ -1,6 +1,0 @@
-Final image optimisation applied:
-- created lighter WebP hero images
-- reduced dark overlays on hero sections
-- switched heavy PNG/JPG hero references to optimised WebP files
-- added lazy loading and async decoding to image tags
-- kept the existing .html page structure so links continue to work on GitHub Pages

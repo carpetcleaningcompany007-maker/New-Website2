@@ -1,9 +1,0 @@
-FULL RESET FOR GITHUB PAGES
-
-1. Delete all files currently in the New-Website2 repo.
-2. Upload EVERYTHING from this ZIP to the repo root.
-3. Make sure GitHub Pages is set to Deploy from a branch, main, /(root).
-4. Do not add a .nojekyll file.
-5. Wait for Pages to rebuild, then hard refresh the site.
-
-This ZIP is a reset build from the original uploaded source, not the later broken rebuilds.
