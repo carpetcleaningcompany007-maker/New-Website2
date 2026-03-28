@@ -10,7 +10,14 @@
 </div></div>
 <div class="drop"><button class="dropbtn" type="button">Areas</button><div class="dropmenu">
 <a href="{{ page.pages_path | default: 'pages/' }}areas.html">All Areas</a>
-{% for t in site.data.towns limit:6 %}<a href="{{ page.areas_path | default: 'areas/' }}{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}
+<a href="{{ page.areas_path | default: 'areas/' }}worcester.html">Worcester</a>
+<a href="{{ page.areas_path | default: 'areas/' }}bromsgrove.html">Bromsgrove</a>
+<a href="{{ page.areas_path | default: 'areas/' }}redditch.html">Redditch</a>
+<a href="{{ page.areas_path | default: 'areas/' }}kidderminster.html">Kidderminster</a>
+<a href="{{ page.areas_path | default: 'areas/' }}droitwich-spa.html">Droitwich Spa</a>
+<a href="{{ page.areas_path | default: 'areas/' }}malvern.html">Malvern</a>
+<a href="{{ page.areas_path | default: 'areas/' }}stourbridge.html">Stourbridge</a>
+<a href="{{ page.areas_path | default: 'areas/' }}birmingham-south.html">Birmingham South</a>
 </div></div>
 <a href="{{ page.pages_path | default: 'pages/' }}reviews.html">Reviews</a><a href="{{ page.pages_path | default: 'pages/' }}gallery.html">Gallery</a><a class="cta" href="{{ page.quote_path | default: 'pages/get-a-quote.html' }}">Get a Quote</a>
 </nav></div></header>

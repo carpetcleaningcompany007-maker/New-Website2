@@ -9,13 +9,13 @@ layout: default
 {% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/hero-rug-cleaning-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'moth-treatment' %}{% assign service_image = '../../assets/img/carpet-moth-treatment-optimised.webp' %}{% endif %}
-<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.90),rgba(15,23,42,.68)),url('{{ service_image }}') center/cover no-repeat">
+<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.56),rgba(15,23,42,.18)),url('{{ service_image }}') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
       <h1>{{ service_name }} in {{ town_obj.name }}</h1>
       <p>{{ page.hero_text }}</p>
-      <p class="hero-secondary">Built for people searching specifically for {{ service_name | downcase }} in {{ town_obj.name }}, with a clear route to the right page and a fast local reply.</p>
+      <p class="hero-secondary">A local service page for customers in {{ town_obj.name }} who want the right service, clear advice and a fast local reply.</p>
       <div class="hero-points hero-points-open">
         <span>{{ service_name }}</span>
         <span>{{ town_obj.name }}</span>
