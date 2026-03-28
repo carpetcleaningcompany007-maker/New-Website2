@@ -4,9 +4,11 @@ layout: default
 {% assign town_obj = site.data.towns | where: 'slug', page.town_slug | first %}
 {% assign service_obj = site.data.services | where: 'slug', page.service_slug | first %}
 {% assign service_name = page.service_name | default: service_obj.name %}
-{% assign service_image = '../../assets/img/truckmount-optimised.webp' %}
+{% assign service_image = '../../assets/img/carpet-wand-cleaning.webp' %}
 {% if page.service_slug == 'upholstery-cleaning' %}{% assign service_image = '../../assets/img/hero-upholstery-cleaning-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/hero-rug-cleaning-optimised.webp' %}{% endif %}
+{% if page.service_slug == 'carpet-cleaning' %}{% assign service_image = '../../assets/img/carpet-wand-cleaning.webp' %}{% endif %}
+{% if page.service_slug == 'stain-removal' %}{% assign service_image = '../../assets/img/stain-removal-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles.webp' %}{% endif %}
 {% if page.service_slug == 'moth-treatment' %}{% assign service_image = '../../assets/img/carpet-moth-treatment-optimised.webp' %}{% endif %}
 <section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.78),rgba(15,23,42,.48)),url('{{ service_image }}') center/cover no-repeat">

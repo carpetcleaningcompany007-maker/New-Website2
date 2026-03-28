@@ -1,0 +1,7 @@
+Hero image updates applied:
+- Carpet Cleaning pages now use carpet-wand-cleaning.webp
+- Town pages now use carpet-wand-cleaning.webp instead of truckmount
+- Stain Removal pages now use stain-removal-optimised.webp
+- Gallery hero switched to rug-cleaning-pro-optimised.webp
+- Reviews, Areas and Get a Quote heroes now use local images for better consistency and speed
+- Service hub default hero background switched away from truckmount
