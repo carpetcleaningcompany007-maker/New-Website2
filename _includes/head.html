@@ -63,10 +63,10 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.website }}/"},
-        {"@type": "ListItem", "position": 2, "name": "Areas", "item": "{{ site.website }}/pages/areas.html"},
-        {"@type": "ListItem", "position": 3, "name": "{{ page.town }}", "item": "{{ site.website }}/areas/{{ page.slug | default: page.town_slug }}.html"}
+        {"@type": "ListItem", "position": 2, "name": "Areas", "item": "{{ '/areas/' | absolute_url }}"},
+        {"@type": "ListItem", "position": 3, "name": "{{ page.town }}", "item": "{{ '/' | append: page.slug | default: page.town_slug | append: '/' | absolute_url }}"}
         {% if page.service_name %},
-        {"@type": "ListItem", "position": 4, "name": "{{ page.service_name }}", "item": "{{ site.website }}/locations/{{ page.town_slug }}/{{ page.service_slug }}.html"}
+        {"@type": "ListItem", "position": 4, "name": "{{ page.service_name }}", "item": "{{ '/' | append: page.town_slug | append: '/' | append: page.service_slug | append: '/' | absolute_url }}"}
         {% endif %}
       ]
     }

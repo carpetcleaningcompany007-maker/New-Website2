@@ -15,7 +15,7 @@ layout: default
       <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
       <h1>{{ service_name }} in {{ town_obj.name }}</h1>
       <p>{{ page.hero_text }}</p>
-      <p class="hero-secondary">Built for people searching specifically for {{ service_name | downcase }} in {{ town_obj.name }}, with a clear route to the right page and a fast local reply.</p>
+      <p class="hero-secondary">Straightforward local help for {{ service_name | downcase }} in {{ town_obj.name }}, with a quick route to get in touch.</p>
       <div class="hero-points hero-points-open">
         <span>{{ service_name }}</span>
         <span>{{ town_obj.name }}</span>
@@ -36,7 +36,7 @@ layout: default
   <div class="container usp-band-grid">
     <div><strong>{{ service_name }}</strong><span>Clear local page built around {{ town_obj.name }} and nearby support.</span></div>
     <div><strong>Fast quote route</strong><span>Move straight to a quote, call or WhatsApp without unnecessary steps.</span></div>
-    <div><strong>Internal SEO support</strong><span>Related services and nearby town links are built in below.</span></div>
+    <div><strong>Related services</strong><span>Quick links to nearby towns and other services are below.</span></div>
   </div>
 </section>
 
@@ -69,7 +69,7 @@ layout: default
     </div>
     <div class="service-chip-grid cards">
       {% for s in site.data.services %}
-        <a href="{{ page.locations_path }}{{ town_obj.slug }}/{{ s.slug }}.html"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>Go straight to the {{ s.name | downcase }} page for {{ town_obj.name }}.</span></a>
+        <a href="{{ '/' | append: town_obj.slug | append: '/' | append: s.slug | append: '/' | relative_url }}"><strong>{{ s.name }} in {{ town_obj.name }}</strong><span>Go straight to the {{ s.name | downcase }} page for {{ town_obj.name }}.</span></a>
       {% endfor %}
     </div>
   </div>
@@ -80,8 +80,8 @@ layout: default
     <span class="section-kicker">Nearby towns</span>
     <h2>{{ service_name }} pages around {{ town_obj.name }}</h2>
     <div class="service-chip-grid cards">
-      {% for t in site.data.towns limit:12 %}{% unless t.slug == town_obj.slug %}
-        <a href="{{ page.locations_path }}{{ t.slug }}/{{ page.service_slug }}.html"><strong>{{ service_name }} in {{ t.name }}</strong><span>View the same service page for {{ t.name }}.</span></a>
+      {% for t in site.data.towns limit:6 %}{% unless t.slug == town_obj.slug %}
+        <a href="{{ '/' | append: t.slug | append: '/' | append: page.service_slug | append: '/' | relative_url }}"><strong>{{ service_name }} in {{ t.name }}</strong><span>View the same service page for {{ t.name }}.</span></a>
       {% endunless %}{% endfor %}
     </div>
   </div>
@@ -105,9 +105,9 @@ layout: default
     <div class="map-panel plain-panel">
       <span class="section-kicker">Map around {{ town_obj.name }}</span>
       <h2>Local map for {{ town_obj.name }}</h2>
-      <p>This page uses {{ town_obj.name }} as its local anchor point, helping customers move from the town page into the specific service they need while keeping the wider site structure connected.</p>
+      <p>Use this page to check coverage around {{ town_obj.name }}, then get in touch for a quick answer about the service you need.</p>
       <div class="mapwrap"><iframe src="https://www.google.com/maps?q={{ town_obj.name | uri_escape }}%20UK&output=embed" loading="lazy"></iframe></div>
-      <p class="map-note">That helps support local searches for {{ service_name | downcase }} in {{ town_obj.name }} and surrounding areas.</p>
+      <p class="map-note">We also cover nearby areas around {{ town_obj.name }}.</p>
     </div>
     <div class="cta-panel plain-panel right-cta accent-block">
       <span class="section-kicker">Need this service?</span>

@@ -1,0 +1,1 @@
+Site tidied for cleaner Jekyll URLs, lighter local page wording, smaller related link sections, mobile spacing improvements, updated Facebook link, Instagram hidden until confirmed, and refreshed sitemap and robots. If you publish from a different GitHub repo name, update baseurl in _config.yml.

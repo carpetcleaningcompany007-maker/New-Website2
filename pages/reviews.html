@@ -26,7 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews | {{ site.business_name }}</title>
   <meta name="description" content="Read reviews for {{ site.business_name }}.">
-  <link rel="canonical" href="{{ site.website }}/pages/reviews.html">
+  <link rel="canonical" href="{{ '/reviews/' | absolute_url }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Reviews | {{ site.business_name }}">
   <meta property="og:description" content="Read genuine customer reviews for {{ site.business_name }}.">
@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 
   <!-- ========================================= -->
   <!-- 03. PAGE SPECIFIC CSS -->
@@ -347,7 +347,7 @@
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
-        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+        {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
       </div>
     </div>
   </div>
@@ -358,7 +358,7 @@
   <!-- ========================================= -->
   <header>
     <div class="container nav">
-      <a class="brand" href="../index.html">
+      <a class="brand" href="{{ '/' | relative_url }}">
         <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
         <span>
           {{ site.business_name }}
@@ -369,34 +369,34 @@
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
 
       <nav class="menu">
-        <a href="../index.html">Home</a>
+        <a href="{{ '/' | relative_url }}">Home</a>
 
         <div class="drop">
           <button class="dropbtn" type="button">Services</button>
           <div class="dropmenu">
-            <a href="../pages/carpet-cleaning.html">Carpet Cleaning</a>
-            <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a>
-            <a href="../pages/stain-removal.html">Stain Removal</a>
-            <a href="../pages/commercial.html">Commercial</a>
-            <a href="../pages/rug-cleaning.html">Rug Cleaning</a>
-            <a href="../pages/moth-treatment.html">Moth Treatment</a>
+            <a href="{{ '/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a>
+            <a href="{{ '/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
+            <a href="{{ '/stain-removal/' | relative_url }}">Stain Removal</a>
+            <a href="{{ '/commercial/' | relative_url }}">Commercial</a>
+            <a href="{{ '/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
+            <a href="{{ '/moth-treatment/' | relative_url }}">Moth Treatment</a>
           </div>
         </div>
 
         <div class="drop">
           <button class="dropbtn" type="button">Areas</button>
           <div class="dropmenu">
-            <a href="../pages/areas.html">All Areas</a>
-            <a href="../areas/worcester.html">Worcester</a>
-            <a href="../areas/bromsgrove.html">Bromsgrove</a>
-            <a href="../areas/kidderminster.html">Kidderminster</a>
-            <a href="../areas/redditch.html">Redditch</a>
+            <a href="{{ '/areas/' | relative_url }}">All Areas</a>
+            <a href="{{ \'/worcester/\' | relative_url }}">Worcester</a>
+            <a href="{{ \'/bromsgrove/\' | relative_url }}">Bromsgrove</a>
+            <a href="{{ \'/kidderminster/\' | relative_url }}">Kidderminster</a>
+            <a href="{{ \'/redditch/\' | relative_url }}">Redditch</a>
           </div>
         </div>
 
-        <a href="../pages/reviews.html" class="current">Reviews</a>
-        <a href="../pages/gallery.html">Gallery</a>
-        <a class="cta" href="get-a-quote.html">Get Quote</a>
+        <a href="{{ '/reviews/' | relative_url }}" class="current">Reviews</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a class="cta" href="{{ '/get-a-quote/' | relative_url }}">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -412,7 +412,7 @@
         <p>Read genuine customer feedback from people who have used {{ site.business_name }} for carpet cleaning, upholstery cleaning and related services across Worcestershire and nearby areas.</p>
         <div class="actions">
           <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
-          <a class="btn secondary" href="get-a-quote.html">Get a Quote</a>
+          <a class="btn secondary" href="{{ '/get-a-quote/' | relative_url }}">Get a Quote</a>
         </div>
       </div>
 
@@ -446,7 +446,7 @@
           </div>
 
           <div class="reviews-actions">
-            <a class="btn primary" href="get-a-quote.html">Request a quote</a>
+            <a class="btn primary" href="{{ '/get-a-quote/' | relative_url }}">Request a quote</a>
             <a class="btn secondary" href="https://share.google/AbG9sVY7gMZgzU9p9" target="_blank" rel="noopener">View all Google reviews</a>
             <button type="button" class="btn secondary" id="expandAllBtn">Expand all</button>
             <button type="button" class="btn secondary" id="collapseAllBtn">Collapse all</button>
@@ -459,7 +459,7 @@
 
       <div class="reviews-bottom-actions">
         <button type="button" class="btn primary" id="loadMoreBtn">Load 10 more reviews</button>
-        <a class="btn secondary" href="get-a-quote.html">Request my quote</a>
+        <a class="btn secondary" href="{{ '/get-a-quote/' | relative_url }}">Request my quote</a>
       </div>
 
       <p class="reviews-note">
@@ -483,12 +483,12 @@
       <div>
         <h3>Services</h3>
         <p>
-          <a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br>
-          <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br>
-          <a href="../pages/stain-removal.html">Stain Removal Treatments</a><br>
-          <a href="../pages/commercial.html">Commercial Cleaning</a><br>
-          <a href="../pages/rug-cleaning.html">Rug Cleaning</a><br>
-          <a href="../pages/moth-treatment.html">Moth Treatment</a>
+          <a href="{{ '/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a><br>
+          <a href="{{ '/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a><br>
+          <a href="{{ '/stain-removal/' | relative_url }}">Stain Removal Treatments</a><br>
+          <a href="{{ '/commercial/' | relative_url }}">Commercial Cleaning</a><br>
+          <a href="{{ '/rug-cleaning/' | relative_url }}">Rug Cleaning</a><br>
+          <a href="{{ '/moth-treatment/' | relative_url }}">Moth Treatment</a>
         </p>
       </div>
 
@@ -498,7 +498,7 @@
           <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
-          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+          {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
         </p>
       </div>
     </div>

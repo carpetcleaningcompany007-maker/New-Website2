@@ -1,15 +1,19 @@
 ---
+layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{{ site.url }}{{ site.baseurl }}/</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/areas.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/carpet-cleaning.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/upholstery-cleaning.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/stain-removal.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/rug-cleaning.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/moth-treatment.html</loc></url>
-  <url><loc>{{ site.url }}{{ site.baseurl }}/pages/commercial.html</loc></url>
-  {% for t in site.data.towns %}<url><loc>{{ site.url }}{{ site.baseurl }}/areas/{{ t.slug }}.html</loc></url>{% endfor %}
-  {% for t in site.data.towns %}{% for s in site.data.services %}<url><loc>{{ site.url }}{{ site.baseurl }}/locations/{{ t.slug }}/{{ s.slug }}.html</loc></url>{% endfor %}{% endfor %}
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ '/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/areas/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/carpet-cleaning/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/upholstery-cleaning/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/stain-removal/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/rug-cleaning/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/moth-treatment/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/commercial/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/reviews/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/gallery/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/get-a-quote/' | absolute_url }}</loc></url>
+  {% for t in site.data.towns %}<url><loc>{{ '/' | append: t.slug | append: '/' | absolute_url }}</loc></url>{% endfor %}
+  {% for t in site.data.towns %}{% for s in site.data.services %}<url><loc>{{ '/' | append: t.slug | append: '/' | append: s.slug | append: '/' | absolute_url }}</loc></url>{% endfor %}{% endfor %}
 </urlset>

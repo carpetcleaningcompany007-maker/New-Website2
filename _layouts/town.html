@@ -27,8 +27,8 @@ layout: default
 <section class="usp-band">
   <div class="container usp-band-grid">
     <div><strong>Local service</strong><span>Fast contact for homes, rentals and everyday household jobs in {{ page.town }}.</span></div>
-    <div><strong>Every main service covered</strong><span>Each town now links cleanly to carpet cleaning, upholstery cleaning, stain removal and moth treatment.</span></div>
-    <div><strong>Stronger local SEO</strong><span>Nearby areas, internal links and town specific copy are all built into the page.</span></div>
+    <div><strong>Every main service covered</strong><span>Quick routes into carpet cleaning, upholstery cleaning, stain removal and moth treatment.</span></div>
+    <div><strong>Clear local navigation</strong><span>Easy routes into the service pages and nearby coverage areas.</span></div>
   </div>
 </section>
 
@@ -39,7 +39,7 @@ layout: default
       <h2>Cleaner carpets for homes and rental properties in {{ page.town }}</h2>
       <p>{{ site.business_name }} provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and selected commercial cleaning in {{ page.town }} and nearby areas.</p>
       <p>Whether you need help with a lounge, bedroom, stairs, hallway, rental property or a tired looking carpet that needs a proper refresh, this page is the local starting point for {{ page.town }}.</p>
-      <p>The aim is simple: make it easy to find the right service for {{ page.town }}, see the nearby areas we cover, and get in touch quickly for a quote.</p>
+      <p>The aim is simple: help people in {{ page.town }} find the right service quickly and get in touch for a quote without digging through the site.</p>
     </div>
     <div class="intro-image-card">
       <img src="../assets/img/truckmount.png" alt="Professional truck-mounted carpet cleaning in {{ page.town }}">
@@ -56,12 +56,12 @@ layout: default
     <div class="section-heading-wrap center narrow-wrap">
       <span class="section-kicker">Choose a service</span>
       <h2>Browse services in {{ page.town }}</h2>
-      <p class="lead" style="margin-inline:auto">Every card below now links to a real local service page for {{ page.town }}.</p>
+      <p class="lead" style="margin-inline:auto">Choose the service you need below.</p>
     </div>
     <div class="premium-town-grid">
       {% assign town_token = '{town}' %}
       {% for s in site.data.services %}
-      <a class="premium-town-card" href="{{ page.locations_path }}{{ page.slug }}/{{ s.slug }}.html">
+      <a class="premium-town-card" href="{{ "/" | append: page.slug | append: "/" | append: s.slug | append: "/" | relative_url }}">
         <h3>{{ s.name }}</h3>
         <p>{{ s.desc | replace: town_token, page.town }}</p>
         <span>View page →</span>
@@ -69,7 +69,7 @@ layout: default
       {% endfor %}
     </div>
     <div class="pill-links premium-subtowns">
-      {% for t in site.data.towns %}{% unless t.slug == page.slug %}<a href="{{ page.areas_path }}{{ t.slug }}.html">{{ t.name }}</a>{% endunless %}{% endfor %}
+      {% for t in site.data.towns limit:6 %}{% unless t.slug == page.slug %}<a href="{{ '/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endunless %}{% endfor %}
     </div>
   </div>
 </section>
@@ -94,8 +94,8 @@ layout: default
     <span class="section-kicker">Internal links</span>
     <h2>Related pages around {{ page.town }}</h2>
     <div class="service-chip-grid cards">
-      {% for t in site.data.towns limit:12 %}{% unless t.slug == page.slug %}
-        <a href="{{ page.areas_path }}{{ t.slug }}.html"><strong>{{ t.name }}</strong><span>Browse the full local service page for {{ t.name }}.</span></a>
+      {% for t in site.data.towns limit:6 %}{% unless t.slug == page.slug %}
+        <a href="{{ '/' | append: t.slug | append: '/' | relative_url }}"><strong>{{ t.name }}</strong><span>Browse the local page for {{ t.name }}.</span></a>
       {% endunless %}{% endfor %}
     </div>
   </div>

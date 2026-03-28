@@ -12,12 +12,12 @@
   <meta property="og:title" content="Professional Carpet Cleaning Worcestershire | {{ site.business_name }}">
   <meta property="og:description" content="Professional carpet cleaning across Worcestershire and the West Midlands for lounges, stairs, bedrooms and rental properties. Pre treatment, agitation and proper hot water extraction for a cleaner, fresher finish.">
   <meta property="og:image" content="../assets/img/truckmount.png">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url | replace: "index.html", "" }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
   <div class="topbar">
@@ -28,44 +28,44 @@
       </div>
       <div class="links">
         <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
-        <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+        {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
       </div>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a class="brand" href="../index.html">
+      <a class="brand" href="{{ '/' | relative_url }}">
         <img src="{{ site.logo_url }}" alt="{{ site.business_name }}">
         <span>{{ site.business_name }}<small>{{ site.brand_tagline }}</small></span>
       </a>
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
       <nav class="menu">
-        <a href="../index.html">Home</a>
+        <a href="{{ '/' | relative_url }}">Home</a>
         <div class="drop">
           <button class="dropbtn" type="button">Services</button>
           <div class="dropmenu">
-            <a href="../pages/carpet-cleaning.html" class="current">Carpet Cleaning</a>
-            <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a>
-            <a href="../pages/stain-removal.html">Stain Removal Treatments</a>
-            <a href="../pages/commercial.html">Commercial Cleaning</a>
-            <a href="../pages/rug-cleaning.html">Rug Cleaning</a>
-            <a href="../pages/moth-treatment.html">Moth Treatment</a>
+            <a href="{{ '/carpet-cleaning/' | relative_url }}" class="current">Carpet Cleaning</a>
+            <a href="{{ '/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
+            <a href="{{ '/stain-removal/' | relative_url }}">Stain Removal Treatments</a>
+            <a href="{{ '/commercial/' | relative_url }}">Commercial Cleaning</a>
+            <a href="{{ '/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
+            <a href="{{ '/moth-treatment/' | relative_url }}">Moth Treatment</a>
           </div>
         </div>
         <div class="drop">
           <button class="dropbtn" type="button">Areas We Cover</button>
           <div class="dropmenu">
-            <a href="../pages/areas.html">All Areas</a>
-            <a href="../areas/worcester.html">Worcester</a>
-            <a href="../areas/bromsgrove.html">Bromsgrove</a>
-            <a href="../areas/kidderminster.html">Kidderminster</a>
-            <a href="../areas/redditch.html">Redditch</a>
+            <a href="{{ '/areas/' | relative_url }}">All Areas</a>
+            <a href="{{ \'/worcester/\' | relative_url }}">Worcester</a>
+            <a href="{{ \'/bromsgrove/\' | relative_url }}">Bromsgrove</a>
+            <a href="{{ \'/kidderminster/\' | relative_url }}">Kidderminster</a>
+            <a href="{{ \'/redditch/\' | relative_url }}">Redditch</a>
           </div>
         </div>
-        <a href="../pages/reviews.html">Reviews</a>
-        <a href="../pages/gallery.html">Gallery</a>
-        <a class="cta" href="get-a-quote.html">Get a Quote</a>
+        <a href="{{ '/reviews/' | relative_url }}">Reviews</a>
+        <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+        <a class="cta" href="{{ '/get-a-quote/' | relative_url }}">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -82,7 +82,7 @@
           <span><i class="fa-solid fa-circle-check"></i>&nbsp; Homes and rental properties</span>
         </div>
         <div class="actions">
-          <a class="btn primary" href="get-a-quote.html">Get a Quote</a>
+          <a class="btn primary" href="{{ '/get-a-quote/' | relative_url }}">Get a Quote</a>
           <a class="btn secondary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
         </div>
       </div>
@@ -173,20 +173,20 @@
         <p class="lead" style="margin-inline:auto">Choose the town nearest to you for the local carpet cleaning page.</p>
       </div>
       <div class="premium-town-grid">
-        <a class="premium-town-card" href="../locations/worcester/carpet-cleaning.html"><h3>Worcester</h3><p>Professional carpet cleaning in Worcester for homes, rental properties and busy family use.</p><span>View Worcester →</span></a>
-        <a class="premium-town-card" href="../locations/bromsgrove/carpet-cleaning.html"><h3>Bromsgrove</h3><p>Local carpet cleaning for lounges, bedrooms, stairs and rental properties.</p><span>View Bromsgrove →</span></a>
-        <a class="premium-town-card" href="../locations/kidderminster/carpet-cleaning.html"><h3>Kidderminster</h3><p>Proper deep carpet cleaning for everyday use, traffic marks and tired carpets.</p><span>View Kidderminster →</span></a>
-        <a class="premium-town-card" href="../locations/redditch/carpet-cleaning.html"><h3>Redditch</h3><p>Cleaner carpets for homes and rental properties with a straightforward local service.</p><span>View Redditch →</span></a>
+        <a class="premium-town-card" href="{{ \'/worcester/carpet-cleaning/\' | relative_url }}"><h3>Worcester</h3><p>Professional carpet cleaning in Worcester for homes, rental properties and busy family use.</p><span>View Worcester →</span></a>
+        <a class="premium-town-card" href="{{ \'/bromsgrove/carpet-cleaning/\' | relative_url }}"><h3>Bromsgrove</h3><p>Local carpet cleaning for lounges, bedrooms, stairs and rental properties.</p><span>View Bromsgrove →</span></a>
+        <a class="premium-town-card" href="{{ \'/kidderminster/carpet-cleaning/\' | relative_url }}"><h3>Kidderminster</h3><p>Proper deep carpet cleaning for everyday use, traffic marks and tired carpets.</p><span>View Kidderminster →</span></a>
+        <a class="premium-town-card" href="{{ \'/redditch/carpet-cleaning/\' | relative_url }}"><h3>Redditch</h3><p>Cleaner carpets for homes and rental properties with a straightforward local service.</p><span>View Redditch →</span></a>
       </div>
       <div class="pill-links premium-subtowns">
-        <a href="../locations/droitwich-spa/carpet-cleaning.html">Droitwich Spa</a>
-        <a href="../areas/malvern.html">Malvern</a>
-        <a href="../areas/stourport-on-severn.html">Stourport on Severn</a>
-        <a href="../areas/bewdley.html">Bewdley</a>
-        <a href="../areas/pershore.html">Pershore</a>
-        <a href="../areas/evesham.html">Evesham</a>
-        <a href="../areas/stourbridge.html">Stourbridge</a>
-        <a href="../areas/halesowen.html">Halesowen</a>
+        <a href="{{ \'/droitwich-spa/carpet-cleaning/\' | relative_url }}">Droitwich Spa</a>
+        <a href="{{ \'/malvern/\' | relative_url }}">Malvern</a>
+        <a href="{{ \'/stourport-on-severn/\' | relative_url }}">Stourport on Severn</a>
+        <a href="{{ \'/bewdley/\' | relative_url }}">Bewdley</a>
+        <a href="{{ \'/pershore/\' | relative_url }}">Pershore</a>
+        <a href="{{ \'/evesham/\' | relative_url }}">Evesham</a>
+        <a href="{{ \'/stourbridge/\' | relative_url }}">Stourbridge</a>
+        <a href="{{ \'/halesowen/\' | relative_url }}">Halesowen</a>
       </div>
     </div>
   </section>
@@ -230,12 +230,12 @@
       <div>
         <h3>Services</h3>
         <p>
-          <a href="../pages/carpet-cleaning.html">Carpet Cleaning</a><br>
-          <a href="../pages/upholstery-cleaning.html">Upholstery Cleaning</a><br>
-          <a href="../pages/stain-removal.html">Stain Removal Treatments</a><br>
-          <a href="../pages/commercial.html">Commercial Cleaning</a><br>
-          <a href="../pages/rug-cleaning.html">Rug Cleaning</a><br>
-          <a href="../pages/moth-treatment.html">Moth Treatment</a>
+          <a href="{{ '/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a><br>
+          <a href="{{ '/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a><br>
+          <a href="{{ '/stain-removal/' | relative_url }}">Stain Removal Treatments</a><br>
+          <a href="{{ '/commercial/' | relative_url }}">Commercial Cleaning</a><br>
+          <a href="{{ '/rug-cleaning/' | relative_url }}">Rug Cleaning</a><br>
+          <a href="{{ '/moth-treatment/' | relative_url }}">Moth Treatment</a>
         </p>
       </div>
       <div>
@@ -244,7 +244,7 @@
           <a href="tel:{{ site.phone_link | default: site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a><br>
-          <a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+          {% if site.instagram_url and site.instagram_url != "" %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
         </p>
       </div>
     </div>
@@ -256,6 +256,6 @@
     <a class="float-btn call" href="tel:{{ site.phone_link | default: site.phone }}" aria-label="Call {{ site.business_name }}"><i class="fa-solid fa-phone"></i></a>
   </div>
 
-  <script src="../assets/script.js"></script>
+  <script src="{{ '/assets/script.js' | relative_url }}"></script>
 </body>
 </html>
