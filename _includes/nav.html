@@ -1,16 +1,16 @@
 <header><div class="container nav"><a class="brand" href="{{ '/' | relative_url }}"><img src="{{ site.logo_url }}" alt="{{ site.business_name }}"><span>{{ site.business_name }}<small>Carpet cleaning across {{ site.service_area }}</small></span></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button><nav class="menu">
 <a href="{{ '/' | relative_url }}">Home</a>
 <div class="drop"><button class="dropbtn" type="button">Services</button><div class="dropmenu">
-<a href="{{ '/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a>
-<a href="{{ '/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
-<a href="{{ '/stain-removal/' | relative_url }}">Stain Removal</a>
-<a href="{{ '/commercial/' | relative_url }}">Commercial</a>
-<a href="{{ '/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
-<a href="{{ '/moth-treatment/' | relative_url }}">Moth Treatment</a>
+<a href="{{ '/pages/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a>
+<a href="{{ '/pages/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
+<a href="{{ '/pages/stain-removal/' | relative_url }}">Stain Removal</a>
+<a href="{{ '/pages/commercial/' | relative_url }}">Commercial</a>
+<a href="{{ '/pages/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
+<a href="{{ '/pages/moth-treatment/' | relative_url }}">Moth Treatment</a>
 </div></div>
 <div class="drop"><button class="dropbtn" type="button">Areas</button><div class="dropmenu">
-<a href="{{ '/areas/' | relative_url }}">All Areas</a>
-{% for t in site.data.towns limit:6 %}<a href="{{ '/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endfor %}
+<a href="{{ '/pages/areas/' | relative_url }}">All Areas</a>
+{% for t in site.data.towns limit:6 %}<a href="{{ '/areas/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endfor %}
 </div></div>
-<a href="{{ '/reviews/' | relative_url }}">Reviews</a><a href="{{ '/gallery/' | relative_url }}">Gallery</a><a class="cta" href="{{ '/get-a-quote/' | relative_url }}">Get a Quote</a>
+<a href="{{ '/pages/reviews/' | relative_url }}">Reviews</a><a href="{{ '/pages/gallery/' | relative_url }}">Gallery</a><a class="cta" href="{{ '/pages/get-a-quote/' | relative_url }}">Get a Quote</a>
 </nav></div></header>

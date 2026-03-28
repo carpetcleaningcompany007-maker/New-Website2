@@ -422,8 +422,3 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
     display:none;
   }
 }
-
-
-/* 2026 audit tidy up */
-@media (max-width:760px){.pill-links,.hero-points-open{gap:8px}.pill-links a,.pill-links span,.hero-points-open span{padding:9px 12px;font-size:14px}.premium-town-card{min-height:auto;padding:18px}.premium-town-card h3{font-size:22px}.premium-process-card{padding:24px 18px 18px}.actions{display:flex;flex-direction:column;align-items:stretch}.actions .btn{width:100%;justify-content:center}.hero .container,.hero-grid-open{padding-top:58px;padding-bottom:52px}}
-@media (max-width:560px){.section-heading-wrap h2,.premium-highlight-box h2,.premium-cta-band h2,.premium-map-panel h2{font-size:30px;line-height:1.05}.intro-copy-premium p,.story-copy p,.copy-block p,.lead,.premium-cta-band p,.premium-highlight-box p{font-size:16px;line-height:1.7}.premium-map-panel,.premium-highlight-box,.premium-cta-band,.quote-panel{padding:20px !important}}
