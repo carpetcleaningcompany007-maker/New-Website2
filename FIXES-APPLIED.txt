@@ -1,0 +1,8 @@
+What was fixed
+
+1. Replaced the broken remote logo with a local JW Carpet Care logo file so it always loads.
+2. Added a white panel behind the logo so it stays readable on dark headers and hero images.
+3. Lightened hero overlays slightly across the site.
+4. Removed empty Instagram links from rendering when no Instagram URL is set.
+5. Kept the site on the stable .html structure so pages continue to work on GitHub Pages.
+6. Ran an internal link check and corrected file references where needed.
