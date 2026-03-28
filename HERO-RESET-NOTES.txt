@@ -1,1 +1,0 @@
-Changed all non-homepage heroes to use the rug cleaning hero image so the service pages match the smaller rug photo further down the site. Homepage hero kept separate.

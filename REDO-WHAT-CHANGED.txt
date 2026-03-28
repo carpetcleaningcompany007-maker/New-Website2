@@ -1,0 +1,9 @@
+This ZIP redoes the site so the non-homepage heroes use the rug cleaning image instead of the truckmount image.
+
+Changed:
+- services page hero
+- service page heroes
+- area page heroes via town layout
+- local service page heroes via service-town layout
+- default non-home hero background in assets/style.css
+- JW logo SVG replaced with a clean transparent version using orange JW and dark text
