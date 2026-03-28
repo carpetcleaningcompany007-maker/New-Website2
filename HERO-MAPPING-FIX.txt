@@ -1,0 +1,2 @@
+Updated hero image mapping so each service page and each local service page uses the matching service image.
+Town area pages now use the carpet wand image instead of a shared fallback.
