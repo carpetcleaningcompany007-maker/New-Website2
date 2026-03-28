@@ -15,7 +15,7 @@ layout: null
   <meta name="author" content="{{ site.business_name }}">
   <meta name="format-detection" content="telephone=no,address=no,email=no">
 
-  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <link rel="canonical" href="https://jwcarpetcare.co.uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="{{ site.logo_url }}">
@@ -27,7 +27,7 @@ layout: null
   <meta property="og:site_name" content="{{ site.business_name }}">
   <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas. Honest local service with visible results.">
-  <meta property="og:url" content="{{ '/' | absolute_url }}">
+  <meta property="og:url" content="https://jwcarpetcare.co.uk/">
   <meta property="og:image" content="{{ site.logo_url }}">
   <meta property="og:image:alt" content="{{ site.business_name }} logo">
   <meta property="og:image:type" content="image/png">
@@ -43,9 +43,9 @@ layout: null
     "@graph":[
       {
         "@type":"Organization",
-        "@id":"{{ site.website }}#org",
+        "@id":"https://jwcarpetcare.co.uk/#org",
         "name":"{{ site.business_name }}",
-        "url":"{{ site.website }}",
+        "url":"https://jwcarpetcare.co.uk/",
         "logo":{
           "@type":"ImageObject",
           "url":"{{ site.logo_url }}"
@@ -55,17 +55,17 @@ layout: null
       },
       {
         "@type":"WebSite",
-        "@id":"{{ site.website }}#website",
-        "url":"{{ site.website }}",
+        "@id":"https://jwcarpetcare.co.uk/#website",
+        "url":"https://jwcarpetcare.co.uk/",
         "name":"{{ site.business_name }}",
-        "publisher":{"@id":"{{ site.website }}#org"},
+        "publisher":{"@id":"https://jwcarpetcare.co.uk/#org"},
         "inLanguage":"en-GB"
       },
       {
         "@type":"LocalBusiness",
-        "@id":"{{ site.website }}#localbusiness",
+        "@id":"https://jwcarpetcare.co.uk/#localbusiness",
         "name":"{{ site.business_name }}",
-        "url":"{{ site.website }}",
+        "url":"https://jwcarpetcare.co.uk/",
         "image":"{{ site.logo_url }}",
         "telephone":"{{ site.phone }}",
         "email":"{{ site.email }}",
@@ -95,26 +95,26 @@ layout: null
         "@type":"Service",
         "@id":"https://jwcarpetcare.co.uk/#service-carpet-cleaning",
         "serviceType":"Carpet Cleaning",
-        "provider":{"@id":"{{ site.website }}#localbusiness"},
+        "provider":{"@id":"https://jwcarpetcare.co.uk/#localbusiness"},
         "areaServed":"Worcestershire and the West Midlands"
       },
       {
         "@type":"Service",
         "@id":"https://jwcarpetcare.co.uk/#service-upholstery-cleaning",
         "serviceType":"Upholstery Cleaning",
-        "provider":{"@id":"{{ site.website }}#localbusiness"},
+        "provider":{"@id":"https://jwcarpetcare.co.uk/#localbusiness"},
         "areaServed":"Worcestershire and the West Midlands"
       },
       {
         "@type":"Service",
         "@id":"https://jwcarpetcare.co.uk/#service-stain-removal",
         "serviceType":"Stain Removal Treatments",
-        "provider":{"@id":"{{ site.website }}#localbusiness"},
+        "provider":{"@id":"https://jwcarpetcare.co.uk/#localbusiness"},
         "areaServed":"Worcestershire and the West Midlands"
       },
       {
         "@type":"FAQPage",
-        "@id":"{{ site.website }}#faq",
+        "@id":"https://jwcarpetcare.co.uk/#faq",
         "mainEntity":[
           {
             "@type":"Question",
@@ -1207,7 +1207,7 @@ layout: null
   color:#fff;
   background:
     linear-gradient(90deg, rgba(8,16,29,.82) 0%, rgba(8,16,29,.66) 34%, rgba(8,16,29,.34) 62%, rgba(8,16,29,.18) 100%),
-    url("assets/img/hero-truckmount-system.png") center center/cover no-repeat;
+    url("assets/img/hero-truckmount-system.webp") center center/cover no-repeat;
 }
 .hero-clean::before{
   content:"";
@@ -1544,16 +1544,16 @@ layout: null
       </div>
 
       <div class="links">
-        <a href="{{ '/pages/reviews/' | relative_url }}">Reviews</a>
-        <a href="{{ '/pages/gallery/' | relative_url }}">Gallery</a>
+        <a href="pages/reviews.html">Reviews</a>
+        <a href="pages/gallery.html">Gallery</a>
       </div>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.business_name }} home">
-        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
+      <a class="brand" href="index.html" aria-label="{{ site.business_name }} home">
+        <img loading="lazy" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
         <span>
           {{ site.business_name }}
           <small>Carpet cleaning across Worcestershire and the West Midlands</small>
@@ -1563,34 +1563,34 @@ layout: null
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
 
       <nav class="menu" aria-label="Primary">
-        <a href="{{ '/' | relative_url }}" class="current" aria-current="page">Home</a>
+        <a href="index.html" class="current" aria-current="page">Home</a>
 
         <div class="drop">
           <button class="dropbtn" type="button" aria-expanded="false">Services</button>
           <div class="dropmenu">
-            <a href="{{ '/pages/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a>
-            <a href="{{ '/pages/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
-            <a href="{{ '/pages/stain-removal/' | relative_url }}">Stain Removal Treatments</a>
-            <a href="{{ '/pages/commercial/' | relative_url }}">Commercial Cleaning</a>
-            <a href="{{ '/pages/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
-            <a href="{{ '/pages/moth-treatment/' | relative_url }}">Moth Treatment</a>
+            <a href="pages/carpet-cleaning.html">Carpet Cleaning</a>
+            <a href="pages/upholstery-cleaning.html">Upholstery Cleaning</a>
+            <a href="pages/stain-removal.html">Stain Removal Treatments</a>
+            <a href="pages/commercial.html">Commercial Cleaning</a>
+            <a href="pages/rug-cleaning.html">Rug Cleaning</a>
+            <a href="pages/moth-treatment.html">Moth Treatment</a>
           </div>
         </div>
 
         <div class="drop">
           <button class="dropbtn" type="button" aria-expanded="false">Areas</button>
           <div class="dropmenu">
-            <a href="{{ '/pages/areas/' | relative_url }}">All Areas</a>
-            <a href="{{ '/areas/worcester/' | relative_url }}">Worcester</a>
-            <a href="{{ '/areas/bromsgrove/' | relative_url }}">Bromsgrove</a>
-            <a href="{{ '/areas/kidderminster/' | relative_url }}">Kidderminster</a>
-            <a href="{{ '/areas/redditch/' | relative_url }}">Redditch</a>
+            <a href="pages/areas.html">All Areas</a>
+            <a href="areas/worcester.html">Worcester</a>
+            <a href="areas/bromsgrove.html">Bromsgrove</a>
+            <a href="areas/kidderminster.html">Kidderminster</a>
+            <a href="areas/redditch.html">Redditch</a>
           </div>
         </div>
 
-        <a href="{{ '/pages/reviews/' | relative_url }}">Reviews</a>
-        <a href="{{ '/pages/gallery/' | relative_url }}">Gallery</a>
-        <a class="cta" href="{{ '/pages/get-a-quote/' | relative_url }}">Get Quote</a>
+        <a href="pages/reviews.html">Reviews</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a class="cta" href="pages/get-a-quote.html">Get Quote</a>
       </nav>
     </div>
   </header>
@@ -1677,20 +1677,20 @@ layout: null
 
         <div class="cards-6">
           <article class="card">
-            <img loading="lazy" src="assets/img/truckmount.png" alt="Professional truck-mounted carpet cleaning system">
+            <img loading="lazy" src="assets/img/truckmount.webp" alt="Professional truck-mounted carpet cleaning system">
             <div class="iconbox">
               <h3>Carpet Cleaning</h3>
               <p>Deep carpet cleaning for homes, rental properties and businesses, helping remove built up soil, marks and everyday wear from carpet fibres.</p>
-              <a href="{{ '/pages/carpet-cleaning/' | relative_url }}">Read more</a>
+              <a href="pages/carpet-cleaning.html">Read more</a>
             </div>
           </article>
 
           <article class="card">
-            <img loading="lazy" src="assets/img/hero-upholstery-cleaning.png" alt="Professional sofa cleaning in progress">
+            <img loading="lazy" src="assets/img/hero-upholstery-cleaning.webp" alt="Professional sofa cleaning in progress">
             <div class="iconbox">
               <h3>Upholstery Cleaning</h3>
               <p>Sofa and upholstery cleaning for tired fabric, everyday build up and general dullness, helping furniture look cleaner and feel fresher.</p>
-              <a href="{{ '/pages/upholstery-cleaning/' | relative_url }}">Read more</a>
+              <a href="pages/upholstery-cleaning.html">Read more</a>
             </div>
           </article>
 
@@ -1699,16 +1699,16 @@ layout: null
             <div class="iconbox">
               <h3>Stain Removal Treatments</h3>
               <p>Targeted stain removal treatments for carpets and upholstery where a standard clean is not enough and more focused treatment is needed.</p>
-              <a href="{{ '/pages/stain-removal/' | relative_url }}">Read more</a>
+              <a href="pages/stain-removal.html">Read more</a>
             </div>
           </article>
 
           <article class="card">
-            <img loading="lazy" src="assets/img/hero-rug-cleaning.png" alt="Professional rug cleaning service">
+            <img loading="lazy" src="assets/img/hero-rug-cleaning.webp" alt="Professional rug cleaning service">
             <div class="iconbox">
               <h3>Rug Cleaning</h3>
               <p>Professional rug cleaning for household rugs that need freshening, soil removal and a cleaner, more presentable finish.</p>
-              <a href="{{ '/pages/rug-cleaning/' | relative_url }}">Read more</a>
+              <a href="pages/rug-cleaning.html">Read more</a>
             </div>
           </article>
 
@@ -1717,16 +1717,16 @@ layout: null
             <div class="iconbox">
               <h3>Commercial Cleaning</h3>
               <p>Commercial carpet cleaning for offices, receptions, hotels and shared spaces that need to stay clean, smart and professional.</p>
-              <a href="{{ '/pages/commercial/' | relative_url }}">Read more</a>
+              <a href="pages/commercial.html">Read more</a>
             </div>
           </article>
 
           <article class="card">
-            <img loading="lazy" src="assets/img/carpet-moth-treatment.jpg" alt="Close up carpet moth photo">
+            <img loading="lazy" src="assets/img/carpet-moth-treatment.webp" alt="Close up carpet moth photo">
             <div class="iconbox">
               <h3>Carpet Moth Treatment</h3>
               <p>Moth treatment for carpets and rugs where signs of damage or activity are appearing and practical next steps are needed.</p>
-              <a href="{{ '/pages/moth-treatment/' | relative_url }}">Read more</a>
+              <a href="pages/moth-treatment.html">Read more</a>
             </div>
           </article>
         </div>
@@ -1798,28 +1798,28 @@ layout: null
               <summary>Worcester</summary>
               <div class="accordion-card-body">
                 <p>Professional carpet cleaning in Worcester for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="{{ '/areas/worcester/' | relative_url }}">See services in Worcester →</a>
+                <a href="areas/worcester.html">See services in Worcester →</a>
               </div>
             </details>
             <details class="accordion-card">
               <summary>Bromsgrove</summary>
               <div class="accordion-card-body">
                 <p>Professional carpet cleaning in Bromsgrove for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="{{ '/areas/bromsgrove/' | relative_url }}">See services in Bromsgrove →</a>
+                <a href="areas/bromsgrove.html">See services in Bromsgrove →</a>
               </div>
             </details>
             <details class="accordion-card">
               <summary>Kidderminster</summary>
               <div class="accordion-card-body">
                 <p>Professional carpet cleaning in Kidderminster for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="{{ '/areas/kidderminster/' | relative_url }}">See services in Kidderminster →</a>
+                <a href="areas/kidderminster.html">See services in Kidderminster →</a>
               </div>
             </details>
             <details class="accordion-card">
               <summary>Redditch</summary>
               <div class="accordion-card-body">
                 <p>Professional carpet cleaning in Redditch for homes, rental properties and commercial spaces that need a proper deep clean and a cleaner finish.</p>
-                <a href="{{ '/areas/redditch/' | relative_url }}">See services in Redditch →</a>
+                <a href="areas/redditch.html">See services in Redditch →</a>
               </div>
             </details>
           </div>
@@ -1827,21 +1827,21 @@ layout: null
           <div class="nearby-areas">
             <h3>Nearby service areas</h3>
             <div class="nearby-grid">
-              <a href="{{ '/areas/droitwich-spa/' | relative_url }}">Droitwich Spa</a>
-              <a href="{{ '/areas/evesham/' | relative_url }}">Evesham</a>
-              <a href="{{ '/areas/bewdley/' | relative_url }}">Bewdley</a>
-              <a href="{{ '/areas/dudley/' | relative_url }}">Dudley</a>
-              <a href="{{ '/areas/brierley-hill/' | relative_url }}">Brierley Hill</a>
-              <a href="{{ '/areas/birmingham-south/' | relative_url }}">Birmingham South</a>
-              <a href="{{ '/areas/birmingham-west/' | relative_url }}">Birmingham West</a>
-              <a href="{{ '/pages/areas/' | relative_url }}">View all areas</a>
+              <a href="areas/droitwich-spa.html">Droitwich Spa</a>
+              <a href="areas/evesham.html">Evesham</a>
+              <a href="areas/bewdley.html">Bewdley</a>
+              <a href="areas/dudley.html">Dudley</a>
+              <a href="areas/brierley-hill.html">Brierley Hill</a>
+              <a href="areas/birmingham-south.html">Birmingham South</a>
+              <a href="areas/birmingham-west.html">Birmingham West</a>
+              <a href="pages/areas.html">View all areas</a>
             </div>
           </div>
         </div>
 
         <div class="actions" style="justify-content:center;margin-top:26px">
-          <a class="btn primary" href="{{ '/pages/areas/' | relative_url }}">View all areas</a>
-          <a class="btn secondary" href="{{ '/pages/gallery/' | relative_url }}">See the gallery</a>
+          <a class="btn primary" href="pages/areas.html">View all areas</a>
+          <a class="btn secondary" href="pages/gallery.html">See the gallery</a>
         </div>
       </div>
     </section>
@@ -1879,7 +1879,7 @@ layout: null
         </div>
 
         <div class="actions" style="justify-content:center;margin-top:26px">
-          <a class="btn primary" href="{{ '/pages/reviews/' | relative_url }}">Read more reviews</a>
+          <a class="btn primary" href="pages/reviews.html">Read more reviews</a>
           <a class="btn secondary" href="https://search.google.com/local/writereview?placeid=ChIJA0Frne3tcEgRNUE0ZtRO5wA" target="_blank" rel="noopener">Leave a review</a>
         </div>
       </div>
@@ -1978,19 +1978,19 @@ layout: null
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
+        <img loading="lazy" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
       </div>
 
       <div>
         <h3>Services</h3>
         <p>
-          <a href="{{ '/pages/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a><br>
-          <a href="{{ '/pages/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a><br>
-          <a href="{{ '/pages/stain-removal/' | relative_url }}">Stain Removal Treatments</a><br>
-          <a href="{{ '/pages/commercial/' | relative_url }}">Commercial Cleaning</a><br>
-          <a href="{{ '/pages/rug-cleaning/' | relative_url }}">Rug Cleaning</a><br>
-          <a href="{{ '/pages/moth-treatment/' | relative_url }}">Moth Treatment</a>
+          <a href="pages/carpet-cleaning.html">Carpet Cleaning</a><br>
+          <a href="pages/upholstery-cleaning.html">Upholstery Cleaning</a><br>
+          <a href="pages/stain-removal.html">Stain Removal Treatments</a><br>
+          <a href="pages/commercial.html">Commercial Cleaning</a><br>
+          <a href="pages/rug-cleaning.html">Rug Cleaning</a><br>
+          <a href="pages/moth-treatment.html">Moth Treatment</a>
         </p>
       </div>
 
@@ -1999,8 +1999,8 @@ layout: null
         <p>
           <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
-          <a href="{{ '/pages/reviews/' | relative_url }}">Reviews</a><br>
-          <a href="{{ '/pages/gallery/' | relative_url }}">Gallery</a>
+          <a href="pages/reviews.html">Reviews</a><br>
+          <a href="pages/gallery.html">Gallery</a>
         </p>
       </div>
     </div>

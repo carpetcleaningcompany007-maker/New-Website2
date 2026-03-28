@@ -1,5 +1,3 @@
----
----
 User-agent: *
 Allow: /
-Sitemap: {{ '/sitemap.xml' | absolute_url }}
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

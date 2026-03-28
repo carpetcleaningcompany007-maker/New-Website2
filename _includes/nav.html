@@ -1,16 +1,16 @@
-<header><div class="container nav"><a class="brand" href="{{ '/' | relative_url }}"><img src="{{ site.logo_url }}" alt="{{ site.business_name }}"><span>{{ site.business_name }}<small>Carpet cleaning across {{ site.service_area }}</small></span></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button><nav class="menu">
-<a href="{{ '/' | relative_url }}">Home</a>
+<header><div class="container nav"><a class="brand" href="{{ page.home_path | default: 'index.html' }}"><img loading="lazy" src="{{ site.logo_url }}" alt="{{ site.business_name }}"><span>{{ site.business_name }}<small>Carpet cleaning across {{ site.service_area }}</small></span></a><button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button><nav class="menu">
+<a href="{{ page.home_path | default: 'index.html' }}">Home</a>
 <div class="drop"><button class="dropbtn" type="button">Services</button><div class="dropmenu">
-<a href="{{ '/pages/carpet-cleaning/' | relative_url }}">Carpet Cleaning</a>
-<a href="{{ '/pages/upholstery-cleaning/' | relative_url }}">Upholstery Cleaning</a>
-<a href="{{ '/pages/stain-removal/' | relative_url }}">Stain Removal</a>
-<a href="{{ '/pages/commercial/' | relative_url }}">Commercial</a>
-<a href="{{ '/pages/rug-cleaning/' | relative_url }}">Rug Cleaning</a>
-<a href="{{ '/pages/moth-treatment/' | relative_url }}">Moth Treatment</a>
+<a href="{{ page.pages_path | default: 'pages/' }}carpet-cleaning.html">Carpet Cleaning</a>
+<a href="{{ page.pages_path | default: 'pages/' }}upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="{{ page.pages_path | default: 'pages/' }}stain-removal.html">Stain Removal</a>
+<a href="{{ page.pages_path | default: 'pages/' }}commercial.html">Commercial</a>
+<a href="{{ page.pages_path | default: 'pages/' }}rug-cleaning.html">Rug Cleaning</a>
+<a href="{{ page.pages_path | default: 'pages/' }}moth-treatment.html">Moth Treatment</a>
 </div></div>
 <div class="drop"><button class="dropbtn" type="button">Areas</button><div class="dropmenu">
-<a href="{{ '/pages/areas/' | relative_url }}">All Areas</a>
-{% for t in site.data.towns limit:6 %}<a href="{{ '/areas/' | append: t.slug | append: '/' | relative_url }}">{{ t.name }}</a>{% endfor %}
+<a href="{{ page.pages_path | default: 'pages/' }}areas.html">All Areas</a>
+{% for t in site.data.towns limit:6 %}<a href="{{ page.areas_path | default: 'areas/' }}{{ t.slug }}.html">{{ t.name }}</a>{% endfor %}
 </div></div>
-<a href="{{ '/pages/reviews/' | relative_url }}">Reviews</a><a href="{{ '/pages/gallery/' | relative_url }}">Gallery</a><a class="cta" href="{{ '/pages/get-a-quote/' | relative_url }}">Get a Quote</a>
+<a href="{{ page.pages_path | default: 'pages/' }}reviews.html">Reviews</a><a href="{{ page.pages_path | default: 'pages/' }}gallery.html">Gallery</a><a class="cta" href="{{ page.quote_path | default: 'pages/get-a-quote.html' }}">Get a Quote</a>
 </nav></div></header>

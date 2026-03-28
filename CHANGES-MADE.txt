@@ -1,16 +1,10 @@
-NEW-WEBSITE2 REDO
+Optimised image-heavy service pages for faster loading.
 
-Main fixes made:
-1. Set the site up for GitHub Pages with baseurl /New-Website2 and permalink pretty.
-2. Reworked internal links to use Jekyll relative_url paths so service pages do not 404.
-3. Updated navigation, footer, sitemap and robots for clean folder URLs.
-4. Removed the Instagram link unless you later add a confirmed profile.
-5. Fixed the Areas page title so liquid text does not show publicly.
-6. Reduced the obvious SEO sounding wording in the town and local service templates.
-7. Pointed the Facebook link to the profile you gave.
-
-Important:
-If you later use a custom domain, change these in _config.yml:
-url:
-baseurl:
-website:
+Changes:
+- Recompressed large hero images to WebP
+- Replaced heavy PNG/JPG references with lighter WebP files
+- Added lazy loading to image tags
+- Updated GitHub Pages config to use /New-Website2
+- Kept working .html page structure to avoid service page 404s
+- Hid Instagram links until a real profile is added
+- Kept your Facebook profile link
