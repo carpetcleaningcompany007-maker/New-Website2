@@ -26,7 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews | JW Carpet Care</title>
   <meta name="description" content="Read reviews for JW Carpet Care.">
-  <link rel="canonical" href="https://carpetcleaningcompany007-maker.github.io/New-Website2//pages/reviews.html">
+  <link rel="canonical" href="https://carpetcleaningcompany007-maker.github.io/New-Website2/pages/reviews.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Reviews | JW Carpet Care">
   <meta property="og:description" content="Read genuine customer reviews for JW Carpet Care.">
@@ -395,8 +395,8 @@
   <!-- ========================================= -->
   <header>
     <div class="container nav">
-      <a class="brand brand--panel" href="../index.html">
-        <img loading="lazy" decoding="async" src="../assets/img/jw-carpet-care-logo-local.png" alt="JW Carpet Care">
+      <a class="brand" href="../index.html">
+        <img loading="lazy" decoding="async" src="../assets/img/jw-logo.png" alt="JW Carpet Care">
         <span>
           JW Carpet Care
           <small>Carpet cleaning across Worcestershire and the West Midlands</small>
@@ -441,7 +441,7 @@
   <!-- ========================================= -->
   <!-- 06. HERO -->
   <!-- ========================================= -->
-  <section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.80),rgba(15,23,42,.44)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
+  <section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.78),rgba(15,23,42,.48)),url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat">
     <div class="container">
       <div>
         <span class="eyebrow">Customer feedback</span>
@@ -453,7 +453,36 @@
         </div>
       </div>
 
-      {% include hero-quote-form.html heading="Get your free quote" text="Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner." service="General quote" status_id="ReviewsHtmlHeroFormStatus" %}
+      <aside class="formcard" aria-label="Quote form">
+  <h2>Get your free quote</h2>
+  <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+  <form class="formgrid" action="#" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="ReviewsHtmlHeroFormStatus">
+    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+    <input type="email" name="email" placeholder="Email address" autocomplete="email">
+    <select name="service" required>
+      <option value="">Select service</option>
+      <option>Carpet cleaning</option>
+      <option>Upholstery cleaning</option>
+      <option>Rug cleaning</option>
+      <option>Stain removal treatment</option>
+      <option>Moth treatment</option>
+      <option>Commercial carpet cleaning</option>
+      <option selected>General quote</option>
+    </select>
+    <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+    
+    <button class="btn primary" type="submit">Send enquiry</button>
+  </form>
+  <div id="ReviewsHtmlHeroFormStatus" class="form-status" aria-live="polite"></div>
+  <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+  <div class="contact-mini">
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+    <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+  </div>
+</aside>
     </div>
   </section>
 
@@ -520,7 +549,7 @@
 <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img loading="lazy" decoding="async" src="../assets/img/jw-carpet-care-logo-local.png" alt="JW Carpet Care logo" style="height:64px">
+        <img loading="lazy" decoding="async" src="../assets/img/jw-logo.png" alt="JW Carpet Care logo" style="height:64px">
         <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment advice and commercial carpet cleaning across Worcestershire and the West Midlands.</p>
       </div>
 

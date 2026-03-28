@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign town_obj = site.data.towns | where: 'slug', page.slug | first %}
-<section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.80),rgba(15,23,42,.44)),url('../assets/img/hero-upholstery-cleaning-optimised.webp') center/cover no-repeat">
+<section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.78),rgba(15,23,42,.48)),url('../assets/img/truckmount-optimised.webp') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">Professional local carpet cleaning</span>
@@ -20,7 +20,36 @@ layout: default
       </div>
     </div>
     {% capture town_quote_text %}Tell us what needs cleaning in {{ page.town }} and get a fast local reply.{% endcapture %}
-    {% include hero-quote-form.html heading="Get your free quote" text=town_quote_text service="General quote" area=page.town status_id="townHeroFormStatus" %}
+    <aside class="formcard" aria-label="Quote form">
+  <h2>Get your free quote</h2>
+  <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+  <form class="formgrid" action="#" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="townHeroFormStatus">
+    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+    <input type="email" name="email" placeholder="Email address" autocomplete="email">
+    <select name="service" required>
+      <option value="">Select service</option>
+      <option>Carpet cleaning</option>
+      <option>Upholstery cleaning</option>
+      <option>Rug cleaning</option>
+      <option>Stain removal treatment</option>
+      <option>Moth treatment</option>
+      <option>Commercial carpet cleaning</option>
+      <option selected>General quote</option>
+    </select>
+    <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+    
+    <button class="btn primary" type="submit">Send enquiry</button>
+  </form>
+  <div id="townHeroFormStatus" class="form-status" aria-live="polite"></div>
+  <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+  <div class="contact-mini">
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+    <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+  </div>
+</aside>
   </div>
 </section>
 
@@ -124,7 +153,7 @@ layout: default
       </div>
       <div class="actions">
         <a class="btn primary" href="tel:+447838231389">Call now</a>
-        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn secondary" href="https://wa.me/447838231389" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ layout: default
 {% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/hero-rug-cleaning-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles.jpg' %}{% endif %}
 {% if page.service_slug == 'moth-treatment' %}{% assign service_image = '../../assets/img/carpet-moth-treatment-optimised.webp' %}{% endif %}
-<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.80),rgba(15,23,42,.44)),url('{{ service_image }}') center/cover no-repeat">
+<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.78),rgba(15,23,42,.48)),url('{{ service_image }}') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
@@ -28,7 +28,36 @@ layout: default
       </div>
     </div>
     {% capture service_town_quote_text %}Tell us what needs cleaning in {{ town_obj.name }} and get a fast local reply.{% endcapture %}
-    {% include hero-quote-form.html heading="Get your free quote" text=service_town_quote_text service=service_name area=town_obj.name status_id="serviceTownHeroFormStatus" %}
+    <aside class="formcard" aria-label="Quote form">
+  <h2>Get your free quote</h2>
+  <p>Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.</p>
+  <form class="formgrid" action="#" method="POST" novalidate data-formspree="true" data-service="General quote" data-area="" data-status="serviceTownHeroFormStatus">
+    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
+    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+    <input type="email" name="email" placeholder="Email address" autocomplete="email">
+    <select name="service" required>
+      <option value="">Select service</option>
+      <option>Carpet cleaning</option>
+      <option>Upholstery cleaning</option>
+      <option>Rug cleaning</option>
+      <option>Stain removal treatment</option>
+      <option>Moth treatment</option>
+      <option>Commercial carpet cleaning</option>
+      <option selected>General quote</option>
+    </select>
+    <textarea name="details" placeholder="Tell us what needs cleaning" required></textarea>
+    
+    <button class="btn primary" type="submit">Send enquiry</button>
+  </form>
+  <div id="serviceTownHeroFormStatus" class="form-status" aria-live="polite"></div>
+  <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
+  <div class="contact-mini">
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
+    <a href="https://wa.me/447838231389" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp James</a>
+  </div>
+</aside>
   </div>
 </section>
 
@@ -115,7 +144,7 @@ layout: default
       <p>If you are comparing options and want a fast answer about {{ service_name | downcase }} in {{ town_obj.name }}, call, email or send a WhatsApp message.</p>
       <div class="actions">
         <a class="btn primary" href="tel:+447838231389">Call now</a>
-        <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn secondary" href="https://wa.me/447838231389" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
