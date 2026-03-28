@@ -3,8 +3,8 @@
   <h2>{{ include.heading | default: 'Quick local contact' }}</h2>
   <p>{{ include.text | default: 'Call, email or WhatsApp us directly for a fast local reply.' }}</p>
   <div class="contact-mini stack quick-contact-links">
-    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
     <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name | default: site.business_name }}</a>
   </div>
 </aside>

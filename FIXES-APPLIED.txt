@@ -1,6 +1,8 @@
-Restored original configured logo reference instead of a fake replacement.
-Darkened hero overlays across the site.
-Changed gallery hero away from the truckmount look.
-Replaced gallery card images with local optimised files.
-Removed blank Instagram links when not set.
-Checked internal file links.
+Fixed in this ZIP:
+- Replaced the dead remote logo URL with a local logo fallback image so the header logo loads.
+- Added a white logo panel so the brand wording is readable against all backgrounds.
+- Darkened hero overlays across the site so pages are no longer too bright.
+- Changed the gallery hero away from the truckmount look.
+- Changed the commercial page hero and intro image to a local JPG fallback.
+- Replaced common Liquid placeholders in the served HTML pages with static values so the pages still work reliably.
+- Removed blank Instagram links.

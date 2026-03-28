@@ -1,1 +1,1 @@
-('pages/areas.html', 'href', '../areas/{{ t.slug }}.html')
+pages/areas.html -> href=../areas/{{ t.slug }}.html

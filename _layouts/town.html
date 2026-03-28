@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign town_obj = site.data.towns | where: 'slug', page.slug | first %}
-<section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.72),rgba(15,23,42,.36)),url('../assets/img/carpet-wand-cleaning-van.jpg') center/cover no-repeat">
+<section class="hero local-hero premium-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.80),rgba(15,23,42,.44)),url('../assets/img/hero-upholstery-cleaning-optimised.webp') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">Professional local carpet cleaning</span>
@@ -15,7 +15,7 @@ layout: default
         <span><i class="fa-solid fa-circle-check"></i>&nbsp; Moth treatment</span>
       </div>
       <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn primary" href="tel:+447838231389">Call 07838231389</a>
         <a class="btn secondary" href="{{ page.quote_path }}">Get a Quote</a>
       </div>
     </div>
@@ -37,12 +37,12 @@ layout: default
     <div class="intro-copy-premium">
       <span class="section-kicker">Local service in {{ page.town }}</span>
       <h2>Cleaner carpets for homes and rental properties in {{ page.town }}</h2>
-      <p>{{ site.business_name }} provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and selected commercial cleaning in {{ page.town }} and nearby areas.</p>
+      <p>JW Carpet Care provides professional carpet cleaning, rug cleaning, upholstery cleaning, stain removal, moth treatment and selected commercial cleaning in {{ page.town }} and nearby areas.</p>
       <p>Whether you need help with a lounge, bedroom, stairs, hallway, rental property or a tired looking carpet that needs a proper refresh, this page is the local starting point for {{ page.town }}.</p>
       <p>The aim is simple: make it easy to find the right service for {{ page.town }}, see the nearby areas we cover, and get in touch quickly for a quote.</p>
     </div>
     <div class="intro-image-card">
-      <img loading="lazy" decoding="async" src="../assets/img/carpet-wand-cleaning-van.jpg" alt="Professional truck-mounted carpet cleaning in {{ page.town }}">
+      <img loading="lazy" decoding="async" src="../assets/img/truckmount-optimised.webp" alt="Professional truck-mounted carpet cleaning in {{ page.town }}">
       <div class="intro-image-overlay">
         <strong>{{ page.town }} local page</strong>
         <span>Use this page as the local route into the service pages you need.</span>
@@ -80,7 +80,7 @@ layout: default
       <div>
         <span class="section-kicker premium-kicker-light">Coverage around {{ page.town }}</span>
         <h2>Nearby areas supported</h2>
-        <p>{{ site.business_name }} also covers nearby areas around {{ page.town }}{% if town_obj.nearby %} including {% for area in town_obj.nearby limit:8 %}{{ area }}{% if forloop.last == false and forloop.length > 2 %}, {% elsif forloop.last == false %} and {% endif %}{% endfor %}{% endif %}.</p>
+        <p>JW Carpet Care also covers nearby areas around {{ page.town }}{% if town_obj.nearby %} including {% for area in town_obj.nearby limit:8 %}{{ area }}{% if forloop.last == false and forloop.length > 2 %}, {% elsif forloop.last == false %} and {% endif %}{% endfor %}{% endif %}.</p>
       </div>
       <div class="pill-links premium-pills">
         {% for area in town_obj.nearby %}<span>{{ area }}</span>{% endfor %}
@@ -123,7 +123,7 @@ layout: default
         <p>Call, email or send a WhatsApp message for a fast local reply about carpet cleaning, upholstery cleaning, stains, rugs or rental property freshen ups in {{ page.town }}.</p>
       </div>
       <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+        <a class="btn primary" href="tel:+447838231389">Call now</a>
         <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>

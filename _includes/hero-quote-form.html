@@ -3,7 +3,7 @@
   <p>{{ include.text | default: 'Tell us what needs cleaning and get a fast response from a trusted local carpet cleaner.' }}</p>
 
   <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-service="{{ include.service | default: page.title | default: 'Cleaning enquiry' }}" data-area="{{ include.area | default: page.town | default: '' }}" data-status="{{ include.status_id | default: 'formStatus' }}">
-    <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
+    <input type="hidden" name="_subject" value="New JW Carpet Care enquiry">
     <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
     <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
     <input type="email" name="email" placeholder="Email address" autocomplete="email">
@@ -27,8 +27,8 @@
   <p class="form-note">Fast reply by phone, email, or WhatsApp.</p>
 
   <div class="contact-mini">
-    <a href="tel:{{ site.phone_link | default: site.phone }}"><i class="fa-solid fa-phone"></i> {{ site.phone }}</a>
-    <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a>
+    <a href="tel:+447838231389"><i class="fa-solid fa-phone"></i> 07838231389</a>
+    <a href="mailto:infojwcarpetcare@gmail.com"><i class="fa-solid fa-envelope"></i> infojwcarpetcare@gmail.com</a>
     <a href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp {{ site.contact_name | default: site.business_name }}</a>
   </div>
 </aside>

@@ -7,9 +7,9 @@ layout: default
 {% assign service_image = '../../assets/img/truckmount-optimised.webp' %}
 {% if page.service_slug == 'upholstery-cleaning' %}{% assign service_image = '../../assets/img/hero-upholstery-cleaning-optimised.webp' %}{% endif %}
 {% if page.service_slug == 'rug-cleaning' %}{% assign service_image = '../../assets/img/hero-rug-cleaning-optimised.webp' %}{% endif %}
-{% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles-optimised.webp' %}{% endif %}
+{% if page.service_slug == 'commercial' %}{% assign service_image = '../../assets/img/commercial-carpet-tiles.jpg' %}{% endif %}
 {% if page.service_slug == 'moth-treatment' %}{% assign service_image = '../../assets/img/carpet-moth-treatment-optimised.webp' %}{% endif %}
-<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.72),rgba(15,23,42,.36)),url('{{ service_image }}') center/cover no-repeat">
+<section class="hero local-hero service-hero" style="background:linear-gradient(120deg,rgba(8,16,29,.80),rgba(15,23,42,.44)),url('{{ service_image }}') center/cover no-repeat">
   <div class="container hero-grid-open">
     <div>
       <span class="eyebrow">{{ service_name }} in {{ town_obj.name }}</span>
@@ -23,7 +23,7 @@ layout: default
         <span>Fast quote route</span>
       </div>
       <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call {{ site.phone }}</a>
+        <a class="btn primary" href="tel:+447838231389">Call 07838231389</a>
         <a class="btn secondary" href="{{ page.quote_path }}">Get a quote</a>
       </div>
     </div>
@@ -114,7 +114,7 @@ layout: default
       <h2>Get a quote for {{ service_name | downcase }} in {{ town_obj.name }}</h2>
       <p>If you are comparing options and want a fast answer about {{ service_name | downcase }} in {{ town_obj.name }}, call, email or send a WhatsApp message.</p>
       <div class="actions">
-        <a class="btn primary" href="tel:{{ site.phone_link | default: site.phone }}">Call now</a>
+        <a class="btn primary" href="tel:+447838231389">Call now</a>
         <a class="btn secondary" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
