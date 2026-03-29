@@ -1068,11 +1068,9 @@ layout: null
       .hero h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 12px; }
       .hero-sub { font-size: 15px; max-width: 100%; margin-bottom: 0; }
       .hero-form-card { display: none; }
+      /* hide stat strip on mobile, form takes its place */
+      .stat-strip { display: none; }
       .mobile-quote-section { display: block !important; }
-
-      /* slim stat strip on mobile */
-      .stat-strip { padding: 18px 0; }
-      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
       .services-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .process-grid::before { display: none; }
@@ -1090,11 +1088,6 @@ layout: null
       .container { width: min(var(--max), calc(100% - 24px)); }
       .hero .container { padding: 28px 0 24px; }
       .hero h1 { font-size: 30px; }
-      .stat-strip { padding: 14px 0; }
-      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
-      .stat-item { padding: 10px 8px; }
-      .stat-number { font-size: 22px; margin-bottom: 3px; }
-      .stat-label { font-size: 11px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
       .cta-band .btns { width: 100%; }
       .cta-band .btns .btn { flex: 1; }
