@@ -19,7 +19,7 @@ layout: null
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="{{ site.logo_url }}">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Disaplay:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <meta property="og:type" content="website">
@@ -964,6 +964,32 @@ layout: null
 
     /* ── FLOATING BUTTONS ── */
 
+    /* ── FLOATING BUTTONS ── */
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 120;
+    }
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      box-shadow: 0 8px 28px rgba(10,22,40,.24);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 14px 36px rgba(10,22,40,.3); }
+    .float-btn.wa { background: var(--green); }
+    .float-btn.call { background: var(--blue); }
+
     /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
@@ -985,43 +1011,59 @@ layout: null
     @media (max-width: 860px) {
       .topbar { display: none; }
       .mobile-toggle { display: inline-flex; }
+
+      /* nav: logo left, menu button right, nothing overflowing */
+      header { position: sticky; top: 0; z-index: 100; }
+      .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        padding: 10px 0;
+        gap: 10px;
+        overflow: hidden;
+      }
+      .brand { flex: 1 1 auto; min-width: 0; gap: 8px; }
+      .brand img { height: 40px; }
+      .brand-name { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .brand-sub { display: none; }
+      .mobile-toggle { flex: 0 0 auto; white-space: nowrap; }
+
+      /* dropdown menu: full-width panel below header */
       .menu {
         display: none;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
         background: #fff;
-        padding: 72px 20px 20px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 8px 24px rgba(10,22,40,.12);
         flex-direction: column;
         align-items: stretch;
         gap: 2px;
+        padding: 10px 16px 16px;
         z-index: 99;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      .menu-close-btn {
-        display: flex;
-        position: fixed;
-        top: 16px; right: 16px;
-        z-index: 100;
-        width: 40px; height: 40px;
-        border-radius: 50%;
-        background: var(--off-white);
-        border: 1px solid var(--line);
-        align-items: center; justify-content: center;
-        font-size: 18px; cursor: pointer;
+        box-sizing: border-box;
       }
       .menu.open { display: flex; }
-      .menu > a, .dropbtn { padding: 11px 14px; border-radius: 10px; }
+      .menu-close-btn { display: none; }
+      .menu > a, .dropbtn { padding: 12px 14px; border-radius: 10px; width: 100%; text-align: left; }
       .menu > a:hover, .dropbtn:hover { background: var(--off-white); }
       .drop { width: 100%; }
       .dropbtn { width: 100%; justify-content: space-between; }
-      .dropmenu { position: static; box-shadow: none; margin-top: 4px; }
+      .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
       .nav-cta { display: none; }
 
+      /* hero: single column, no form card */
       .hero { min-height: auto; background-position: 65% center; }
-      .hero .container { padding: 48px 0 40px; grid-template-columns: 1fr; }
-      .hero h1 { font-size: clamp(38px, 10vw, 54px); }
-      .hero-sub { font-size: 16px; }
+      .hero .container { padding: 48px 0 40px; display: block; }
+      .hero-copy { max-width: 100%; }
+      .hero h1 { font-size: clamp(36px, 9vw, 52px); }
+      .hero-sub { font-size: 16px; max-width: 100%; }
       .hero-pills span:nth-child(n+3) { display: none; }
       .hero-form-card { display: none; }
 
@@ -1033,21 +1075,24 @@ layout: null
       .areas-main { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      section { padding: 60px 0; }
+      section { padding: 56px 0; }
+
+      /* floating buttons: keep visible */
+      .floating { right: 16px; bottom: 16px; }
     }
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 36px 0 30px; }
-      .hero h1 { font-size: 34px; }
+      .hero .container { padding: 32px 0 28px; }
+      .hero h1 { font-size: 32px; }
       .hero-pills { display: none; }
-      .hero-actions .btn { width: 100%; }
-      .hero-actions { flex-direction: column; }
-      .hero-form-card { padding: 22px 18px; }
       .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      .stat-number { font-size: 28px; }
+      .stat-number { font-size: 26px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
+      .cta-band .btns { width: 100%; }
+      .cta-band .btns .btn { flex: 1; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
   </style>
 </head>
@@ -1134,14 +1179,7 @@ layout: null
             <span><i class="fa-solid fa-circle-check"></i> Stain removal</span>
             <span><i class="fa-solid fa-circle-check"></i> Commercial cleaning</span>
           </div>
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="tel:{{ site.phone }}">
-              <i class="fa-solid fa-phone"></i> Call {{ site.phone }}
-            </a>
-            <a class="btn btn-ghost" href="pages/get-a-quote.html">
-              Get a free quote <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+
         </div>
 
         <aside class="hero-form-card" aria-label="Quick quote form">
@@ -1537,6 +1575,16 @@ layout: null
       </div>
     </div>
   </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="floating">
+    <a class="float-btn wa" href="https://wa.me/{{ site.phone_link | default: site.phone | remove: '+' }}" target="_blank" rel="noopener" aria-label="WhatsApp {{ site.business_name }}">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="float-btn call" href="tel:{{ site.phone }}" aria-label="Call {{ site.business_name }}">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
 
   <script>
     // Mobile nav toggle
