@@ -1,0 +1,7 @@
+Homepage mobile fixes applied
+
+1. Removed the quote form from the mobile hero so the hero image is visible.
+2. Fixed the bug where the mobile form below the hero was being hidden by the same .hero-form-card mobile rule.
+3. Added a cleaner mobile hero treatment with lighter overlay so the image shows properly.
+4. Hid the hero button row on mobile to reduce clutter.
+5. Kept the quote form below the hero on mobile in its own clean card.

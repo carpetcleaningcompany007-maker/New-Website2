@@ -18,7 +18,7 @@ layout: null
   <link rel="canonical" href="https://jwcarpetcare.co.uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="{{ site.logo_url | relative_url }}">
+  <link rel="preload" as="image" href="{{ site.logo_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -28,7 +28,7 @@ layout: null
   <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
   <meta property="og:url" content="https://jwcarpetcare.co.uk/">
-  <meta property="og:image" content="{{ site.logo_url | absolute_url }}">
+  <meta property="og:image" content="{{ site.logo_url }}">
 
   <script type="application/ld+json">
   {
@@ -1007,9 +1007,17 @@ layout: null
     }
 
     /* mobile quote section: hidden on desktop */
-    .mobile-quote-section { display: none !important; background: #fff; padding: 0; }
-    .mobile-quote-section .hero-form-card { display: none !important; }
-
+    .mobile-quote-section {
+      display: none;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      padding: 26px 0 18px;
+    }
+    .mobile-quote-section .hero-form-card {
+      display: block;
+      max-width: 100%;
+      box-shadow: 0 20px 48px rgba(10,22,40,.1);
+      border: 1px solid rgba(15,23,42,.08);
+    }
 
     @media (max-width: 860px) {
       .topbar { display: none; }
@@ -1049,17 +1057,52 @@ layout: null
       .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
       .nav-cta { display: none; }
 
-      /* hero: clean image + heading only, no form */
-      .hero { min-height: auto; background-position: 60% center; }
-      .hero .container { padding: 40px 0 28px; display: grid; grid-template-columns: 1fr; gap: 18px; }
-      .hero-eyebrow { display: none; }
-      .hero-pills { display: none; }
-      .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 12px; max-width: 12ch; }
-      .hero-sub { font-size: 15px; margin-bottom: 0; max-width: 36ch; }
-      .hero-form-card { display: block; max-width: 100%; margin-top: 4px; }
+      /* hero: let the image breathe on mobile */
+      .hero {
+        min-height: 72svh;
+        align-items: flex-end;
+        background:
+          linear-gradient(180deg, rgba(6,14,28,.26) 0%, rgba(6,14,28,.38) 45%, rgba(6,14,28,.72) 100%),
+          url("assets/img/hero-truckmount-system-optimised.webp") center 34% / cover no-repeat;
+      }
+      .hero::before { opacity: .018; }
+      .hero::after {
+        background: linear-gradient(180deg, rgba(201,168,76,.08) 0%, transparent 36%, rgba(6,14,28,.16) 100%);
+      }
+      .hero .container {
+        padding: 108px 0 26px;
+        display: block;
+      }
+      .hero-copy {
+        max-width: 520px;
+        background: linear-gradient(180deg, rgba(6,14,28,.20) 0%, rgba(6,14,28,.48) 100%);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 24px;
+        padding: 18px 18px 16px;
+        backdrop-filter: blur(5px);
+      }
+      .hero-eyebrow,
+      .hero-pills,
+      .hero-actions,
+      .hero > .container > .hero-form-card {
+        display: none !important;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 9vw, 46px);
+        line-height: .98;
+        margin-bottom: 12px;
+        max-width: 10ch;
+      }
+      .hero-sub {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 0;
+        max-width: 30ch;
+        color: rgba(255,255,255,.92);
+      }
 
       /* show mobile form, hide stat strip */
-      .mobile-quote-section { display: none !important; }
+      .mobile-quote-section { display: block; }
       .stat-strip { display: none; }
 
       .services-grid { grid-template-columns: 1fr; }
@@ -1075,12 +1118,18 @@ layout: null
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 36px 0 30px; }
+      .hero {
+        min-height: 68svh;
+        background-position: center 30%;
+      }
+      .hero .container { padding: 96px 0 22px; }
+      .hero-copy {
+        padding: 16px 16px 14px;
+        border-radius: 20px;
+      }
       .hero h1 { font-size: 34px; }
-      .hero-pills { display: none; }
-      .hero-actions .btn { width: 100%; justify-content: center; }
-      .hero-actions { flex-direction: column; }
-      .hero-form-card { padding: 20px 16px; border-radius: 20px; }
+      .mobile-quote-section { padding: 22px 0 16px; }
+      .mobile-quote-section .hero-form-card { padding: 22px 18px; border-radius: 22px; }
       .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .stat-number { font-size: 28px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
@@ -1088,104 +1137,7 @@ layout: null
       .floating { bottom: 16px; right: 14px; }
       .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
-  
-
-    /* ── FINAL MOBILE RESCUE FIXES ── */
-    @media (max-width: 860px) {
-      body { overflow-x: hidden; }
-      header { position: sticky; top: 0; z-index: 200; }
-      .nav { align-items: center; }
-      .brand { gap: 10px; }
-      .brand img { height: 34px !important; max-width: 140px; object-fit: contain; }
-      .brand-copy { min-width: 0; }
-      .brand-name {
-        display: block;
-        font-size: 14px !important;
-        line-height: 1.1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .hero { background-position: center center; }
-      .hero .container {
-        max-width: 100%;
-        padding: 28px 0 22px !important;
-        gap: 14px !important;
-      }
-      .hero-copy { max-width: 100%; }
-      .hero h1 {
-        font-size: clamp(28px, 8.4vw, 36px) !important;
-        line-height: 1.04;
-        max-width: 100% !important;
-      }
-      .hero-sub {
-        font-size: 15px !important;
-        line-height: 1.55;
-        max-width: 100% !important;
-      }
-      .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
-      .hero-actions .btn { width: 100%; }
-      .hero-form-card { display: none !important; }
-      .mobile-quote-section {
-        display: block !important;
-        padding: 18px 0 8px !important;
-        background: #fff;
-      }
-      .mobile-quote-section .hero-form-card {
-        display: block !important;
-        margin: 0;
-        padding: 18px 16px !important;
-        border-radius: 18px !important;
-      }
-      .services-grid,
-      .process-grid,
-      .trust-grid,
-      .reviews-grid,
-      .footer-grid,
-      .areas-main,
-      .map-cta,
-      .service-links,
-      .stats-grid,
-      .contact-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .process-card,
-      .service-card,
-      .trust-card,
-      .review-card { min-width: 0; }
-      .trust-card,
-      .process-card,
-      .review-card,
-      .service-card-body,
-      .map-card,
-      .cta-card { padding-left: 18px; padding-right: 18px; }
-      .section-heading {
-        font-size: clamp(28px, 8vw, 36px);
-        line-height: 1.08;
-      }
-      .section-lead,
-      .trust-card p,
-      .process-card p,
-      .service-card-body p,
-      .review-card p { font-size: 16px; line-height: 1.65; }
-      section { padding: 46px 0 !important; }
-      .floating { right: 14px; bottom: 14px; }
-      .float-btn { width: 54px; height: 54px; }
-    }
-
-    @media (max-width: 480px) {
-      .container { width: calc(100% - 20px) !important; }
-      .brand img { height: 30px !important; max-width: 120px; }
-      .brand-name { font-size: 13px !important; }
-      .hero h1 { font-size: 30px !important; }
-      .section-heading { font-size: 30px !important; }
-      .trust-card,
-      .process-card,
-      .review-card { padding: 20px 16px !important; }
-      .service-card img { height: 180px; }
-    }
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -1209,7 +1161,7 @@ layout: null
   <header>
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="{{ site.business_name }} home">
-        <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }} logo">
+        <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
         <div class="brand-text">
           <span class="brand-name">{{ site.business_name }}</span>
           <span class="brand-sub">Carpet cleaning across Worcestershire</span>
@@ -1675,7 +1627,7 @@ layout: null
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }} logo">
+          <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
           <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
         </div>
         <div>
