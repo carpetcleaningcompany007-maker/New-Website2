@@ -988,13 +988,6 @@ layout: null
     .float-btn.wa { background: var(--green); }
     .float-btn.call { background: var(--blue); }
 
-    /* mobile quote section — hidden on desktop, shown on mobile */
-    .mobile-quote-section {
-      display: none;
-      padding: 28px 0;
-      background: var(--off-white);
-    }
-
     /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
@@ -1016,38 +1009,57 @@ layout: null
     @media (max-width: 860px) {
       .topbar { display: none; }
       .mobile-toggle { display: inline-flex; }
+
+      /* fix nav so menu doesn't escape off screen */
+      header { position: relative; overflow: visible; }
+      .nav { flex-wrap: nowrap; min-height: 64px; padding: 10px 0; gap: 10px; }
+      .brand { flex: 1 1 auto; min-width: 0; }
+      .brand img { height: 40px; }
+      .brand-name { font-size: 15px; }
+      .brand-sub { display: none; }
+      .mobile-toggle { flex-shrink: 0; }
       .menu {
         display: none;
         position: absolute;
-        top: calc(100% + 8px);
-        left: 0; right: 0;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
         background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 10px;
-        box-shadow: var(--shadow-md);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 8px 24px rgba(10,22,40,.1);
         flex-direction: column;
         align-items: stretch;
-        gap: 4px;
+        gap: 2px;
+        padding: 10px 16px 14px;
+        z-index: 99;
+        box-sizing: border-box;
       }
       .menu.open { display: flex; }
-      .menu > a, .dropbtn { padding: 11px 14px; border-radius: 10px; }
+      .menu > a, .dropbtn { padding: 12px 14px; border-radius: 10px; width: 100%; text-align: left; }
       .menu > a:hover, .dropbtn:hover { background: var(--off-white); }
       .drop { width: 100%; }
       .dropbtn { width: 100%; justify-content: space-between; }
-      .dropmenu { position: static; box-shadow: none; margin-top: 4px; }
+      .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
       .nav-cta { display: none; }
 
-      .hero { min-height: auto; background-position: 65% center; }
-      .hero .container { padding: 48px 0 40px; display: block; }
-      .hero h1 { font-size: clamp(38px, 10vw, 54px); }
-      .hero-sub { font-size: 16px; }
-      .hero-pills { display: none; }
+      /* hero: clean image + heading only */
+      .hero { min-height: auto; background-position: 60% center; }
+      .hero .container { padding: 40px 0 36px; display: block; }
       .hero-eyebrow { display: none; }
+      .hero-pills { display: none; }
+      .hero h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 12px; }
+      .hero-sub { font-size: 15px; margin-bottom: 0; }
+      /* hide form inside hero on mobile */
       .hero-form-card { display: none; }
 
-      .stat-strip { display: none; }
+      /* show mobile quote section */
       .mobile-quote-section { display: block; }
+
+      /* hide stat strip on mobile */
+      .stat-strip { display: none; }
+
       .services-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .process-grid::before { display: none; }
@@ -1055,24 +1067,22 @@ layout: null
       .areas-main { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      section { padding: 60px 0; }
+      section { padding: 56px 0; }
+      .floating { right: 16px; bottom: 16px; }
     }
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 36px 0 30px; }
-      .hero h1 { font-size: 34px; }
-      .hero-pills { display: none; }
-      .hero-actions .btn { width: 100%; }
-      .hero-actions { flex-direction: column; }
-      .hero-form-card { padding: 22px 18px; }
-      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      .stat-number { font-size: 28px; }
+      .hero .container { padding: 28px 0 24px; }
+      .hero h1 { font-size: 30px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
+      .cta-band .btns { width: 100%; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .floating { bottom: 16px; right: 14px; }
       .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
+
+    /* mobile quote section — hidden on desktop */
+    .mobile-quote-section { display: none; background: var(--off-white); padding: 28px 0; }
   </style>
 </head>
 <body>
@@ -1198,7 +1208,7 @@ layout: null
       </div>
     </section>
 
-    <!-- MOBILE ONLY: quote form below hero -->
+    <!-- MOBILE FORM: shows below hero on mobile only -->
     <section class="mobile-quote-section">
       <div class="container">
         <div class="hero-form-card">
