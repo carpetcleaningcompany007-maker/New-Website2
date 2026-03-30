@@ -988,7 +988,7 @@ layout: null
     .float-btn.wa { background: var(--green); }
     .float-btn.call { background: var(--blue); }
 
-    /* mobile quote section: hidden on desktop, shown on mobile */
+    /* mobile quote section — hidden on desktop, shown on mobile */
     .mobile-quote-section {
       display: none;
       padding: 28px 0;
@@ -1039,10 +1039,12 @@ layout: null
       .nav-cta { display: none; }
 
       .hero { min-height: auto; background-position: 65% center; }
-      .hero .container { padding: 48px 0 40px; }
+      .hero .container { padding: 48px 0 40px; display: block; }
       .hero h1 { font-size: clamp(38px, 10vw, 54px); }
       .hero-sub { font-size: 16px; }
-      .hero-pills span:nth-child(n+3) { display: none; }
+      .hero-pills { display: none; }
+      .hero-eyebrow { display: none; }
+      .hero-form-card { display: none; }
 
       .stat-strip { display: none; }
       .mobile-quote-section { display: block; }
@@ -1193,6 +1195,40 @@ layout: null
             <span><i class="fa-solid fa-star"></i> Professional service</span>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <!-- MOBILE ONLY: quote form below hero -->
+    <section class="mobile-quote-section">
+      <div class="container">
+        <div class="hero-form-card">
+          <p class="form-title">Get your free quote</p>
+          <p class="form-sub">Tell us what needs cleaning and we'll get back to you fast.</p>
+          <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-status="mobileFormStatus">
+            <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+            <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+            <input type="email" name="email" placeholder="Email address" autocomplete="email">
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Carpet cleaning</option>
+              <option>Upholstery cleaning</option>
+              <option>Rug cleaning</option>
+              <option>Stain removal treatment</option>
+              <option>Moth treatment</option>
+              <option>Commercial carpet cleaning</option>
+              <option>General quote</option>
+            </select>
+            <textarea name="details" placeholder="Tell us what needs cleaning" style="min-height:80px;" required></textarea>
+            <button class="btn btn-gold" type="submit">Send enquiry <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div id="mobileFormStatus" class="form-status" aria-live="polite"></div>
+          <div class="form-badges">
+            <span><i class="fa-solid fa-bolt"></i> Fast local reply</span>
+            <span><i class="fa-solid fa-shield"></i> Honest advice</span>
+            <span><i class="fa-solid fa-star"></i> Professional service</span>
+          </div>
+        </div>
       </div>
     </section>
 
