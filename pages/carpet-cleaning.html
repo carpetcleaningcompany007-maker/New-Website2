@@ -36,7 +36,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
-        <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }}">
+        <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }}">
         <span>{{ site.business_name }}<small>{{ site.brand_tagline }}</small></span>
       </a>
       <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
@@ -224,7 +224,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
+        <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }} logo" style="height:64px;margin-bottom:16px">
         <div class="footer-note">Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal treatments, moth treatment and commercial carpet cleaning across Worcestershire and the West Midlands</div>
       </div>
       <div>

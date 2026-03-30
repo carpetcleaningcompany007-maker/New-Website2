@@ -435,3 +435,12 @@ header{box-shadow:0 8px 24px rgba(15,23,42,.04)}
 .hero>.container,.local-hero>.container,.service-hero>.container,.premium-hero>.container{position:relative;z-index:1}
 .topbar .links:empty{display:none}
 @media (max-width:760px){.brand img{height:52px;max-width:180px;padding:6px 10px}.brand span{font-size:15px}.brand span small{font-size:11px;line-height:1.25}}
+
+
+/* === mobile/header/logo readability fix === */
+header{background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}
+.brand img{height:56px;max-width:220px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;padding:6px 10px;box-shadow:0 8px 22px rgba(15,23,42,.08)}
+.brand span{display:flex;flex-direction:column;gap:3px;color:#0f172a !important;text-shadow:none !important}
+.brand span small{color:#64748b !important}
+@media (max-width:860px){.brand img{height:46px;max-width:170px;padding:5px 8px}.menu{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 14px 34px rgba(15,23,42,.12)}}
+@media (max-width:560px){.brand img{height:42px;max-width:150px}.menu a,.dropbtn{padding:11px 12px}.hero .container{gap:16px}.formcard{padding:22px 16px;border-radius:20px}}

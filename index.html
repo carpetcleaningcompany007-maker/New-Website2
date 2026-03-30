@@ -18,7 +18,7 @@ layout: null
   <link rel="canonical" href="https://jwcarpetcare.co.uk/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="{{ site.logo_url }}">
+  <link rel="preload" as="image" href="{{ site.logo_url | relative_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -28,7 +28,7 @@ layout: null
   <meta property="og:title" content="{{ site.business_name }} | Carpet Cleaning Worcester, Bromsgrove, Kidderminster & Redditch">
   <meta property="og:description" content="Professional carpet cleaning, upholstery cleaning, stain removal treatments and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.">
   <meta property="og:url" content="https://jwcarpetcare.co.uk/">
-  <meta property="og:image" content="{{ site.logo_url }}">
+  <meta property="og:image" content="{{ site.logo_url | absolute_url }}">
 
   <script type="application/ld+json">
   {
@@ -996,9 +996,6 @@ layout: null
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* mobile quote section — hidden on desktop, shown on mobile via media query below */
-    .mobile-quote-section { display: none; background: var(--off-white); padding: 28px 0; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
       .hero .container { grid-template-columns: 1fr; max-width: 680px; }
@@ -1009,16 +1006,21 @@ layout: null
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
+    /* mobile quote section: hidden on desktop */
+    .mobile-quote-section { display: none !important; background: #fff; padding: 0; }
+    .mobile-quote-section .hero-form-card { display: none !important; }
+
+
     @media (max-width: 860px) {
       .topbar { display: none; }
       .mobile-toggle { display: inline-flex; }
 
-      /* fix nav so menu doesn't escape off screen */
-      header { position: relative; overflow: visible; }
-      .nav { flex-wrap: nowrap; min-height: 64px; padding: 10px 0; gap: 10px; }
-      .brand { flex: 1 1 auto; min-width: 0; }
+      /* nav fix: keeps menu inside screen */
+      header { position: relative; }
+      .nav { flex-wrap: nowrap; min-height: 64px; padding: 10px 0; gap: 10px; overflow: hidden; }
+      .brand { flex: 1 1 auto; min-width: 0; overflow: hidden; }
       .brand img { height: 40px; }
-      .brand-name { font-size: 15px; }
+      .brand-name { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .brand-sub { display: none; }
       .mobile-toggle { flex-shrink: 0; }
       .menu {
@@ -1047,20 +1049,17 @@ layout: null
       .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
       .nav-cta { display: none; }
 
-      /* hero: clean image + heading only */
+      /* hero: clean image + heading only, no form */
       .hero { min-height: auto; background-position: 60% center; }
-      .hero .container { padding: 40px 0 36px; display: block; }
+      .hero .container { padding: 40px 0 28px; display: grid; grid-template-columns: 1fr; gap: 18px; }
       .hero-eyebrow { display: none; }
       .hero-pills { display: none; }
-      .hero h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 12px; }
-      .hero-sub { font-size: 15px; margin-bottom: 0; }
-      /* hide form inside hero on mobile */
-      .hero-form-card { display: none; }
+      .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 12px; max-width: 12ch; }
+      .hero-sub { font-size: 15px; margin-bottom: 0; max-width: 36ch; }
+      .hero-form-card { display: block; max-width: 100%; margin-top: 4px; }
 
-      /* show mobile quote section */
-      .mobile-quote-section { display: block; }
-
-      /* hide stat strip on mobile */
+      /* show mobile form, hide stat strip */
+      .mobile-quote-section { display: none !important; }
       .stat-strip { display: none; }
 
       .services-grid { grid-template-columns: 1fr; }
@@ -1076,14 +1075,20 @@ layout: null
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 28px 0 24px; }
-      .hero h1 { font-size: 30px; }
+      .hero .container { padding: 36px 0 30px; }
+      .hero h1 { font-size: 34px; }
+      .hero-pills { display: none; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .hero-actions { flex-direction: column; }
+      .hero-form-card { padding: 20px 16px; border-radius: 20px; }
+      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .stat-number { font-size: 28px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
-      .cta-band .btns { width: 100%; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .floating { bottom: 16px; right: 14px; }
       .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
-
+  </style>
 </head>
 <body>
 
@@ -1107,7 +1112,7 @@ layout: null
   <header>
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="{{ site.business_name }} home">
-        <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
+        <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }} logo">
         <div class="brand-text">
           <span class="brand-name">{{ site.business_name }}</span>
           <span class="brand-sub">Carpet cleaning across Worcestershire</span>
@@ -1208,7 +1213,7 @@ layout: null
       </div>
     </section>
 
-    <!-- MOBILE FORM: shows below hero on mobile only -->
+    <!-- mobile form: shows below hero on mobile only -->
     <section class="mobile-quote-section">
       <div class="container">
         <div class="hero-form-card">
@@ -1573,7 +1578,7 @@ layout: null
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="{{ site.logo_url }}" alt="{{ site.business_name }} logo">
+          <img loading="lazy" decoding="async" src="{{ site.logo_url | relative_url }}" alt="{{ site.business_name }} logo">
           <p>Professional carpet cleaning, upholstery cleaning, rug cleaning, stain removal and commercial carpet cleaning across Worcester, Bromsgrove, Kidderminster, Redditch and nearby areas.</p>
         </div>
         <div>

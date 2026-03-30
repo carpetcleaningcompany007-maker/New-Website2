@@ -1,0 +1,6 @@
+Fixed in this package:
+- kept the home page quote form visible on mobile
+- removed the duplicate mobile quote block that was causing layout issues
+- improved mobile hero stacking and button spacing
+- corrected logo path handling for Jekyll relative URLs
+- darkened header logo text for readability on white backgrounds
