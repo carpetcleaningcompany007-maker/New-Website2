@@ -996,9 +996,6 @@ layout: null
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* mobile quote section — hidden on desktop, shown on mobile via media query below */
-    .mobile-quote-section { display: none; background: var(--off-white); padding: 28px 0; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
       .hero .container { grid-template-columns: 1fr; max-width: 680px; }
@@ -1009,16 +1006,19 @@ layout: null
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
+    /* mobile quote section: hidden on desktop */
+    .mobile-quote-section { display: none; background: #fff; padding: 28px 0; }
+
     @media (max-width: 860px) {
       .topbar { display: none; }
       .mobile-toggle { display: inline-flex; }
 
-      /* fix nav so menu doesn't escape off screen */
-      header { position: relative; overflow: visible; }
-      .nav { flex-wrap: nowrap; min-height: 64px; padding: 10px 0; gap: 10px; }
-      .brand { flex: 1 1 auto; min-width: 0; }
+      /* nav fix: keeps menu inside screen */
+      header { position: relative; }
+      .nav { flex-wrap: nowrap; min-height: 64px; padding: 10px 0; gap: 10px; overflow: hidden; }
+      .brand { flex: 1 1 auto; min-width: 0; overflow: hidden; }
       .brand img { height: 40px; }
-      .brand-name { font-size: 15px; }
+      .brand-name { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .brand-sub { display: none; }
       .mobile-toggle { flex-shrink: 0; }
       .menu {
@@ -1047,20 +1047,17 @@ layout: null
       .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
       .nav-cta { display: none; }
 
-      /* hero: clean image + heading only */
+      /* hero: clean image + heading only, no form */
       .hero { min-height: auto; background-position: 60% center; }
-      .hero .container { padding: 40px 0 36px; display: block; }
+      .hero .container { padding: 40px 0 32px; display: block; }
       .hero-eyebrow { display: none; }
       .hero-pills { display: none; }
-      .hero h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 12px; }
+      .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 12px; }
       .hero-sub { font-size: 15px; margin-bottom: 0; }
-      /* hide form inside hero on mobile */
       .hero-form-card { display: none; }
 
-      /* show mobile quote section */
+      /* show mobile form, hide stat strip */
       .mobile-quote-section { display: block; }
-
-      /* hide stat strip on mobile */
       .stat-strip { display: none; }
 
       .services-grid { grid-template-columns: 1fr; }
@@ -1076,14 +1073,20 @@ layout: null
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 28px 0 24px; }
-      .hero h1 { font-size: 30px; }
+      .hero .container { padding: 36px 0 30px; }
+      .hero h1 { font-size: 34px; }
+      .hero-pills { display: none; }
+      .hero-actions .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+      .hero-form-card { padding: 22px 18px; }
+      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .stat-number { font-size: 28px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
-      .cta-band .btns { width: 100%; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .floating { bottom: 16px; right: 14px; }
       .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
-
+  </style>
 </head>
 <body>
 
@@ -1208,7 +1211,7 @@ layout: null
       </div>
     </section>
 
-    <!-- MOBILE FORM: shows below hero on mobile only -->
+    <!-- mobile form: shows below hero on mobile only -->
     <section class="mobile-quote-section">
       <div class="container">
         <div class="hero-form-card">
