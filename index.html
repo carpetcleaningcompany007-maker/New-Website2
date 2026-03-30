@@ -460,8 +460,7 @@ layout: null
       gap: 20px;
       text-align: center;
     }
-    .stat-item { padding: 6px 16px; border-right: 1px solid rgba(255,255,255,.1); }
-    .stat-item:last-child { border-right: none; }
+    .stat-item { padding: 6px; }
     .stat-number {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 36px;
@@ -964,8 +963,6 @@ layout: null
     .footer-bottom p { font-size: 13px; color: #64748b; }
 
     /* ── FLOATING BUTTONS ── */
-
-    /* ── FLOATING BUTTONS ── */
     .floating {
       position: fixed;
       right: 18px;
@@ -991,6 +988,13 @@ layout: null
     .float-btn.wa { background: var(--green); }
     .float-btn.call { background: var(--blue); }
 
+    /* mobile quote section: hidden on desktop, shown on mobile */
+    .mobile-quote-section {
+      display: none;
+      padding: 28px 0;
+      background: var(--off-white);
+    }
+
     /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
@@ -1012,65 +1016,36 @@ layout: null
     @media (max-width: 860px) {
       .topbar { display: none; }
       .mobile-toggle { display: inline-flex; }
-
-      /* nav: logo left, menu button right, nothing overflowing */
-      header { position: sticky; top: 0; z-index: 100; }
-      .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 64px;
-        padding: 10px 0;
-        gap: 10px;
-        overflow: hidden;
-      }
-      .brand { flex: 1 1 auto; min-width: 0; gap: 8px; }
-      .brand img { height: 40px; }
-      .brand-name { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .brand-sub { display: none; }
-      .mobile-toggle { flex: 0 0 auto; white-space: nowrap; }
-
-      /* dropdown menu: full-width panel below header */
       .menu {
         display: none;
         position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
+        top: calc(100% + 8px);
+        left: 0; right: 0;
         background: #fff;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 8px 24px rgba(10,22,40,.12);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: var(--shadow-md);
         flex-direction: column;
         align-items: stretch;
-        gap: 2px;
-        padding: 10px 16px 16px;
-        z-index: 99;
-        box-sizing: border-box;
+        gap: 4px;
       }
       .menu.open { display: flex; }
-      .menu-close-btn { display: none; }
-      .menu > a, .dropbtn { padding: 12px 14px; border-radius: 10px; width: 100%; text-align: left; }
+      .menu > a, .dropbtn { padding: 11px 14px; border-radius: 10px; }
       .menu > a:hover, .dropbtn:hover { background: var(--off-white); }
       .drop { width: 100%; }
       .dropbtn { width: 100%; justify-content: space-between; }
-      .dropmenu { position: static; box-shadow: none; margin-top: 4px; border-radius: 12px; }
+      .dropmenu { position: static; box-shadow: none; margin-top: 4px; }
       .nav-cta { display: none; }
 
-      /* hero: just image + heading on mobile */
-      .hero { min-height: auto; background-position: 60% center; }
-      .hero .container { padding: 36px 0 32px; display: block; }
-      .hero-eyebrow { display: none; }
-      .hero-pills { display: none; }
-      .hero-copy { max-width: 100%; }
-      .hero h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 12px; }
-      .hero-sub { font-size: 15px; max-width: 100%; margin-bottom: 0; }
-      .hero-form-card { display: none; }
-      /* hide stat strip on mobile, form takes its place */
+      .hero { min-height: auto; background-position: 65% center; }
+      .hero .container { padding: 48px 0 40px; }
+      .hero h1 { font-size: clamp(38px, 10vw, 54px); }
+      .hero-sub { font-size: 16px; }
+      .hero-pills span:nth-child(n+3) { display: none; }
+
       .stat-strip { display: none; }
-      .mobile-quote-section { display: block !important; }
+      .mobile-quote-section { display: block; }
       .services-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .process-grid::before { display: none; }
@@ -1078,20 +1053,22 @@ layout: null
       .areas-main { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      section { padding: 56px 0; }
-
-      /* floating buttons: keep visible */
-      .floating { right: 16px; bottom: 16px; }
+      section { padding: 60px 0; }
     }
 
     @media (max-width: 560px) {
       .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero .container { padding: 28px 0 24px; }
-      .hero h1 { font-size: 30px; }
+      .hero .container { padding: 36px 0 30px; }
+      .hero h1 { font-size: 34px; }
+      .hero-pills { display: none; }
+      .hero-actions .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+      .hero-form-card { padding: 22px 18px; }
+      .stat-strip .inner { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .stat-number { font-size: 28px; }
       .cta-band .inner { flex-direction: column; align-items: flex-start; }
-      .cta-band .btns { width: 100%; }
-      .cta-band .btns .btn { flex: 1; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .floating { bottom: 16px; right: 14px; }
       .float-btn { width: 50px; height: 50px; font-size: 20px; }
     }
   </style>
@@ -1130,7 +1107,6 @@ layout: null
       </button>
 
       <nav class="menu" aria-label="Primary">
-        <button class="menu-close-btn" id="menuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
         <a href="index.html" class="current" aria-current="page">Home</a>
         <div class="drop">
           <button class="dropbtn" type="button" aria-expanded="false">Services</button>
@@ -1179,7 +1155,14 @@ layout: null
             <span><i class="fa-solid fa-circle-check"></i> Stain removal</span>
             <span><i class="fa-solid fa-circle-check"></i> Commercial cleaning</span>
           </div>
-
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="tel:{{ site.phone }}">
+              <i class="fa-solid fa-phone"></i> Call {{ site.phone }}
+            </a>
+            <a class="btn btn-ghost" href="pages/get-a-quote.html">
+              Get a free quote <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
 
         <aside class="hero-form-card" aria-label="Quick quote form">
@@ -1213,26 +1196,7 @@ layout: null
       </div>
     </section>
 
-    <!-- ── MOBILE QUOTE (shown only on mobile) ── -->
-    <section class="mobile-quote-section" style="display:none; padding:28px 0; background:var(--off-white);">
-      <div class="container">
-        <div class="hero-form-card" style="max-width:100%;">
-          <p class="form-title">Get your free quote</p>
-          <p class="form-sub">Tell us what needs cleaning and we'll get back to you fast.</p>
-          <form class="formgrid" action="{{ site.formspree_endpoint }}" method="POST" novalidate data-formspree="true" data-status="mobileFormStatus">
-            <input type="hidden" name="_subject" value="New {{ site.business_name }} enquiry">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="tel" name="phone" placeholder="Phone number" required>
-            <select name="service" required><option value="">Select a service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Stain removal treatment</option><option>Commercial carpet cleaning</option><option>General quote</option></select>
-            <textarea name="details" placeholder="Tell us what needs cleaning" style="min-height:72px;" required></textarea>
-            <button class="btn btn-gold" type="submit">Send enquiry</button>
-          </form>
-          <div id="mobileFormStatus" class="form-status" aria-live="polite"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 25002500 STAT STRIP 25002500 -->
+    <!-- ── STAT STRIP ── -->
     <div class="stat-strip">
       <div class="container">
         <div class="inner">
@@ -1260,7 +1224,7 @@ layout: null
     <section class="section-alt reveal">
       <div class="container">
         <span class="section-label">Our services</span>
-        <h2 class="section-heading">Professional carpet cleaning services across Worcestershire</h2>
+        <h2 class="section-heading">Professional cleaning services across Worcestershire</h2>
         <p class="section-lead">Carpet cleaning, upholstery cleaning, rug cleaning, stain removal and commercial carpet cleaning — all with proper equipment and honest local advice.</p>
 
         <div class="services-grid">
@@ -1613,15 +1577,6 @@ layout: null
       toggle.addEventListener('click', () => {
         const open = menu.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-      });
-    }
-    const menuClose = document.getElementById('menuClose');
-    if (menuClose) {
-      menuClose.addEventListener('click', () => {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
       });
     }
 
